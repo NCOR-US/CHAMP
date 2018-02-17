@@ -1,0 +1,20 @@
+{
+  "data" : {
+    "id" : "urn:process-workflow:plans:generated:Agent-b4a81a7a-c157-47ff-ad2b-e28a0791fd59",
+    "attributes" : {
+      "name" : "John",
+      "username" : null,
+      "joined" : null,
+      "role" : "http://www.semanticweb.org/no/ontologies/2017/2/Widget#ManufacturerRole"
+    },
+    "relationships" : {
+      "agentIn" : {
+        "data" : [ {
+          "type" : "sub-processes",
+          "id" : "urn:process-workflow:plans:generated:SubProcess-244544b9-9018-488b-9a67-1286cec68c9d"
+        } ]
+      }
+    },
+    "type" : "agents"
+  }
+}

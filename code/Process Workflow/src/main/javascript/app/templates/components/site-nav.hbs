@@ -1,0 +1,24 @@
+<ul class="title-area">
+    <li class="name">
+        <h1><a class="no-click">Process Workflow</a></h1>
+    </li>
+</ul>
+<section class="top-bar-section">
+    <ul class="left">
+        <li class="divider"></li>
+        <li class="{{if highlightHome 'active'}}">{{#link-to 'index'}}Home{{/link-to}}</li>
+        <li class="{{if highlightProcesses 'active'}}">{{#link-to 'processes.index'}}Processes{{/link-to}}</li>
+        <li class="{{if highlightInventory 'active'}}">{{#link-to 'inventory'}}Inventory{{/link-to}}</li>
+        <li class="{{if highlightQuery 'active'}}">{{#link-to 'query'}}Query{{/link-to}}</li>
+        <li class="{{if highlightDataInput 'active'}}">{{#link-to 'data-input'}}Data Input{{/link-to}}</li>
+        <li class="{{if highlightAdmin 'active'}}">{{#link-to 'admin'}}Admin{{/link-to}}</li>
+    </ul>
+    <ul class="right">
+        <li class="has-dropdown">
+            <a class="user-label"><i class="fa fa-user"></i> default.user</a>
+            <ul class="dropdown">
+                <li>{{#link-to 'settings'}}Settings{{/link-to}}</li>
+            </ul>
+        </li>
+    </ul>
+</section>

@@ -1,0 +1,40 @@
+---
+
+Name: Intel Report Plan v2
+Description: An analysis of some intel, followed by discussion
+Developer: Joe Smith (username: joe.smith)
+Created: 16 August 2017 3:56:44 PM -04:00
+Last Edited: 18 August 2017 11:05:01 AM -04:00
+
+---
+
+Sub-process 1: Collect Information
+
+Required materials:
+- The document
+
+Outputs:
+- The report
+
+Step 1: Read the document
+Step 2: Understand the contents of the document
+Step 3: Assess the importance of the document
+Step 4: Write the report
+
+---
+
+Sub-process 2: Discuss Information with the Manager
+
+Inputs:
+- The report
+
+Outputs:
+- Meeting notes
+
+Step 1: Talk with the supervisor on your findings
+Step 2: Plan the company's course of action
+
+---
+
+Agent 1: (any analyst)
+Agent 2: (that analyst's supervisor)

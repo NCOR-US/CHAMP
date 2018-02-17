@@ -1,0 +1,9 @@
+<label>Function
+    <select class="function-select bottom-margin-1" name="fn">
+        {{#each-in aggregateFunctions as |name fn|}}
+            <option value="{{name}}" selected="{{if (eq agg.expr.name name) "selected"}}">
+                {{name}}
+            </option>
+        {{/each-in}}
+    </select>
+</label>

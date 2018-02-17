@@ -1,0 +1,643 @@
+@prefix : <http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ero: <http://www.ontologyrepository.com/CommonCoreOntologies/ExtendedRelationOntology#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ace_lexicon: <http://attempto.ifi.uzh.ch/ace_lexicon#> .
+@prefix CEO-ontology: <http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/> .
+@prefix PLC-ontology: <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/> .
+@base <http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/> .
+
+<http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/> rdf:type owl:Ontology ;
+                                                                   owl:imports PLC-ontology: ;
+                                                                   owl:versionInfo "Version .01"@en ;
+                                                                   rdfs:comment "Design Ontology"@en ;
+                                                                   dc:contributor "J. Neil Otte, Ron Rudnicki, Munira Binti Mohd Ali, Binbin Zhang, and Ruoyu Yang."@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ExtendedRelationOntology#definition
+ero:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ExtendedRelationOntology#elucidation
+ero:elucidation rdf:type owl:AnnotationProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ExtendedRelationOntology#term_editor
+ero:term_editor rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfMeeting
+<http://www.ontologyrepository.com/CommonCoreOntologies/ActOfMeeting> rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Organization
+<http://www.ontologyrepository.com/CommonCoreOntologies/Organization> rdf:type owl:Class ;
+                                                                      rdfs:subClassOf obo:BFO_0000027 .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/PlanSpecification
+<http://www.ontologyrepository.com/CommonCoreOntologies/PlanSpecification> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/EconomicGood
+CEO-ontology:EconomicGood rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/AcceptanceCriterion
+:AcceptanceCriterion rdf:type owl:Class ;
+                     rdfs:subClassOf :Requirement ;
+                     ero:definition "A directive information content entity that specifies how the buyer or receiver of goods will determine if the product or service is acceptable."@en ;
+                     ero:term_editor "J. Neil Otte"@en ;
+                     rdfs:label "Acceptance Criterion"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ActOfAnalysisOfClientNeed
+:ActOfAnalysisOfClientNeed rdf:type owl:Class ;
+                           rdfs:subClassOf <http://www.semanticweb.org/ontologies/TestingProcessOntology#ActOfAnalysis> ;
+                           ero:definition "An Act of Analysis that analyzes a statement of client need in conjunction with other information, which may include codes and regulations, budgetary and delivery date information, information on existing products used to address needs similar to that of the client, and a statement of the objectives of a design process."@en ;
+                           ero:term_editor "J. Neil Otte"@en ;
+                           rdfs:label "Act of Analysis of Client Need"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ActOfBrainstorming
+:ActOfBrainstorming rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+                    ero:definition "an intentional act where multiple potential representations are described so that their merits may be assessed, often in advance of choosing one."@en ;
+                    ero:term_editor "J. Neil Otte"@en ;
+                    rdfs:label "Act of Brainstorming"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ActOfBudgeting
+:ActOfBudgeting rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.semanticweb.org/ontologies/TestingProcessOntology#ActOfAnalysis> ;
+                ero:definition "An act of analysis that either creates a proposed budget or amends a portion of a budget."@en ;
+                ero:term_editor "J. Neil Otte"@en ;
+                rdfs:label "Act of Budgeting"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ActOfDescribingClientNeed
+:ActOfDescribingClientNeed rdf:type owl:Class ;
+                           rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty <http://www.ontologyrepository.com/CommonCoreOntologies/has_output> ;
+                                             owl:someValuesFrom :DescriptionOfClientNeed
+                                           ] ;
+                           ero:definition "An Intentional Act that creates a description of the needs of a client or customer."@en ;
+                           ero:term_editor "J. Neil Otte"@en ;
+                           rdfs:label "Act of Describing Client Need"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ActOfEconomicGoodAgreement
+:ActOfEconomicGoodAgreement rdf:type owl:Class ;
+                            rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+                            ero:definition "An act of agreement between a vendor and a client, where the vendor agrees to produce some economic good."@en ;
+                            ero:term_editor "J. Neil Otte"@en ;
+                            rdfs:label "Act of Economic Good Agreement"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ActOfInvestigation
+:ActOfInvestigation rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+                    ero:definition "An intentional act that involves collecting or generating information that is about some entity."@en ;
+                    ero:term_editor "J. Neil Otte"@en ;
+                    rdfs:label "Act of Investigation"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ActOfLaunchMeeting
+:ActOfLaunchMeeting rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/ActOfMeeting> ;
+                    ero:definition "An Act of Meeting that is carried out in order to initial the beginning of a new project."@en ;
+                    ero:term_editor "J. Neil Otte"@en ;
+                    rdfs:label "Act of Launch Meeting"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ActOfManufacturingRequirementIdentification
+:ActOfManufacturingRequirementIdentification rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+                                             ero:definition "An intentional act that involves creating and identifying specifications that prescribe the manufacturing processes necessary for producing some product."@en ;
+                                             ero:term_editor "J. Neil Otte"@en ;
+                                             rdfs:label "Act of Manufacturing Requirement Identification"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ActOfMarketAnalysis
+:ActOfMarketAnalysis rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.semanticweb.org/ontologies/TestingProcessOntology#ActOfAnalysis> ;
+                     ero:definition "An Act of Analysis that analyzes past predictions of financial performance or past behavior of financial markets in order to inductively infer predictions of future financial performance."@en ;
+                     ero:term_editor "J. Neil Otte"@en ;
+                     rdfs:label "Act of Market Analysis"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ActOfProductModelAcceptance
+:ActOfProductModelAcceptance rdf:type owl:Class ;
+                             rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty <http://www.ontologyrepository.com/CommonCoreOntologies/has_output> ;
+                                               owl:someValuesFrom :ProductModel
+                                             ] ;
+                             ero:definition "An intentional act that takes some artifact model or conceptual model and adopts it as a product model that prescribes some product line."@en ;
+                             ero:term_editor "J. Neil Otte"@en ;
+                             rdfs:label "Act of Product Model Acceptance"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ActOfPrototypeTesting
+:ActOfPrototypeTesting rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/ActOfAppraisal> ;
+                       ero:definition "An intentional act in which an investigator investigates some number of Conceptual Designs in order to select a Product Model."@en ;
+                       ero:term_editor "J. Neil Otte"@en ;
+                       rdfs:label "Act of Prototype Testing"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ActOfRanking
+:ActOfRanking rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+              ero:definition "an intentional act in which an agent assigns an ordinal measurement to members of a set of entities."@en ;
+              ero:elucidation "Note: Ranking some set of entities always involves considering them as a set and assigning an ordered set of values--even a partial order--to all of the members of the set."@en ;
+              ero:term_editor "J. Neil Otte"@en ;
+              rdfs:label "Act of Ranking"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ActOfTechinicalDrawing
+:ActOfTechinicalDrawing rdf:type owl:Class ;
+                        rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://www.ontologyrepository.com/CommonCoreOntologies/has_output> ;
+                                          owl:someValuesFrom :TechnicalDrawing
+                                        ] ;
+                        ero:definition "an intentional act that involves the drawing of artifacts in a precise way using certain techniques of draftsmanship, as employed in architecture or engineering."@en ;
+                        ero:term_editor "J. Neil Otte"@en ;
+                        rdfs:label "Act of Techinical Drawing"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ApprovalRole
+:ApprovalRole rdf:type owl:Class ;
+              rdfs:subClassOf obo:BFO_0000023 ;
+              ero:definition "A role inhering in a person with direct oversight authority who is responsible for the integration of the information at the next level of integration, and is responsible for contractual compliance."@en ;
+              ero:term_editor "J. Neil Otte"@en ;
+              rdfs:label "Approval Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ApprovalSpecification
+:ApprovalSpecification rdf:type owl:Class ;
+                       rdfs:subClassOf :Requirement ;
+                       ero:definition "a specification that prescribes the agent who must approve a particular course of action."@en ;
+                       ero:term_editor "J. Neil Otte"@en ;
+                       rdfs:label "Approval Specification"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/Budget
+:Budget rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/PlanSpecification> ;
+        ero:definition "a directive information content entity a) consisting of an itemized list of actions, products, or commodities b) along with their expected costs or actual costs and c) which has been adopted to prescribe some process."@en ;
+        ero:term_editor "J. Neil Otte"@en ;
+        rdfs:label "Budget"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/CADModel
+:CADModel rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingArtifact> ;
+          ero:definition "An Information Bearing Artifact that is in the Computer Assisted Design (CAD) format."@en ;
+          ero:term_editor "J. Neil Otte"@en ;
+          rdfs:label "CAD Model"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/CertificateOfAuthenticity
+:CertificateOfAuthenticity rdf:type owl:Class ;
+                           rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/Certificate> ;
+                           ero:definition "A certificate that certifies all some materiel items listed in this contract are genuine, new and unused unless otherwise specified in writing herein; are suitable for the intended purpose; are not defective, suspect, or counterfeit; have not been provided under false pretenses; and have not been materially altered, damaged, deteriorated, or degraded."@en ;
+                           ero:term_editor "J. Neil Otte" ;
+                           rdfs:label "Certificate of Authenticity"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/CertificateOfConformance
+:CertificateOfConformance rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/Certificate> ;
+                          ero:definition "A document provided by a supplier formally declaring that all buyer purchase order requirements have been met. The document may include information such as manufacturer, distributor, quantity, lot and/or date code, inspection date, etc., and is signed by a responsible party for the supplier."@en ;
+                          ero:term_editor "J. Neil Otte" ;
+                          rdfs:label "Certificate of Conformance"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ChairpersonRole
+:ChairpersonRole rdf:type owl:Class ;
+                 rdfs:subClassOf obo:BFO_0000023 ;
+                 ero:definition "a role inhering in an agent that is the highest officer of an organized group such as a board, a committee, or a deliberative assembly."@en ;
+                 ero:term_editor "J. Neil Otte"@en ;
+                 rdfs:label "Chairperson Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/Chart
+:Chart rdf:type owl:Class ;
+       rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/InformationStructureEntity> ;
+       ero:definition "an information structure entity that visually represents data by employing symbols, such as bars, lines, or wedges of a pie. Common subclasses of chart include: histograms, bar charts, pie charts, and line charts."@en ;
+       ero:term_editor "J. Neil Otte"@en ;
+       rdfs:label "Chart"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ConceptualDesign
+:ConceptualDesign rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactModel> ;
+                  ero:definition "An Artifact Model that is generated in order to be assessed in an Act of Appraisal prior to the selection of a Product Model."@en ;
+                  ero:elucidation "A ‘conceptual design’ is an artifact model that has not yet been chosen as a product model. Frequently, a design process will create a series of 'conceptual designs', some of which may be used to guide the creation of prototypes. Once one of them is chosen, it then counts as a product model, and the product model becomes the artifact model that prescribes the design of a product."@en ;
+                  ero:term_editor "J. Neil Otte"@en ;
+                  rdfs:label "Conceptual Design"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/Contract
+:Contract rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity> ;
+          ero:definition "a directive information content entity created by voluntary agreement between two or more parties that is enforceable by law as a binding legal agreement."@en ;
+          ero:term_editor "J. Neil Otte"@en ;
+          rdfs:label "Contract"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ContractAward
+:ContractAward rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/InformationContentEntity> ;
+               ero:definition "a document certifying to a recipient that an offer has been accepted, and which establishes a legal obligation between parties."@en ;
+               ero:term_editor "J. Neil Otte"@en ;
+               rdfs:label "Contract Award"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ContractorRole
+:ContractorRole rdf:type owl:Class ;
+                rdfs:subClassOf obo:BFO_0000023 ;
+                ero:definition "a role inhering in an agent that is realized in undertaking a contract to provide materials or labor to perform a service or do a job."@en ;
+                ero:term_editor "J. Neil Otte"@en ;
+                rdfs:label "Contractor Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/CounterfeitPartRole
+:CounterfeitPartRole rdf:type owl:Class ;
+                     rdfs:subClassOf obo:BFO_0000023 ;
+                     ero:definition "A role inhering in an artifact that has been confirmed to be a copy, imitation, or substitute that has been represented, identified, or marked as genuine, or altered by a source without legal right with intent to mislead, deceive, or defraud."@en ;
+                     ero:term_editor "J. Neil Otte"@en ;
+                     rdfs:label "Counterfeit Part Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/CrossFunctionalTeam
+:CrossFunctionalTeam rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/Organization> ;
+                     ero:definition "An organization whose component agents have different functional expertise and who work toward a common goal."@en ;
+                     ero:term_editor "Munira Ali"@en ;
+                     rdfs:label "Cross Functional Team"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/CustomerRequirement
+:CustomerRequirement rdf:type owl:Class ;
+                     rdfs:subClassOf :Requirement ;
+                     ero:definition "a directive information content entity that is created by some customer and prescribes some material entity."@en ;
+                     ero:term_editor "J. Neil Otte"@en ;
+                     rdfs:label "Customer Requirement" .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/Deliverable
+:Deliverable rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( CEO-ontology:EconomicGood
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.ontologyrepository.com/CommonCoreOntologies/is_output_of> ;
+                                                          owl:someValuesFrom :ActOfEconomicGoodAgreement
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+             rdfs:subClassOf CEO-ontology:EconomicGood .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/DescriptionOfClientNeed
+:DescriptionOfClientNeed rdf:type owl:Class ;
+                         rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity> ;
+                         ero:definition "A descriptive information content entity that describes the needs of a client or customer."@en ;
+                         ero:term_editor "J. Neil Otte"@en ;
+                         rdfs:label "Description of Client Need"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/DesignRequirementsManual
+:DesignRequirementsManual rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity> ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                            owl:someValuesFrom :Requirement
+                                          ] ;
+                          ero:definition "a directive information content entity that prescribes the requirements of the design"@en ;
+                          ero:term_editor "J. Neil Otte"@en ;
+                          rdfs:label "Design Requirements Manual"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/DesignStandardsManual
+:DesignStandardsManual rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity> ;
+                       ero:definition "a directive information content entity that prescribes the standards of the design."@en ;
+                       ero:term_editor "J. Neil Otte"@en ;
+                       rdfs:label "Design Standards Manual"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/DetailedDesignUserGuide
+:DetailedDesignUserGuide rdf:type owl:Class ;
+                         rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity> ;
+                         ero:definition "a directive information content entity that prescribes to the agent how to use a detailed design."@en ;
+                         ero:elucidation "Detailed design is the phase where the design is refined and plans, specifications and estimates are created."@en ;
+                         ero:term_editor "J. Neil Otte"@en ;
+                         rdfs:label "Detailed Design User Guide"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/DevelopmentContract
+:DevelopmentContract rdf:type owl:Class ;
+                     rdfs:subClassOf :Contract ;
+                     ero:definition "A contract that prescribes an agreement between a developer and a client, where the developer agrees to take specific actions to deliver some artifact."@en ;
+                     ero:term_editor "J. Neil Otte"@en ;
+                     rdfs:label "Development Contract"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/DocumentIdentification
+:DocumentIdentification rdf:type owl:Class ;
+                        rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DesignativeInformationContentEntity> ;
+                        ero:definition "A designative information content entity that designates some document."@en ;
+                        ero:term_editor "J. Neil Otte"@en ;
+                        rdfs:label "Document Identification"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/DocumentTitle
+:DocumentTitle rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DesignativeInformationContentEntity> ;
+               ero:definition "A designative information content entity that designates some document."@en ;
+               ero:term_editor "J. Neil Otte" ;
+               rdfs:label "Document Title"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/DocumentVersionIdentfication
+:DocumentVersionIdentfication rdf:type owl:Class ;
+                              rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DesignativeInformationContentEntity> ;
+                              ero:definition "A designative information content entity that designates a version of a document."@en ;
+                              ero:term_editor "J. Neil Otte" ;
+                              rdfs:label "Document Version Identification"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/FraudulentPartRole
+:FraudulentPartRole rdf:type owl:Class ;
+                    rdfs:subClassOf :SuspectPartRole ;
+                    ero:definition "A suspect part role inhering in an artifact when that artifact is misrepresented to a Customer as meeting as Customer’s requirements."@en ;
+                    ero:term_editor "J. Neil Otte"@en ;
+                    rdfs:label "Fradulent Part Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/GanttChart
+:GanttChart rdf:type owl:Class ;
+            rdfs:subClassOf :Chart ;
+            ero:definition "a bar chart invented by Henry Gannt in the 1910s that visually depicts a project schedule."@en ;
+            ero:term_editor "J. Neil Otte"@en ;
+            rdfs:label "Gantt Chart"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/Government-IndustryDataExchangeProgram
+:Government-IndustryDataExchangeProgram rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/Act> ;
+                                        ero:definition "A cooperative activity between the U.S. and Canadian governments and industry participants that seeks to reduce or eliminate expenditures of resources by sharing technical information essential during research, design, development, production and operational phases of the life cycle of systems, facilities and equipment."@en ;
+                                        ero:term_editor "J. Neil Otte" ;
+                                        rdfs:label "Government-Industry Data Exchange Program" .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/IndependentDistributorRole
+:IndependentDistributorRole rdf:type owl:Class ;
+                            rdfs:subClassOf obo:BFO_0000023 ;
+                            ero:definition "A distributor who purchases material entities with the intention to sell and redistribute them back into the market."@en ;
+                            ero:term_editor "J. Neil Otte"@en ;
+                            rdfs:label "Independent Distributor Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/InterfaceControlDrawing
+:InterfaceControlDrawing rdf:type owl:Class ;
+                         rdfs:subClassOf :TechnicalDrawing ;
+                         ero:definition "a techincal drawing that describes physical and functional qualities of all interfaces of related or co-functioning entities."@en ;
+                         ero:term_editor "J. Neil Otte"@en ;
+                         rdfs:label "Interface Control Drawing"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/MeetingMinutes
+:MeetingMinutes rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity> ;
+                ero:definition "an information content entity that records the information discussed in a meeting."@en ;
+                ero:term_editor "J. Neil Otte" ;
+                rdfs:label "Meeting Minutes"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/Microfilm
+:Microfilm rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingArtifact> ;
+           ero:definition "an information bearing artifact that bears scaled-down reproductions of documents that are made for the purposes of transmission, storage, reading, and printing."@en ;
+           ero:term_editor "J. Neil Otte"@en ;
+           rdfs:label "Microfilm"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/Mono-detailDrawing
+:Mono-detailDrawing rdf:type owl:Class ;
+                    rdfs:subClassOf :TechnicalDrawing ;
+                    ero:definition "A techinical drawing that delineates a single part that defines all features, dimensions of that artifact."@en ;
+                    ero:term_editor "J. Neil Otte"@en ;
+                    rdfs:label "Mono-detail Drawing"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/Multi-detailDrawing
+:Multi-detailDrawing rdf:type owl:Class ;
+                     rdfs:subClassOf :TechnicalDrawing ;
+                     ero:definition "A techinical drawing that delineates two or more uniquely identified parts of an artifact on the same drawing and meets the requirements of a mono-detail drawing."@en ;
+                     ero:term_editor "J. Neil Otte"@en ;
+                     rdfs:label "Multi-detail Drawing"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/NonconformanceReport
+:NonconformanceReport rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity> ;
+                      ero:definition "a descriptive information content entity that describes a failure to conform to accepted standards."@en ;
+                      ero:term_editor "J. Neil Otte"@en ;
+                      rdfs:label "Nonconformance Reports"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/PartnerRole
+:PartnerRole rdf:type owl:Class ;
+             rdfs:subClassOf obo:BFO_0000023 ;
+             ero:definition "a role inhering in an agent that is realized in taking part in an undertaking with others, especially in a business or company with shared risks and profits."@en ;
+             ero:term_editor "J. Neil Otte"@en ;
+             rdfs:label "Partner Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ProductCost
+:ProductCost rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity> ;
+             ero:definition "a monetary value of expenditures for supplies, services, labor, equipment and other items purchased for manufacturing the product."@en ;
+             rdfs:label "Product Cost"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ProductModel
+:ProductModel rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactModel> ;
+              ero:definition "An Artifact Model that prescribes a common set of Functions and Qualities to inhere in the products of a product line."@en ;
+              ero:term_editor "J. Neil Otte"@en ;
+              rdfs:label "Product Model"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ProductProcessSpecification
+:ProductProcessSpecification rdf:type owl:Class ;
+                             rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity> ;
+                             ero:definition "A specification of the manufacturing processes necessary for creating a particular product."@en ;
+                             ero:term_editor "J. Neil Otte"@en ;
+                             rdfs:label "Product Process Specification"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ProjectLeadRole
+:ProjectLeadRole rdf:type owl:Class ;
+                 rdfs:subClassOf obo:BFO_0000023 ;
+                 ero:definition "A role inhering in an agent who has authority over a project, and who is charged with communicating the activities of the project to others within an organization."@en ;
+                 ero:term_editor "J. Neil Otte"@en ;
+                 rdfs:label "Project Lead Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ProjectManagerRole
+:ProjectManagerRole rdf:type owl:Class ;
+                    rdfs:subClassOf obo:BFO_0000023 ;
+                    ero:definition "a role inhering in an agent that is responsible for controlling or administering all or part of a project."@en ;
+                    ero:term_editor "J. Neil Otte"@en ;
+                    rdfs:label "Project Manager Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ProjectTitle
+:ProjectTitle rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DesignativeInformationContentEntity> ;
+              ero:definition "A designative information content entity that designates some project."@en ;
+              ero:term_editor "J. Neil Otte" ;
+              rdfs:label "Project Title"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ProjectedCost
+:ProjectedCost rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity> ;
+               ero:definition "a monetary value of expenditures for some project, perhaps including supplies, services, labor, products, equipment, and other items purchased."@en ;
+               ero:term_editor "J. Neil Otte"@en ;
+               rdfs:label "Projected Cost"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/ProposedBudget
+:ProposedBudget rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/PlanSpecification> ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://www.obofoundry.org/ro/ro.owl#has_part> ;
+                                  owl:someValuesFrom :ProjectedCost
+                                ] ;
+                ero:definition "a directive information content entity consisting of an itemized list of actions, products, or commodities along with their expected costs."@en ;
+                ero:term_editor "J. Neil Otte"@en ;
+                rdfs:label "Proposed Budget"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/PrototypeRole
+:PrototypeRole rdf:type owl:Class ;
+               rdfs:subClassOf obo:BFO_0000023 ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty <http://www.ontologyrepository.com/CommonCoreOntologies/inheres_in> ;
+                                 owl:someValuesFrom <http://www.ontologyrepository.com/CommonCoreOntologies/Artifact>
+                               ] ;
+               ero:definition "a role inhering in some artifact when that artifact is produced as part of an early design process in order to assess the merits of a particular conceptual design."@en ;
+               ero:term_editor "J. Neil Otte"@en ;
+               rdfs:label "Prototype Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/PurchaseOrderRequirement
+:PurchaseOrderRequirement rdf:type owl:Class ;
+                          rdfs:subClassOf :Requirement ;
+                          ero:definition "a directive information content entity that prescribes  a commercial document and first official offer issued by a buyer to a seller, indicating types, quantities, and agreed prices for products or services."@en ;
+                          ero:term_editor "J. Neil Otte"@en ;
+                          rdfs:label "Purchase Order Requirement"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/QualityInspectorRole
+:QualityInspectorRole rdf:type owl:Class ;
+                      rdfs:subClassOf obo:BFO_0000023 ;
+                      ero:definition "a role inhering in an agent that is realized in examining products and materials for defects or deviations from specifications."@en ;
+                      ero:term_editor "J. Neil Otte"@en ;
+                      rdfs:label "Quality Inspector Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/Requirement
+:Requirement rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity> ;
+             ero:definition "A Directive Information Content Entity that prescribes a condition that is necessary in order for some state of affairs to obtain."@en ;
+             ero:term_editor "J. Neil Otte"@en ;
+             rdfs:label "Requirement"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/RequirementIdentification
+:RequirementIdentification rdf:type owl:Class ;
+                           rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DesignativeInformationContentEntity> ;
+                           ero:definition "A designative information content entity that designates a requirement."@en ;
+                           ero:term_editor "J. Neil Otte" ;
+                           rdfs:label "Requirement Identification"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/Schedule
+:Schedule rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity> ;
+          ero:definition "a directive information content entity that is used for recording a list of times at which possible tasks, events, or actions are intended to take place, or of a sequence of events in the chronological order in which such things are intended to take place."@en ;
+          ero:term_editor "J. Neil Otte"@en ;
+          rdfs:label "Schedule"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/SponsorRole
+:SponsorRole rdf:type owl:Class ;
+             rdfs:subClassOf obo:BFO_0000023 ;
+             ero:definition "a role inhering in an agent that supports an event, activity, person, or organization financially or through the provision of products or services"@en ;
+             ero:term_editor "J. Neil Otte"@en ;
+             rdfs:label "Sponsor Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/StatementOfWork
+:StatementOfWork rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity> ;
+                 ero:definition "a document that prescribes the activities, deliverables, and timelines for a vendor to provide services to a client."@en ;
+                 ero:term_editor "J. Neil Otte"@en ;
+                 rdfs:label "Statement of Work"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/SupplierRole
+:SupplierRole rdf:type owl:Class ;
+              rdfs:subClassOf obo:BFO_0000023 ;
+              ero:definition "a role inhering in an agent that is realized in act of selling."@en ;
+              ero:term_editor "J. Neil Otte"@en ;
+              rdfs:label "Vendor Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/SuspectPartRole
+:SuspectPartRole rdf:type owl:Class ;
+                 rdfs:subClassOf obo:BFO_0000023 ;
+                 ero:definition "A role inhering in some artifact when there is an indication that the artifact may have been misrepresented by the supplier or manufacturer and may meet the definition of fraudulent part or counterfeit part."@en ;
+                 ero:term_editor "J. Neil Otte"@en ;
+                 rdfs:label "Suspect Part Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/6/DesignOntology/TechnicalDrawing
+:TechnicalDrawing rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/InformationContentEntity> ;
+                  ero:definition "An information content entity that visually illustrates specified qualities of an artifact model."@en ;
+                  ero:term_editor "J. Neil Otte"@en ;
+                  rdfs:label "Technical Drawing"@en .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology#ActOfAnalysis
+<http://www.semanticweb.org/ontologies/TestingProcessOntology#ActOfAnalysis> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/ActOfAppraisal> ;
+                                                                             ero:definition "An act of appraisal that uses data to infer a conclusion."@en ;
+                                                                             ero:term_editor "Binbin Zhang"@en ;
+                                                                             rdfs:label "Act of Analysis"@en .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

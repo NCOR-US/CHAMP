@@ -1,0 +1,29 @@
+{{#drag-row data=rowIndex}}
+    <div class="row">
+        <div class="small-12 columns horizontal-limit">
+            {{#if editing}}
+                <strong>{{textView}}</strong>
+            {{else}}
+                <a {{action 'startEditing'}}>{{textView}}</a>
+            {{/if}}
+        </div>
+    </div>
+    {{#if editing}}
+        <hr>
+        <div class="function-editor-wrapper">
+            {{nested-function-editor functions=functionRegistry expr=expr}}
+        </div>
+
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="clearfix">
+                    <ul class="button-group right">
+                        <li>
+                            <a class="button primary small" {{action 'stopEditing'}}>Close</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+{{/drag-row}}

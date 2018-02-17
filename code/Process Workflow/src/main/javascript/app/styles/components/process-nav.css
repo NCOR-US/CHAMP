@@ -1,0 +1,25 @@
+.side-nav-container {
+    padding: 12px 20px;
+    background: #fafafa;
+}
+
+.side-nav-title {
+    padding: 4px 0;
+    font-size: 0.77778rem;
+    font-weight: bold;
+}
+
+.side-nav {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.side-nav-link {
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}
+
+.side-nav.indented {
+    margin-left: 1em;
+    padding-top: 0;
+}

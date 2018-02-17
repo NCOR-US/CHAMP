@@ -1,0 +1,291 @@
+{
+    "meta": {
+        "version": "0.1.0"
+    },
+    "data": [
+        {
+            "type": "sub-process-spec",
+            "id": "urn:test:plans:GatherInformation",
+            "attributes": {
+                "name": "Information Collection",
+                "type": "cco:ActOfIntelligenceGathering"
+            },
+            "relationships": {
+                "parentPlan": {
+                    "data": {
+                        "type": "processes",
+                        "id": "urn:test:plans:IntelReportPlan"
+                    }
+                },
+                "agents": {
+                    "data": {
+                        "type": "agents",
+                        "id": "urn:test:Collector"
+                    }
+                },
+                "inputs": {
+                    "data": {
+                        "type": "artifact-spec",
+                        "id": "urn:test:plans:someDocument"
+                    }
+                },
+                "outputs": {
+                    "data": {
+                        "type": "artifact-spec",
+                        "id": "urn:test:plans:someReport"
+                    }
+                },
+                "processParts": {
+                    "data": [
+                        {
+                            "type": "sub-process-spec",
+                            "id": "urn:test:plans:Read"
+                        },
+                        {
+                            "type": "sub-process-spec",
+                            "id": "urn:test:plans:Understand"
+                        },
+                        {
+                            "type": "sub-process-spec",
+                            "id": "urn:test:plans:Assess"
+                        },
+                        {
+                            "type": "sub-process-spec",
+                            "id": "urn:test:plans:Write"
+                        }
+                    ]
+                },
+                "nextProcess": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:DiscussInformation"
+                    }
+                }
+            },
+            "links": {
+                "self": "http://localhost:9090/ontoview/data/sub-processes/urn%3Atest%2Fplans%2FGatherInformation"
+            }
+        },
+        {
+            "type": "sub-process-spec",
+            "id": "urn:test:plans:DiscussInformation",
+            "attributes": {
+                "type": "cco:ActOfIntelligenceGathering",
+                "name": "Information Collection"
+            },
+            "relationships": {
+                "previousProcess": {
+                    "data": {
+                        "type": "sub-process",
+                        "id": "urn:test:plans:GatherInformation"
+                    }
+                },
+                "agents": {
+                    "data": [
+                        {
+                            "type": "agent-spec",
+                            "id": "urn:test:Collector"
+                        },
+                        {
+                            "type": "agent-spec",
+                            "id": "urn:test:Manager"
+                        }
+                    ]
+                },
+                "inputs": {
+                    "data": {
+                        "type": "artifact-spec",
+                        "id": "urn:test:plans:someReport"
+                    }
+                },
+                "outputs": {
+                    "data": {
+                        "type": "artifact-spec",
+                        "id": "urn:test:plans:MeetingNotes"
+                    }
+                },
+                "processParts": {
+                    "data": [
+                        {
+                            "type": "sub-process-spec",
+                            "id": "urn:test:plans:Chat"
+                        },
+                        {
+                            "type": "sub-process-spec",
+                            "id": "urn:test:plans:Plan"
+                        }
+                    ]
+                }
+            },
+            "links": {
+                "self": "http://localhost:9090/ontoview/data/sub-processes/urn%3Atest%3Aplans%3ADiscussInformation"
+            }
+        },
+
+
+
+
+        {
+            "type": "sub-process-spec",
+            "id": "urn:test:plans:Read",
+            "attributes": {
+                "name": "Read the document",
+                "type": "ActOfReading"
+            },
+            "relationships": {
+                "parentSubProcess": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:GatherInformation"
+                    }
+                },
+                "nextPart": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:Understand"
+                    }
+                }
+            },
+            "links": {
+                "self": "http://localhost:9090/ontoview/data/process-parts/urn%3Atest%3Aplans%3ARead"
+            }
+        },
+        {
+            "type": "process-parts",
+            "id": "urn:test:plans:Understand",
+            "attributes": {
+                "name": "Understand the document",
+                "type": "ActOfUnderstanding"
+            },
+            "relationships": {
+                "parentSubProcess": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:GatherInformation"
+                    }
+                },
+                "previousPart": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:Read"
+                    }
+                },
+                "nextPart": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:Assess"
+                    }
+                }
+            },
+            "links": {
+                "self": "http://localhost:9090/ontoview/data/process-parts/urn%3Atest%3Aplans%3AUnderstand"
+            }
+        },
+        {
+            "type": "sub-process-spec",
+            "id": "urn:test:plans:Assess",
+            "attributes": {
+                "name": "Assess the usefulness of the document",
+                "type": "ActOfAssessment"
+            },
+            "relationships": {
+                "parentSubProcess": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:GatherInformation"
+                    }
+                },
+                "previousPart": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:Understand"
+                    }
+                },
+                "nextPart": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:Write"
+                    }
+                }
+            },
+            "links": {
+                "self": "http://localhost:9090/ontoview/data/process-parts/urn%3Atest%3Aplans%3AAssess"
+            }
+        },
+        {
+            "type": "sub-process-spec",
+            "id": "urn:test:plans:Write",
+            "attributes": {
+                "name": "Write the report",
+                "type": "ActOfWriting"
+            },
+            "relationships": {
+                "previousPart": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:Assess"
+                    }
+                },
+                "parentSubProcess": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:GatherInformation"
+                    }
+                }
+            },
+            "links": {
+                "self": "http://localhost:9090/ontoview/data/process-parts/urn%3Atest%3Aplans%3AWrite"
+            }
+        },
+        {
+            "type": "sub-process-spec",
+            "id": "urn:test:plans:Chat",
+            "attributes": {
+                "name": "Talk about the report",
+                "type": "ActOfCommunication"
+            },
+            "relationships": {
+                "parentSubProcess": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:DiscussInformation"
+                    }
+                },
+                "nextPart": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:Plan"
+                    }
+                }
+            },
+            "links": {
+                "self": "http://localhost:9090/ontoview/data/process-parts/urn%3Atest%3Aplans%3AChat"
+            }
+        },
+        {
+            "type": "sub-process-spec",
+            "id": "urn:test:plans:Plan",
+            "attributes": {
+                "name": "Discuss the way forward",
+                "type": "ActOfPlanning"
+            },
+            "relationships": {
+                "parentSubProcess": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:DiscussInformation"
+                    }
+                },
+                "previousPart": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:Chat"
+                    }
+                }
+            },
+            "links": {
+                "self": "http://localhost:9090/ontoview/data/process-parts/urn%3Atest%3Aplans%3APlan"
+            }
+        }
+    ]
+}

@@ -1,0 +1,313 @@
+@prefix : <http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/> .
+
+<http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/> rdf:type owl:Ontology ;
+                                                                 owl:imports <http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AllCoreOntology> ;
+                                                                 <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology#Title> "Commercial Entities Ontology (CEO)"@en ;
+                                                                 owl:versionInfo "Version .01"@en ;
+                                                                 rdfs:comment "created by J. Neil Otte"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/definition
+<http://www.ontologyrepository.com/CommonCoreOntologies/definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/Title
+:Title rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/Title
+<http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/Title> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.obofoundry.org/ro/ro.owl#participates_in
+<http://www.obofoundry.org/ro/ro.owl#participates_in> rdf:type owl:ObjectProperty ;
+                                                      rdfs:label "participates_in" .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/function_of
+<http://www.ontologyrepository.com/CommonCoreOntologies/function_of> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/has_role
+<http://www.ontologyrepository.com/CommonCoreOntologies/has_role> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/realizes
+<http://www.ontologyrepository.com/CommonCoreOntologies/realizes> rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/affords
+:affords rdf:type owl:ObjectProperty ;
+         owl:inverseOf :is_afforded_by ;
+         rdfs:range <http://purl.obolibrary.org/obo/BFO_0000003> ;
+         <http://purl.obolibrary.org/obo/IAO_0000115> "X affords Y when X makes possible, facilitates, or allows for Y."@en ;
+         <http://www.w3.org/2004/02/skos/core#example> "an ocean affords swimming"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/is_afforded_by
+:is_afforded_by rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Act
+<http://www.ontologyrepository.com/CommonCoreOntologies/Act> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
+                                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A Process in which at least one Agent plays a causative role."@en ;
+                                                             rdfs:label "Act"@en .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfAppraisal
+<http://www.ontologyrepository.com/CommonCoreOntologies/ActOfAppraisal> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+                                                                        <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An Intentional Act that involves evaluating, estimating, or judging the nature, value, importance, condition, or quality of something or someone."@en ;
+                                                                        rdfs:label "Act of Appraisal"@en .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Artifact
+<http://www.ontologyrepository.com/CommonCoreOntologies/Artifact> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000030> ;
+                                                                  <http://purl.obolibrary.org/obo/IAO_0000119> "CCO"@en ;
+                                                                  rdfs:label "Artifact"@en ;
+                                                                  <http://www.w3.org/2004/02/skos/core#definition> "An Object that was designed by some Agent to realize a certain function."@en .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactFunction
+<http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactFunction> rdf:type owl:Class ;
+                                                                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://www.ontologyrepository.com/CommonCoreOntologies/function_of> ;
+                                                                                                owl:someValuesFrom <http://www.ontologyrepository.com/CommonCoreOntologies/Artifact>
+                                                                                              ] ;
+                                                                          rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000034> ;
+                                                                          <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A function that inheres in some Artifact in virtue of that Artifact being designed to be used in processes that require that function to be realized."@en ;
+                                                                          rdfs:label "Artifact Function"@en .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/InformationContentEntity
+<http://www.ontologyrepository.com/CommonCoreOntologies/InformationContentEntity> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ;
+                                                                                  <http://purl.obolibrary.org/obo/IAO_0000118> "ICE"@en ;
+                                                                                  <http://purl.obolibrary.org/obo/IAO_0000600> "Information Content Entity is here intended to be a class of Entities whose instances are the informational content of Information Bearing Entities. For example, three instances of information bearers -- such as a bar chart, color-coded map, and a written report -- each of which lists the GDP of Countries for the year 2010 are each different bearers of the same information content. It is this content that is generically dependent upon its bearer. This treatment of Informational Content Entity (cf. the Information Artifact Ontology) leads to a principle of subtyping based upon the relationship that ICE's have with the Entity they are about rather than characteristics such as format, language, measurement scale, or media. The latter are treated here as being Qualities of bearers."@en ;
+                                                                                  <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Generically Dependent Continuant that generically depends on some Information Bearing Entity and stands in relation of aboutness to some Entity."@en ;
+                                                                                  rdfs:label "Information Content Entity"@en .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct
+<http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/Act> ;
+                                                                        <http://purl.obolibrary.org/obo/IAO_0000115> "An Act in which at least one Agent plays a causative role and which is prescribed by some Directive Information Content Entity held by at least one of the Agents."@en ;
+                                                                        <http://purl.obolibrary.org/obo/IAO_0000119> "CCO"@en ;
+                                                                        rdfs:label "Intentional Act"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/AccruingOfInterest
+:AccruingOfInterest rdf:type owl:Class ;
+                    rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
+                    <http://purl.obolibrary.org/obo/IAO_0000115> "a financial process whereby a principal portion of money is added to by an associated rate of interest."@en ;
+                    rdfs:label "Accruing of Interest"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/ActOfEconomicExchange
+:ActOfEconomicExchange rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+                       <http://purl.obolibrary.org/obo/IAO_0000600> "Note: Acts of Owning, Leasing, and Paying are routine process parts of an Act Of Economic Exchange, with frequently many of these being parts of the same transaction, as when one purchases a pair of sunglasses and a two-year release on a corvette--that is, there is one one act of economic exchange that has one act of paying, one act of purchasing, and one act of leasing as process parts. Impotantly, theft and gifting are not cases of 'act of economic exchange' since the transfer is one-way."@en ;
+                       <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An intentional act in which economic goods are exchanged between agents."@en ;
+                       rdfs:label "Act of Economic Exchange"@en ;
+                       <http://www.w3.org/2004/02/skos/core#example> "1. Purchasing or renting a car. 2. Buying the right to download and play music under a digital rights management agreement. 3. Tipping a waiter. 4. Purchasing a home morgage."@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/ActOfLeasing
+:ActOfLeasing rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+              <http://purl.obolibrary.org/obo/IAO_0000118> "Act of Renting"@en ;
+              <http://purl.obolibrary.org/obo/IAO_0000600> "Note: a lessee is an agent who bears a lessee role; a lessor is an agen twho bears a lessor role."@en ;
+              <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An intentional act whereby a lessee agrees to pay the lessor for the use of an economic good."@en ;
+              rdfs:label "Act of Leasing"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/ActOfPaying
+:ActOfPaying rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+             <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An intentional act in which one relinquishes ownership of financial currency in the act of giving it to another agent who then becomes the owner of that financial currency."@en ;
+             rdfs:label "Act of Paying"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/Commodity
+:Commodity rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                 owl:onProperty <http://www.ontologyrepository.com/CommonCoreOntologies/has_role> ;
+                                 owl:someValuesFrom :CommodityRole
+                               ] ;
+           rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
+           <http://purl.obolibrary.org/obo/IAO_0000116> "Note: the terms 'product' and 'commodity' are often used the same, but where they are used differently, 'commodity' is often used to refer to raw resources like petroleum, lumber, coal--particularly when talking about stocks and betting on commodity futures--and commodity is here contrasted with product, where product is stipulated as a 'finished' product, normally (but not always) one that has undergone a manufacturing process. This distinction is helpful, and so we adopt it here and distinguish the terms in this way. "@en ;
+           rdfs:label "Commodity"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "material entities that can survive their act of creation, can be transported, stored, and rented."@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/CommodityRole
+:CommodityRole rdf:type owl:Class ;
+               rdfs:subClassOf :EconomicGoodRole ;
+               <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A role that inheres in some commodity and is realized in some act of appraisal."@en ;
+               rdfs:label "Commodity Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/Consumable
+:Consumable rdf:type owl:Class ;
+            rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ,
+                            [ rdf:type owl:Class ;
+                              owl:unionOf ( :Commodity
+                                            :Product
+                                          )
+                            ] ;
+            <http://purl.obolibrary.org/obo/IAO_0000115> "a product or commodity whose principle use involves a process in which it is somewhat or entirely consumed."@en ;
+            rdfs:label "Consumable"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/CustomerRole
+:CustomerRole rdf:type owl:Class ;
+              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000023> ;
+              <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "a role that inheres in an agent and is realized in an act of purchasing."@en ;
+              rdfs:label "Customer Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/DeonticRole
+:DeonticRole rdf:type owl:Class ;
+             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000023> ;
+             <http://purl.obolibrary.org/obo/IAO_0000117> "J. Neil Otte"@en ;
+             <http://purl.obolibrary.org/obo/IAO_0000600> "\"Here, we adopt the terminology of Cristina Bicchieri (2016), who distinguishes first-order personal normative expectations, which are one’s own expectations about how others and oneself ought to act, from second-order normative expectations, which concern one’s beliefs about the normative expectations of others. The latter includes, for instance, the belief of a woman that women in her village believe a good mother should abstain from nursing a newborn baby. Here, we are only concerned with the former.\" (source: Otte and Brockhhausen (forthcoming) Mereological Relations Among Institutional and Deontic Roles)"@en ;
+             <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A deontic role is a role that one bears in virtue of being the subject of a personal normative expectation."@en ;
+             rdfs:label "Deontic Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/DigitalGood
+:DigitalGood rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( <http://www.ontologyrepository.com/CommonCoreOntologies/InformationContentEntity>
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.obofoundry.org/ro/ro.owl#participates_in> ;
+                                                          owl:someValuesFrom :StasisOfDigitalGoodDeclaration
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+             rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/InformationContentEntity> ;
+             <http://purl.obolibrary.org/obo/IAO_0000601> "Axiom 1: For any stasis of digital good declaration S occurring on T, there is some Act of Ownership at T that is process part of S."@en ,
+                                                          "Axiom 2:  For any stasis of digital good declaration S occurring on T2, there is some Act of Digital Good Declaration R that occurs on T1 where R precedes S and T1 interval_meets T2."@en ;
+             <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A digital good is an information content entity that is participating in a stasis of digital good, during which it is owned by some owner."@en ;
+             rdfs:label "Digital Good"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/DispositionToProvideService
+:DispositionToProvideService rdf:type owl:Class ;
+                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000016> ;
+                             <http://purl.obolibrary.org/obo/IAO_0000117> "J. Neil Otte"@en ;
+                             <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "a disposition that is realized in some act of service"@en ;
+                             rdfs:label "Disposition To Provide Service"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/EconomicGood
+:EconomicGood rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:unionOf ( :DigitalGood
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://www.ontologyrepository.com/CommonCoreOntologies/has_role> ;
+                                                    owl:someValuesFrom :EconomicGoodRole
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://www.ontologyrepository.com/CommonCoreOntologies/realizes> ;
+                                                    owl:someValuesFrom :DispositionToProvideService
+                                                  ]
+                                                )
+                                  ] ;
+              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> ;
+              <http://purl.obolibrary.org/obo/IAO_0000119> "adapted from Wikipedia https://en.wikipedia.org/wiki/Goods"@en ;
+              rdfs:comment "Note: Economic goods can be products or services, hence they do not fall under occurrents or continuants exclusively."@en ;
+              rdfs:label "Economic Good"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "In economics, goods are materials or services that satisfy human wants and provide utility."@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/EconomicGoodRole
+:EconomicGoodRole rdf:type owl:Class ;
+                  rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000023> ;
+                  <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A role that inheres in some commodity or some product and is realized in some act of appraisal."@en ;
+                  rdfs:label "Economic Good Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/LesseeRole
+:LesseeRole rdf:type owl:Class ;
+            rdfs:subClassOf :DeonticRole ;
+            rdfs:label "Lessee Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/LessorRole
+:LessorRole rdf:type owl:Class ;
+            rdfs:subClassOf :DeonticRole ;
+            rdfs:label "Lessor Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/ManufacturedGood
+:ManufacturedGood rdf:type owl:Class ;
+                  rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                  rdfs:label "Manufactured Good"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "a product or commodity that was created through a manufacturing process."@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/OwnershipRole
+:OwnershipRole rdf:type owl:Class ;
+               rdfs:subClassOf :DeonticRole ;
+               <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "a role that inheres in an agent and is realized in an act of ownership."@en ;
+               rdfs:label "Ownership Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/Product
+:Product rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://www.ontologyrepository.com/CommonCoreOntologies/has_role> ;
+                               owl:someValuesFrom :ProductRole
+                             ] ;
+         rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/Artifact> ;
+         <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "an artifact that bears a product role."@en ;
+         rdfs:label "Product"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/ProductRole
+:ProductRole rdf:type owl:Class ;
+             rdfs:subClassOf :EconomicGoodRole ;
+             <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A role that inheres in some product and is realized in some act of appraisal."@en ;
+             rdfs:label "Product Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/StasisOfDigitalGoodDeclaration
+:StasisOfDigitalGoodDeclaration rdf:type owl:Class ;
+                                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
+                                <http://purl.obolibrary.org/obo/IAO_0000117> "J. Neil Otte"@en ;
+                                <http://purl.obolibrary.org/obo/IAO_0000601> """Axiom: For any stasis of digital good declaration S occurring on T, there is some Act of Ownership at T that is process part of S. 
+
+That is, an ICE that is a digital good is owned by someone at all times at which it is a digital good."""@en ;
+                                <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A stasis during which an information content entity is a digital good."@en ;
+                                rdfs:label "Stasis of Digital Good Declaration"@en .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

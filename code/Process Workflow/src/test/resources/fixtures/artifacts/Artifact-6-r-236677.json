@@ -1,0 +1,20 @@
+{
+  "data" : {
+    "id" : "urn:process-workflow:plans:generated:Artifact-6-r-236677",
+    "attributes" : {
+      "name" : "Conductivity Value",
+      "type" : "http://www.semanticweb.org/no/ontologies/2017/2/Widget#RejectedUnit",
+      "amount" : null,
+      "unitOfMeasure" : null
+    },
+    "relationships" : {
+      "outputOf" : {
+        "data" : [ {
+          "type" : "sub-processes",
+          "id" : "urn:process-workflow:plans:generated:SubProcess-244544b9-9018-488b-9a67-1286cec68c9d"
+        } ]
+      }
+    },
+    "type" : "artifacts"
+  }
+}

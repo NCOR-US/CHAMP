@@ -1,0 +1,468 @@
+@prefix : <http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/> .
+
+<http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/> rdf:type owl:Ontology ;
+                                                                               owl:imports <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/> ;
+                                                                               <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology/term_editor> "Ruoyu Yang" ;
+                                                                               rdfs:label "Maintenance Ontology" ;
+                                                                               owl:versionInfo "version 1" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/IAO_0000600
+<http://purl.obolibrary.org/obo/IAO_0000600> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/definition
+<http://www.ontologyrepository.com/CommonCoreOntologies/definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology/definition_source
+<http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#definition_source> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology/term_editor
+<http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology/term_editor> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfBackwardScheduling
+:ActOfBackwardScheduling rdf:type owl:Class ;
+                         rdfs:subClassOf :ActOfScheduling ;
+                         <http://purl.obolibrary.org/obo/IAO_0000115> "An act of scheduling that plans the tasks from the due date or required-by date to determine the start date or any changes in capacity required."@en ;
+                         <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Scheduling_(production_processes)"@en ;
+                         <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                         rdfs:label "Act of Backward Scheduling"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfCommon-modeFailureAnalysis
+:ActOfCommon-modeFailureAnalysis rdf:type owl:Class ;
+                                 rdfs:subClassOf :ActOfFailureAnalysis ;
+                                 <http://purl.obolibrary.org/obo/IAO_0000115> "An act of  failure analysis that evaluates problems which are not statistically independent to achieve reliability for the design of fault-tolerant systems."@en ;
+                                 <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Common_cause_and_special_cause_(statistics)#Common_mode_failure_in_engineering"@en ;
+                                 <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                                 rdfs:label "Act of Common-mode Failure Analysis"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfCondition-basedMaintenance
+:ActOfCondition-basedMaintenance rdf:type owl:Class ;
+                                 rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfMaintenance> ;
+                                 <http://purl.obolibrary.org/obo/IAO_0000115> "An act of maintenance that performes after one or more indicators show that equipment is going to fail or that equipment performance is deteriorating."@en ;
+                                 <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Condition-based_maintenance"@en ;
+                                 <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                                 rdfs:label "Act of Condition-based Maintenance"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfCorrectiveMaintenance
+:ActOfCorrectiveMaintenance rdf:type owl:Class ;
+                            rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfMaintenance> ;
+                            <http://purl.obolibrary.org/obo/IAO_0000115> "An act of maintenance that identifies, isolates, and rectifies a fault so that the failed equipment, artifact, or system can be restored to an operational condition within the tolerances or limits established for in-service operations."@en ;
+                            <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#definition_source> "https://en.wikipedia.org/wiki/Corrective_maintenance"@en ;
+                            <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                            rdfs:label "Act of Corrective Maintenance"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfCostControl
+:ActOfCostControl rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+                  <http://purl.obolibrary.org/obo/IAO_0000115> "An intentional act that identifies and reduces business expenses to increase profits, and it starts with the budgeting process."@en ;
+                  <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                  rdfs:label "Act of Cost Control"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfDestructivePhysicalAnalysis
+:ActOfDestructivePhysicalAnalysis rdf:type owl:Class ;
+                                  rdfs:subClassOf :ActOfFailureAnalysis ;
+                                  <http://purl.obolibrary.org/obo/IAO_0000115> "An act of failure analysis that involves methodical dissection, inspection and testing of unfailed element or equipment."@en ;
+                                  <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                                  rdfs:label "Act of Destructive Physical Analysis"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfFailureAnalysis
+:ActOfFailureAnalysis rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+                      <http://purl.obolibrary.org/obo/IAO_0000115> "An intentional act that collects and analyzes data to determine the cause of a failure, often with the goal of determining corrective actions or liability."@en ;
+                      <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Failure_analysis"@en ;
+                      <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                      rdfs:label "Act of Failure Analysis"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfFaultTreeAnalysis
+:ActOfFaultTreeAnalysis rdf:type owl:Class ;
+                        rdfs:subClassOf :ActOfFailureAnalysis ;
+                        <http://purl.obolibrary.org/obo/IAO_0000115> "An act of failure analysis that an undesired state of a system is analyzed using Boolean logic to combine a series of lower-level events."@en ;
+                        <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Fault_tree_analysis"@en ;
+                        <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                        rdfs:label "Act of Fault Tree Analysis"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfForwardScheduling
+:ActOfForwardScheduling rdf:type owl:Class ;
+                        rdfs:subClassOf :ActOfScheduling ;
+                        <http://purl.obolibrary.org/obo/IAO_0000115> "An act of scheduling that plans the tasks from the date, resources become available to determine the maintenance date or the due date."@en ;
+                        <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Scheduling_(production_processes)"@en ;
+                        <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                        rdfs:label "Act of Forward Scheduling"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfLaborCostControl
+:ActOfLaborCostControl rdf:type owl:Class ;
+                       rdfs:subClassOf :ActOfCostControl ;
+                       <http://purl.obolibrary.org/obo/IAO_0000115> "An act of  cost control that optimizes cost of staff wages."@en ;
+                       <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                       rdfs:label "Act of Labor Cost Control"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfManufactureCostControl
+:ActOfManufactureCostControl rdf:type owl:Class ;
+                             rdfs:subClassOf :ActOfCostControl ;
+                             <http://purl.obolibrary.org/obo/IAO_0000115> "An act of cost control that optimizes cost of equipments depreciation and maintenance fund."@en ;
+                             <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                             rdfs:label "Act of Manufacture Cost Control"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfOnsiteMaintenance
+:ActOfOnsiteMaintenance rdf:type owl:Class ;
+                        rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfMaintenance> ;
+                        <http://purl.obolibrary.org/obo/IAO_0000115> "An act of maintenance that performs where the equipment is operated."@en ;
+                        <http://purl.obolibrary.org/obo/IAO_0000119> "https://definedterm.com/onsite_maintenance"@en ;
+                        <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                        rdfs:label "Act of Onsite Maintenance"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfPeriodicMaintenance
+:ActOfPeriodicMaintenance rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfMaintenance> ;
+                          <http://purl.obolibrary.org/obo/IAO_0000115> "An act of maintenance that determines the type of repair, repair interval and repair work in advance according to equipment wear condition."@en ;
+                          <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                          rdfs:label "Act of Periodic Maintenance"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfPredictiveMaintenance
+:ActOfPredictiveMaintenance rdf:type owl:Class ;
+                            rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfMaintenance> ;
+                            <http://purl.obolibrary.org/obo/IAO_0000115> "An act of maintenance that helps determine the condition of in-service equipment in order to predict when maintenance should be performed."@en ;
+                            <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Predictive_maintenance"@en ;
+                            <http://purl.obolibrary.org/obo/IAO_0000600> "predictive maintenance utilizes nondestructive testing technologies such as infrared, acoustic (partial discharge and airborne ultrasonic), corona detection, vibration analysis, sound level measurements, oil analysis, and other specific online tests."@en ;
+                            <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                            rdfs:label "Act of Predictive Maintenance"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfPreventiveMaintenance
+:ActOfPreventiveMaintenance rdf:type owl:Class ;
+                            rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfMaintenance> ;
+                            <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Preventive_maintenance"@en ;
+                            <http://purl.obolibrary.org/obo/IAO_0000600> "Predictive maintenance differs from preventive maintenance because it relies on the actual condition of equipment, rather than average or expected life statistics, to predict when maintenance will be required."@en ;
+                            <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An act of maintenance that is performed in some artifacts prior to the artifacts loss or diminishment of function."@en ;
+                            <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                            rdfs:label "Act of Preventive Maintenance"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfRawMaterialCostControl
+:ActOfRawMaterialCostControl rdf:type owl:Class ;
+                             rdfs:subClassOf :ActOfCostControl ;
+                             <http://purl.obolibrary.org/obo/IAO_0000115> "An act of cost control that optimizes cost of maintenance material purchase, logistics, storage and production consumption."@en ;
+                             <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                             rdfs:label "Act of Raw Material Cost Control"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfReliabilityPhysicsAnalysis
+:ActOfReliabilityPhysicsAnalysis rdf:type owl:Class ;
+                                 rdfs:subClassOf :ActOfFailureAnalysis ;
+                                 <http://purl.obolibrary.org/obo/IAO_0000115> "An act of failure analysis that involves physical,chemical or electrical analysis of failed assemblies, elements,equipments and investigation of the failure mechanisms."@en ;
+                                 <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                                 rdfs:label "Act of Reliability Physics Analysis"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfScheduling
+:ActOfScheduling rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+                 <http://purl.obolibrary.org/obo/IAO_0000115> "An intentional act that arranges, controlls and optimizes work and workloads in a production, manufacturing, or maintenance process."@en ;
+                 <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Scheduling_(production_processes)"@en ;
+                 <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                 rdfs:label "Act of Scheduling"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfSoftwareFailureAnalysis
+:ActOfSoftwareFailureAnalysis rdf:type owl:Class ;
+                              rdfs:subClassOf :ActOfFailureAnalysis ;
+                              <http://purl.obolibrary.org/obo/IAO_0000115> "An act of failure analysis that evaluates problems and discrepancies occurring in the design or operation of software."@en ;
+                              <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                              rdfs:label "Act of Software Failure Analysis"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ActOfTotalProductiveMaintenance
+:ActOfTotalProductiveMaintenance rdf:type owl:Class ;
+                                 rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfMaintenance> ;
+                                 <http://purl.obolibrary.org/obo/IAO_0000115> "An act of maintenance that improves the integrity of production and quality systems through the machines, equipment, processes, and employees that add business value to an organization."@en ;
+                                 <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Total_productive_maintenance"@en ;
+                                 <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                                 rdfs:label "Act of Total Productive Maintenance"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/AnnualMaintenanceSchedule
+:AnnualMaintenanceSchedule rdf:type owl:Class ;
+                           rdfs:subClassOf :MaintenanceScheduleDocument ;
+                           <http://purl.obolibrary.org/obo/IAO_0000115> "A schedual document that involves annual equipment maintenance and repair work guidance which is only a general arrangement about maintenance category and number."@en ;
+                           <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                           rdfs:label "Annual Maintenance Schedule"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/ConsumableElement
+:ConsumableElement rdf:type owl:Class ;
+                   rdfs:subClassOf :SpareElement ;
+                   <http://purl.obolibrary.org/obo/IAO_0000115> "A spare element that is usually scrapped when it is found to have failed and no longer considered repairable."@en ;
+                   <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Spare_part"@en ;
+                   <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                   rdfs:label "Consumable Element"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/EffectsAnalysis
+:EffectsAnalysis rdf:type owl:Class ;
+                 rdfs:subClassOf :ActOfFailureAnalysis ;
+                 <http://purl.obolibrary.org/obo/IAO_0000115> "An act of failure analysis that involves reviewing as many components, assemblies, and subsystems as possible to identify failure modes, and their causes and effects."@en ;
+                 <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Failure_mode_and_effects_analysis"@en ;
+                 <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                 rdfs:label "Act of Failure Modes&Effects Analysis"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/EnvironmentalReason
+:EnvironmentalReason rdf:type owl:Class ;
+                     rdfs:subClassOf :MaintenanceExternalReason ;
+                     <http://purl.obolibrary.org/obo/IAO_0000115> "A maintenance external reason that is caused by abnormal environment factors such as temperature, airflow, dust and humidity."@en ;
+                     <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                     rdfs:label "Environmental Reason"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/EquipmentAging
+:EquipmentAging rdf:type owl:Class ;
+                rdfs:subClassOf :MaintenanceInternalReason ;
+                <http://purl.obolibrary.org/obo/IAO_0000115> "A maintenance internal reason that involves process of equipment becoming older and losing several functions."@en ;
+                <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                rdfs:label "Equipment Aging"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/EquipmentObsolescence
+:EquipmentObsolescence rdf:type owl:Class ;
+                       rdfs:subClassOf :MaintenanceInternalReason ;
+                       <http://purl.obolibrary.org/obo/IAO_0000115> "A maintenance internal reason that involves equipment or parts becoming obsolete or outdated and no longer used."@en ;
+                       <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                       rdfs:label "Equipment Obsolescence"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/FunctionDepletion
+:FunctionDepletion rdf:type owl:Class ;
+                   rdfs:subClassOf :MaintenanceInternalReason ;
+                   <http://purl.obolibrary.org/obo/IAO_0000115> "A maintenance internal reason that involves equipment or elements becoming obsolete or outdated and no longer used."@en ;
+                   <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                   rdfs:label "Function Depletion"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/HumanImproperOperation
+:HumanImproperOperation rdf:type owl:Class ;
+                        rdfs:subClassOf :MaintenanceExternalReason ;
+                        <http://purl.obolibrary.org/obo/IAO_0000115> "A maintenance external reason that is caused by labor's improper operation or violation of operating procedures."@en ;
+                        <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                        rdfs:label "Human Improper Operation"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/MaintenanceDocument
+:MaintenanceDocument rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/Document> ;
+                     <http://purl.obolibrary.org/obo/IAO_0000115> "A document that is used to write,draw or present all relative information of maintenance operation."@en ;
+                     <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Document"@en ;
+                     <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                     rdfs:label "Maintenance Document"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/MaintenanceExternalReason
+:MaintenanceExternalReason rdf:type owl:Class ;
+                           rdfs:subClassOf :MaintenanceReasonDocument ;
+                           <http://purl.obolibrary.org/obo/IAO_0000115> "A maintenance reason document that describes surrounding factors instead of element or equipment themselves that causes maintenance operations."@en ;
+                           <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                           rdfs:label "Maintenance External Reason"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/MaintenanceFinancialDocument
+:MaintenanceFinancialDocument rdf:type owl:Class ;
+                              rdfs:subClassOf :MaintenanceDocument ;
+                              <http://purl.obolibrary.org/obo/IAO_0000115> "A maintenance document that reports financial information about maintenance operation in a standardized format."@en ;
+                              <http://purl.obolibrary.org/obo/IAO_0000119> "http://study.com/academy/lesson/financial-documents-definition-types-business-examples.html"@en ;
+                              <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                              rdfs:label "Maintenance Financial Document"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/MaintenanceInternalReason
+:MaintenanceInternalReason rdf:type owl:Class ;
+                           rdfs:subClassOf :MaintenanceReasonDocument ;
+                           <http://purl.obolibrary.org/obo/IAO_0000115> "A maintenance reason document that describes element or equipment problems that causes maintenance operations."@en ;
+                           <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                           rdfs:label "Maintenance Internal Reason"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/MaintenanceReasonDocument
+:MaintenanceReasonDocument rdf:type owl:Class ;
+                           rdfs:subClassOf :MaintenanceDocument ;
+                           <http://purl.obolibrary.org/obo/IAO_0000115> "A maintenance document that"@en ;
+                           <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                           rdfs:label "Maintenance Reason Document"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/MaintenanceScheduleDocument
+:MaintenanceScheduleDocument rdf:type owl:Class ;
+                             rdfs:subClassOf :MaintenanceDocument ;
+                             <http://purl.obolibrary.org/obo/IAO_0000115> "A maintenance document that schedules how to order these tasks and how to commit resources between the variety of possible tasks."@en ;
+                             <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Schedule"@en ;
+                             <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                             rdfs:label "Maintenance Schedule Document"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/MaintenanceTechnicalDocument
+:MaintenanceTechnicalDocument rdf:type owl:Class ;
+                              rdfs:subClassOf :MaintenanceDocument ;
+                              <http://purl.obolibrary.org/obo/IAO_0000115> "A maintenance document that describes handling, functionality and architecture of a technical product or a product under development or use."@en ;
+                              <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Technical_documentation"@en ;
+                              <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                              rdfs:label "Maintenance Technical Document"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/MonthMaintenanceSchedule
+:MonthMaintenanceSchedule rdf:type owl:Class ;
+                          rdfs:subClassOf :MaintenanceScheduleDocument ;
+                          <http://purl.obolibrary.org/obo/IAO_0000115> "A schedual document that determines maintenance category, date and number in this month according to maintenance completion situation of last month and actual equipments status."@en ;
+                          <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                          rdfs:label "Month Maintenance Schedule"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/PortionOfAcidicCleaningAgent
+:PortionOfAcidicCleaningAgent rdf:type owl:Class ;
+                              rdfs:subClassOf :PortionOfCleaningAgent ;
+                              <http://purl.obolibrary.org/obo/IAO_0000115> "Portion of cleaning agent that is used for removal of inorganic deposits like scaling."@en ;
+                              <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Cleaning_agent#Alkaline"@en ;
+                              <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                              rdfs:label "Portion of Acidic Cleaning Agent"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/PortionOfAlkalineCleaningAgent
+:PortionOfAlkalineCleaningAgent rdf:type owl:Class ;
+                                rdfs:subClassOf :PortionOfCleaningAgent ;
+                                <http://purl.obolibrary.org/obo/IAO_0000115> "Portion of  cleaning agent that contains strong bases like sodium hydroxide or potassium hydroxide whose PH value  is grater than 7.0."@en ;
+                                <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Cleaning_agent#Alkaline"@en ;
+                                <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                                rdfs:label "Portion of Alkaline Cleaning Agent"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/PortionOfCleaningAgent
+:PortionOfCleaningAgent rdf:type owl:Class ;
+                        rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                        <http://purl.obolibrary.org/obo/IAO_0000115> "A material entity that is used to remove dirt, including dust, stains, bad smells, and clutter on surfaces."@en ;
+                        <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Cleaning_agent"@en ;
+                        <http://purl.obolibrary.org/obo/IAO_0000600> "Cleaning agent are usually liquids, powders, sprays, or granules."@en ;
+                        <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                        rdfs:label "Portion of Cleaning Agent"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/PortionOfDegreaserCleaningAgent
+:PortionOfDegreaserCleaningAgent rdf:type owl:Class ;
+                                 rdfs:subClassOf :PortionOfCleaningAgent ;
+                                 <http://purl.obolibrary.org/obo/IAO_0000115> "Portion of  cleaning agent that is used for removing grease."@en ;
+                                 <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Cleaning_agent"@en ;
+                                 <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                                 rdfs:label "Portion of Degreaser Cleaning Agent"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/PortionOfDryLubricant
+:PortionOfDryLubricant rdf:type owl:Class ;
+                       rdfs:subClassOf :PortionOfLubricant ;
+                       <http://purl.obolibrary.org/obo/IAO_0000115> "Portion of lubricant that is materials which, despite being in the solid phase, are able to reduce friction between two surfaces sliding against each other without the need for a liquid oil medium."@en ;
+                       <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Dry_lubricant"@en ;
+                       <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                       rdfs:label "Portion of Dry Lubricant"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/PortionOfLubricant
+:PortionOfLubricant rdf:type owl:Class ;
+                    rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> ;
+                    <http://purl.obolibrary.org/obo/IAO_0000115> "A material entity that is introduced to reduce friction between surfaces in mutual contact, which ultimately reduces the heat generated when the surfaces move."@en ;
+                    <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                    rdfs:label "Portion of Lubricant"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/PortionOfLubricatingGrease
+:PortionOfLubricatingGrease rdf:type owl:Class ;
+                            rdfs:subClassOf :PortionOfLubricant ;
+                            <http://purl.obolibrary.org/obo/IAO_0000115> "Portion of lubricant that is thick, oily substance and put on the moving parts of cars and other machines in order to make them work smoothly."@en ;
+                            <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Grease_(lubricant)"@en ;
+                            <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                            rdfs:label "Portion of Lubricating Grease"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/PortionOfLubricatingOil
+:PortionOfLubricatingOil rdf:type owl:Class ;
+                         rdfs:subClassOf :PortionOfLubricant ;
+                         <http://purl.obolibrary.org/obo/IAO_0000115> "Portion of lubricant that is used to cover or treat machinery so as to lessen friction."@en ;
+                         <http://purl.obolibrary.org/obo/IAO_0000119> "https://www.collinsdictionary.com/us/dictionary/english/lubricating-oil"@en ;
+                         <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                         rdfs:label "Portion of lubricating oil"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/PortionOfNeutralCleaningAgent
+:PortionOfNeutralCleaningAgent rdf:type owl:Class ;
+                               rdfs:subClassOf :PortionOfCleaningAgent ;
+                               <http://purl.obolibrary.org/obo/IAO_0000115> "Portion of  cleaning agent that is pH-neutral and based on non-ionic surfactants."@en ;
+                               <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                               rdfs:label "Portion Of Neutral Cleaning Agent"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/QuarterMaintenanceSchedule
+:QuarterMaintenanceSchedule rdf:type owl:Class ;
+                            rdfs:subClassOf :MaintenanceScheduleDocument ;
+                            <http://purl.obolibrary.org/obo/IAO_0000115> "A schedual document that specifies annual maintenance plan including specific maintenance category and number."@en ;
+                            <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                            rdfs:label "Quarter Maintenance Schedule"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/RepairableElement
+:RepairableElement rdf:type owl:Class ;
+                   rdfs:subClassOf :SpareElement ;
+                   <http://purl.obolibrary.org/obo/IAO_0000115> "A spare element that is deemed worthy of repair, usually by virtue of economic consideration of their repair cost."@en ;
+                   <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Spare_part"@en ;
+                   <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                   rdfs:label "Repairable Element"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/SpareElement
+:SpareElement rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/Artifact> ;
+              <http://purl.obolibrary.org/obo/IAO_0000115> "An artifact that is kept in an inventory and used for the repair or replacement of failed units."@en ;
+              <http://purl.obolibrary.org/obo/IAO_0000119> "https://en.wikipedia.org/wiki/Spare_part"@en ;
+              <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+              rdfs:label "Spare Element"@en .
+
+
+###  http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/TechnicalDrawing
+:TechnicalDrawing rdf:type owl:Class ;
+                  rdfs:subClassOf :MaintenanceTechnicalDocument ;
+                  <http://purl.obolibrary.org/obo/IAO_0000115> "A technical document that visually communicates how artifacts ,elements functions or are constructed."@en ;
+                  <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> "Ruoyu Yang"@en ;
+                  rdfs:label "Technical Drawing"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/Mid/EventOntology#LossOfDependentContinuant> <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> ""@en .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

@@ -1,0 +1,86 @@
+{
+    "type": "manufacturer-lots",
+    "id": "lotID",
+    "iriBase": "gen:Lot",
+    "baseClass": "widget:ManufacturersLot",
+    "attributes": [
+        {
+            "name": "lotNumber",
+            "structure": [
+                "?lotID cco:designated_by ?ice0",
+                "?ice0 rdf:type cco:NonDesignativeName",
+                "?ice0 cco:inheres_in ?ibe0",
+                "?ibe0 rdf:type cco:InformationBearingEntity",
+                "?ibe0 cco:has_text_value ?lotNumber"
+            ],
+            "generate": [
+                {
+                    "variable": "ibe0",
+                    "strategy": "random",
+                    "base": "NonDesignativeNameIBE"
+                },
+                {
+                    "variable": "ice0",
+                    "strategy": "random",
+                    "base": "NonDesignativeNameICE"
+                }
+            ]
+        },
+        {
+            "name": "amount",
+            "structure": [
+                "?lotID cco:has_quality ?amt1",
+                "?amt1 rdf:type cco:Amount",
+                "?amt1 cco:measured_by ?ice1",
+                "?ice1 rdf:type cco:RatioMeasurementInformationContentEntity",
+                "?ice1 cco:inheres_in ?ibe1",
+                "?ibe1 rdf:type cco:InformationBearingEntity",
+                "?ibe1 cco:has_integer_value ?amount"
+            ],
+            "generate": [
+                {
+                    "variable": "amt1",
+                    "strategy": "random",
+                    "base": "Amount"
+                },
+                {
+                    "variable": "ice1",
+                    "strategy": "random",
+                    "base": "InformationContentEntity"
+                },
+                {
+                    "variable": "ibe1",
+                    "strategy": "random",
+                    "base": "InformationBearingEntity"
+                }
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "name": "purchasedBy",
+            "type": "agents",
+            "structure": [
+                "?lotID cco:participates_in ?purchase1",
+                "?purchase1 rdf:type cco:ActOfPurchasing",
+                "?purchasedBy bfo:agent_in ?purchase1",
+
+                "?purchasedBy cco:has_role ?customerrole1",
+                "?customerrole1 rdf:type ceo:CustomerRole",
+                "?customerrole1 cco:realized_in ?purchase1"
+            ],
+            "generate": [
+                {
+                    "variable": "purchase1",
+                    "strategy": "random",
+                    "base": "ActOfPurchasing"
+                },
+                {
+                    "variable": "customerrole1",
+                    "strategy": "random",
+                    "base": "CustomerRole"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+<a {{action 'setCurrentlyEditing' (hash expr=expr argLevel=argLevel)}} title="click to edit {{expr.name}} function">{{expr.name}}</a>(
+{{#each exprArgs as |a index|}}
+    {{#if a.expr}}
+        {{clickable-segment-expr expr=a.expr parent=this level=nextLevel argIndex=index prevLevel=argLevel}}
+    {{else}}
+        {{a.value}}
+    {{/if}}
+    {{#unless (eq index lastArgPos)}}, {{/unless}}
+{{/each}})

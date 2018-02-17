@@ -1,0 +1,221 @@
+@prefix : <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/> .
+
+<http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/> rdf:type owl:Ontology ;
+                                                                owl:imports <http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/> ;
+                                                                <http://purl.org/dc/elements/1.1/contributor> "J. Neil Otte, Binbin Zhang, Ron Rudnicki, Munira Binti Mohd Ali, Ruoyu Yang, Barry Smith."@en ;
+                                                                owl:versionInfo "Version .01"@en ;
+                                                                : "Product Life Cycle (PLC) Ontology"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/definition
+<http://www.ontologyrepository.com/CommonCoreOntologies/definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/Title
+: rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/is_site_of
+<http://www.ontologyrepository.com/CommonCoreOntologies/is_site_of> rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/realized_by
+<http://www.ontologyrepository.com/CommonCoreOntologies/realized_by> rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/affords
+:affords rdf:type owl:ObjectProperty ;
+                                                         owl:inverseOf :is_afforded_by ;
+                                                         rdfs:range <http://purl.obolibrary.org/obo/BFO_0000003> ;
+                                                         <http://purl.obolibrary.org/obo/IAO_0000115> "X affords Y when X makes possible, facilitates, or allows for Y."@en ;
+                                                         <http://www.w3.org/2004/02/skos/core#example> "an ocean affords swimming"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/is_afforded_by
+:is_afforded_by rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Act
+<http://www.ontologyrepository.com/CommonCoreOntologies/Act> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
+                                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A Process in which at least one Agent plays a causative role."@en ;
+                                                             rdfs:label "Act"@en .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfArtifactEmployment
+<http://www.ontologyrepository.com/CommonCoreOntologies/ActOfArtifactEmployment> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+                                                                                 <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An Intentional Act of using an Artifact." ;
+                                                                                 rdfs:label "Act of Artifact Employment"@en .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfPlanning
+<http://www.ontologyrepository.com/CommonCoreOntologies/ActOfPlanning> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+                                                                       <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An Intentional Act that involves making a Plan to achieve some specified Objective."@en ;
+                                                                       rdfs:label "Act of Planning"@en .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Artifact
+<http://www.ontologyrepository.com/CommonCoreOntologies/Artifact> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000030> ;
+                                                                  <http://purl.obolibrary.org/obo/IAO_0000119> "CCO"@en ;
+                                                                  rdfs:label "Artifact"@en ;
+                                                                  <http://www.w3.org/2004/02/skos/core#definition> "An Object that was designed by some Agent to realize a certain function."@en .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity
+<http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity> rdf:type owl:Class ;
+                                                                                             rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/InformationContentEntity> ;
+                                                                                             rdfs:label "Descriptive Information Content Entity"@en .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity
+<http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity> rdf:type owl:Class ;
+                                                                                           rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/InformationContentEntity> ;
+                                                                                           rdfs:label "Directive Information Content Entity"@en .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/InformationContentEntity
+<http://www.ontologyrepository.com/CommonCoreOntologies/InformationContentEntity> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ;
+                                                                                  rdfs:label "Information Content Entity"@en .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct
+<http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> rdf:type owl:Class ;
+                                                                        rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/Act> ;
+                                                                        <http://purl.obolibrary.org/obo/IAO_0000115> "An Act in which at least one Agent plays a causative role and which is prescribed by some Directive Information Content Entity held by at least one of the Agents."@en ;
+                                                                        <http://purl.obolibrary.org/obo/IAO_0000119> "CCO"@en ;
+                                                                        rdfs:label "Intentional Act"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfDesign
+:ActOfDesign rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+                                                             <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "an intentional act that creates plan specifications that guide the creation of a material entity."@en ;
+                                                             <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "Note: An Act of Design results in the issue of a plan specification that, in the canonical case, may be used across industrial contexts. Again, in the canonical case, the resulting plan specifications are then implemented in an Act of Production Planning, which refines the plan specification based on context. For instance, an Act of Design may say that a particular kind of machine is required to create the product, whereas an Act of Production Planning says this particular machine on this factory floor is required to create the product. It is also understood that there are cases where the Act of Design and the Act of Production Planning coincide, such that the plan specification that issues from the same coordinated process is production plan."@en ;
+                                                             <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "J. Neil Otte"@en ;
+                                                             rdfs:label "Act of Design"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfDisposal
+:ActOfDisposal rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+                                                               rdfs:comment "An intentional act where the ownership of a material entity is relinquished by its owner and any new ownership of the material entity is not intended to be realized along the lines of the material entity's prior function."@en ;
+                                                               rdfs:label "Act of Disposal"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfMaintenance
+:ActOfMaintenance rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+                                                                  <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An intentional act whose purpose is to preserve the condition or state of readiness of an artifact."@en ;
+                                                                  rdfs:label "Act of Maintenance"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfProduction
+:ActOfProduction rdf:type owl:Class ;
+                                                                 rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+                                                                 <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "an intentional act that creates a material entity."@en ;
+                                                                 rdfs:label "Act of Production"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfProductionPlanning
+:ActOfProductionPlanning rdf:type owl:Class ;
+                                                                         rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/ActOfPlanning> ;
+                                                                         <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An Intentional Act that has output some plan that guides the production of a material entity at a particular site of production."@en ;
+                                                                         rdfs:label "Act of Production Planning"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfRecycling
+:ActOfRecycling rdf:type owl:Class ;
+                                                                rdfs:subClassOf :ActOfProduction ;
+                                                                <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "an act of production that takes material entities that have been disposed of and changes their physical composition in order to reclaim either their parts or their component materials in order to create new material entities."@en ;
+                                                                rdfs:label "Act of Recycling"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService
+:ActOfService rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+                                                              rdfs:comment "Note: While there is a common distinction in the literature between embodied services and disembodied or splintered services (such as compact discs, books, newspapers, television shows), the latter are not true services, since the purchase of a splintered service is not the purchase of a process, but rather the purchase of a commodity (a continuant). Hence, there is here, under process, no contrasting sibling class of disembodied service, and thus all that we mean by services are services in the sense of an embodied service."@en ;
+                                                              rdfs:label "Act of Service"@en ;
+                                                              <http://www.w3.org/2004/02/skos/core#definition> "an intentional act that is such that production of an economic good and consumption of that good coincide."@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/DispositionToProvideService
+:DispositionToProvideService rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000016> ,
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <http://www.ontologyrepository.com/CommonCoreOntologies/realized_by> ;
+                                                                                               owl:someValuesFrom :ActOfService
+                                                                                             ] ;
+                                                                             <http://purl.obolibrary.org/obo/IAO_0000117> "J. Neil Otte"@en ;
+                                                                             <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "a disposition that is realized in some act of service"@en ;
+                                                                             rdfs:label "Disposition To Provide Service"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/EndOfLifeProcess
+:EndOfLifeProcess rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
+                                                                  rdfs:label "End Of Life Process"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/OwnershipRole
+:OwnershipRole rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000023> ;
+                                                               <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "a role that inheres in an agent and is realized in an act of ownership."@en ;
+                                                               rdfs:label "Ownership Role"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ProductLifeCycle
+:ProductLifeCycle rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
+                                                                  <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A process that has process parts the design, production, maintence, use, and end of life processes in which a product participates."@en ;
+                                                                  rdfs:label "Product Life Cycle"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ProductLine
+:ProductLine rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000027> ;
+                                                             <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "an aggregate of products whose members consist of a single class of product whose production is specified by the same specification."@en ;
+                                                             rdfs:label "Product Line"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/Setting
+:Setting rdf:type owl:Class ;
+                                                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://www.ontologyrepository.com/CommonCoreOntologies/is_site_of> ;
+                                                                               owl:someValuesFrom <http://purl.obolibrary.org/obo/BFO_0000015>
+                                                                             ] ;
+                                                         rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000029> ;
+                                                         <http://purl.obolibrary.org/obo/IAO_0000115> "a highly structured, improbable arrangements of objects and events that coerce behavior in accordance with their own dynamic patterning."@en ;
+                                                         <http://purl.obolibrary.org/obo/IAO_0000119> "Schoggen, P. 1989 Behavior Settings. A Revision and Extension of Roger G. Barker”s Ecological Psychology, Stanford: Stanford University Press."@en ;
+                                                         rdfs:label "Setting"@en .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

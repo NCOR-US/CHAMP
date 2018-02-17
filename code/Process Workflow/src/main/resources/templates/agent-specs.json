@@ -1,0 +1,37 @@
+{
+    "type": "agent-specs",
+    "id": "agentID",
+    "iriBase": "gen:Spec-Agent",
+    "baseClass": "cco:Agent",
+    "attributes": [
+        {
+            "name": "role",
+            "structure": [
+                "?agentID lro:has_role ?ice0",
+                "?ice0 rdf:type ?role"
+            ],
+            "generate": [
+                {
+                    "variable": "ibe0",
+                    "strategy": "random",
+                    "base": "RoleIBE"
+                },
+                {
+                    "variable": "ice0",
+                    "strategy": "random",
+                    "base": "RoleICE"
+                }
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "name": "agentIn",
+            "type": "sub-process-specs",
+            "linkType": "hasMany",
+            "structure": [
+                "?agentID lro:agent_in ?agentIn"
+            ]
+        }
+    ]
+}

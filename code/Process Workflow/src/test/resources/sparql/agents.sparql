@@ -1,0 +1,61 @@
+# SPARQL query template for agents.
+# Concrete agents always have the combination of username and person full name
+# Planned agents always have Lewisian relations and roles
+
+# todo can probably build this from a template
+
+prefix : <urn:test:plans:>
+prefix gen: <urn:test:plans:generated:>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/>
+prefix lro: <http://www.ontologyrepository.com/CommonCoreOntologies/LewisianRelationOntology/>
+
+select *
+where {
+  graph <http://pw.cubrc.org/current-data> {
+    ?id             rdf:type                cco:Agent .
+
+    # first, middle, last. only valid for concrete users
+    optional {
+        ?id         cco:designated_by       ?ice0 .
+        ?ice0       rdf:type                cco:PersonFullName ;
+                    cco:inheres_in          ?ibe0 .
+        ?ibe0       rdf:type                cco:InformationBearingEntity ;
+                    cco:has_text_value      ?name .
+    }
+
+    # user name. only valid for concrete users
+    optional {
+        ?id         cco:designated_by       ?ice1 .
+        ?ice1       rdf:type                cco:Username ;
+                    cco:inheres_in          ?ibe1 .
+        ?ibe1       rdf:type                cco:InformationBearingEntity ;
+                    cco:has_text_value      ?username .
+    }
+
+    # plans that this agent is author of. only valid for concrete users
+    optional {
+        ?id         cco:has_role            ?role .
+        ?role       rdf:type                cco:AuthorRole ;
+                    cco:realized_by         ?planCreate .
+        ?planCreate rdf:type                cco:ActOfArtifactCreation ;
+                    cco:prescribes          ?authorOf .
+        ?authorOf   rdf:type                cco:Plan .
+    }
+
+    # plans that this agent took part in. only valid for concrete users
+    optional {
+        ?id         cco:agent_in            ?agentIn .
+    }
+
+    # plans that this agent should take part in. only valid for abstract agents
+    optional {
+        ?id         lro:agent_in          ?agentIn .
+    }
+
+    # role of the agent in the process. only valid for abstract agents. todo what to do with this? need to differentiate from author of
+    optional {
+        ?id         cco:has_role            ?hasRole .
+    }
+  }
+}

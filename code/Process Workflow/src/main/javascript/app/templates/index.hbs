@@ -1,0 +1,126 @@
+<br>
+<div class="row">
+    <div class="small-12 columns">
+        <h3 class="center">Status
+            <span class="small">
+                {{#if reloadSuccess}}
+                    (<i class="fa fa-check"></i>)
+                {{else}}
+                    (<a {{action 'reload'}}>reload</a>)
+                {{/if}}
+            </span>
+        </h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="small-12 columns">
+        <div class="row panel">
+            <div class="row">
+                <div class="small-12 columns">
+                    <div class="row">
+                        <div class="small-6 columns">
+                            <h5>Process Plan Records
+                                {{#if isCurrentlyDeletingSpecs}}
+                                    (<i class="fa fa-spinner fa-spin"></i>)
+                                {{else if specDeleteSuccessful}}
+                                    (<i class="fa fa-check"></i>)
+                                {{else}}
+                                    (<a {{action 'deleteAllSpecs'}}>delete all</a>)
+                                {{/if}}
+                            </h5>
+                            <ul>
+                                <li>Processes:
+                                    {{#if (eq model.processes.state "rejected")}}
+                                        NOT OK
+                                    {{else}}
+                                        OK ({{model.processes.value.content.length}})
+                                    {{/if}}
+                                </li>
+                                <li>Agents:
+                                    {{#if (eq model.agentSpecs.state "rejected")}}
+                                        NOT OK
+                                    {{else}}
+                                        OK ({{model.agentSpecs.value.content.length}})
+                                    {{/if}}
+                                </li>
+                                <li>Artifacts:
+                                    {{#if (eq model.artifactSpecs.state "rejected")}}
+                                        NOT OK
+                                    {{else}}
+                                        OK ({{model.artifactSpecs.value.content.length}})
+                                    {{/if}}
+                                </li>
+                                <li>Test Value Bearers:
+                                    {{#if (eq model.testValueSpecs.state "rejected")}}
+                                        NOT OK
+                                    {{else}}
+                                        OK ({{model.testValueSpecs.value.content.length}})
+                                    {{/if}}
+                                </li>
+                                <li>Sub-processes:
+                                    {{#if (eq model.subProcessSpecs.state "rejected")}}
+                                        NOT OK
+                                    {{else}}
+                                        OK ({{model.subProcessSpecs.value.content.length}})
+                                    {{/if}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="small-6 columns">
+                            <h5>Process Records
+                                {{#if isCurrentlyDeletingProc}}
+                                    (<i class="fa fa-spinner fa-spin"></i>)
+                                {{else if procDeleteSuccessful}}
+                                    (<i class="fa fa-check"></i>)
+                                {{else}}
+                                    (<a {{action 'deleteAllConc'}}>delete all</a>)
+                                {{/if}}
+                            </h5>
+                            <ul>
+                                {{!--
+                                <li>Process Runs:
+                                    OK (0)
+                                    {{#if (eq model.processes.state "rejected")}}
+                                        NOT OK
+                                    {{else}}
+                                        OK ({{model.processes.value.content.length}})
+                                    {{/if}}
+                                </li>
+                                --}}
+                                <li>Agents:
+                                    {{#if (eq model.agents.state "rejected")}}
+                                        NOT OK
+                                    {{else}}
+                                        OK ({{model.agents.value.content.length}})
+                                    {{/if}}
+                                </li>
+                                <li>Artifacts:
+                                    {{#if (eq model.artifacts.state "rejected")}}
+                                        NOT OK
+                                    {{else}}
+                                        OK ({{model.artifacts.value.content.length}})
+                                    {{/if}}
+                                </li>
+                                <li>Test Value Bearers:
+                                    {{#if (eq model.testValues.state "rejected")}}
+                                        NOT OK
+                                    {{else}}
+                                        OK ({{model.testValues.value.content.length}})
+                                    {{/if}}
+                                </li>
+                                <li>Sub-processes:
+                                    {{#if (eq model.subProcesses.state "rejected")}}
+                                        NOT OK
+                                    {{else}}
+                                        OK ({{model.subProcesses.value.content.length}})
+                                    {{/if}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

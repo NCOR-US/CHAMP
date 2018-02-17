@@ -1,0 +1,15 @@
+<label>Function
+    <select class="function-select bottom-margin-1" name="fn">
+        {{#each-in functions as |groupName group|}}
+            <optgroup label={{groupName}}>
+                {{#each-in group as |name fn|}}
+                    <option value="{{groupName}}:{{name}}" selected="{{if (eq selectedOpt name) "selected"}}">
+                        {{#with (get functionRef name) as |fr|}}
+                            <em>{{fr.return.type}}</em> {{name}} ({{fr.paramString}})
+                        {{/with}}
+                    </option>
+                {{/each-in}}
+            </optgroup>
+        {{/each-in}}
+    </select>
+</label>

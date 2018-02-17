@@ -1,0 +1,2645 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/no/ontologies/2017/2/Widget/"
+     xml:base="http://www.semanticweb.org/no/ontologies/2017/2/Widget/"
+     xmlns:widget="http://www.semanticweb.org/no/ontologies/2017/2/Widget#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:CEO-ontology="http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology#"
+     xmlns:PLC-ontology="http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology#"
+     xmlns:cco="http://www.ontologyrepository.com/CommonCoreOntologies/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:ontologies="http://www.semanticweb.org/no/ontologies/2017/1/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget">
+        <owl:imports rdf:resource="http://www.semanticweb.org/ontologies/ManufacturingProcessOntology"/>
+        <owl:imports rdf:resource="http://www.semanticweb.org/ontologies/TestingProcessOntology"/>
+        <owl:imports rdf:resource="http://www.semanticweb.org/ontologies/ToolOntology"/>
+        <owl:versionInfo xml:lang="en">Version .01</owl:versionInfo>
+        <owl:versionInfo xml:lang="en">Widget is an application ontology developed for a test product notionally developed by Cobham Industries</owl:versionInfo>
+        <owl:versionInfo xml:lang="en">Widget Ontology</owl:versionInfo>
+        <owl:versionInfo xml:lang="en">Created by J. Neil Otte, Ron Rudnicki, Ruoyu Yang, Binbin Zhang, and Munira Binti Mohd Ali</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/ActOfPalleting -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/ActOfPalleting">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ActOfArtifactProcessing"/>
+        <cco:definition xml:lang="en">An Intentional Act in which an Agent places objects on a Palet for storage or shipping.</cco:definition>
+        <rdfs:label xml:lang="en">Act of Palleting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/AssemblyAndTestWorkmanshipManual -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/AssemblyAndTestWorkmanshipManual">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Document"/>
+        <rdfs:label xml:lang="en">Assembly and Test Workmanship Manual</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/ColorValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/ColorValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Color Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/ConductivityValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/ConductivityValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conductivity Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/DateValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/DateValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Date Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/FrequencyValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/FrequencyValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Frequency Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/HeightValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/HeightValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Height Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/InnerDiameterValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/InnerDiameterValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inner Diameter Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/InspectorNameValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/InspectorNameValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inspector Name Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/JobNumberValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/JobNumberValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Job Number Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/LengthValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/LengthValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Length Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/LotNumberValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/LotNumberValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lot Number Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/OperatingInstructions -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/OperatingInstructions">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Document"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Operating Instructions</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/OuterDiameterValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/OuterDiameterValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Outer Diameter Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/PackagingInstructions -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/PackagingInstructions">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Document"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Packaging Instructions</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/PartDescriptionValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/PartDescriptionValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Part Description Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/PartIntegrityValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/PartIntegrityValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Part Integrity Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/PartNumberValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/PartNumberValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Part Number Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/ResistanceValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/ResistanceValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Resistance Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/SafetyProcedureDocument -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/SafetyProcedureDocument">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Document"/>
+        <rdfs:label xml:lang="en">Safety Procedure Document</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/SerialNumberValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/SerialNumberValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Serial Number Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/TemperatureValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/TemperatureValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Temperature Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Document"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Test Procedure Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_output_of"/>
+                <owl:someValuesFrom rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ActOfAppraisal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <cco:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An Information Bearing Entity that is the output of some Act of Appraisal
+ and is the bearer of some Measurement Information Content Entity that measures some quality or disposition of an object or process profile of a process</cco:definition>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Test Value Bearer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/TimeDurationValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/TimeDurationValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time Duration Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/VoltageValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/VoltageValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Voltage Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/WeightValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/WeightValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weight Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/WidthValue -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/WidthValue">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestValueBearer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Width Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ADCComponentsTemplateJobNumber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ADCComponentsTemplateJobNumber">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TaskIdentifier"/>
+        <rdfs:label xml:lang="en">ADC Components Template Job Number</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#AQLSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#AQLSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <cco:alternative_label xml:lang="en">Acceptable quality limit</cco:alternative_label>
+        <cco:definition xml:lang="en">A specification of  the lowest tolerable process average (mean) in that is still considered acceptable.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">AQL Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#AcceptanceTestProcedureSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#AcceptanceTestProcedureSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of inspections and tests to be performed on a particular device</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Acceptance Test Procedure Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#AcceptedUnit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#AcceptedUnit">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+        <cco:definition xml:lang="en">machine elements or products that have pass the inspection or testing process where its meet the specification</cco:definition>
+        <cco:term_editor xml:lang="en">Munira ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Accepted Unit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ActOfDatabaseTransaction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ActOfDatabaseTransaction">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct"/>
+        <cco:definition xml:lang="en">an act that uses some database software to conduct a transaction.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Act of Database Transaction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ActOfPreparing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ActOfPreparing">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ActOfArtifactProcessing"/>
+        <cco:definition xml:lang="en">An act of making ready or being made ready for use or consideration.</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Act of Preparing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ActOfStoring -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ActOfStoring">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ActOfArtifactProcessing"/>
+        <cco:elucidation xml:lang="en">?</cco:elucidation>
+        <rdfs:label xml:lang="en">Act of Storing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#AdjustmentsAndRepairsSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#AdjustmentsAndRepairsSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/AssemblyAndTestWorkmanshipManual"/>
+        <cco:definition xml:lang="en">A specification of the types of adjustments, repairs or maintenance that can be made to the LAT units during testing, if any.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Adjustment and Repairs Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#AgeTestSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#AgeTestSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of how each Age Test is to be conducted.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Age Test Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#AlarmSignal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#AlarmSignal">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/InformationContentEntity"/>
+        <cco:definition xml:lang="en">A descriptive information content entity that alerts others to some state of affairs.</cco:definition>
+        <cco:definition_source xml:lang="en">https://en.wikipedia.org/wiki/Alarm_device</cco:definition_source>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Alarm Signal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#AmmoDataCard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#AmmoDataCard">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Document"/>
+        <cco:alternative_label xml:lang="en">ADC</cco:alternative_label>
+        <cco:definition xml:lang="en">A government record the bears essential data pertaining to the initial history of a lot of ammunition and explosive material.</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Ammo Data Card</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#AntipilferageLabel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#AntipilferageLabel">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactIdentifier"/>
+        <cco:definition>?</cco:definition>
+        <rdfs:label xml:lang="en">Antipilferage Label</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#AtmosphericTestConditionsSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#AtmosphericTestConditionsSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of atmospheric conditions for testing process</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki and Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Atmospheric Test Conditions Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#BaggedUnit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#BaggedUnit">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+        <cco:definition xml:lang="en">A product that is installed in pre-made ESD bag and sealed and ready for wrapping process.</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Bagged Unit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#BallisticAcceptanceSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#BallisticAcceptanceSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <cco:definition xml:lang="en">A specification of test conducted to determine if the requirements of overcoming air resistance in flight are met.</cco:definition>
+        <cco:definition_source xml:lang="en">https://en.wikipedia.org/wiki/Ballistic_coefficient</cco:definition_source>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Ballistic Acceptance Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#BallisticAcceptanceTestSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#BallisticAcceptanceTestSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of how each Ballistic Acceptance Test is to be conducted.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Ballistic Acceptance Test Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Barcode -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Barcode">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactIdentifier"/>
+        <cco:definition xml:lang="en">A designative information content entity that represents the identity of an object.</cco:definition>
+        <cco:definition_source xml:lang="en">https://en.wikipedia.org/wiki/Barcode</cco:definition_source>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Barcode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#BatteryAgeSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#BatteryAgeSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/AssemblyAndTestWorkmanshipManual"/>
+        <cco:definition xml:lang="en">A specification of the temporal interval that battery outputs rated voltage.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Battery Age Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#BatteryContactAndFerriteBushingAssembly -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#BatteryContactAndFerriteBushingAssembly">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">A Machine Element composed of a Battery Contact and Ferrite Bushing</cco:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#BatteryContactAssembly -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#BatteryContactAssembly">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">A machine element that has a crimped wire and rivet as parts.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Battery Contact Assembly</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#BatteryHousing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#BatteryHousing">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">an artifact that holds a battery in one or more compartments.</cco:definition>
+        <cco:definition_source xml:lang="en">https://en.wikipedia.org/wiki/Battery_holder</cco:definition_source>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Battery Housing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#BatteryVoltageSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#BatteryVoltageSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/AssemblyAndTestWorkmanshipManual"/>
+        <cco:definition xml:lang="en">A specification of difference in electric potential energy between two points per unit electric charge.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Battery Voltage Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#BleederCircuitResistanceTestSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#BleederCircuitResistanceTestSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of how each Bleeder Circuit Resistance Test  is to be conducted.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Bleeder Circuit Resistance Test Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#BleederCircuitTestSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#BleederCircuitTestSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of how each Bleeder Circuit Test  is to be conducted.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Bleeder Circuit Test Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#BridgewireResistanceTestSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#BridgewireResistanceTestSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A type of Individual Non-Destructive Test that examines resistance of bridgewire(after circuit board assy).</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:comment xml:lang="en">specification for the &apos;after circuit board assay&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">Bridgewire Resistance Test Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#BubbleWrap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#BubbleWrap">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+        <cco:definition xml:lang="en">An artifact that is a plastic packaging material in sheets containing numerous small air cushions designed to protect fragile goods.</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Bubble Wrap</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Burr -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Burr">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
+        <cco:definition xml:lang="en">A portion of material that is raised above a smooth surface after a modification process.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Burr</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Bushing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Bushing">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">A machine element that is a metal lining for a round hole, especially one in which an axle revolves.</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Bushing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#CamLever -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#CamLever">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">An artifact that is used to transfer a force to a load and usually to provide a mechanical advantage.</cco:definition>
+        <cco:definition_source xml:lang="en">http://dictionary.reverso.net/english-definition/cam%20lever</cco:definition_source>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Cam Lever</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#CapacitanceTestSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#CapacitanceTestSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of how each Capacitance Test  is to be conducted.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Capacitance Test Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Capacitor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Capacitor">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">a passive two-terminal electrical machine element that stores electical energy in an electric field</cco:definition>
+        <cco:definition_source xml:lang="en">https://en.wikipedia.org/wiki/Capacitor</cco:definition_source>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Capacitor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#CircuitBoardAssembly -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#CircuitBoardAssembly">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+        <cco:definition xml:lang="en">An artifact obtained by connecting the electronic components with the wirings of circuit boards</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Circuit Board Assembly</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#CircuitCavity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#CircuitCavity">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <rdfs:label xml:lang="en">Circuit Cavity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Component -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Component">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">An artifact that is one of the individual parts of which a composite entity is made up.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Corrosion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Corrosion">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <cco:definition xml:lang="en">A process that converts a refined metal to a more chemically-stable form.</cco:definition>
+        <cco:definition_source xml:lang="en">https://en.wikipedia.org/wiki/Corrosion</cco:definition_source>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Corrosion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Cover -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Cover">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">A machine element that is part of an object and which lies on, over, or around the object, especially in order to protect or conceal it.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Cover</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#CoverSeatingStatusSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#CoverSeatingStatusSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/AssemblyAndTestWorkmanshipManual"/>
+        <cco:definition xml:lang="en">A specification of the seating status of a cover.</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Cover Seating Status Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#CureDate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#CureDate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TaskIdentifier"/>
+        <cco:definition xml:lang="en">A date that designates the time that the product has been cured.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Cure Date</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#CustomerRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#CustomerRole">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/OccupationRole"/>
+        <cco:definition xml:lang="en">a role inhering in an agent in the context of a value transaction when that agent purchases an economic good from another agent.</cco:definition>
+        <cco:elucidation xml:lang="en">Note: what I call here a &apos;value transaction&apos; will probably need to be replaced. I want to avoid the term &apos;financial transaction&apos; because I want to allow that one can be a customer without supplying money during a transaction.</cco:elucidation>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Customer Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#DataCollectionDocument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#DataCollectionDocument">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Document"/>
+        <cco:definition xml:lang="en">A document that contains data collection information about the production of a product.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Data Collection Document</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#DestructiveLATTestSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#DestructiveLATTestSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of the procedures that will follow the failure of a unit during Destructive LAT testing.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Destructive LAT Test Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#DocumentNumber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#DocumentNumber">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactIdentifier"/>
+        <cco:definition xml:lang="en">A number that designates a document.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Document Number</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#DrawingNumber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#DrawingNumber">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactIdentifier"/>
+        <cco:definition xml:lang="en">A number that designates a drawing.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Drawing Number</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Driver -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Driver">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">a wheel or other part in a mechanism that receives power directly and transmits motion to other parts.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte and Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Driver</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ESDBag -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ESDBag">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Container"/>
+        <cco:definition xml:lang="en">An artifact that prevents electrostatic discharge phenomenon between different objects.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">ESD Bag</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ESDProtectionSystemSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ESDProtectionSystemSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <cco:definition xml:lang="en">A specification of protection from Electrostatic discharge (ESD) where there is the sudden flow of electricity between two electrically charged objects caused by contact, an electrical short, or dielectric breakdown.</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">ESD Protection System Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ElastomerMaterialVerificationSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ElastomerMaterialVerificationSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/AssemblyAndTestWorkmanshipManual"/>
+        <cco:definition xml:lang="en">A specification of the duration of time between the cure date (C/D) of soft goods (gaskets, o-rings) to the manufacture date (the month the job is started.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Elastomer Material Verification Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#EmployeeRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#EmployeeRole">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/OrganizationMemberRole"/>
+        <cco:definition xml:lang="en">a role inhering in an agent and realized in an act of employment.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Employee Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#EngineeringChangeNumber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#EngineeringChangeNumber">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TaskIdentifier"/>
+        <cco:definition xml:lang="en">A number that designates an engineering change.</cco:definition>
+        <cco:term_editor xml:lang="en">Rouyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Engineering Change Number</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#EngineeringChangeRequestAndOrderFormDatasheet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#EngineeringChangeRequestAndOrderFormDatasheet">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Spreadsheet"/>
+        <rdfs:label xml:lang="en">Engineering Change Request and Order Form Datasheet</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#EnvelopeDimensionDataSheet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#EnvelopeDimensionDataSheet">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity"/>
+        <cco:definition xml:lang="en">A document that records the dimensions of an envelope.</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Envelope Dimension Data Sheet</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#EquipmentListSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#EquipmentListSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Document"/>
+        <cco:definition xml:lang="en">A specification of the equipment to be used during a process, including the equipment name, manufacturer name, model number, maintenance schedule and calibration frequency.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Equipment List Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ExpirationDate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ExpirationDate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TaskIdentifier"/>
+        <cco:definition xml:lang="en">A date that indicates the expiration time.</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Expiration Date</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ExplosiveHandlingSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ExplosiveHandlingSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/SafetyProcedureDocument"/>
+        <cco:definition xml:lang="en">A specification on managing material that causes a sudden, almost instantaneous, release of gas, heat, and pressure, accompanied by loud noise when subjected to a certain amount of shock, pressure, or temperature.</cco:definition>
+        <cco:definition_source xml:lang="en">http://www.businessdictionary.com/definition/explosive.html</cco:definition_source>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Explosive Handling Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ExplosiveTraceabilityDatasheet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ExplosiveTraceabilityDatasheet">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Spreadsheet"/>
+        <cco:definition xml:lang="en">A datasheet into which the data generated by the Elastomer Material Verification is placed (i.e. cure date and manufacture date)</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Explosive Traceability Datasheet</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#FailedTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#FailedTest">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/NominalMeasurementInformationContentEntity"/>
+        <rdfs:label xml:lang="en">Failed Test</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Failed Test</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#FailureAnalysisReport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#FailureAnalysisReport">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Report"/>
+        <cco:definition xml:lang="en">A report that describes a failure of some artifact during use.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Failure Analysis Report</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#FailureCode -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#FailureCode">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactIdentifier"/>
+        <cco:definition xml:lang="en">A designative information content entity that identifies a failed test.</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Failure Code</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#FailureModeSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#FailureModeSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/AssemblyAndTestWorkmanshipManual"/>
+        <cco:definition xml:lang="en">A specification of how a product doesn&apos;t meet its desirable or intended objective.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Failure Mode Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#FailureOfEnvironment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#FailureOfEnvironment">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/NominalMeasurementInformationContentEntity"/>
+        <cco:definition xml:lang="en">A nominal measurement of the outcome of an operation test in an environment</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Failure Of Environment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#FailureOfOperation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#FailureOfOperation">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/NominalMeasurementInformationContentEntity"/>
+        <cco:definition xml:lang="en">A nominal measurement of the outcome of an operation test.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Failure Of Operation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#FaultTreeAnalysis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#FaultTreeAnalysis">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Document"/>
+        <cco:alternative_label xml:lang="en">FTA</cco:alternative_label>
+        <cco:definition xml:lang="en">A document consisting of a deductive analysis of an undesired state of a system provided in Boolean logic to combine a series of lower-level events</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Fault Tree Analysis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#FileSavingFormatSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#FileSavingFormatSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <cco:definition xml:lang="en">A specification of the format of a program file that is to be saved.</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">File Saving Format Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#FinalAssemblySerialNumber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#FinalAssemblySerialNumber">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactIdentifier"/>
+        <cco:definition xml:lang="en">A number that is designated to a part obtained from nameplate.</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Final Assembly Serial Number</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#FirstArticleInspectionRecordDatasheet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#FirstArticleInspectionRecordDatasheet">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Spreadsheet"/>
+        <rdfs:label xml:lang="en">First Article Inspection Record Datasheet</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#FlakedSurfaceCoatingSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#FlakedSurfaceCoatingSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/AssemblyAndTestWorkmanshipManual"/>
+        <cco:definition xml:lang="en">A specification of non-electrolytically applied coatings, which provide good protection against corrosion.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki and Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Flaked Surface Coating Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ForeignObjectDebrisSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ForeignObjectDebrisSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/AssemblyAndTestWorkmanshipManual"/>
+        <rdfs:label xml:lang="en">Foreign Object Debris Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Frayed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Frayed">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <cco:definition xml:lang="en">a quality inhering in a segment of rope, cord, or string where the ends have become unraveled or worn.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Frayed</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#FullyOperational -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#FullyOperational">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/NominalMeasurementInformationContentEntity"/>
+        <cco:definition xml:lang="en">a nominal measurement of the functioning of an artifact that attests to the proper functioning of the artifact.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Fully Operational</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#FunctionalTestSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#FunctionalTestSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of how each Functional Test  is to be conducted.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Functional Test Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Guide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Guide">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+        <cco:definition xml:lang="en">An artifact that is used to assist in a process.</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Guide</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#IAWAS9102 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#IAWAS9102">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <rdfs:label xml:lang="en">IAWAS 9102</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#IllegibleMarking -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#IllegibleMarking">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/NominalMeasurementInformationContentEntity"/>
+        <cco:definition xml:lang="en">a nominal measurement of handwriting that indicates the handwritten markings were unable to be understood.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Illegible Marking</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#IncorrectMarking -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#IncorrectMarking">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/NominalMeasurementInformationContentEntity"/>
+        <cco:definition xml:lang="en">a nominal measurement of handwriting that indicates the handwritten description was not correct.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Incorrect Marking</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#IndividualNondestructiveTestProcedureSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#IndividualNondestructiveTestProcedureSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of the kinds of non-destructive tests, the quantity of LAT units to be tested, the test method and compliance to be performed.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Individual Nondestructive Test Procedure Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#IndustrialOrganization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#IndustrialOrganization">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/IncorporatedOrganization"/>
+        <rdfs:label xml:lang="en">Industrial Organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Inflator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Inflator">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">An artifact whose function is to inflate a chamber.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Inflator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#InspectSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#InspectSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <cco:definition xml:lang="en">A specification of an operation to inspect an assembly or sub-assembly. Inspection includes both documentation output from other operations and the assembly or sub-assembly.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Inspect Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#InspectionRequirementsSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#InspectionRequirementsSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <cco:definition xml:lang="en">A specification of an inspection process that inspects if a product meets some requirement.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Inspection Requirements Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#InspectionResultDocument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#InspectionResultDocument">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Document"/>
+        <cco:definition xml:lang="en">A document that is the output of some dimensional inspection process.</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Inspection Result Document</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#InspectorName -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#InspectorName">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DesignativeName"/>
+        <cco:definition xml:lang="en">a designative information content entity that is the name of the inspector.</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Inspector Name</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#InvestigatorRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#InvestigatorRole">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/OccupationRole"/>
+        <cco:definition xml:lang="en">A role inhering in an agent that is realized in an act of appraisal.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Investigator Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#JobNumber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#JobNumber">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TaskIdentifier"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/designates"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ProductionRun"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <cco:definition xml:lang="en">a designative information content entity that is a number and designates an act.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Job Number</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#LATHardwareAndDispositionSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#LATHardwareAndDispositionSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <cco:definition xml:lang="en">A specification of how to store and dispose of tested units</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">LAT Hardware And Disposition Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#LATSerialNumber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#LATSerialNumber">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TaskIdentifier"/>
+        <cco:definition xml:lang="en">A number that designates a Lot Acceptance Test.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">LAT Serial Number</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#LATUnitOfFinalAssembly -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#LATUnitOfFinalAssembly">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+        <cco:definition xml:lang="en">A sample of a final assembly that has been selected for the Lot Acceptance Testing</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">LAT Unit Of Final Assembly</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Label -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Label">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactIdentifier"/>
+        <cco:definition xml:lang="en">A designative information content entity which identities information or symbols about the product.</cco:definition>
+        <cco:definition_source xml:lang="en">https://en.wikipedia.org/wiki/Label</cco:definition_source>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Label</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Lanyard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Lanyard">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">A machine element consisting of a rope or strap whose function is to facilitate the portability of an artifact to which it is attached.</cco:definition>
+        <cco:definition xml:lang="en">Munira Ali</cco:definition>
+        <rdfs:label xml:lang="en">Lanyard</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#LanyardAssembly -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#LanyardAssembly">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Lanyard"/>
+        <cco:definition xml:lang="en">A machine element consisting of a rope or strap whose function is to facilitate the portability of an artifact to which it is attached.</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Lanyard Assembly</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#LanyardEnd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#LanyardEnd">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
+        <rdfs:label xml:lang="en">Lanyard End</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#LapseSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#LapseSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <cco:definition xml:lang="en">A specification of the product is failure to maintain the initial state.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Lapse Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Leakage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Leakage">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <cco:definition xml:lang="en">a process through which material is lost through holes, cracks, or over the lip of a container.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Leakage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#LeakageTestSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#LeakageTestSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A type of Individual Non-Destructive Test that examines leakage level of primer port.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Leakage Test Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#LotAcceptanceTestReport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#LotAcceptanceTestReport">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Report"/>
+        <cco:definition xml:lang="en">A report that describes results about lot acceptance test.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Lot Acceptance Test Report</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#LotAcceptanceTestSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#LotAcceptanceTestSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <rdfs:label xml:lang="en">Lot Acceptance Test Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#LotInspectionSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#LotInspectionSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <rdfs:label xml:lang="en">Lot Inspection Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#LotNumber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#LotNumber">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactIdentifier"/>
+        <cco:definition xml:lang="en">A designative information content entity that identifies a particular portion of material from a single manufacturer.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Lot Number</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#LotSampleSelectionSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#LotSampleSelectionSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of the number of units to be randomly selected for testing from a lot of a given size</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Lot Sample Selection Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#MachineBody -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#MachineBody">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <rdfs:label xml:lang="en">Machine Body</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ManualOperationWithC02CylinderSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ManualOperationWithC02CylinderSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/OperatingInstructions"/>
+        <cco:definition xml:lang="en">A specification of procedures that are operated manually with CO2 cylinder.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki and Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Manual Operation With C02 Cylinder Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ManualOperationWithC02CylinderTestSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ManualOperationWithC02CylinderTestSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/OperatingInstructions"/>
+        <cco:definition xml:lang="en">A specification of how each Manual Operation with C02 Cylinder Test is to be conducted.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Manual Operation With C02 Cylinder Test Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ManualOperationWithoutC02CylinderSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ManualOperationWithoutC02CylinderSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/OperatingInstructions"/>
+        <cco:definition xml:lang="en">A specification of procedures that are operated manually without CO2 cylinder.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki and Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Manual Operation Without C02 Cylinder Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ManualOperationWithoutC02CylinderTestSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ManualOperationWithoutC02CylinderTestSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/OperatingInstructions"/>
+        <cco:definition xml:lang="en">A specification of how each Manual Operation without C02 Cylinder Test  is to be conducted.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki and Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Manual Operation Without C02 Cylinder Test Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ManufactureDate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ManufactureDate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TaskIdentifier"/>
+        <cco:definition xml:lang="en">A date that indicates a manufacture time.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Manufacture Date</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ManufacturerRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ManufacturerRole">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/OccupationRole"/>
+        <cco:definition xml:lang="en">a role inhering in an agent that is realized in an act of manufacturing.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Manufacturer Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ManufacturersLot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ManufacturersLot">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000027"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/designated_by"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#LotNumber"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <cco:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quantity of a particular item (artifact) or material from a single manufacturer</cco:definition>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manufacturers Lot</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ManufacturingPlan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ManufacturingPlan">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Document"/>
+        <cco:definition xml:lang="en">A Document that describes the manufacturing process and the final product that is produced by it.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manufacturing Plan</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#MaterialDispositionReport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#MaterialDispositionReport">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Report"/>
+        <cco:alternative_label xml:lang="en">MDR</cco:alternative_label>
+        <cco:definition xml:lang="en">A report describing the process of removing  defective, damaged, or otherwise foreign material identified during a manufacturing process.</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Material Disposition Report</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#MathematicalEquation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#MathematicalEquation">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/InformationContentEntity"/>
+        <cco:definition xml:lang="en">an information content entity that consists of a statement of identity between one or more variables connected by a mathematical syntax.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Mathematical Equation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#MeasurementInstrumentationSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#MeasurementInstrumentationSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <cco:definition xml:lang="en">A specification of the instruments to be used during testing. Includes calibration, cleanliness, capabilities (for example: capable of simulating mounting of device as in actual service).</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Measurement Instrumentation Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#MissingMarking -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#MissingMarking">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/NominalMeasurementInformationContentEntity"/>
+        <cco:definition xml:lang="en">a nominal measurement of handwriting that indicates that where a specification had prescribed that a mark should be made, one had not been made.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Missing Marking</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#MylarWasher -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#MylarWasher">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">an artifact that is used to distribute the load of a threaded fastener made by mylar material.</cco:definition>
+        <cco:definition_source xml:lang="en">https://en.wikipedia.org/wiki/Washer_(hardware)</cco:definition_source>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Mylar Washer_</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Nameplate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Nameplate">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingArtifact"/>
+        <cco:definition xml:lang="en">A designative information content entity bearer that bears a name.</cco:definition>
+        <cco:definition_source xml:lang="en">https://en.wikipedia.org/wiki/Nameplate</cco:definition_source>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Nameplate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#NondestructiveTestSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#NondestructiveTestSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of the procedures that will follow failure of a nondestructive test.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Nondestructive Test Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#NylonPlug -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#NylonPlug">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">An artifact that fills a hole tightly made by nylon material.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Nylon Plug</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#O-Ring -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#O-Ring">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A machine element that is a gasket in the form of a ring with a circular cross section, typically made of pliable material, used to seal connections in pipes, tubes, and other machine elements.</cco:definition>
+        <cco:term_editor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">O-Ring</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#OperationDescription -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#OperationDescription">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <cco:definition xml:lang="en">A narrative that describes the inputs, steps, output and test procedures, and equipment to be used during an operation of the assembly and/or creation of a work product</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Operation Description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#OperationName -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#OperationName">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TaskIdentifier"/>
+        <cco:definition xml:lang="en">A name that designates a task, operation, job, or project within a set of work instructions</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Operation Name</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#OperationNumber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#OperationNumber">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TaskIdentifier"/>
+        <cco:definition xml:lang="en">A number that designates a task, operation, project, or job within a set of work instructions.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">OperationNumber</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#OperationTraceabilitySticker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#OperationTraceabilitySticker">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TaskIdentifier"/>
+        <cco:definition xml:lang="en">A designative information content entity which identities history, location, or application of product.</cco:definition>
+        <rdfs:label xml:lang="en">Operation Traceability Sticker</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#OperatorCertification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#OperatorCertification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Certificate"/>
+        <cco:definition xml:lang="en">A certification that attests to the operator meeting the operation requirements.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Operator Certification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#OutsideTestingSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#OutsideTestingSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <cco:definition xml:lang="en">A specification of how any testing performed outside of a company should be conducted.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Outside Testing Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Package -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Package">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+        <cco:definition xml:lang="en">An object or group of objects wrapped in paper or plastic, or packed in a box for the purpose of shipping, handling, or storage.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Package</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PartName -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PartName">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactIdentifier"/>
+        <cco:definition xml:lang="en">a designative information content entity that is a name and designates a part.</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Part Name</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PartNumber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PartNumber">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactIdentifier"/>
+        <cco:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An Artifact Identifier that designates all parts of a particular kind.</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Part Number</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PassedTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PassedTest">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/NominalMeasurementInformationContentEntity"/>
+        <rdfs:label xml:lang="en">Passed Test</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Passed Test</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Photograph -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Photograph">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity"/>
+        <cco:definition xml:lang="en">a descriptive information content entity consisting of an image that is captured by light falling on a photo-sensitive surface</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Photograph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PiercingPin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PiercingPin">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">a pin whose function is to pierce through a material surface.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Piercing Pin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfCarbonDioxide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfCarbonDioxide">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/PortionOfProcessedMaterial"/>
+        <cco:definition xml:lang="en">a chemical compound made of a carbon atom covalently doubled bonded to two oxygen atoms</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Portion Of Carbon Dioxide</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfCopper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfCopper">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/PortionOfProcessedMaterial"/>
+        <rdfs:label xml:lang="en">Portion Of Copper</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfIsopropylAlcohol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfIsopropylAlcohol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfSolvent"/>
+        <cco:alternative_label xml:lang="en">IPA</cco:alternative_label>
+        <cco:definition xml:lang="en">a portion of volatile solvent used for cleaning.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Portion Of Isopropyl Alcohol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfLead -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfLead">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/PortionOfProcessedMaterial"/>
+        <rdfs:label xml:lang="en">Portion Of Lead</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfLoctite290 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfLoctite290">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/PortionOfProcessedMaterial"/>
+        <rdfs:label xml:lang="en">Portion of Loctite 290</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfLubricant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfLubricant">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/PortionOfProcessedMaterial"/>
+        <rdfs:label xml:lang="en">Portion of Lubricant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfPottingCompound -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfPottingCompound">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/PortionOfProcessedMaterial"/>
+        <rdfs:label xml:lang="en">Portion Of Potting Compound</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfSilicone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfSilicone">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/PortionOfProcessedMaterial"/>
+        <rdfs:label xml:lang="en">Portion of Silicone</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfSiliconeLubricant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfSiliconeLubricant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfLubricant"/>
+        <cco:definition xml:lang="en">a portion of silicone whose function is to lubricate. (CC-209-02)</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Portion Of Silicone Lubricant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfSolder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfSolder">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/PortionOfProcessedMaterial"/>
+        <rdfs:label xml:lang="en">Portion Of Solder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfSolvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PortionOfSolvent">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/PortionOfProcessedMaterial"/>
+        <cco:definition xml:lang="en">a portion of material that is the bearer of a solvent function</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Portion Of Solvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PressureTestSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PressureTestSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of how a pressure test is to be conducted.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Pressure Test Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Primer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Primer">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">an artifact whose function is to trigger an explosive.</cco:definition>
+        <cco:definition_source xml:lang="en">https://en.wikipedia.org/wiki/Detonator</cco:definition_source>
+        <cco:term_editor xml:lang="en">J Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Primer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PrimerAndElastomerAgeSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PrimerAndElastomerAgeSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <cco:definition xml:lang="en">A specification of procedures that use aggravated conditions of heat, humidity, oxygen, sunlight, vibration, etc. to speed up the normal aging processes of items, i.e. primer or elastomer.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki and Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Primer And Elastomer Age Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PrimerAndElastomerAgeTestSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PrimerAndElastomerAgeTestSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of how each Primer/Elastomer Age Test  is to be conducted.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Primer And Elastomer Age Test Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PrimerESD20-PieceTray -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PrimerESD20-PieceTray">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+        <rdfs:label xml:lang="en">Primer ESD 20-Piece Tray</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PrimerPlug -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PrimerPlug">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">?</cco:definition>
+        <rdfs:label xml:lang="en">Primer Plug</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PrimerRadiographicInspectionSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PrimerRadiographicInspectionSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A type of Individual Non-Destructive Test that uses X-rays for locating flaws in a primer.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Primer Radiographic Inspection Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PrintedCircuitBoard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PrintedCircuitBoard">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">?</cco:definition>
+        <rdfs:label xml:lang="en">Printed Circuit Board</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PrintedCircuitBoardDateCode -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PrintedCircuitBoardDateCode">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TaskIdentifier"/>
+        <cco:definition xml:lang="en">A date that designates the temporal interval when a printed circuit board was created.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Printed Circuit Board Date Code</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PrintedCircuitBoardSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PrintedCircuitBoardSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <rdfs:label xml:lang="en">Printed Circuit Board Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ProductionRun -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ProductionRun">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ProcessAggregate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/has_output"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ManufacturersLot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <cco:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Process Aggregate of acts of production that produce the same product prescribed by the same specification</cco:definition>
+        <cco:definition_source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://en.oxforddictionaries.com/definition/production_run</cco:definition_source>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Production Run</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ProductionRunSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ProductionRunSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/prescribes"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ProductionRun"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <cco:definition xml:lang="en">A specification of the process of product assembly or construction.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Production Run Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ProjectNumber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ProjectNumber">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TaskIdentifier"/>
+        <cco:definition xml:lang="en">A number that designates a project.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Project Number</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ProtectivePlug -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ProtectivePlug">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">A machine element that is meant to be inserted to the part for the protection of the part from damage.</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Protective Plug</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PullStrength -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PullStrength">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Resistance"/>
+        <cco:definition xml:lang="en">A capacity of a material entity to withstand loads tending to elongate.</cco:definition>
+        <cco:definition_source xml:lang="en">https://en.wikipedia.org/wiki/Ultimate_tensile_strength</cco:definition_source>
+        <cco:term_editor xml:lang="en">Rouyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Pull Strength</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#PullTestSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#PullTestSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of how a pull test is to be conducted.</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Pull Test Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#QualityControlSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#QualityControlSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <cco:definition xml:lang="en">A specification of the responsibilities of the Quality Control staff.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Quality Control Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#RadiographicInspectionSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#RadiographicInspectionSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <cco:definition xml:lang="en">A specification of how each Radiographic Inspection  is to be conducted.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Radiographic Inspection Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#RejectedUnit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#RejectedUnit">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+        <cco:definition xml:lang="en">?</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Rejected Unit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#RequestDate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#RequestDate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TaskIdentifier"/>
+        <cco:definition xml:lang="en">A date that designates the time an engineering change was requested.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Request Date</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ResidueSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ResidueSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <cco:definition xml:lang="en">A specification of material entity remains after a process</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Residue Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Resistance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Resistance">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
+        <rdfs:label xml:lang="en">Resistance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#RevisionRecord -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#RevisionRecord">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Document"/>
+        <cco:definition xml:lang="en">A numbered list of changes made to a document along with a description of the change, the date upon which the change is effective and the name of the person making the change.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Revision Record</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#RubberTip -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#RubberTip">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">A machine element that is to be fitted at the end of an object.</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Rubber Tip</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SafetyGlasses -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SafetyGlasses">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+        <cco:definition xml:lang="en">An artifact that encloses or protects the area surrounding the eyes in order to prevent particulates, water, or chemicals from striking the eyes.</cco:definition>
+        <rdfs:label xml:lang="en">Safety Glasses</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SampleInspectionResultDocument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SampleInspectionResultDocument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#InspectionResultDocument"/>
+        <cco:definition xml:lang="en">A descriptive information content entity that describes results of a sample inspection process.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Sample Inspection Result Document</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SampleSizeSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SampleSizeSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification for a quantity of part or product that to be selected to be included in a statistical sample so that the actual population of parts or products can be infered from a sample.</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Sample Size Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SamplingPlanSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SamplingPlanSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of a detailed outline of which measurements will be taken at what times, on which material, in what manner, and by whom which is used in Acceptance test procedure.</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Sampling Plan Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ScrapingSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ScrapingSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <cco:definition xml:lang="en">A specification of discarding or removing a defective part or product to convert it to scrap metal.</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Scraping Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SensorContact -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SensorContact">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">A machine element that detects objects through physical contact with a device.</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Sensor Contact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SensorContactAssembly -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SensorContactAssembly">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">A machine element that is the assembly of spring with sensor through a welding process.</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Sensor Contact Assembly</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SensorHousingAssembly -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SensorHousingAssembly">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">?</cco:definition>
+        <rdfs:label xml:lang="en">Sensor Housing Assembly</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SequenceOfLotInspectionsSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SequenceOfLotInspectionsSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <cco:definition xml:lang="en">A specification of which inspections need to be completed before progressing onto the next inspections</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Sequence Of Lot Inspections Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SerialNumber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SerialNumber">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactIdentifier"/>
+        <cco:definition xml:lang="en">A number that designates a part or process.</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Serial Number</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SerialNumberBarcodeList -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SerialNumberBarcodeList">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactIdentifier"/>
+        <rdfs:label xml:lang="en">Serial Number Barcode List</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SheetOfBubblewrap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SheetOfBubblewrap">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+        <cco:definition xml:lang="en">A pliable transparent plastic material that is used for packing fragile items.</cco:definition>
+        <cco:definition_source xml:lang="en">https://en.wikipedia.org/wiki/Bubble_wrap</cco:definition_source>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Sheet Of Bubble wrap</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SheetOfPaper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SheetOfPaper">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+        <cco:definition xml:lang="en">an artifact whose function is to bear information.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Sheet Of Paper</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ShelfLifeSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ShelfLifeSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <cco:definition xml:lang="en">A specification that prescribes how long a commodity may be stored without becoming unfit for use, consumption, or sale.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Shelf Life Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ShippingBox -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ShippingBox">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ToolOntology#Box"/>
+        <cco:definition xml:lang="en">An artifact that is used for storage and shipping.</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Shipping Box</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ShippingLabel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ShippingLabel">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ArtifactIdentifier"/>
+        <rdfs:label xml:lang="en">Shipping Label</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SingleLotVerificationSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SingleLotVerificationSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification"/>
+        <cco:definition xml:lang="en">A specification of procedures that verfy the status of single lot.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki and Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Single Lot Verification Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SingleLotVerificationTestSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SingleLotVerificationTestSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of how each Single Lot Verification Test  is to be conducted.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Single Lot Verification Test Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SoftGoodsAndExplosiveTraceabilityDatasheet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SoftGoodsAndExplosiveTraceabilityDatasheet">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Spreadsheet"/>
+        <rdfs:label xml:lang="en">Soft Goods And Explosive Traceability Datasheet</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SolderJoint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SolderJoint">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">A material entity that is the output of a soldering process where it is in between of the joined surface that has been soldered</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Solder Joint</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SolderJointSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SolderJointSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/AssemblyAndTestWorkmanshipManual"/>
+        <cco:definition xml:lang="en">A specfication of a point at which parts structure are joined through by melting and putting a filler metal (solder) into the joint, the filler metal having a lower melting point than the adjoining metal.</cco:definition>
+        <cco:term_editor xml:lang="en">Munira ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Solder Joint Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SolderStandardSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SolderStandardSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/AssemblyAndTestWorkmanshipManual"/>
+        <cco:definition xml:lang="en">A specification of practice and requirements for the manufacture of soldered electrical and electronic asemblies.</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Solder Standard Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Specification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
+        <rdfs:label xml:lang="en">Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Spring -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Spring">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">A machine element that is typically a helical metal coil, that can be pressed or pulled but returns to its former shape when released, used chiefly to exert constant tension or absorb movement.</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali and Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Spring</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SpringPin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SpringPin">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">A machine element that acts as a mechanical fastener that secures the position of two or more parts of a machine relative to each other.</cco:definition>
+        <cco:definition_source xml:lang="en">https://en.wikipedia.org/wiki/Spring_pin</cco:definition_source>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Spring Pin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#StepNumber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#StepNumber">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TaskIdentifier"/>
+        <cco:definition xml:lang="en">A number that designates a task or operation within an operation</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Step Number</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#StrandOfCopperWire -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#StrandOfCopperWire">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#StrandOfWire"/>
+        <cco:definition xml:lang="en">An artifact made from copper that is used as electrical or thermal conductor.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Strand Of Copper Wire</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#StrandOfWire -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#StrandOfWire">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/MachineElement"/>
+        <cco:definition xml:lang="en">A machine element that is a long thin piece of metal and is used to fasten things or to carry electric current.</cco:definition>
+        <cco:definition_source xml:lang="en">https://www.collinsdictionary.com/us/dictionary/english/wire</cco:definition_source>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Strand Of Wire</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Sub-AssembleWeldSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Sub-AssembleWeldSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/AssemblyAndTestWorkmanshipManual"/>
+        <cco:definition xml:lang="en">A specification of an operation during which all five sensor contacts are welded</cco:definition>
+        <cco:elucidation xml:lang="en">specification for the (sensor_housing_assay_-_1613-037-01)</cco:elucidation>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Sub-Assemble Weld Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SubassayDataCollectionDatasheet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SubassayDataCollectionDatasheet">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Spreadsheet"/>
+        <rdfs:label xml:lang="en">Subassay Data Collection Datasheet</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#SupplierRole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SupplierRole">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/OccupationRole"/>
+        <cco:definition xml:lang="en">a role inhering in an agent and realized in an act of supplying economic goods.</cco:definition>
+        <cco:term_editor xml:lang="en">J. Neil Otte</cco:term_editor>
+        <rdfs:label xml:lang="en">Supplier Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#TaskIdentifier -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TaskIdentifier">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DesignativeInformationContentEntity"/>
+        <rdfs:label xml:lang="en">Task Identifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#TaskNumber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TaskNumber">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TaskIdentifier"/>
+        <cco:definition xml:lang="en">A number that designates a task.</cco:definition>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Task Number</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#TemperatureStabilizationSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TemperatureStabilizationSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of the rate of change of temperature between the device being tested and the amibient air temperature.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Temperature Stabilization Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#TemporarySerialNumber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TemporarySerialNumber">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SerialNumber"/>
+        <cco:definition xml:lang="en">A number that is temporarily designates a part.</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Temporary Serial Number</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#TemporarySerialNumberLabel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TemporarySerialNumberLabel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SerialNumber"/>
+        <rdfs:label xml:lang="en">Temporary Serial Number Label</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#TestConditionsSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TestConditionsSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of the conditions under which the testing of a particular device shall be performed.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Test Conditions Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#TestDataSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TestDataSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of type of data to be recorded for the tests to be performed (e.g. Pass/Fail, individual data, complete description) and any information that should be associated with the test data (e.g. S/N of part, test section number).</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Test Data Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#TestFailureReportingSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TestFailureReportingSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A specification of the procedures that will follow the failure of a unit during LAT testing.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Test Failure Reporting Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#TestResultReport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TestResultReport">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Report"/>
+        <cco:definition xml:lang="en">A report that describes the results of testing process.</cco:definition>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">Test Result Report</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#TestSafetySpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TestSafetySpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/SafetyProcedureDocument"/>
+        <cco:definition xml:lang="en">A specification of the safety conditions for a testing process.</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Test Safety Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#TestSampleBag -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#TestSampleBag">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Container"/>
+        <cco:definition xml:lang="en">An artifact that is used to store test samples.</cco:definition>
+        <cco:term_editor xml:lang="en">Munira Ali</cco:term_editor>
+        <rdfs:label xml:lang="en">Test Sample Bag</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ToleranceSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ToleranceSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/AssemblyAndTestWorkmanshipManual"/>
+        <cco:definition xml:lang="en">A specification of the maximum range of conditions allowable during testing.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Tolerance Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#ToolSettingSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#ToolSettingSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/AssemblyAndTestWorkmanshipManual"/>
+        <rdfs:label xml:lang="en">Tool Setting Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#VisualExaminationTestSpecification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#VisualExaminationTestSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/TestProcedureSpecification"/>
+        <cco:definition xml:lang="en">A type of Individual Non-Destructive Test that examines the production sample with the unaided eye, hand lens, or low magnification field microscopes.</cco:definition>
+        <cco:term_editor xml:lang="en">Ron Rudnicki</cco:term_editor>
+        <rdfs:label xml:lang="en">Visual Examination Test Specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#Voltmeter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#Voltmeter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ToolOntology#TestingTool"/>
+        <rdfs:label xml:lang="en">Voltmeter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#WeldingElectrode -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#WeldingElectrode">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"/>
+        <cco:definition xml:lang="en">An artifact with baked on chemical coating that provides the filler metal required for the joint to be welded.</cco:definition>
+        <cco:definition_source xml:lang="en">http://www.keenovens.com/products/stick-electrodes-details.html</cco:definition_source>
+        <cco:term_editor xml:lang="en">Ruoyu Yang</cco:term_editor>
+        <rdfs:label xml:lang="en">Welding Electrode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#WidgetSubassayDataCollectionDatasheet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#WidgetSubassayDataCollectionDatasheet">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Spreadsheet"/>
+        <rdfs:label xml:lang="en">Widget Subassay Data Collection Datasheet</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/no/ontologies/2017/2/Widget#X-ray -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#X-ray">
+        <rdfs:subClassOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Image"/>
+        <cco:alternative_label xml:lang="en">radiograph</cco:alternative_label>
+        <cco:definition xml:lang="en">An image that is captured through electromagnetic radiation, specifically X-rays.</cco:definition>
+        <cco:definition_source xml:lang="en">https://en.wikipedia.org/wiki/Radiography</cco:definition_source>
+        <cco:term_editor xml:lang="en">Binbin Zhang</cco:term_editor>
+        <rdfs:label xml:lang="en">X-ray</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#EngineeringChangeRequestAndOrderFormDatasheet"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#FirstArticleInspectionRecordDatasheet"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#MarriageRecordDatasheet"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SoftGoodsAndExplosiveTraceabilityDatasheet"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#SubassayDataCollectionDatasheet"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#FailureOfEnvironment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#FailureOfOperation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#FullyOperational"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#IllegibleMarking"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#IncorrectMarking"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/no/ontologies/2017/2/Widget#MissingMarking"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

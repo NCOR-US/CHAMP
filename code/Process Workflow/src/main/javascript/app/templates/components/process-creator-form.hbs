@@ -1,0 +1,135 @@
+<div class="row" style="max-width: 85rem">
+    <div class="small-3 columns">
+        <div class="side-nav-container">
+            <nav>
+                <h6>Process Navigation</h6>
+                <h5 class="side-nav-title">General Information</h5>
+                <ul class="side-nav">
+                    <li class={{if showStart 'active' 'inactive'}}>
+                        <a class="side-nav-link" {{action 'goToInfo'}}>Process Summary</a>
+                    </li>
+                </ul>
+                {{#if process.firstStep}}
+                    <h5 class="side-nav-title">Step Listing</h5>
+                    {{process-nav data=process.firstStep currentStep=currentStep setCurrent='setCurrentStep'}}
+                {{/if}}
+            </nav>
+        </div>
+    </div>
+
+    <div class="small-9 columns">
+        <div class={{if showStart "visible" "hidden"}}>
+            <div class="row">
+                <div class="small-12 columns">
+                    <label><span class="required">*</span> Name
+                        {{input value=process.name}}
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns">
+                    <label>Description
+                        {{textarea value=process.description}}
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns">
+                    <label>Notes
+                        {{textarea value=process.notes}}
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns">
+                    <label><span class="required">*</span> Process Type
+                        {{chosen-select value=(mut processType) options=processTypes optionValueKey='id' placeholder='Select a process type'}}
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns">
+                    <label>Product
+                        {{chosen-select value=(mut product) options=products optionValueKey='id' placeholder='Select a product'}}
+                    </label>
+                </div>
+            </div>
+
+            {{#unless process.firstStep}}
+                <div class="row">
+                    <div class="small-12 columns">
+                        <div class="pull-right">
+                            {{#if showBegin}}
+                                <a class="button small primary" {{action 'begin'}}>Next</a>
+                            {{else}}
+                                <a class="button small primary" disabled>Next</a>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            {{/unless}}
+        </div>
+        <div class={{if showStart "hidden" "visible"}}>
+            <div class="row">
+                <div class="small-12 columns">
+                    <strong>Process Name:</strong> {{process.name}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns">
+                    <strong>Process Type:</strong> {{selectedProcessType.display}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns">
+                    <strong>Final Output:</strong>
+                    {{#if selectedProduct.display}}{{selectedProduct.display}}{{else}}None{{/if}}
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="small-12 columns">
+                    {{subprocess-editor step=process.firstStep.content
+                                        showTask=(action 'setCurrentStep')
+                                        allInputItems=allInputItems
+                                        allOutputItems=allOutputItems
+                                        currentStep=currentStep
+                    }}
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="small-12 columns">
+                    <div class="pull-left">
+                        {{#if showBack}}
+                            <a class="button small secondary" {{action 'goBack'}}>Back</a>
+                        {{/if}}
+                    </div>
+
+                    <div class="pull-right">
+                        {{#if showNext}}
+                            <a class="button small secondary" {{action 'goForward'}}>Next</a>
+                        {{/if}}
+
+                        {{#if canDeleteStep}}
+                            <a class="button small alert" {{action 'deleteSubProcess'}}>Remove Step</a>
+                        {{/if}}
+
+                        <a class="button small primary" {{action 'addStep'}}>Add Step</a>
+                        {{#if saveSuccessful}}
+                            <i class="fa fa-check"></i>
+                        {{else if isCurrentlySaving}}
+                            <a class="button small success disabled">Finish</a>
+                            <i class="fa fa-spin fa-spinner"></i>
+                        {{else}}
+                            <a class="button small success" {{action 'finish'}}>Finish</a>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

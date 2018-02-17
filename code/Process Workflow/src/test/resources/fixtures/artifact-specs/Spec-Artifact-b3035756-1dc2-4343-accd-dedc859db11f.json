@@ -1,0 +1,20 @@
+{
+  "data" : {
+    "id" : "urn:process-workflow:plans:generated:Spec-Artifact-b3035756-1dc2-4343-accd-dedc859db11f",
+    "attributes" : {
+      "name" : "Date Value",
+      "type" : "http://www.semanticweb.org/no/ontologies/2017/2/Widget#SafetyGlasses",
+      "amount" : 2,
+      "unitOfMeasure" : null
+    },
+    "relationships" : {
+      "outputOf" : {
+        "data" : [ {
+          "type" : "sub-process-specs",
+          "id" : "urn:process-workflow:plans:generated:Spec-SubProcess-36330772-8395-4d82-8814-ab3153740f6b"
+        } ]
+      }
+    },
+    "type" : "artifact-specs"
+  }
+}

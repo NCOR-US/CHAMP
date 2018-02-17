@@ -1,0 +1,24 @@
+{
+    "type": "test-value-bearers",
+    "id": "bearerID",
+    "iriBase": "gen:TestValueBearer",
+    "baseClass": "cco:TestValueBearer",
+    "attributes": [
+        {
+            "name": "value",
+            "structure": [
+                "?bearerID cco:has_text_value ?value"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "name": "subProcess",
+            "type": "sub-processes",
+            "linkType": "belongsTo",
+            "structure": [
+                "?bearerID cco:is_test_output_of ?subProcess"
+            ]
+        }
+    ]
+}

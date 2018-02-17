@@ -1,0 +1,25 @@
+/* Global styles */
+
+.no-click:hover, label {
+    cursor: default;
+}
+
+span.required {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+.center {
+    text-align: center;
+}
+
+.fa-spin {
+    animation: fa-spin 1s infinite steps(8, end);
+}
+
+.fa-check {
+    color: #368a55;
+}

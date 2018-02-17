@@ -1,0 +1,21 @@
+/* Styles related to the application container */
+
+#pwContent {
+    position: fixed;
+    margin-top: 2.8125rem;
+    height: 95vh;
+    overflow: auto;
+    width: 100%;
+}
+
+#pwContent *:focus {
+    outline: 0;
+}
+
+#pwFooter {
+    position: fixed;
+    bottom: .25em;
+    right: 2em;
+    font-size: small;
+    color: #aaaaaa;
+}

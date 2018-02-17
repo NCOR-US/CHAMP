@@ -1,0 +1,80 @@
+{{!-- clickable top-level function representation --}}
+<div class="row">
+    <div class="small-12 columns">
+        {{clickable-segment-expr expr=expr parent=this}}
+    </div>
+</div>
+
+{{!-- workspace --}}
+<div class="function-workspace-wrapper">
+    <div class="row">
+        <div class="small-12 columns">
+            {{function-select functions=functions selectedOpt=currentlyEditing.name callback=(action 'changeExpr')}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-12 columns">
+            {{#with (get functionRef currentlyEditing.name) as |fr|}}
+                <label>{{fr.definitionWithLinks}}</label>
+                {{!--
+                todo this is not consistent
+                <label>(See examples <a target="_blank" href="{{fr.exampleLink}}">here</a>.)</label>
+                --}}
+                <br>
+            {{else}}
+                No definition available.
+            {{/with}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-12 columns">
+            <label>Arguments</label>
+        </div>
+    </div>
+    {{#each exprArgs as |arg argIndex|}}
+        <div class="row">
+            <div class="small-1 columns">
+                <a {{action 'changeArgType' arg argIndex}}>
+                    <i class="fa fa-refresh" title="{{get changeArgText (concat arg.isFn '')}}"></i>
+                </a>
+            </div>
+            <div class="small-1 columns">
+                <label>
+                    {{#with (get functionRef currentlyEditing.name) as |fr|}}
+                        {{get (get-index fr.params argIndex) 'name'}}
+                    {{else}}
+                        arg {{argIndex}}
+                    {{/with}}
+                </label>
+            </div>
+            <div class="small-4 columns">
+                {{#if arg.isFn}}
+                    ({{arg.value.name}} function definition)
+                {{else}}
+                    <div class="row collapse">
+                        <div class="small-10 columns">
+                            {{input value=arg.value}}
+                        </div>
+                        <div class="small-2 columns">
+                            <a class="button postfix" style="margin:0; height:1.5rem; line-height:1.5rem" {{action 'saveArg' arg argIndex}}>Set</a>
+                        </div>
+                    </div>
+                {{/if}}
+            </div>
+            <div class="small-2 columns">
+                {{#if arg.isOptional}}
+                    <em>Optional</em>
+                {{/if}}
+            </div>
+            <div class="small-4 columns"></div>
+        </div>
+    {{else}}
+        <div class="row">
+            <div class="small-12 columns">
+                (none)
+            </div>
+        </div>
+    {{/each}}
+</div>

@@ -1,0 +1,17 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/>
+prefix lro: <http://www.ontologyrepository.com/CommonCoreOntologies/LewisianRelationOntology/>
+
+select distinct ?iri ?label ?definition #?parentClass
+where {
+  graph ?graph {
+    ?parentClass rdfs:subClassOf* cco:MeasurementUnit .
+    ?parentClass cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Mid/UnitsOfMeasureOntology" .
+    ?iri rdf:type owl:NamedIndividual .
+    ?iri rdf:type ?parentClass .
+    ?iri cco:dmdii_preferred_label ?label .
+    optional {?iri rdfs:label ?definition . }
+  }
+}

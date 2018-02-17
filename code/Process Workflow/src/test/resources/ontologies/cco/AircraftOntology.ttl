@@ -1,0 +1,1511 @@
+@prefix : <http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology> a owl:Ontology ;
+	owl:imports <http://www.ontologyrepository.com/CommonCoreOntologies/Domain/SensorOntology> , <http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ArtifactOntology> ;
+	rdfs:label "Aircraft Ontology"^^xsd:string ;
+	owl:versionInfo "COPYRIGHT © 2015 CUBRC, Inc."^^xsd:string ;
+	rdfs:comment "This ontology is designed to represent types of aircraft along with their specifications, parts, and functions."^^xsd:string ;
+	owl:versionInfo "Version 1.0.1"^^xsd:string , "August 1, 2017"^^xsd:string .
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/ANAPX100
+
+cco:ANAPX100 a owl:Class ;
+	rdfs:subClassOf cco:IdentificationFriendOrFoeTransponder ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "AN/APX-100"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/ANARC164
+
+cco:ANARC164 a owl:Class ;
+	rdfs:subClassOf cco:RadioSystem ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "AN/ARC-164"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/ANARC190
+
+cco:ANARC190 a owl:Class ;
+	rdfs:subClassOf cco:RadioSystem ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "AN/ARC-190"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/ANARC210
+
+cco:ANARC210 a owl:Class ;
+	rdfs:subClassOf cco:RadioSystem ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "AN/ARC-210"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AccessoryDrive
+
+cco:AccessoryDrive a owl:Class ;
+	rdfs:subClassOf cco:Gearbox ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Accessory Drive"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/ActOfLanding
+
+cco:ActOfLanding a owl:Class ;
+	rdfs:subClassOf cco:ActOfArrival ;
+	cco:definition "An Act of Arrival that is the last part of a flight, where an  aircraft or spacecraft returns to the ground."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Landing"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Act of Landing"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/ActOfTakeoff
+
+cco:ActOfTakeoff a owl:Class ;
+	rdfs:subClassOf cco:ActOfDeparture ;
+	cco:definition "An Act of Departure that is the phase of flight in which an aerospace vehicle goes from the ground to flying in the air."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Takeoff"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Act of Takeoff"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AftCargoDoor
+
+cco:AftCargoDoor a owl:Class ;
+	rdfs:subClassOf cco:CargoDoor ;
+	cco:definition "A Cargo Door that is located toward the Empennage of some Aircraft."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Aft Cargo Door"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AftLoadingRamp
+
+cco:AftLoadingRamp a owl:Class ;
+	rdfs:subClassOf cco:LoadingRamp ;
+	cco:definition "A Loading Ramp that is located toward the Empennage of some Aircraft."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Aft Loading Ramp"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Aileron
+
+cco:Aileron a owl:Class ;
+	rdfs:subClassOf cco:ControlSurface ;
+	cco:definition "A Control Surface that is designed to control some Aircraft's roll (or movement around its longitudinal axis), which normally results in a change in Flight Path due to the tilting of the lift vector."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Aileron"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Aileron"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AileronHinge
+
+cco:AileronHinge a owl:Class ;
+	owl:equivalentClass _:genid1 .
+
+_:genid1 owl:intersectionOf _:genid4 .
+
+_:genid4 a rdf:List ;
+	rdf:first cco:Hinge ;
+	rdf:rest _:genid2 .
+
+_:genid2 a rdf:List ;
+	rdf:first _:genid3 .
+
+_:genid3 a owl:Restriction ;
+	owl:onProperty <http://www.obofoundry.org/ro/ro.owl#part_of> ;
+	owl:someValuesFrom cco:Aileron .
+
+_:genid2 rdf:rest rdf:nil .
+
+_:genid1 a owl:Class .
+
+cco:AileronHinge rdfs:subClassOf cco:Hinge ;
+	cco:definition "A Hinge that is designed to be part of some Aileron."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Aileron Hinge"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AirRefuelingFunction
+
+cco:AirRefuelingFunction a owl:Class ;
+	rdfs:subClassOf cco:FluidControlArtifactFunction ;
+	cco:definition "A Fluid Control Function that is realized in the process of mid-air transfer of fuel from aircraft to another."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Air Refueling Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AirSpeedIndicator
+
+cco:AirSpeedIndicator a owl:Class ;
+	rdfs:subClassOf cco:FlightInstrument ;
+	cco:definition "A Speed Indicator that is designed to measure the speed of some Aircraft."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Air Speed Indicator"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AircraftClass
+
+cco:AircraftClass a owl:Class ;
+	rdfs:subClassOf cco:ArtifactModel , _:genid5 .
+
+_:genid5 a owl:Restriction ;
+	owl:onProperty cco:prescribes ;
+	owl:someValuesFrom cco:Aircraft .
+
+cco:AircraftClass cco:definition "An Artifact Model which prescribes some Aircraft."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:comment "The subclass hierarchy is under development. It is derived from https://en.wikipedia.org/wiki/Class_rating"^^xsd:string ;
+	rdfs:label "Aircraft Class"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AircraftElevator
+
+cco:AircraftElevator a owl:Class ;
+	rdfs:subClassOf cco:ControlSurface ;
+	cco:definition "A Control Surface that is designed to control some Aircraft's pith, and therefore the angle of attack and the lift of the Wing."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Elevator_(aeronautics)"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Aircraft Elevator"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AircraftFlightControlSystem
+
+cco:AircraftFlightControlSystem a owl:Class ;
+	rdfs:subClassOf cco:VehicleControlSystem ;
+	cco:alternative_label "Flight Control"^^xsd:string ;
+	cco:definition "A Vehicle Control System that enables some Agent to control the velocity and/or direction of some Aircraft by means of its Control Surfaces, the respective Cockpit controls, connecting linkages, and necessary operating mechanisms."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Aircraft_flight_control_system"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Aircraft Flight Control System"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AircraftFloorHeatingSystem
+
+cco:AircraftFloorHeatingSystem a owl:Class ;
+	rdfs:subClassOf cco:HeatingSystem ;
+	cco:definition "A Heating System that is designed to heat some Aircraft by means of heating pads installed in the floor."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Aircraft Floor Heating System"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AircraftFunction
+
+cco:AircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:ArtifactFunction ;
+	cco:definition "An Artifact Function that inheres in an Aircraft in virtue of the Aircraft having been designed or modified to be used in actions that require that function to be realized."^^xsd:string ;
+	cco:definition_source "DoD 4120.15-L Model Designation of Military Aerospace Vehicles May 12, 2004"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AircraftRudder
+
+cco:AircraftRudder a owl:Class ;
+	rdfs:subClassOf cco:ControlSurface ;
+	cco:definition "A Control Surface that is designed to control some Aircraft's yaw about the vertical axis (i.e., the horizontal direction in which the nose is pointing)."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Rudder#Aircraft_rudders"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Aircraft Rudder"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AircraftSkin
+
+cco:AircraftSkin a owl:Class ;
+	rdfs:subClassOf cco:AirframePart ;
+	cco:definition "An Airframe Part that is designed to cover much of the Wings and Fuselage of some Aircraft."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Skin_(aeronautics)"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Aircraft Skin"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AircraftWindow
+
+cco:AircraftWindow a owl:Class ;
+	rdfs:subClassOf cco:AirframePart ;
+	cco:definition "An Airframe Part that is designed to allow the passage of light into some Aircraft through a material usually glazed or covered in some other transparent or translucent."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Window"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Aircraft Window"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AircraftWindshield
+
+cco:AircraftWindshield a owl:Class ;
+	rdfs:subClassOf cco:AircraftWindow ;
+	cco:definition "An Aircraft Window that is located at the front of the Cockpit of some Aircraft to enable the Pilots to see in front of the Aircraft during operation."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Aircraft Windshield"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AircraftWing
+
+cco:AircraftWing a owl:Class ;
+	rdfs:subClassOf cco:AirframePart ;
+	cco:definition "An Airframe Part that is designed to produce aerodynamic forces facilitating movement through air or other gases."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Wing"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Aircraft Wing"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Airframe
+
+cco:Airframe a owl:Class ;
+	rdfs:subClassOf cco:VehicleFrame ;
+	cco:definition "A Vehicle Frame that is designed to provide structural support to some Aircraft."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Airframe"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Airframe"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AirframeDoor
+
+cco:AirframeDoor a owl:Class ;
+	rdfs:subClassOf cco:AirframePart ;
+	cco:definition "An Airframe Part that is designed to block off and allow access to some Aircraft."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Door"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Airframe Door"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AirframePart
+
+cco:AirframePart a owl:Class ;
+	rdfs:subClassOf cco:VehicleFramePart ;
+	cco:definition "A Vehicle Frame Part that is designed to be part of some Airframe."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Airframe Part"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Airliner
+
+cco:Airliner a owl:Class ;
+	rdfs:subClassOf cco:Aircraft ;
+	cco:definition "An Aircraft designed to be used to transport passengers and cargo."^^xsd:string ;
+	cco:definition_source "http://en.wikipedia.org/wiki/Airliner"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Airliner"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Aliform
+
+cco:Aliform a owl:Class ;
+	rdfs:subClassOf cco:ThreeDimensionalShape ;
+	cco:definition "A Three Dimensional Shape that has the shape of a wing."^^xsd:string ;
+	cco:definition_source "http://www.dictionary.com/browse/aliform"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Aliform"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AntisubmarineAircraftFunction
+
+cco:AntisubmarineAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Antisubmarine Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AttackAircraftFunction
+
+cco:AttackAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Attack Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AttitudeIndicator
+
+cco:AttitudeIndicator a owl:Class ;
+	rdfs:subClassOf cco:FlightInstrument ;
+	cco:alternative_label "Artificial Horizon"^^xsd:string , "Attitude Director Indicator"^^xsd:string , "Gyro Horizon"^^xsd:string ;
+	cco:definition "A Sensor that is designed to measure a Vehicle's Orientation with respect to the horizon."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Attitude_indicator"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Attitude Indicator"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AutomaticDirectionFinder
+
+cco:AutomaticDirectionFinder a owl:Class ;
+	rdfs:subClassOf cco:RadioDirectionFinder ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Automatic Direction Finder"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AuxiliaryFuelTank
+
+cco:AuxiliaryFuelTank a owl:Class ;
+	rdfs:subClassOf cco:FuelTank ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Auxiliary Fuel Tank"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AuxiliaryFuelTanks
+
+cco:AuxiliaryFuelTanks a owl:Class ;
+	rdfs:subClassOf obo:BFO_0000027 ;
+	cco:definition "An Object Aggregate whose members are all instances of Auxiliary Fuel Tank."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Auxiliary Fuel Tanks"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AuxiliaryHydraulicPowerSource
+
+cco:AuxiliaryHydraulicPowerSource a owl:Class ;
+	rdfs:subClassOf cco:HydraulicPowerSource ;
+	cco:definition "A Hydraulic Power Source that is designed to provide power to some Aircraft for functions other than propulsion."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Auxiliary Hydraulic Power Source"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/AuxiliaryPowerUnit
+
+cco:AuxiliaryPowerUnit a owl:Class ;
+	rdfs:subClassOf cco:PowerSource ;
+	cco:definition "A Power Source that is designed to be part of some Vehicle and to provide energy for functions other than propulsion."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Auxiliary_power_unit"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Auxiliary Power Unit"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/BleedAirSystem
+
+cco:BleedAirSystem a owl:Class ;
+	rdfs:subClassOf cco:Artifact ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Bleed Air System"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Bomber
+
+cco:Bomber a owl:Class ;
+	rdfs:subClassOf cco:Aircraft ;
+	cco:definition "An Aircraft designed to be used to attack ground and sea targets, by dropping bombs on them, or by launching cruise missiles at them."^^xsd:string ;
+	cco:definition_source "http://en.wikipedia.org/wiki/Bomber"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Bomber"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/BomberAircraftFunction
+
+cco:BomberAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Bomber Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/CargoDoor
+
+cco:CargoDoor a owl:Class ;
+	rdfs:subClassOf cco:AirframeDoor ;
+	cco:definition "An Airframe Door that is designed to enable or inhibit access to the cargo of some Aircraft."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Cargo Door"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Cockpit
+
+cco:Cockpit a owl:Class ;
+	rdfs:subClassOf cco:AirframePart ;
+	cco:alternative_label "Flight Deck"^^xsd:string ;
+	cco:definition "An Airframe Part that is designed to be the area of some Aircraft (usually near the front) from which the pilot controls the Aircraft."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Cockpit"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Cockpit"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/CockpitVoiceRecorder
+
+cco:CockpitVoiceRecorder a owl:Class ;
+	rdfs:subClassOf cco:FlightRecorder ;
+	cco:definition "A Flight Recorder that is designed to preserve the recent history of sounds in the Cockpit including the conversation of the pilots."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Flight_recorder"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Cockpit Voice Recorder"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/ColdWeatherAircraftFunction
+
+cco:ColdWeatherAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Cold Weather Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/CombatPayload
+
+cco:CombatPayload a owl:Class ;
+	rdfs:subClassOf cco:Payload ;
+	cco:definition "A Payload that is transported by an Aircraft and is composed of the sum of the expendable weapons payload."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Combat Payload"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/CommandControlAircraft
+
+cco:CommandControlAircraft a owl:Class ;
+	rdfs:subClassOf cco:Aircraft ;
+	cco:definition "An Aircraft designed to be used to perform tasks of Intelligence, Surveillance, or Reconnaissance."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Command Control Aircraft"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Compressor
+
+cco:Compressor a owl:Class ;
+	rdfs:subClassOf cco:Turbomachine ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Compressor"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/ControllablePitchPropeller
+
+cco:ControllablePitchPropeller a owl:Class ;
+	rdfs:subClassOf cco:Propeller ;
+	cco:alternative_label "Variable-Pitch Propeller"^^xsd:string ;
+	cco:definition "A Propeller whose blades are designed to be alterable by rotating the blades about their vertical axis by means of mechanical or hydraulic arrangement."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Variable-pitch_propeller"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Controllable Pitch Propeller"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/CruiseAircraftSpeed
+
+cco:CruiseAircraftSpeed a owl:Class ;
+	rdfs:subClassOf cco:Speed ;
+	cco:definition "A Speed that is charaterized by a Aircraft moving at the fastest rate it can maintain at a given altitude to maximize range."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Cruise Aircraft Speed"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/DirectorAircraftFunction
+
+cco:DirectorAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Director Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/DiverterlessSupersonicInlet
+
+cco:DiverterlessSupersonicInlet a owl:Class ;
+	rdfs:subClassOf cco:SupersonicInlet ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Diverterless Supersonic Inlet"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/DroneAircraftFunction
+
+cco:DroneAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Drone Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/DuctedFan
+
+cco:DuctedFan a owl:Class ;
+	rdfs:subClassOf cco:Fan ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Ducted Fan"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/ElectronicCountermeasureDevice
+
+cco:ElectronicCountermeasureDevice a owl:Class ;
+	rdfs:subClassOf cco:Artifact ;
+	cco:alternative_label "ECM"^^xsd:string ;
+	cco:definition "An Artifact that is designed to trick or deceive radar, sonar, or other detection systems, such as infrared or lasers."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Electronic_countermeasure"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Electronic Countermeasure Device"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/EmergencyExitDoor
+
+cco:EmergencyExitDoor a owl:Class ;
+	rdfs:subClassOf cco:AirframeDoor ;
+	cco:definition "An Airframe Door that is designed to facilitate exiting the Aircraft in an emergency situation."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Emergency Exit Door"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Empennage
+
+cco:Empennage a owl:Class ;
+	rdfs:subClassOf cco:AirframePart ;
+	cco:alternative_label "Tail"^^xsd:string , "Tail Assembly"^^xsd:string ;
+	cco:definition "An Airframe Part that is designed to provide stability for some Aircraft."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Empennage"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Empennage"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/EngineInstrument
+
+cco:EngineInstrument a owl:Class ;
+	rdfs:subClassOf cco:Sensor ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Engine Instrument"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/EnginePressureRatioGague
+
+cco:EnginePressureRatioGague a owl:Class ;
+	rdfs:subClassOf cco:EngineInstrument ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Engine Pressure Ratio Gague"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/ExhaustGasTemperatureGague
+
+cco:ExhaustGasTemperatureGague a owl:Class ;
+	rdfs:subClassOf cco:EngineInstrument ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Exhaust Gas Temperature Gague"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/ExternalFuelTank
+
+cco:ExternalFuelTank a owl:Class ;
+	rdfs:subClassOf cco:FuelTank ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "External Fuel Tank"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/ExternalFuelTanks
+
+cco:ExternalFuelTanks a owl:Class ;
+	rdfs:subClassOf obo:BFO_0000027 ;
+	cco:definition "An Object Aggregate whose members are all instances of External Fuel Tank."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "External Fuel Tanks"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/FighterAircraft
+
+cco:FighterAircraft a owl:Class ;
+	rdfs:subClassOf cco:Aircraft ;
+	cco:definition "An Aircraft designed to be used for air-to-air combat with other aircraft."^^xsd:string ;
+	cco:definition_source "http://en.wikipedia.org/wiki/Fighter_Aircraft"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Fighter Aircraft"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/FighterAircraftFunction
+
+cco:FighterAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Fighter Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/FirewallShutoffValve
+
+cco:FirewallShutoffValve a owl:Class ;
+	rdfs:subClassOf cco:HydraulicValve ;
+	cco:definition "A Valve that is designed to be located on the Airframe side of the engine firewall that will completely shut off the flow of fuel, oil, or hydraulic fluids to the engine in the case of an engine compartment fire."^^xsd:string ;
+	cco:definition_source "http://www.datwiki.net/page.php?id=3431&find=firewall%20shutoff%20valve%20(aircraft%20fluid%20system%20component)&searching=yes"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Firewall Shutoff Valve"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/FixedPitchPropeller
+
+cco:FixedPitchPropeller a owl:Class ;
+	rdfs:subClassOf cco:Propeller ;
+	cco:definition "A Propeller whose blades are designed to be permanently attached to the hub."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Propeller_(aeronautics)"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Fixed Pitch Propeller"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Flap
+
+cco:Flap a owl:Class ;
+	rdfs:subClassOf cco:HighLifeDevice ;
+	cco:definition "A High-Life Device that is designed to lower the minimum speed at which some Aircraft can be safely flown, to increase the angle of descent for landing, and to cause an increase in drag."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Flap_(aeronautics)"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Flap"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/FlightDataRecorder
+
+cco:FlightDataRecorder a owl:Class ;
+	rdfs:subClassOf cco:FlightRecorder ;
+	cco:definition "A Flight Recorder that is designed to preserve the recent history of the flight process through the recording of dozens of parameters collected several times per second."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Flight_recorder"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Flight Data Recorder"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/FlightInstrument
+
+cco:FlightInstrument a owl:Class ;
+	rdfs:subClassOf cco:Sensor ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Flight Instrument"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/FlightManagementSystem
+
+cco:FlightManagementSystem a owl:Class ;
+	rdfs:subClassOf cco:Computer ;
+	cco:definition "A Computer that is designed to automate a wide variety of in-flight tasks, such as in-flight management of the flight plan."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Flight_management_system"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Flight Management System"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/FlightRecorder
+
+cco:FlightRecorder a owl:Class ;
+	rdfs:subClassOf cco:RecordingDevice ;
+	cco:alternative_label "Black Box"^^xsd:string ;
+	cco:definition "A Recorder that is designed to be placed in some Aircraft in order to facilitate the investigation of any aviation accidents and incidents."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Flight_recorder"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Flight Recorder"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/ForwardLoadingRamp
+
+cco:ForwardLoadingRamp a owl:Class ;
+	rdfs:subClassOf cco:LoadingRamp ;
+	cco:definition "A Loading Ramp that is located toward the Nose of some Aircraft."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Forward Loading Ramp"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/FuelInstrument
+
+cco:FuelInstrument a owl:Class ;
+	rdfs:subClassOf cco:EngineInstrument ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Fuel Instrument"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/FuelJettisonSystem
+
+cco:FuelJettisonSystem a owl:Class ;
+	rdfs:subClassOf cco:FuelSystemComponent ;
+	cco:definition "A Fuel System Component that is designed to facilitate some Aircraft's landing by dumping some Portion of Fuel, and thus reducing its landing weight."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Fuel_dumping"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Fuel Jettison System"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/FuelPressureGague
+
+cco:FuelPressureGague a owl:Class ;
+	rdfs:subClassOf cco:FuelInstrument ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Fuel Pressure Gague"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/FuelQuantityGauge
+
+cco:FuelQuantityGauge a owl:Class ;
+	rdfs:subClassOf cco:FuelInstrument ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Fuel Quantity Gauge"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/FullAuthorityDigitalEngineControl
+
+cco:FullAuthorityDigitalEngineControl a owl:Class ;
+	rdfs:subClassOf cco:Computer ;
+	cco:alternative_label "FADEC"^^xsd:string ;
+	cco:definition "A Computer that is designed to take multiple variables of an Aircraft's current flight condition as input in order to optimize that Aircraft's Engine's performance."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/FADEC"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Full Authority Digital Engine Control"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Fuselage
+
+cco:Fuselage a owl:Class ;
+	rdfs:subClassOf cco:AirframePart ;
+	cco:definition "An Airframe Part that is designed to house the pilots, passengers, or cargo of some Aircraft."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Fuselage"^^xsd:string ;
+	cco:elucidation "A fuselage comprises not only the cabin or cargo areas, but also the cockpit."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Fuselage"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/FuselageDoor
+
+cco:FuselageDoor a owl:Class ;
+	rdfs:subClassOf cco:AirframeDoor ;
+	cco:definition "An Airframe Door that is designed to enable or inhibit access to the Fuselage of some Aircraft."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Fuselage Door"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/GroundAttackAircraft
+
+cco:GroundAttackAircraft a owl:Class ;
+	rdfs:subClassOf cco:Aircraft ;
+	cco:definition "An Aircraft designed to be used for attacking targets on the ground with greater precision than Bombers and prepared to face stronger low-level air defense."^^xsd:string ;
+	cco:definition_source "http://en.wikipedia.org/wiki/Ground-Attack_aircraft"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Ground Attack Aircraft"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/GroundSpoiler
+
+cco:GroundSpoiler a owl:Class ;
+	rdfs:subClassOf cco:LiftSpoiler ;
+	cco:definition "A Lift Spoiler that is designed to maximize wheel brake efficiency by dumping the lift generated by the Wing and thus forcing the full weight of the Aircraft onto the Landing Gear."^^xsd:string ;
+	cco:definition_source "http://www.skybrary.aero/index.php/Spoilers_And_Speedbrakes"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Ground Spoiler"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/HeadingIndicator
+
+cco:HeadingIndicator a owl:Class ;
+	rdfs:subClassOf cco:FlightInstrument ;
+	cco:alternative_label "Directional Gyro"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Heading Indicator"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Helicopter
+
+cco:Helicopter a owl:Class ;
+	rdfs:subClassOf cco:Aircraft ;
+	cco:definition "An Aircraft in which lift and thrust are supplied by one or more engine driven rotors allowing the helicopter to take off and land vertically, to hover, and to fly forwards, backwards, and laterally."^^xsd:string ;
+	cco:definition_source "http://en.wikipedia.org/wiki/Helicopter"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Helicopter"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/HighLifeDevice
+
+cco:HighLifeDevice a owl:Class ;
+	rdfs:subClassOf cco:VehicleControlSystemComponent , _:genid6 .
+
+_:genid6 a owl:Restriction ;
+	owl:onProperty cco:bearer_of ;
+	owl:someValuesFrom cco:EnhancingArtifactFunction .
+
+cco:HighLifeDevice cco:definition "A Vehicle Control Component that is designed to increase the amount of lift produced by an Aircraft's Wing."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/High-lift_device" ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "High-Lift Device"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/HighPressureCompressor
+
+cco:HighPressureCompressor a owl:Class ;
+	rdfs:subClassOf cco:Compressor ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "High-Pressure Compressor"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/HighPressureTurbine
+
+cco:HighPressureTurbine a owl:Class ;
+	rdfs:subClassOf cco:Turbine ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "High-Pressure Turbine"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/IceProtectionSystem
+
+cco:IceProtectionSystem a owl:Class ;
+	rdfs:subClassOf cco:Artifact ;
+	cco:definition "An Artifact that is designed to enable some Agent to keep atmospheric ice from accumulating on aircraft surfaces."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Ice_protection_system"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Ice Protection System"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/InletCone
+
+cco:InletCone a owl:Class ;
+	rdfs:subClassOf cco:AirInlet ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Inlet Cone"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/InletRamp
+
+cco:InletRamp a owl:Class ;
+	rdfs:subClassOf cco:AirInlet ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Inlet Ramp"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/InstrumentationSystem
+
+cco:InstrumentationSystem a owl:Class ;
+	rdfs:subClassOf cco:Artifact ;
+	cco:definition "An Artifact that is designed to measure, display, or record physical quantities."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Instrumentation"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Instrumentation System"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/InternalFuelTank
+
+cco:InternalFuelTank a owl:Class ;
+	rdfs:subClassOf cco:FuelTank ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Internal Fuel Tank"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/InternalFuelTanks
+
+cco:InternalFuelTanks a owl:Class ;
+	rdfs:subClassOf obo:BFO_0000027 ;
+	cco:definition "An Object Aggregate whose members are all instances of Internal Fuel Tank."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Internal Fuel Tanks"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/KneelingLandingGear
+
+cco:KneelingLandingGear a owl:Class ;
+	rdfs:subClassOf cco:NoseLandingGear ;
+	cco:definition "A Nose Landing Gear that is designed to have small steerable auxiliary wheels on short struts located forward of the primary Nose Landing Gear, allowing the Aircraft to be taxied tail-high with the primary Nose Landing Gear retracted."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Landing_gear#.22Kneeling.22_gear"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Kneeling Landing Gear"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/KneelingLandingGearControlUnit
+
+cco:KneelingLandingGearControlUnit a owl:Class ;
+	rdfs:subClassOf cco:LandingGearControlUnit ;
+	cco:definition "A Landing Gear Control Unit that is designed to control the protraction and retraction of some Kneeling Landing Gear."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Kneeling Landing Gear Control Unit"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/LandingGear
+
+cco:LandingGear a owl:Class ;
+	rdfs:subClassOf cco:VehicleControlSystemComponent ;
+	cco:definition "An Airframe Part that is designed to enable some Aircraft or Spacecraft to takeoff or land."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Landing_gear"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Landing Gear"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/LandingGearControlUnit
+
+cco:LandingGearControlUnit a owl:Class ;
+	rdfs:subClassOf cco:SteeringControlComponent ;
+	cco:definition "A Vehicle Control Component that is designed to control the protraction and retraction of some Landing Gear."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Landing Gear Control Unit"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/LandingGearDoor
+
+cco:LandingGearDoor a owl:Class ;
+	rdfs:subClassOf cco:AirframeDoor ;
+	cco:definition "An Airframe Door that is designed to expose or conceal the Landing Gear of some Aircraft."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Landing Gear Door"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/LandingGearDoorActuator
+
+cco:LandingGearDoorActuator a owl:Class ;
+	rdfs:subClassOf cco:Actuator ;
+	cco:definition "An Actuator that is designed to move some Landing Gear Door."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Landing Gear Door Actuator"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/LaserAircraftFunction
+
+cco:LaserAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Laser Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/LeadingEdge
+
+cco:LeadingEdge a owl:Class ;
+	rdfs:subClassOf cco:WingPart ;
+	cco:definition "A Wing Part that is designed to be the foremost edge of an airfoil section."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Leading_edge"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Leading Edge"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/LiftSpoiler
+
+cco:LiftSpoiler a owl:Class ;
+	rdfs:subClassOf cco:WingPart ;
+	cco:definition "A Wing Part that is designed to intentionally reduce the lift component of an Airfoil in a controlled way."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Spoiler_(aeronautics)"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Lift Spoiler"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/LoadingRamp
+
+cco:LoadingRamp a owl:Class ;
+	rdfs:subClassOf cco:AirframePart ;
+	cco:definition "An Airframe Part that is designed to be a protractable and retractable inclined plane which facilitates the loading of cargo."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Loading Ramp"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/LowPressureCompressor
+
+cco:LowPressureCompressor a owl:Class ;
+	rdfs:subClassOf cco:Compressor ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Low-Pressure Compressor"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/LowPressureTurbine
+
+cco:LowPressureTurbine a owl:Class ;
+	rdfs:subClassOf cco:Turbine ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Low-Pressure Turbine"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/MainLandingGear
+
+cco:MainLandingGear a owl:Class ;
+	rdfs:subClassOf cco:LandingGear ;
+	cco:definition "A Landing Gear that is designed to be attached approximately underneath the wings of some Aircraft."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Main Landing Gear"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/MainLandingGearDoor
+
+cco:MainLandingGearDoor a owl:Class ;
+	rdfs:subClassOf cco:LandingGearDoor ;
+	cco:definition "A Landing Gear Door that is designed to expose or conceal some Main Landing Gear."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Main Landing Gear Door"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/MainLandingGearDoorActuator
+
+cco:MainLandingGearDoorActuator a owl:Class ;
+	rdfs:subClassOf cco:LandingGearDoorActuator ;
+	cco:definition "A Landing Gear Door Actuator that is designed to move some Main Landing Gear Door."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Main Landing Gear Door Actuator"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/MalfunctionDetectionAnalysisAndRecordingSystem
+
+cco:MalfunctionDetectionAnalysisAndRecordingSystem a owl:Class ;
+	rdfs:subClassOf cco:Sensor ;
+	cco:alternative_label "MADAR"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Malfunction Detection Analysis and Recording System"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/MaximumAircraftPayload
+
+cco:MaximumAircraftPayload a owl:Class ;
+	rdfs:subClassOf cco:Payload ;
+	cco:definition "A Payload that is transported by an Aircraft and is composed of all the expendable payload, which can be carried utilizing all storage areas and attachment points, and not requiring a full fuel load."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Maximum Aircraft Payload"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/MaximumAircraftRateOfClimb
+
+cco:MaximumAircraftRateOfClimb a owl:Class ;
+	rdfs:subClassOf cco:Speed ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Maximum Aircraft Rate of Climb"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/MaximumAircraftSpeed
+
+cco:MaximumAircraftSpeed a owl:Class ;
+	rdfs:subClassOf cco:Speed ;
+	cco:definition "A Speed that is charaterized by a Aircraft moving at the fastest rate it can maintain at a given altitude."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Maximum Aircraft Speed"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/MaximumAircraftSpeedSeaLevelConditions
+
+cco:MaximumAircraftSpeedSeaLevelConditions a owl:Class ;
+	rdfs:subClassOf cco:Speed ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Maximum Aircraft Speed Sea Level Conditions"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/MaximumAircraftTakeoffPayload
+
+cco:MaximumAircraftTakeoffPayload a owl:Class ;
+	rdfs:subClassOf cco:Payload ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Maximum Aircraft Takeoff Payload"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/MilitaryAircraftFunction
+
+cco:MilitaryAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:AircraftFunction ;
+	cco:definition "An Aircraft Function that inheres in an Aircraft in virtue of the Aircraft having been designed or modified to be used in military missions that require that function to be realized."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:comment "The military aircraft functions listed as subclasses of this class should be asserted to inhere in aircraft only in accordance with the associations made between the model designations and modified and basic mission defined in DoD 4120.15 L."^^xsd:string ;
+	rdfs:label "Military Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/MilitaryTransportAircraft
+
+cco:MilitaryTransportAircraft a owl:Class ;
+	rdfs:subClassOf cco:Aircraft ;
+	cco:definition "An Aircraft designed to be used to deliver troops, weapons and other military equipment by a variety of methods to any area of military operations around the surface of the planet, usually outside of the commercial flight routes in uncontrolled airspace."^^xsd:string ;
+	cco:definition_source "http://en.wikipedia.org/wiki/Military_transport_vehicle"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Military Transport Aircraft"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/MultiEngineAirplaneClass
+
+cco:MultiEngineAirplaneClass a owl:Class ;
+	rdfs:subClassOf cco:AircraftClass ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Multi Engine Airplane Class"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/MultiEngineLandAirplaneClass
+
+cco:MultiEngineLandAirplaneClass a owl:Class ;
+	rdfs:subClassOf cco:MultiEngineAirplaneClass ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Multi Engine Land Airplane Class"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/MultiEngineSeaAirplaneClass
+
+cco:MultiEngineSeaAirplaneClass a owl:Class ;
+	rdfs:subClassOf cco:MultiEngineAirplaneClass ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Multi Engine Sea Airplane Class"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/MultiMissionAircraftFunction
+
+cco:MultiMissionAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Multi-Mission Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/MultimodeReceiverSystem
+
+cco:MultimodeReceiverSystem a owl:Class ;
+	rdfs:subClassOf cco:NavigationSystem ;
+	cco:definition "A Navigation System that is designed to incorporate signals from multiple types of navigational and landing systems, and integrating them into a single presentation and using the combination of signals to verify the accuracy of the others."^^xsd:string ;
+	cco:definition_source "https://airandspace.si.edu/collection-objects/multi-mode-receiver-mmr-laas-cert-collins-glu-925-global-landing-unit"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Multimode Receiver System"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Nacelle
+
+cco:Nacelle a owl:Class ;
+	rdfs:subClassOf cco:AirframePart ;
+	cco:definition "An Airframe Part of some Aircraft, separate from the Fuselage, which is designed to house engines, fuel, and equipment."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Nacelle" ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Nacelle"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/NavigationInstrument
+
+cco:NavigationInstrument a owl:Class ;
+	rdfs:subClassOf cco:Sensor ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Navigation Instrument"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/NondirectionalRadioBeacon
+
+cco:NondirectionalRadioBeacon a owl:Class ;
+	rdfs:subClassOf cco:NavigationInstrument ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Nondirectional Radio Beacon"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/NormalAircraftPayload
+
+cco:NormalAircraftPayload a owl:Class ;
+	rdfs:subClassOf cco:Payload ;
+	cco:definition "A Payload that is transported by Aircraft and is composed of the most weapons and defensive expendables, but excluding fuel, that can be carried by an aircraft configured with a full fuel load without exceeding the aircraft's gross takeoff weight."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Normal Aircraft Payload"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/NoseLandingGear
+
+cco:NoseLandingGear a owl:Class ;
+	rdfs:subClassOf cco:LandingGear ;
+	cco:definition "A Landing Gear that is designed to be attached underneath the nose of some Aircraft."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Nose Landing Gear"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/NoseLandingGearDoor
+
+cco:NoseLandingGearDoor a owl:Class ;
+	rdfs:subClassOf cco:LandingGearDoor ;
+	cco:definition "A Landing Gear Door that is designed to expose or conceal some Nose Landing Gear."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Nose Landing Gear Door"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/NoseLandingGearDoorActuator
+
+cco:NoseLandingGearDoorActuator a owl:Class ;
+	rdfs:subClassOf cco:LandingGearDoorActuator ;
+	cco:definition "A Landing Gear Door Actuator that is designed to move some Nose Landing Gear Door."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Nose Landing Gear Door Actuator"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/NoseWheelSteeringControl
+
+cco:NoseWheelSteeringControl a owl:Class ;
+	rdfs:subClassOf cco:HighLifeDevice ;
+	cco:definition "A Vehicle Control System Component that is designed to enable some Agent to steer the nose wheel of some Aircraft."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Nose Wheel Steering Control"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/ObservationAircraftFunction
+
+cco:ObservationAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Observation Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/PatrolAircraftFunction
+
+cco:PatrolAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Patrol Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Pylon
+
+cco:Pylon a owl:Class ;
+	rdfs:subClassOf cco:AirframePart ;
+	cco:alternative_label "Hardpoint"^^xsd:string ;
+	cco:definition "An Airframe Part that is designed to carry an external or internal load on some Aircraft."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Hardpoint"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Pylon"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/RT1794
+
+cco:RT1794 a owl:Class ;
+	rdfs:subClassOf cco:ANARC210 ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "RT-1794"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/RadarAltimeterSystem
+
+cco:RadarAltimeterSystem a owl:Class ;
+	rdfs:subClassOf cco:RadarNavigationSystem ;
+	cco:definition "A Radar Navigation System that is designed to measure Altitude above the terrain presently beneath some Aircraft or Spacecraft by timing how long it takes a beam of radio waves to reflect from teh ground and return to the Vehicle."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Radar_altimeter"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Radar Altimeter System"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/RadarNavigationSystem
+
+cco:RadarNavigationSystem a owl:Class ;
+	rdfs:subClassOf cco:RadioNavigationSystem ;
+	cco:definition "A Radio Navigation System that is designed to use radio waves to determine the range, angle, or velocity of objects."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Radar Navigation System"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/RadioDirectionFinder
+
+cco:RadioDirectionFinder a owl:Class ;
+	rdfs:subClassOf cco:NavigationInstrument ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Radio Direction Finder"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/RadioNavigationSystem
+
+cco:RadioNavigationSystem a owl:Class ;
+	rdfs:subClassOf cco:NavigationSystem ;
+	cco:definition "A Navigation System that is designed to participate in some process that has process part some Radio Frequency."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Radio Navigation System"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/RadioSystem
+
+cco:RadioSystem a owl:Class ;
+	rdfs:subClassOf cco:TelecommunicationInstrument ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Radio System"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/ReconnaissanceAircraftFunction
+
+cco:ReconnaissanceAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Reconnaissance Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/ResearchAircraftFunction
+
+cco:ResearchAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Research Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/RollSpoiler
+
+cco:RollSpoiler a owl:Class ;
+	rdfs:subClassOf cco:LiftSpoiler ;
+	cco:definition "A Lift Spoiler that is designed to assist the Ailerons in enhancing roll authority and response during a landing process."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Roll Spoiler"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/RotaryWingAircraftClass
+
+cco:RotaryWingAircraftClass a owl:Class ;
+	rdfs:subClassOf cco:AircraftClass ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Rotary Wing Aircraft Class"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/SearchAndRescueAndMedevacAircraftFunction
+
+cco:SearchAndRescueAndMedevacAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Search and Rescue and MEDEVAC Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/ServiceCeiling
+
+cco:ServiceCeiling a owl:Class ;
+	rdfs:subClassOf cco:Altitude ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Service Ceiling"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Shaft
+
+cco:Shaft a owl:Class ;
+	rdfs:subClassOf cco:Artifact ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Shaft"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/SingleEngineAirplaneClass
+
+cco:SingleEngineAirplaneClass a owl:Class ;
+	rdfs:subClassOf cco:AircraftClass ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Single Engine Airplane Class"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/SingleEngineLandAirplaneClass
+
+cco:SingleEngineLandAirplaneClass a owl:Class ;
+	rdfs:subClassOf cco:SingleEngineAirplaneClass ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Single Engine Land Airplane Class"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/SingleEngineSeaAirplaneClass
+
+cco:SingleEngineSeaAirplaneClass a owl:Class ;
+	rdfs:subClassOf cco:SingleEngineAirplaneClass ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Single Engine Sea Airplane Class"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/SpecialElectronicInstallationAircraftFunction
+
+cco:SpecialElectronicInstallationAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Special Electronic Installation Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/StaffAircraftFunction
+
+cco:StaffAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Staff Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/SubsonicInlet
+
+cco:SubsonicInlet a owl:Class ;
+	rdfs:subClassOf cco:AirInlet ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Subsonic Inlet"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/SupersonicInlet
+
+cco:SupersonicInlet a owl:Class ;
+	rdfs:subClassOf cco:AirInlet ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Supersonic Inlet"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/TankerAircraftFunction
+
+cco:TankerAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Tanker Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/ThrustReverserSystem
+
+cco:ThrustReverserSystem a owl:Class ;
+	rdfs:subClassOf cco:Artifact ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Thrust Reverser System"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/TrailingEdge
+
+cco:TrailingEdge a owl:Class ;
+	rdfs:subClassOf cco:WingPart ;
+	cco:definition "A Wing Part that is designed to be the rear edge of the Wing where the airflow separated by the Leading Edge rejoins."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Trailing_edge"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Trailing Edge"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/TrainerAircraftFunction
+
+cco:TrainerAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Trainer Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/TransportAircraftFunction
+
+cco:TransportAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Transport Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Turbine
+
+cco:Turbine a owl:Class ;
+	rdfs:subClassOf cco:Turbomachine ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Turbine"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Turbocharger
+
+cco:Turbocharger a owl:Class ;
+	rdfs:subClassOf cco:FluidControlArtifact ;
+	cco:alternative_label "Turbo"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Turbocharger"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/TurbofanEngine
+
+cco:TurbofanEngine a owl:Class ;
+	rdfs:subClassOf cco:GasTurbine ;
+	cco:definition "A Gas Turbine Engine that is designed to drive a ducted fan that is part of some Aircraft."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Turbofan"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Turbofan Engine"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Turbomachine
+
+cco:Turbomachine a owl:Class ;
+	rdfs:subClassOf cco:FluidControlArtifact ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Turbomachine"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/TurbopropEngine
+
+cco:TurbopropEngine a owl:Class ;
+	rdfs:subClassOf cco:GasTurbine ;
+	cco:definition "A Gas Turbine Engine that is designed to drive a Propeller that is part of some Aircraft."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Turboprop"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Turboprop Engine"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Turbopump
+
+cco:Turbopump a owl:Class ;
+	rdfs:subClassOf cco:Pump ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Turbopump"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/TurnIndicator
+
+cco:TurnIndicator a owl:Class ;
+	rdfs:subClassOf cco:FlightInstrument ;
+	cco:definition_source "See: https://en.wikipedia.org/wiki/Turn_and_slip_indicator#Turn_indicator"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Turn Indicator"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/UltraHighFrequencyGuard
+
+cco:UltraHighFrequencyGuard a owl:Class ;
+	rdfs:subClassOf cco:UltraHighFrequency ;
+	cco:definition "An Ultra High Frequency that is 243.0 MHz and used by some Military Organization for emergency communication aboard some Aircraft."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Aircraft_emergency_frequency"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Ultra High Frequency Guard"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/UltraHighFrequencyGuardCommunicationInstrument
+
+cco:UltraHighFrequencyGuardCommunicationInstrument a owl:Class ;
+	owl:equivalentClass _:genid7 .
+
+_:genid7 a owl:Restriction ;
+	owl:onProperty <http://www.obofoundry.org/ro/ro.owl#participates_in> ;
+	owl:someValuesFrom _:genid8 .
+
+_:genid8 owl:intersectionOf _:genid11 .
+
+_:genid11 a rdf:List ;
+	rdf:first obo:BFO_0000015 ;
+	rdf:rest _:genid9 .
+
+_:genid9 a rdf:List ;
+	rdf:first _:genid10 .
+
+_:genid10 a owl:Restriction ;
+	owl:onProperty cco:has_process_part ;
+	owl:someValuesFrom cco:UltraHighFrequencyGuard .
+
+_:genid9 rdf:rest rdf:nil .
+
+_:genid8 a owl:Class .
+
+cco:UltraHighFrequencyGuardCommunicationInstrument rdfs:subClassOf cco:UltraHighFrequencyCommunicationInstrument ;
+	cco:definition "A Communication Instrument that is designed to participate in some process that has process part some Ultra High Frequency Guard."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Ultra High Frequency Guard Communication Instrument"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/UnitedStatesAirForceAirplaneClass
+
+cco:UnitedStatesAirForceAirplaneClass a owl:Class ;
+	rdfs:subClassOf cco:AircraftClass ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "United States Air Force Airplane Class"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/UnmannedAerialVehicle
+
+cco:UnmannedAerialVehicle a owl:Class ;
+	rdfs:subClassOf cco:Aircraft ;
+	cco:definition "An Aircraft that is designed to be flown by a Pilot or a navigator without a human Crew on board the Aircraft."^^xsd:string ;
+	cco:definition_source "http://en.wikipedia.org/wiki/Unmanned_aerial_vehicle"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Unmanned Aerial Vehicle"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/UtilityAircraftFunction
+
+cco:UtilityAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Utility Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Variometer
+
+cco:Variometer a owl:Class ;
+	rdfs:subClassOf cco:FlightInstrument ;
+	cco:alternative_label "Vertical Speed Indicator"^^xsd:string ;
+	cco:definition_source "See: https://en.wikipedia.org/wiki/Variometer"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Variometer"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/VerticalTakeoffPayload
+
+cco:VerticalTakeoffPayload a owl:Class ;
+	rdfs:subClassOf cco:Payload ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Vertical Takeoff Payload"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/VeryHighFrequencyGuard
+
+cco:VeryHighFrequencyGuard a owl:Class ;
+	rdfs:subClassOf cco:VeryHighFrequency ;
+	cco:definition "A Very High Frequency that is 121.5 MHz and used by civilians for emergency communication aboard some Aircraft."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Aircraft_emergency_frequency"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Very High Frequency Guard"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/VeryHighFrequencyGuardCommunicationInstrument
+
+cco:VeryHighFrequencyGuardCommunicationInstrument a owl:Class ;
+	owl:equivalentClass _:genid12 .
+
+_:genid12 a owl:Restriction ;
+	owl:onProperty <http://www.obofoundry.org/ro/ro.owl#participates_in> ;
+	owl:someValuesFrom _:genid13 .
+
+_:genid13 owl:intersectionOf _:genid16 .
+
+_:genid16 a rdf:List ;
+	rdf:first obo:BFO_0000015 ;
+	rdf:rest _:genid14 .
+
+_:genid14 a rdf:List ;
+	rdf:first _:genid15 .
+
+_:genid15 a owl:Restriction ;
+	owl:onProperty cco:has_process_part ;
+	owl:someValuesFrom cco:VeryHighFrequencyGuard .
+
+_:genid14 rdf:rest rdf:nil .
+
+_:genid13 a owl:Class .
+
+cco:VeryHighFrequencyGuardCommunicationInstrument rdfs:subClassOf cco:VeryHighFrequencyCommunicationInstrument ;
+	cco:definition "A Communication Instrument that is designed to participate in some process that has process part some Very High Frequency Guard."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Very High Frequency Guard Communication Instrument"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/VeryHighFrequencyOmnidirectionalRangeIndicator
+
+cco:VeryHighFrequencyOmnidirectionalRangeIndicator a owl:Class ;
+	rdfs:subClassOf cco:NavigationInstrument ;
+	cco:alternative_label "VOR Indicator"^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Very-High Frequency Omnidirectional Range Indicator"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Visor
+
+cco:Visor a owl:Class ;
+	rdfs:subClassOf cco:CargoDoor ;
+	cco:alternative_label "Visor"^^xsd:string ;
+	cco:definition "A Cargo Door that is located toward the nose of some Aircraft."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Forward Cargo Door"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/WeatherAircraftFunction
+
+cco:WeatherAircraftFunction a owl:Class ;
+	rdfs:subClassOf cco:MilitaryAircraftFunction ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Weather Aircraft Function"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/WingPart
+
+cco:WingPart a owl:Class ;
+	rdfs:subClassOf cco:AirframePart ;
+	cco:definition "An Airframe Part that is designed to be part of some Aircraft Wing."^^xsd:string ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Aircraft Wing Part"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Wingspan
+
+cco:Wingspan a owl:Class ;
+	rdfs:subClassOf cco:Width ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Wingspan"^^xsd:string .
+# 
+# http://www.ontologyrepository.com/CommonCoreOntologies/Yoke
+
+cco:Yoke a owl:Class ;
+	rdfs:subClassOf cco:SteeringControlComponent , _:genid17 .
+
+_:genid17 a owl:Restriction ;
+	owl:onProperty cco:bearer_of ;
+	owl:someValuesFrom cco:OrientationControlArtifactFunction .
+
+cco:Yoke cco:alternative_label "Control Wheel"^^xsd:string ;
+	cco:definition "A Vehicle Control Component that is designed to enable some Agent to pilot some fixed-wing Aircraft."^^xsd:string ;
+	cco:definition_source "https://en.wikipedia.org/wiki/Yoke_(aeronautics)" ;
+	cco:is_curated_in_ontology "http://www.ontologyrepository.com/CommonCoreOntologies/Domain/AircraftOntology"^^xsd:string ;
+	rdfs:label "Yoke"^^xsd:string .
+# 
+# Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi

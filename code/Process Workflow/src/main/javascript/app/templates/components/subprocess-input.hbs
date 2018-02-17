@@ -1,0 +1,250 @@
+<div class="{{if (eq currentStep step.id) 'visible' 'hidden'}}">
+    <hr>
+    <div class="row">
+        <div class="small-12 columns">
+            <strong>Step Name:</strong> {{step.name}}
+        </div>
+    </div>
+
+    {{#if step.notes}}
+        <div class="row">
+            <div class="small-12 columns">
+                <br>
+                <h6>Notes:</h6>
+                <p>{{step.notes}}</p>
+            </div>
+        </div>
+    {{/if}}
+    <div class="row">
+        <div class="small-12 columns">
+            <br>
+            <h5>Inputs</h5>
+        </div>
+    </div>
+    {{#each step.inputs as |input|}}
+        <div class="row">
+            <div class="small-12 columns">
+                {{input type='checkbox' checked=input.isUsed}}
+                <label>{{input.name}}</label>
+            </div>
+        </div>
+    {{else}}
+        <div class="row">
+            <div class="small-12 columns">
+                No inputs.
+            </div>
+        </div>
+    {{/each}}
+
+    <br>
+
+    <div class="row">
+        <div class="small-12 columns">
+            <h5>Outputs</h5>
+        </div>
+    </div>
+    {{#each step.outputs as |output outputIndex|}}
+        <div class="row">
+            <div class="small-12 columns">
+                <h6>{{output.name}}</h6>
+                <div class="row" style="margin-left:1em">
+                    <div class="small-2 columns">
+                        Completed
+                    </div>
+                    <div class="small-1 columns">
+                        {{!--
+                                    <span style="color:grey">({{resultSet.numCompleted}})</span>
+                                    --}}
+                    </div>
+                    <div class="small-9 columns">
+                        <div class="row">
+                            <div class="small-3 columns">
+                                <label>Serial Numbers:</label>
+                            </div>
+                            <div class="small-9 columns" style="margin-top:-.5em; padding-left:0">
+                                {{!-- todo pair up output specs with output data container --}}
+                                {{#with (get outputLookup output.id) as |lookup|}}
+                                    {{input value=lookup.completedString}}
+                                {{/with}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-left:1em">
+                    <div class="small-2 columns">
+                        Rejected
+                    </div>
+                    <div class="small-1 columns">
+                        {{!--
+                                    <span style="color:grey">({{resultSet.numRejected}})</span>
+                                    --}}
+                    </div>
+                    <div class="small-9 columns">
+                        <div class="row">
+                            <div class="small-3 columns">
+                                <label>Serial Numbers:</label>
+                            </div>
+                            <div class="small-9 columns" style="margin-top: -.5em; padding-left:0">
+                                {{#with (get outputLookup output.id) as |lookup|}}
+                                    {{input value=lookup.rejectedString}}
+                                {{/with}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-left:1em">
+                    <div class="small-2 columns">
+                        Scrap
+                    </div>
+                    <div class="small-1 columns">
+                        {{!--
+                                    <span style="color:grey">({{resultSet.numScrap}})</span>
+                                    --}}
+                    </div>
+                    <div class="small-9 columns">
+                        <div class="row">
+                            <div class="small-3 columns">
+                                <label>Serial Numbers:</label>
+                            </div>
+                            <div class="small-9 columns" style="margin-top: -.5em; padding-left:0">
+                                {{#with (get outputLookup output.id) as |lookup|}}
+                                    {{input value=lookup.scrapString}}
+                                {{/with}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{else}}
+        <div class="row">
+            <div class="small-12 columns">
+                No outputs.
+            </div>
+        </div>
+    {{/each}}
+
+    <br>
+
+    <div class="row">
+        <div class="small-12 columns">
+            <h5>Test Outputs</h5>
+        </div>
+    </div>
+
+    {{#if step.testValues.length}}
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="row">
+                    <div class="small-1 columns">
+                        <h6><strong>Name</strong></h6>
+                    </div>
+                    <div class="small-11 columns">
+                        <h6><strong>Values</strong></h6>
+                    </div>
+                </div>
+
+                {{#each step.testValues as |bearer|}}
+                    {{#with (get testOutputLookup bearer.id) as |lookup|}}
+                        <div class="row">
+                            <div class="small-1 columns">
+                                <div style="padding-top:8px;">
+                                    <strong>{{#if bearer.name}}{{bearer.name}}{{else}}Untitled{{/if}}</strong>
+                                </div>
+                            </div>
+                            {{#each lookup as |col|}}
+                                <div class="small-2 columns">
+                                    {{#if col}}
+                                        {{input value=col.value}}
+                                    {{/if}}
+                                </div>
+                            {{/each}}
+                            {{#each columnPad as |pad|}}
+                                <div class="small-2 columns"></div>
+                            {{/each}}
+                        </div>
+                    {{/with}}
+                {{/each}}
+
+                {{!--
+                <table class="test-value-bearer-table">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Values</th>
+                        {{#each headerValueLengthPad as |pad|}}
+                            <th></th>
+                        {{/each}}
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each step.testValues as |bearer|}}
+                        {{#with (get testOutputLookup bearer.id) as |lookup|}}
+                            <tr>
+                            <th scope="row">{{#if bearer.name}}{{bearer.name}}{{else}}Untitled{{/if}}</th>
+                            {{#each lookup as |col|}}
+                                <td>
+                                    {{#if col}}
+                                        {{input class="test-value-bearer-input" value=col.value}}
+                                    {{/if}}
+                                </td>
+                            {{/each}}
+                            </tr>
+                        {{/with}}
+                    {{/each}}
+                    </tbody>
+                </table>
+                --}}
+            </div>
+        </div>
+    {{else}}
+        <div class="row">
+            <div class="small-12 columns">
+                No test outputs.
+            </div>
+        </div>
+    {{/if}}
+
+    <br>
+
+    <div class="row">
+        <div class="small-12 columns">
+            <h5>Agents</h5>
+        </div>
+    </div>
+    {{#each step.agents as |agent|}}
+        <div class="row">
+            <div class="small-12 columns">
+                <label>{{agent.role}}
+                    {{input value=agent.realName}}
+                </label>
+            </div>
+        </div>
+    {{else}}
+        <div class="row">
+            <div class="small-12 columns">
+                No agents.
+            </div>
+        </div>
+    {{/each}}
+</div>
+
+{{#if step.nextSubProcess}}
+    {{subprocess-input step=step.nextSubProcess.content
+                       currentStep=currentStep
+                       inputLookup=inputLookup
+                       outputLookup=outputLookup
+                       testOutputLookup=testOutputLookup
+                       agentLookup=agentLookup
+    }}
+{{/if}}
+
+{{#each step.processParts as |part|}}
+    {{subprocess-input step=part
+                       currentStep=currentStep
+                       inputLookup=inputLookup
+                       outputLookup=outputLookup
+                       testOutputLookup=testOutputLookup
+                       agentLookup=agentLookup
+    }}
+{{/each}}

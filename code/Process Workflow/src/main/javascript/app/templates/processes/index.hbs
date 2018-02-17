@@ -1,0 +1,60 @@
+<br>
+<div class="row">
+    <div class="small-12 columns">
+        <h3 class="center">Processes</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="small-12 columns">
+        <table class="process-table">
+            <thead>
+            <tr>
+                <td>Name</td>
+                <td>Description</td>
+                <td>Author</td>
+                <td>Last Edited</td>
+            </tr>
+            </thead>
+
+            <tbody>
+            {{#each model as |process|}}
+                <tr>
+                    <td>{{#link-to 'processes.edit' process.name}}{{process.name}}{{/link-to}}</td>
+                    <td>
+                        {{#if process.description}}
+                            {{process.description}}
+                        {{else}}
+                            (no description)
+                        {{/if}}
+                    </td>
+                    <td>
+                        {{#if process.author.name}}
+                            {{process.author.name}}
+                        {{else}}
+                            (anonymous)
+                        {{/if}}
+                    </td>
+                    <td>
+                        {{#if process.lastEdited}}
+                            {{moment-from-now process.lastEdited}}
+                        {{else}}
+                            (unknown)
+                        {{/if}}
+
+                        <a {{action 'deleteProcess' process.id}} style="position:absolute; right:2em">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            {{else}}
+                <tr>
+                    <td class="center" colspan="4">No processes available</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+
+        {{#link-to 'processes.new'}}Add a process{{/link-to}}
+    </div>
+</div>

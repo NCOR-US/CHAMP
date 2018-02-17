@@ -1,0 +1,9 @@
+{{#if obj.externalLink}}
+    <a href="{{obj.value}}" target="_blank">{{obj.displayText}}</a>
+{{else if obj.link}}
+    {{#link-to 'search-result' obj.link}}
+        {{obj.displayText}}
+    {{/link-to}}
+{{else}}
+    {{obj.displayText}}
+{{/if}}

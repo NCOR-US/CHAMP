@@ -1,0 +1,199 @@
+#
+# Example RDF data for processes.
+#
+# Typically, a process plan will have a sequence of acts performed by some actor(s), with arbitrary inputs
+# and outputs. A process will have a sequence of process parts, which may have their own inputs.
+#
+# If a process is automated, the sequence of acts will instead have causal factors.
+#
+
+# might want to think about separate instance namespaces for Lewisian relations
+@prefix : <urn:test:plans:>
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+@prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/>
+@prefix lro: <http://www.ontologyrepository.com/CommonCoreOntologies/LewisianRelationOntology/>
+
+# ---------------------------------------------------------------------------------------------
+
+# supporting information: author of the plan, initial plan
+:JoeSmith           rdf:type            cco:Agent ;
+                    cco:designated_by   :ICE0 .
+:ICE0               rdf:type            cco:PersonFullName ;
+                    cco:inheres_in      :IBE0 .
+:IBE0               rdf:type            cco:InformationBearingEntity ;
+                    cco:has_text_value  "Joe Smith" .
+:JoeSmith           cco:designated_by   :ICE010 .
+:ICE010             rdf:type            cco:Username ;
+                    cco:inheres_in      :IBE010 .
+:IBE010             rdf:type            cco:InformationBearingEntity ;
+                    cco:has_text_value  "joe.smith" .
+
+:IntelReportPlan0   rdf:type            cco:Plan ;
+                    cco:designated_by   :ICE00 .
+:ICE00              rdf:type            cco:DesignativeName ;
+                    cco:inheres_in      :IBE00 .
+:IBE00              rdf:type            cco:InformationBearingEntity ;
+                    cco:has_text_value  "Intel Report Plan v1" .
+
+:IntelReportPlan0   lro:prescribes    :GatherInformation .
+
+# ---------------------------------------------------------------------------------------------
+# a plan always prescribes some process, at any level of existence
+:IntelReportPlan    rdf:type            cco:Plan ;
+                    cco:designated_by   :ICE000 .
+:ICE000             rdf:type            cco:DesignativeName ;
+                    cco:inheres_in      :IBE000 .
+:IBE000             rdf:type            cco:InformationBearingEntity ;
+                    cco:has_text_value  "Intel Report Plan v2" ;
+                    lro:prescribes    :GatherInformation .
+
+# author, create time, last updated time
+:JoeSmith           cco:has_role        :PlanAuthor .
+:PlanAuthor         rdf:type            cco:AuthorRole ;
+                    cco:realized_by     :PlanCreate .
+:PlanCreate         rdf:type            cco:ActOfArtifactCreation ;
+                    cco:prescribes      :IntelReportPlan0 ;
+                    cco:occurs_on       :SomeTime .
+:SomeTime           rdf:type            cco:TimeOfDay ;
+                    cco:designated_by   :ICE14 .
+:ICE14              rdf:type            cco:TimeOfDayIdentifier ;
+                    cco:inheres_in      :IBE14 .
+:IBE14              rdf:type            cco:InformationBearingEntity ;
+                    cco:has_text_value  "2017-8-16T15:56:44-04:00" .
+
+:PlanEdit1          rdf:type            cco:ActOfArtifactModification ;
+                    cco:prescribes      :IntelReportPlan ;
+                    cco:occurs_on       :SomeTime2 .
+:SomeTime2          rdf:type            cco:TimeOfDay ;
+                    cco:designated_by   :ICE15 .
+:ICE15              rdf:type            cco:TimeOfDayIdentifier ;
+                    cco:inheres_in      :IBE15 .
+:IBE15              rdf:type            cco:InformationBearingEntity ;
+                    cco:has_text_value  "2017-8-18T11:05:01-04:00" .
+
+# ---------------------------------------------------------------------------------------------
+# Type 1: design of a process (a "process plan")
+
+# basic information
+:GatherInformation  rdf:type            cco:ActOfIntelligenceGathering ;
+                    cco:designated_by   :ICE1 .
+:ICE1               rdf:type            cco:DesignativeName ;
+                    cco:inheres_in      :IBE1 .
+:IBE1               rdf:type            cco:InformationBearingEntity ;
+                    cco:has_text_value  "Information Collection" .
+
+# inputs
+:GatherInformation  lro:has_input     :someDocument .
+:someDocument       rdf:type            cco:Document ;
+                    cco:designated_by   :ICE2 .
+:ICE2               rdf:type            cco:DesignativeName ;
+                    cco:inheres_in      :IBE2 .
+:IBE2               rdf:type            cco:InformationBearingEntity ;
+                    cco:has_text_value  "Input Document Title" .
+
+# outputs
+:GatherInformation  lro:has_output    :someReport .
+:someReport         rdf:type            cco:Report ;
+                    cco:designated_by   :ICE3 .
+:ICE3               rdf:type            cco:DesignativeName ;
+                    cco:inheres_in      :IBE3 .
+:IBE3               rdf:type            cco:InformationBearingEntity ;
+                    cco:has_text_value  "Output Report Title" .
+
+# no specific agent here, since it's just a plan
+:Collector          rdf:type            cco:Agent ;
+                    lro:agent_in      :GatherInformation ;
+                    cco:has_role        :CollectorRole .
+:CollectorRole      rdf:type            cco:OccupationRole ;
+                    cco:has_organizational_context :SomeOrg .
+:SomeOrg            rdf:type            cco:Organization ;
+                    cco:designated_by   :ICE4 .
+:ICE4               rdf:type            cco:DesignativeName ;
+                    cco:inheres_in      :IBE4 .
+:IBE4               rdf:type            cco:InformationBearingEntity ;
+                    cco:has_text_value  "Cobham PLC" .
+
+# parts of this subprocess
+:Read               rdf:type                    cco:Act ;
+                    lro:is_part_of_process    :GatherInformation ;
+                    lro:precedes              :Understand ;
+                    cco:designated_by           :ICE7 .
+:ICE7               rdf:type                    cco:DesignativeName ;
+                    cco:inheres_in              :IBE7 .
+:IBE7               rdf:type                    cco:InformationBearingEntity ;
+                    cco:has_text_value          "Read the document" .
+
+:Understand         rdf:type                    cco:Act ;
+                    lro:is_part_of_process    :GatherInformation ;
+                    lro:precedes              :Assess ;
+                    cco:designated_by           :ICE8 .
+:ICE8               rdf:type                    cco:DesignativeName ;
+                    cco:inheres_in              :IBE8 .
+:IBE8               rdf:type                    cco:InformationBearingEntity ;
+                    cco:has_text_value          "Understand the document" .
+
+:Assess             rdf:type                    cco:Act ;
+                    lro:is_part_of_process    :GatherInformation ;
+                    lro:precedes              :Write ;
+                    cco:designated_by           :ICE9 .
+:ICE9               rdf:type                    cco:DesignativeName ;
+                    cco:inheres_in              :IBE9 .
+:IBE9               rdf:type                    cco:InformationBearingEntity ;
+                    cco:has_text_value          "Assess the usefulness of the document" .
+
+:Write              rdf:type                    cco:ActOfOfficialDocumentation ;
+                    lro:is_part_of_process    :GatherInformation ;
+                    cco:designated_by           :ICE13 .
+:ICE13              rdf:type                    cco:DesignativeName ;
+                    cco:inheres_in              :IBE13 .
+:IBE13              rdf:type                    cco:InformationBearingEntity ;
+                    cco:has_text_value          "Write the report" .
+
+# additional subprocesses follow like this:
+
+# linking to previous subprocess
+:DiscussInformation rdf:type        cco:Act .
+:GatherInformation  lro:precedes  :DiscussInformation .
+
+# basic information
+:DiscussInformation rdf:type            cco:ActOfPersonalCommunication ;
+                    cco:designated_by   :ICE5 .
+:ICE5               rdf:type            cco:DesignativeName ;
+                    cco:inheres_in      :IBE5 .
+:IBE5               rdf:type            cco:InformationBearingEntity ;
+                    cco:has_text_value  "Discussion of Collected Information" .
+
+# inputs
+:DiscussInformation lro:has_input     :someReport .
+
+# outputs
+:MeetingNotes       rdf:type            cco:Artifact ;
+                    cco:designated_by   :ICE6 .
+:ICE6               rdf:type            cco:DesignativeName ;
+                    cco:inheres_in      :IBE6 .
+:IBE6               rdf:type            cco:InformationBearingEntity ;
+                    cco:has_text_value  "Meeting Notes" .
+
+# agents
+:Collector          lro:agent_in      :DiscussInformation .
+:Manager            rdf:type            cco:Agent ;
+                    lro:agent_in      :DiscussInformation .
+
+# steps
+:Chat               rdf:type                    cco:Act ;
+                    lro:is_part_of_process    :DiscussInformation ;
+                    lro:precedes              :Plan ;
+                    cco:designated_by           :ICE10 .
+:ICE10              rdf:type                    cco:DesignativeName ;
+                    cco:inheres_in              :IBE10 .
+:IBE10              rdf:type                    cco:InformationBearingEntity ;
+                    cco:has_text_value          "Talk about the report" .
+
+:Plan               rdf:type                    cco:Act ;
+                    lro:is_part_of_process    :DiscussInformation ;
+                    cco:designated_by           :ICE11 .
+:ICE11              rdf:type                    cco:DesignativeName ;
+                    cco:inheres_in              :IBE11 .
+:IBE11              rdf:type                    cco:InformationBearingEntity ;
+                    cco:has_text_value          "Discuss the way forward" .

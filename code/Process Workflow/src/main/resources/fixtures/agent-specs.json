@@ -1,0 +1,49 @@
+{
+    "meta": {
+        "version": "0.1.0"
+    },
+    "data": [
+        {
+            "type": "agents",
+            "id": "urn:test:plans:Collector",
+            "attributes": {
+                "role": "Collector"
+            },
+            "relationships": {
+                "agentIn": {
+                    "data": [
+                        {
+                            "type": "sub-process-spec",
+                            "id": "urn:test:plans:GatherInformation"
+                        },
+                        {
+                            "type": "sub-process-spec",
+                            "id": "urn:test:plans:DiscussInformation"
+                        }
+                    ]
+                }
+            },
+            "links": {
+                "self": "http://localhost:9090/ontoview/data/agents/urn%3Atest%3Aplans%3ACollector"
+            }
+        },
+        {
+            "type": "agents",
+            "id": "urn:test:plans:Manager",
+            "attributes": {
+                "role": "Manager"
+            },
+            "relationships": {
+                "agentIn": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:DiscussInformation"
+                    }
+                }
+            },
+            "links": {
+                "self": "http://localhost:9090/ontoview/data/agents/urn%3Atest%3Aplans%3AManager"
+            }
+        }
+    ]
+}

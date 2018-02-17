@@ -1,0 +1,2320 @@
+@prefix : <http://www.semanticweb.org/ontologies/ToolOntology/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ace_lexicon: <http://attempto.ifi.uzh.ch/ace_lexicon#> .
+@prefix CEO-ontology: <http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/> .
+@prefix PLC-ontology: <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/> .
+@base <http://www.semanticweb.org/ontologies/ToolOntology/> .
+
+<http://www.semanticweb.org/ontologies/ToolOntology/> rdf:type owl:Ontology ;
+                                                       owl:imports PLC-ontology: ;
+                                                       PLC-ontology:Title "The Tool Ontology"@en ;
+                                                       owl:versionInfo "Version .01"@en ,
+                                                                       "J. Neil Otte, Ron Rudnicki, Ruoyu Yang, Binbin Zhang, and Munira Binti Mohd Ali"@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/
+<http://www.semanticweb.org/ontologies/ToolOntology/> rdf:type owl:Class ;
+                                                      rdfs:subClassOf :OpticalInvestigationTool .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Abacus
+:Abacus rdf:type owl:Class ;
+        rdfs:subClassOf :CalculatingTool ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        cco:definition "A calculating artifact that is designed for mathematical calculation consisting of a frame set with rods on which balls or beads are moved ."@en ;
+        rdfs:label "Abacus" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/AbradingTool
+:AbradingTool rdf:type owl:Class ;
+              rdfs:subClassOf cco:Tool ;
+              obo:IAO_0000117 "Ruoyu Yang" ;
+              obo:IAO_0000119 "https://en.wikipedia.org/wiki/Abrasion_(mechanical)" ;
+              cco:definition "An artifact that is designed for scuffing, scratching, wearing down, marring, or rubbing away  surface of artifact."@en ;
+              rdfs:label "Abrading Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Acoustic_Emission_Testing_Tool
+:Acoustic_Emission_Testing_Tool rdf:type owl:Class ;
+                                rdfs:subClassOf :TestingTool ;
+                                obo:IAO_0000115 "A artifact that is designed to test the acoustic emmisions produced by some entity."@en ;
+                                obo:IAO_0000117 "BinBin Zhang" ;
+                                rdfs:label "Acoustic Emission Testing Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/AirClipper
+:AirClipper rdf:type owl:Class ;
+            rdfs:subClassOf :CuttingTool ;
+            obo:IAO_0000117 "Ruoyu Yang" ;
+            cco:definition "A cutting artifact that is designed for cutting or trimming small pieces off a material entity."@en ;
+            rdfs:label "Air Clipper" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/AirDrill
+:AirDrill rdf:type owl:Class ;
+          rdfs:subClassOf :Drill ;
+          obo:IAO_0000117 "Ruoyu Yang" ;
+          cco:definition "A drill that is powered by compressed air."@en ;
+          rdfs:label "Air Drill" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/AirFilter
+:AirFilter rdf:type owl:Class ;
+           rdfs:subClassOf :ElectricCleaningTool ;
+           obo:IAO_0000117 "Ruoyu Yang" ;
+           obo:IAO_0000119 "https://en.wikipedia.org/wiki/Air_filter" ;
+           cco:definition "An electric cleaning artifact that is designed for removing solid particulates such as dust, pollen, mould, and bacteria from the air."@en ;
+           cco:elucidation "Filters contains an absorbent such as charcoal that can remove odors and gaseous pollutants such as volatile organic compounds or ozone." ;
+           rdfs:label "Air Filter" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/AirGrinder
+:AirGrinder rdf:type owl:Class ;
+            rdfs:subClassOf :AbradingTool ;
+            obo:IAO_0000117 "Ruoyu Yang" ;
+            obo:IAO_0000119 "https://en.wikipedia.org/wiki/Grinding_machine" ;
+            cco:definition "An abrading artifact that is designed for grinding, which is a type of machining using an abrasive wheel as the cutting artifact, powered by compressed air."@en ;
+            rdfs:label "Air Grinder" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/AirSander
+:AirSander rdf:type owl:Class ;
+           rdfs:subClassOf :AbradingTool ;
+           obo:IAO_0000117 "Ruoyu Yang" ;
+           obo:IAO_0000119 "https://en.wikipedia.org/wiki/Sander" ;
+           cco:definition "An abrading artifact powered by air pressure that is designed for smoothing an object's surface with sandpaper or other abrasive material."@en ;
+           rdfs:label "Air Sander" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/AirWrench
+:AirWrench rdf:type owl:Class ;
+           rdfs:subClassOf :Wrench ;
+           obo:IAO_0000117 "Ruoyu Yang" ;
+           cco:definition "A wrench that is powered by compressed air."@en ;
+           rdfs:label "Air Wrench" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Alarm
+:Alarm rdf:type owl:Class ;
+       rdfs:subClassOf :ProtectionTool ;
+       obo:IAO_0000117 "Ruoyu Yang" ;
+       obo:IAO_0000119 "https://en.wikipedia.org/wiki/Alarm_device" ;
+       cco:definition "A protection artifact that gives an audible, visual or other form of alarm signal about a problem or condition."@en ;
+       rdfs:label "Alarm" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Anchor
+:Anchor rdf:type owl:Class ;
+        rdfs:subClassOf :JoinTool ;
+        obo:IAO_0000115 "A join artifact that is designed for connecting a vessel to the bed of a body of water to prevent the craft from drifting due to wind or current."@en ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Anchor" ;
+        rdfs:label "Anchor" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Artifact_Element
+:Artifact_Element rdf:type owl:Class ;
+                  rdfs:subClassOf cco:Artifact ;
+                  cco:definition "An artifact that is designed to be an elementary component of some artifact." ;
+                  cco:term_editor "Ruoyu Yang" ;
+                  rdfs:label "Artifact Element" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Axe
+:Axe rdf:type owl:Class ;
+     rdfs:subClassOf :CuttingTool ;
+     obo:IAO_0000117 "Ruoyu Yang" ;
+     cco:definition "A cutting artifact that is designed for chopping wood with a steel blade attached at a right angle to a handle."@en ;
+     rdfs:label "Axe" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Bag
+:Bag rdf:type owl:Class ;
+     rdfs:subClassOf :Container ;
+     obo:IAO_0000117 "Ruoyu Yang" ;
+     cco:definition "A container that is designed for carrying things ,made of flexible material with an opening at the top." ;
+     rdfs:label "Bag" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Ball-PointPen
+:Ball-PointPen rdf:type owl:Class ;
+               rdfs:subClassOf :WritingTool ;
+               obo:IAO_0000117 "Ruoyu Yang" ;
+               cco:definition "A writing artifact that dispenses ink over a metal ball at its point."@en ;
+               rdfs:label "Ball-Point Pen" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/BandSaw
+:BandSaw rdf:type owl:Class ;
+         rdfs:subClassOf :SawingTool ;
+         obo:IAO_0000115 "A sawing artifact that is designed for woodworking, metalworking, and lumbering with a long, sharp blade consisting of a continuous band of toothed metal stretched between two or more wheels to cut material."@en ;
+         obo:IAO_0000117 "Ruoyu Yang" ;
+         obo:IAO_0000119 "https://en.wikipedia.org/wiki/Bandsaw" ;
+         rdfs:label "Band Saw" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/BarCode
+:BarCode rdf:type owl:Class ;
+         rdfs:subClassOf :SignArtifact ;
+         obo:IAO_0000117 "Ruoyu Yang" ;
+         cco:definition "A sign artifact that conatins optical, machine-readable data, which usually describes information about the object." ;
+         rdfs:label "BarCode" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Basket
+:Basket rdf:type owl:Class ;
+        rdfs:subClassOf :Container ;
+        obo:IAO_0000115 "A container that is designed for holding or carrying objects, typically made from interwoven strips of cane or wire." ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        rdfs:label "Basket" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Beaker
+:Beaker rdf:type owl:Class ;
+        rdfs:subClassOf :Container ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        cco:definition "A container that is containers for stirrung, mixing and heating liquids and generally cylindrical in shape with a flat bottom." ;
+        rdfs:label "Beaker" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/BladeGrinder
+:BladeGrinder rdf:type owl:Class ;
+              rdfs:subClassOf :ElectricGrinder ;
+              obo:IAO_0000115 "An electric grinder that is designed for chopping material while mixing it, by means of a high-speed spinning blade."@en ;
+              obo:IAO_0000117 "Ruoyu Yang" ;
+              obo:IAO_0000119 "https://en.wikipedia.org/wiki/Blade_grinder" ;
+              rdfs:label "Blade Grinder" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/BleederResistanceTester
+:BleederResistanceTester rdf:type owl:Class ;
+                         rdfs:subClassOf :TestingTool ;
+                         cco:definition "A testing artifact that is designed for testing the bleeder resistance inhering in a material entity."@en ;
+                         cco:term_editor "J. Neil Otte"@en ;
+                         rdfs:label "Bleeder Resistance Tester" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Bolt
+:Bolt rdf:type owl:Class ;
+      rdfs:subClassOf :Artifact_Element ;
+      cco:definition "An artifact element that is designed as threaded fastener with an external male thread." ;
+      cco:definition_source "https://en.wikipedia.org/wiki/Bolt_(fastener)" ;
+      cco:term_editor "Ruoyu Yang" ;
+      rdfs:label "Bolt" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/BoltCutter
+:BoltCutter rdf:type owl:Class ;
+            rdfs:subClassOf :CuttingTool ;
+            obo:IAO_0000115 "A cutting artifact that is designed for cutting chains, padlocks, bolts, and wire mesh."@en ;
+            obo:IAO_0000117 "Ruoyu Yang" ;
+            obo:IAO_0000119 "https://en.wikipedia.org/wiki/Bolt_cutter" ;
+            cco:elucidation "Bolt cutter has long handles and short blades, with compound hinges to maximize leverage and cutting force." ;
+            rdfs:label "Bolt Cutter" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/BoreGauge
+:BoreGauge rdf:type owl:Class ;
+           rdfs:subClassOf :DimensionalMeasurementTool ;
+           obo:IAO_0000117 "Ruoyu Yang" ;
+           obo:IAO_0000119 "https://en.wikipedia.org/wiki/Bore_gauge" ;
+           cco:definition "A spatial measurement artifact that is designed for measuring or transfering artifacts that are used in the process of accurately measuring holes."@en ;
+           rdfs:label "Bore Gauge" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Bowl
+:Bowl rdf:type owl:Class ;
+      rdfs:subClassOf :Container ;
+      obo:IAO_0000115 "A container that is designed for serving hot and cold food, which is round and open-top." ;
+      obo:IAO_0000117 "Ruoyu Yang" ;
+      rdfs:label "Bowl" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Box
+:Box rdf:type owl:Class ;
+     rdfs:subClassOf :Container ;
+     obo:IAO_0000117 "Ruoyu Yang" ;
+     cco:definition "A container that typically is square or rectangular with lid, flat base and sides," ;
+     rdfs:label "Box" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/BreatheProtectionTool
+:BreatheProtectionTool rdf:type owl:Class ;
+                       rdfs:subClassOf :PersonalProtectionTool ;
+                       obo:IAO_0000115 "A personal protection artifact that is designed to protect the recipitory systems of persons from gas or debris."@en ;
+                       obo:IAO_0000117 "Ruoyu Yang" ;
+                       rdfs:label "Respiratory System Protection Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Broom
+:Broom rdf:type owl:Class ;
+       rdfs:subClassOf :ManualCleaningTool ;
+       obo:IAO_0000117 "Ruoyu Yang" ;
+       cco:definition "A manual cleaning artifact that is designed for sweeping debris from a floor with a long-handled brush of bristles or twigs while the user of the broom is in an upright position."@en ;
+       rdfs:label "Broom" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Brush
+:Brush rdf:type owl:Class ;
+       rdfs:subClassOf :ManualCleaningTool ;
+       obo:IAO_0000115 "A manual cleaning artifact that is designed for cleaning, grooming hair, make up, painting, surface finishing, usually consisting of bristles, wire or other filaments."@en ;
+       obo:IAO_0000117 "Ruoyu Yang" ;
+       obo:IAO_0000119 "https://en.wikipedia.org/wiki/Brush" ;
+       rdfs:label "Brush" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/BrushPen
+:BrushPen rdf:type owl:Class ;
+          rdfs:subClassOf :WritingTool ;
+          obo:IAO_0000117 "Ruoyu Yang" ;
+          cco:definition "A writing artifact that is made by animals' hair, mainly used n calligraphy and drawing."@en ;
+          rdfs:label "Brush Pen" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/BuffingWheel
+:BuffingWheel rdf:type owl:Class ;
+              rdfs:subClassOf :PolishingTool ;
+              obo:IAO_0000115 "A polishing artifact that is designed for shining and polishing, covered with a soft material, such as lamb's wool or leather."@en ;
+              obo:IAO_0000117 "Ruoyu Yang" ;
+              obo:IAO_0000119 "http://www.thefreedictionary.com/buffing+wheel" ;
+              rdfs:label "Buffing Wheel" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/BurrGrinder
+:BurrGrinder rdf:type owl:Class ;
+             rdfs:subClassOf :AbradingTool ;
+             obo:IAO_0000115 "An abrading artifact that is designed for grinding hard, small food products between two revolving abrasive surfaces separated by a distance usually set by the user."@en ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             obo:IAO_0000119 "https://en.wikipedia.org/wiki/Burr_mill" ;
+             cco:elucidation "When the two surfaces of grinder are set far apart, the resulting ground material is coarser. When the two surfaces are set closer together, the resulting ground material is finer and smaller." ;
+             rdfs:label "Burr Grinder" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/CableTie
+:CableTie rdf:type owl:Class ;
+          rdfs:subClassOf :JoinTool ;
+          obo:IAO_0000115 "A join artifact that is designed for holding objects together, and which is often made of cables or wires."@en ;
+          obo:IAO_0000117 "Ruoyu Yang" ;
+          rdfs:label "Cable Tie" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/CalculatingTool
+:CalculatingTool rdf:type owl:Class ;
+                 rdfs:subClassOf cco:Tool ;
+                 obo:IAO_0000117 "Ruoyu Yang" ;
+                 obo:IAO_0000119 "https://en.wikipedia.org/wiki/Calculation" ;
+                 cco:definition "An artifact that is designed for transforming mathematical information content entities into one or more mathematical information content entities."@en ;
+                 rdfs:label "Calculating Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Calculator
+:Calculator rdf:type owl:Class ;
+            rdfs:subClassOf :CalculatingTool ;
+            obo:IAO_0000117 "Ruoyu Yang" ;
+            obo:IAO_0000119 "https://en.wikipedia.org/wiki/Calculator" ;
+            cco:definition "A calculating artifact that is designed for performing calculations, ranging from basic arithmetic to complex mathematics."@en ;
+            rdfs:label "Calculator" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Caliper
+:Caliper rdf:type owl:Class ;
+         rdfs:subClassOf :DimensionalMeasurementTool ;
+         obo:IAO_0000117 "Ruoyu Yang" ;
+         obo:IAO_0000119 "https://en.wikipedia.org/wiki/Calipers" ;
+         cco:definition "A spatial measurement artifact that is designed for measuring the distance between two opposite sides of an object."@en ;
+         rdfs:label "Caliper" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/CapacitanceTestFixture
+:CapacitanceTestFixture rdf:type owl:Class ;
+                        rdfs:subClassOf :Fixture ;
+                        cco:definition "A fixture that is designed for holding a device during testing in place, allowing the device to be tested in a capacitance test."@en ;
+                        cco:term_editor "J. Neil Otte and Binbin Zhang"@en ;
+                        rdfs:label "CapacitanceTest Fixture" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/CarpetCleaner
+:CarpetCleaner rdf:type owl:Class ;
+               rdfs:subClassOf :ElectricCleaningTool ;
+               obo:IAO_0000117 "Ruoyu Yang" ;
+               obo:IAO_0000119 "https://en.wikipedia.org/wiki/Carpet_cleaning" ;
+               cco:definition "An electric cleaning artifact that is designed for removing stains, dirt, and allergens from carpet."@en ;
+               rdfs:label "Carpet Cleaner" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Cart
+:Cart rdf:type owl:Class ;
+      rdfs:subClassOf :TransportationTool ;
+      obo:IAO_0000117 "Ruoyu Yang" ;
+      obo:IAO_0000119 "https://en.wikipedia.org/wiki/Cart" ;
+      cco:definition "A transportation artifact that is designed for carrying loads and pulled by a horse with two or four wheels."@en ;
+      rdfs:label "Cart" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Caster
+:Caster rdf:type owl:Class ;
+        rdfs:subClassOf cco:MachineElement ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        cco:definition "A machine element that is mounted to a larger object that enables relatively easy rolling movement of the object." ;
+        rdfs:label "Caster" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Chiller
+:Chiller rdf:type owl:Class ;
+         rdfs:subClassOf cco:MachineElement ;
+         obo:IAO_0000115 "A machine element that is designed for removing heat from a liquid via a vapor-compression or absorption refrigeration cycle." ;
+         obo:IAO_0000117 "Ruoyu Yang" ;
+         obo:IAO_0000119 "https://en.wikipedia.org/wiki/Chiller" ;
+         rdfs:label "Chiller" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Chisel
+:Chisel rdf:type owl:Class ;
+        rdfs:subClassOf :CuttingTool ;
+        obo:IAO_0000115 "A cutting artifact that is designed for carving or cutting a hard material such as wood, stone, or metal by hand, struck with a mallet, or mechanical power."@en ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Chisel" ;
+        rdfs:label "Chisel" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/CircuitBoardFunctionalTester
+:CircuitBoardFunctionalTester rdf:type owl:Class ;
+                              rdfs:subClassOf :TestingTool ;
+                              cco:definition "A testing artifact that is designed for testing a circuit board function."@en ;
+                              cco:term_editor "J. Neil Otte"@en ;
+                              rdfs:label "CircuitBoard Functional Tester" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/CircuitBoardTester
+:CircuitBoardTester rdf:type owl:Class ;
+                    rdfs:subClassOf :TestingTool ;
+                    cco:definition "A testing artifact that is designed for testing a circuit board."@en ;
+                    cco:term_editor "J. Neil Otte"@en ;
+                    rdfs:label "CircuitBoard Tester" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/CircularSaw
+:CircularSaw rdf:type owl:Class ;
+             rdfs:subClassOf :SawingTool ;
+             obo:IAO_0000115 "A sawing artifact that is designed for cutting different materials using a rotary motion spinning around an arbor by using a toothed or abrasive disc or blade."@en ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             obo:IAO_0000119 "https://en.wikipedia.org/wiki/Circular_saw" ;
+             rdfs:label "Circular Saw" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Clamp
+:Clamp rdf:type owl:Class ;
+       rdfs:subClassOf :JoinTool ;
+       obo:IAO_0000115 "A join artifact that is designed for holding or securing objects tightly together to prevent movement or separation through the application of inward pressure."@en ;
+       obo:IAO_0000117 "Ruoyu Yang" ;
+       obo:IAO_0000119 "https://en.wikipedia.org/wiki/Clamp_(artifact)" ;
+       rdfs:label "Clamp" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/CleaningTool
+:CleaningTool rdf:type owl:Class ;
+              rdfs:subClassOf cco:Tool ;
+              obo:IAO_0000115 "An artifact that is designed for removing debris, especially by washing, filtering, wiping, or brushing."@en ;
+              obo:IAO_0000117 "Ruoyu Yang" ;
+              rdfs:label "Cleaning Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Compass
+:Compass rdf:type owl:Class ;
+         rdfs:subClassOf :LocationMeasurementTool ;
+         obo:IAO_0000117 "Ruoyu Yang" ;
+         obo:IAO_0000119 "https://en.wikipedia.org/wiki/Compass" ;
+         cco:definition "A location measurement artifact that is designed for navigation and orientation that shows direction relative to the geographic cardinal directions."@en ;
+         rdfs:label "Compass" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Compressor
+:Compressor rdf:type owl:Class ;
+            rdfs:subClassOf cco:MachineElement ;
+            obo:IAO_0000115 "A machine element that is designed for increasing the pressure of fluid, transfering high pressure gas and charging gas cylinders and scaveng." ;
+            obo:IAO_0000117 "Ruoyu Yang" ;
+            rdfs:label "Compressor" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Container
+:Container rdf:type owl:Class ;
+           rdfs:subClassOf cco:Artifact ;
+           obo:IAO_0000117 "Ruoyu Yang" ;
+           cco:definition "A artifact that is designed for creating a partially or fully enclosed space that can be used to contain, store, and transport objects, information or materials." ;
+           cco:definition_source "https://en.wikipedia.org/wiki/Container" ;
+           rdfs:label "Container" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Conveyor
+:Conveyor rdf:type owl:Class ;
+          rdfs:subClassOf :TransportationTool ;
+          obo:IAO_0000117 "Ruoyu Yang" ;
+          obo:IAO_0000119 "https://en.wikipedia.org/wiki/Conveyor_system" ;
+          cco:definition "A transportation artifact that moves materials from one location to another, usually useful in applications involving the transportation of heavy or bulky materials."@en ;
+          cco:elucidation "Conveyor systems allow quick and efficient transportation for a wide variety of materials, which make them very popular in the material handling and packaging industries." ;
+          rdfs:label "Conveyor" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/CounterBalance
+:CounterBalance rdf:type owl:Class ;
+                rdfs:subClassOf :WeightMeasurementTool ;
+                obo:IAO_0000117 "Ruoyu Yang" ;
+                cco:definition "A weight measurement artifact that is designed for measuring weight or calculating mass by balancing the force due to gravity against the force on a spring."@en ;
+                rdfs:label "Counter Balance" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Crane
+:Crane rdf:type owl:Class ;
+       rdfs:subClassOf :LiftingTool ;
+       obo:IAO_0000115 "A lifting artifact that is designed for lifting and lowering materials and moving them horizontally, usually equipped with a hoist rope, wire ropes or chains, and sheaves."@en ;
+       obo:IAO_0000117 "Ruoyu Yang" ;
+       obo:IAO_0000119 "https://en.wikipedia.org/wiki/Crane_(machine)" ;
+       rdfs:label "Crane" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/CreepTestingTool
+:CreepTestingTool rdf:type owl:Class ;
+                  rdfs:subClassOf :TestingTool ;
+                  obo:IAO_0000115 "A tool thatis designed to measure some entity's continuing dimensional change while under timed stress load."@en ;
+                  obo:IAO_0000117 "BinBin Zhang" ;
+                  rdfs:label "Creep Testing Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Crucible
+:Crucible rdf:type owl:Class ;
+          rdfs:subClassOf :Container ;
+          obo:IAO_0000117 "Ruoyu Yang" ;
+          cco:definition "A container that is designed for heating metal, glass and pigment production and can withstand very high temperatures." ;
+          rdfs:label "Crucible" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/CuttingTool
+:CuttingTool rdf:type owl:Class ;
+             rdfs:subClassOf cco:Tool ;
+             obo:IAO_0000115 "An artifact that is designed for the separation of a physical object, into two or more portions or create a incision, through the application of an acutely directed force."@en ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             obo:IAO_0000119 "https://en.wikipedia.org/wiki/Cutting" ;
+             rdfs:label "Cutting Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/DepthGauge
+:DepthGauge rdf:type owl:Class ;
+            rdfs:subClassOf :DimensionalMeasurementTool ;
+            obo:IAO_0000117 "Ruoyu Yang" ;
+            obo:IAO_0000119 "https://en.wikipedia.org/wiki/Depth_gauge" ;
+            cco:definition "A spatial measurement artifact that displays the equivalent depth in water."@en ;
+            rdfs:label "Depth Gauge" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/DialIndicator
+:DialIndicator rdf:type owl:Class ;
+               rdfs:subClassOf :DimensionalMeasurementTool ;
+               obo:IAO_0000117 "Ruoyu Yang" ;
+               obo:IAO_0000119 "https://en.wikipedia.org/wiki/Indicator_(distance_amplifying_instrument)" ;
+               cco:definition "A spatial measurement artifact that is designed for accurately measuring small distances and angles and visually presenting this measurement."@en ;
+               rdfs:label "Dial Indicator" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/DigitalCapacitanceMeter
+:DigitalCapacitanceMeter rdf:type owl:Class ;
+                         rdfs:subClassOf :ElectricityMeasurementTool ;
+                         cco:definition "An electricity measurement artifact that is designed for testing the capacitance of a material entity."@en ;
+                         cco:term_editor "J. Neil Otte"@en ;
+                         rdfs:label "Digital Capacitance Meter" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/DigitalPressureGauge
+:DigitalPressureGauge rdf:type owl:Class ;
+                      rdfs:subClassOf :PressureGauge ;
+                      obo:IAO_0000115 "A pressure gauge that displays measurements in the form of a digital readout."@en ;
+                      obo:IAO_0000117 "Ruoyu Yang" ;
+                      rdfs:label "Digital Pressure Gauge" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/DimensionalMeasurementTool
+:DimensionalMeasurementTool rdf:type owl:Class ;
+                            rdfs:subClassOf :MeasurementTool ;
+                            obo:IAO_0000115 "A measurement artifact that is designed for measuring the size of a material entity."@en ;
+                            obo:IAO_0000117 "Ruoyu Yang" ;
+                            rdfs:label "Spatial Measurement Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/DivingRegulator
+:DivingRegulator rdf:type owl:Class ;
+                 rdfs:subClassOf :Regulator ;
+                 obo:IAO_0000115 "A regulator that is designed for  reducing pressurized breathing gas to ambient pressure and delivers it to the diver." ;
+                 obo:IAO_0000117 "Ruoyu Yang" ;
+                 obo:IAO_0000119 "https://en.wikipedia.org/wiki/Diving_regulator" ;
+                 rdfs:label "Diving Regulator" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Dolly
+:Dolly rdf:type owl:Class ;
+       rdfs:subClassOf :TransportationTool ;
+       obo:IAO_0000117 "Ruoyu Yang" ;
+       obo:IAO_0000119 "https://en.wikipedia.org/wiki/Dolly_(trailer)" ;
+       cco:definition "A transportation artifact that is designed for holding heavy objects, usually powered by tractors or trucks."@en ;
+       rdfs:label "Dolly" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Drill
+:Drill rdf:type owl:Class ;
+       rdfs:subClassOf :HardwareHandlingArtifact ;
+       obo:IAO_0000115 "A hardware handling artifact that is designed for boring holes in various materials or fastening various materials together."@en ;
+       obo:IAO_0000119 "https://en.wikipedia.org/wiki/Drill" ;
+       cco:elucidation "Drill is usually fitted with drill bit or driver bit." ;
+       cco:term_editor "Ruoyu Yang" ;
+       rdfs:label "Drill" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Drum
+:Drum rdf:type owl:Class ;
+      rdfs:subClassOf :Container ;
+      obo:IAO_0000117 "Ruoyu Yang" ;
+      cco:definition "A container that is designed for shipping bulk cargobul, made of steel, dense paperboard or plastics." ;
+      rdfs:label "Drum" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Dryer
+:Dryer rdf:type owl:Class ;
+       rdfs:subClassOf :ElectricCleaningTool ;
+       obo:IAO_0000117 "Ruoyu Yang" ;
+       obo:IAO_0000119 "https://en.wikipedia.org/wiki/Hand_dryer" ;
+       cco:definition "An electric cleaning artifact that is designed for drying wet hands, usually operated with a button or automatically using an infrared sensor."@en ;
+       rdfs:label "Hand Dryer" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/DustCollector
+:DustCollector rdf:type owl:Class ;
+               rdfs:subClassOf :ElectricCleaningTool ;
+               obo:IAO_0000117 "Ruoyu Yang" ;
+               obo:IAO_0000119 "https://en.wikipedia.org/wiki/Dust_collector" ;
+               cco:definition "An electric cleaning artifact that is designed for enhancing the quality of air by collecting dust and other impurities."@en ;
+               cco:elucidation "Dust collector consists of a blower, dust filter, a filter-cleaning system, and a dust receptacle or dust removal system."@en ;
+               rdfs:label "Dust Collector" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/DustMask
+:DustMask rdf:type owl:Class ;
+          rdfs:subClassOf :BreatheProtectionTool ;
+          obo:IAO_0000117 "Ruoyu Yang" ;
+          obo:IAO_0000119 "https://en.wikipedia.org/wiki/Dust_mask" ;
+          cco:definition "A respiratory system protection artifact that holds over the nose and mouth by elastic or rubber straps to protect against dusts encountered during construction or cleaning activities."@en ;
+          rdfs:label "Dust Mask" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Dustpan
+:Dustpan rdf:type owl:Class ;
+         rdfs:subClassOf :ManualCleaningTool ;
+         obo:IAO_0000117 "Ruoyu Yang" ;
+         obo:IAO_0000119 "https://en.wikipedia.org/wiki/Dustpan" ;
+         cco:definition "A manual cleaning artifact that is designed for receiving dust and waste with a flat handheld."@en ;
+         rdfs:label "Dustpan" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/EarProtectionTool
+:EarProtectionTool rdf:type owl:Class ;
+                   rdfs:subClassOf :PersonalProtectionTool ;
+                   obo:IAO_0000115 "A personal protection artifact that is designed for protecting people's ears." ;
+                   obo:IAO_0000117 "Ruoyu Yang" ;
+                   rdfs:label "Ear Protection Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Earmuff
+:Earmuff rdf:type owl:Class ;
+         rdfs:subClassOf :EarProtectionTool ;
+         obo:IAO_0000117 "Ruoyu Yang" ;
+         obo:IAO_0000119 "https://en.wikipedia.org/wiki/Earmuffs" ;
+         cco:definition "An ear protection artifact that covers a person's ears for hearing protection or for warmth." ;
+         rdfs:label "Earmuff" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Earplug
+:Earplug rdf:type owl:Class ;
+         rdfs:subClassOf :EarProtectionTool ;
+         obo:IAO_0000117 "Ruoyu Yang" ;
+         obo:IAO_0000119 "https://en.wikipedia.org/wiki/Earplug" ;
+         cco:definition "An ear protection artifact that protects the user's ears from loud noises or the intrusion of water, foreign bodies, dust or excessive wind by inserted in the ear canal." ;
+         rdfs:label "Earplug" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ElectricCleaningTool
+:ElectricCleaningTool rdf:type owl:Class ;
+                      rdfs:subClassOf :CleaningTool ;
+                      obo:IAO_0000115 "A cleaning artifact that is powered by electricity."@en ;
+                      obo:IAO_0000117 "Ruoyu Yang" ;
+                      rdfs:label "Electric Cleaning Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ElectricDrill
+:ElectricDrill rdf:type owl:Class ;
+               rdfs:subClassOf :Drill ;
+               obo:IAO_0000117 "Ruoyu Yang" ;
+               obo:IAO_0000119 "https://en.wikipedia.org/wiki/Electric_drill" ;
+               cco:definition "a drill that is driven by an electric motor."@en ;
+               rdfs:label "Electric Drill" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ElectricGrinder
+:ElectricGrinder rdf:type owl:Class ;
+                 rdfs:subClassOf :AbradingTool ;
+                 obo:IAO_0000117 "Ruoyu Yang" ;
+                 cco:definition "An abrading artifact powered by electricity that is designed for chopping or crushing a material entity to small particles or powder."@en ;
+                 rdfs:label "Electric Grinder" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ElectricHammer
+:ElectricHammer rdf:type owl:Class ;
+                rdfs:subClassOf :Hammer ;
+                obo:IAO_0000117 "Ruoyu Yang" ;
+                cco:definition "A hammer that is powered by electric motors."@en ;
+                rdfs:label "Electric Hammer" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ElectricPlaner
+:ElectricPlaner rdf:type owl:Class ;
+                rdfs:subClassOf :Planer ;
+                obo:IAO_0000117 "Ruoyu Yang" ;
+                obo:IAO_0000119 "https://en.wikipedia.org/wiki/Plane_(artifact)" ;
+                cco:definition "A planer that is powered by electricity."@en ;
+                rdfs:label "Electric Planer" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ElectricScale
+:ElectricScale rdf:type owl:Class ;
+               rdfs:subClassOf :Scale ;
+               obo:IAO_0000115 "A scale that is powered by a battery or current to measure weight"@en ;
+               obo:IAO_0000117 "Ruoyu Yang" ;
+               rdfs:label "Electric Scale" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ElectricScrewDriver
+:ElectricScrewDriver rdf:type owl:Class ;
+                     rdfs:subClassOf :Screwdriver ;
+                     obo:IAO_0000117 "Ruoyu Yang" ;
+                     cco:definition "A screw driver that is powered by electric motor."@en ;
+                     rdfs:label "Electric Screw Driver" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ElectricSolderingIron
+:ElectricSolderingIron rdf:type owl:Class ;
+                       rdfs:subClassOf :JoinTool ;
+                       obo:IAO_0000117 "Ruoyu Yang" ;
+                       cco:definition "A joining artifact that is designed for soldering consisting of heated metal tip and an insulated handle, powered by electric motors."@en ;
+                       rdfs:label "Soldering Iron" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ElectricWeld
+:ElectricWeld rdf:type owl:Class ;
+              rdfs:subClassOf :JoinTool ;
+              obo:IAO_0000117 "Ruoyu Yang" ;
+              cco:definition "A joining artifact that is designed for joining one metal object to another by using electricity to create enough heat to melt metal, powered by electric motors."@en ;
+              rdfs:label "Electric Weld" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ElectricWrench
+:ElectricWrench rdf:type owl:Class ;
+                rdfs:subClassOf :Wrench ;
+                obo:IAO_0000117 "Ruoyu Yang" ;
+                cco:definition "A wrench that is powered by electric motor."@en ;
+                rdfs:label "Electric Wrench" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ElectricalTestFixture
+:ElectricalTestFixture rdf:type owl:Class ;
+                       rdfs:subClassOf :Fixture ;
+                       cco:definition "A fixture that is designed for holding the device under test in place and allow it to be tested by being subjected to controlled electronic test signals."@en ;
+                       cco:term_editor "J. Neil Otte and Binbin Zhang"@en ;
+                       rdfs:label "Electrical Test Fixture" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ElectricityMeasurementTool
+:ElectricityMeasurementTool rdf:type owl:Class ;
+                            rdfs:subClassOf :MeasurementTool ;
+                            obo:IAO_0000115 "A measurement artifact that is designed for measuring the current, voltage, resistance, and capacitance of a material entity."@en ;
+                            obo:IAO_0000117 "Ruoyu Yang" ;
+                            rdfs:label "Electricity Measurement Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Electrode
+:Electrode rdf:type owl:Class ;
+           rdfs:subClassOf :JoinTool ;
+           obo:IAO_0000117 "Ruoyu Yang" ;
+           obo:IAO_0000119 "https://en.wikipedia.org/wiki/Electrode" ;
+           cco:definition "A joining artifact that is designed for making contact with a nonmetallic part of a circuit."@en ;
+           rdfs:label "Electrode" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Envelopes
+:Envelopes rdf:type owl:Class ;
+           rdfs:subClassOf :Container ;
+           obo:IAO_0000117 "Ruoyu Yang" ;
+           cco:definition "A container that is made of thin flat material and designed to contain a flat object, such as a letter or card." ;
+           rdfs:label "Envelope" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ExitSign
+:ExitSign rdf:type owl:Class ;
+          rdfs:subClassOf :InfrastructureElement ;
+          obo:IAO_0000117 "Ruoyu Yang" ;
+          cco:definition "An infrasturcture element that is designed for denoting the location of the closest emergency exit in case of fire or other emergency." ;
+          rdfs:label "Exit Sign" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/EyeBolt
+:EyeBolt rdf:type owl:Class ;
+         rdfs:subClassOf :Bolt ;
+         obo:IAO_0000115 "A bolt that is designed for firmly attaching a securing eye to a structure, so that ropes or cables may then be tied to it." ;
+         obo:IAO_0000117 "Ruoyu Yang" ;
+         cco:definition_source "https://en.wikipedia.org/wiki/Eye_bolt" ;
+         rdfs:label "Eye Bolt" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/EyeProtectionTool
+:EyeProtectionTool rdf:type owl:Class ;
+                   rdfs:subClassOf :PersonalProtectionTool ;
+                   obo:IAO_0000115 "A personal protection artifact that is designed for protecting people's eyes." ;
+                   obo:IAO_0000117 "Ruoyu Yang" ;
+                   rdfs:label "Eye Protection Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/FaceProtectionTool
+:FaceProtectionTool rdf:type owl:Class ;
+                    rdfs:subClassOf :PersonalProtectionTool ;
+                    obo:IAO_0000115 "A personal protection artifact that is designed for protecting a person's face." ;
+                    obo:IAO_0000117 "Ruoyu Yang" ;
+                    rdfs:label "Face Protection Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/FarmingTool
+:FarmingTool rdf:type owl:Class ;
+             rdfs:subClassOf cco:Tool ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             cco:definition "An artifact that is designed for helping to harvest crops or raise livestock."@en ;
+             rdfs:label "Farming Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/FatigueTestingTool
+:FatigueTestingTool rdf:type owl:Class ;
+                    rdfs:subClassOf :TestingTool ;
+                    obo:IAO_0000115 "A tool that is designed to measure some entity failure under repeated loading below the yield strength." ;
+                    obo:IAO_0000117 "BinBin Zhang" ;
+                    rdfs:label "Fatigue Testing Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/FeelerGauge
+:FeelerGauge rdf:type owl:Class ;
+             rdfs:subClassOf :DimensionalMeasurementTool ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             obo:IAO_0000119 "https://en.wikipedia.org/wiki/Feeler_gauge" ;
+             cco:definition "A spatial measurement artifact that is designed for measuring gap widths, mostly used in engineering to measure the clearance between two parts."@en ;
+             rdfs:label "Feeler Gauge" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/File
+:File rdf:type owl:Class ;
+      rdfs:subClassOf :AbradingTool ;
+      obo:IAO_0000117 "Ruoyu Yang" ;
+      obo:IAO_0000119 "https://en.wikipedia.org/wiki/File_(artifact)" ;
+      cco:definition "An abrading artifact that is designed for removing fine amounts of material from an object."@en ;
+      rdfs:label "File" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Filter
+:Filter rdf:type owl:Class ;
+        rdfs:subClassOf :ElectricCleaningTool ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Filtration" ;
+        cco:definition "An electric cleaning artifact that is designed for separating solids from fluids (liquids or gases) by adding a medium through which only one set of fluids can pass."@en ;
+        rdfs:label "Filter" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/FiltrationTool
+:FiltrationTool rdf:type owl:Class ;
+                rdfs:subClassOf cco:Tool ;
+                obo:IAO_0000115 "An artifact that is designed for separating solids from fluids using a medium through which only the fluid can pass."@en ;
+                obo:IAO_0000117 "Ruoyu Yang" ;
+                obo:IAO_0000119 "https://en.wikipedia.org/wiki/Filtration" ;
+                cco:elucidation "Fluids mean both liquids or gases." ;
+                rdfs:label "Filtration Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/FireExtinguisher
+:FireExtinguisher rdf:type owl:Class ;
+                  rdfs:subClassOf :ProtectionTool ;
+                  obo:IAO_0000117 "Ruoyu Yang" ;
+                  obo:IAO_0000119 "https://en.wikipedia.org/wiki/Fire_extinguisher" ;
+                  cco:definition "A protection artifact that extinguishes or controls small fires, often in emergency situations, not intended for use on an out-of-control fire."@en ;
+                  rdfs:label "Fire Extinguisher" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/First-AidSupply
+:First-AidSupply rdf:type owl:Class ;
+                 rdfs:subClassOf :ProtectionTool ;
+                 obo:IAO_0000117 "Ruoyu Yang" ;
+                 obo:IAO_0000119 "https://en.wikipedia.org/wiki/First_aid" ;
+                 cco:definition "A protection artifact that assists a person suffering a sudden illness or injury with care provided to preserve life, prevent the condition from worsening, and/or promote recovery."@en ;
+                 rdfs:label "First-Aid Supply" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Fixture
+:Fixture rdf:type owl:Class ;
+         rdfs:subClassOf cco:MachineElement ;
+         cco:definition "A machine element that is designed for work-holding or support device used in the manufacturing industry." ;
+         cco:definition_source "https://en.wikipedia.org/wiki/Fixture_(tool)" ;
+         cco:elucidation "A fixture's primary purpose is to create a secure mounting point for a workpiece, allowing for support during operation and increased accuracy, precision, reliability, and interchangeability in the finished parts." ;
+         cco:term_editor "Ruoyu Yang" ;
+         rdfs:label "Fixture" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Flashlight
+:Flashlight rdf:type owl:Class ;
+            rdfs:subClassOf :LightingTool ;
+            obo:IAO_0000115 "A lighting artifact that consists of a light bulb mounted in a reflector, a transparent cover to protect the light source and reflector, a battery, and a switch."@en ;
+            obo:IAO_0000117 "Ruoyu Yang" ;
+            obo:IAO_0000119 "https://en.wikipedia.org/wiki/Flashlight" ;
+            rdfs:label "Flashlight" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Flask
+:Flask rdf:type owl:Class ;
+       rdfs:subClassOf :Container ;
+       obo:IAO_0000117 "Ruoyu Yang" ;
+       cco:definition "A container that is designed for holding reagents or samples and typically is conical or spherical glass container with narrow-necke." ;
+       rdfs:label "Flask" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/FlowSwitch
+:FlowSwitch rdf:type owl:Class ;
+            rdfs:subClassOf :Switch ;
+            obo:IAO_0000115 "A switch that is designed for switching on or off in response to the flow or non-flow of a fluid such as air or water." ;
+            obo:IAO_0000117 "Ruoyu Yang" ;
+            obo:IAO_0000119 "https://en.wikipedia.org/wiki/Sail_switch" ;
+            rdfs:label "Flow Switch" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Flowmeter
+:Flowmeter rdf:type owl:Class ;
+           rdfs:subClassOf :VolumeMeasurementTool ;
+           obo:IAO_0000115 "A volume measurement artifact that is designed for measuring mass flow rates of liquid."@en ;
+           obo:IAO_0000117 "Ruoyu Yang" ;
+           rdfs:label "Flowmeter" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/FountainPen
+:FountainPen rdf:type owl:Class ;
+             rdfs:subClassOf :WritingTool ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             cco:definition "A writing artifact that draws ink from the reservoir through a feed to the nib and deposits it on paper via a combination of gravity and capillary action."@en ;
+             rdfs:label "Fountain Pen" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/FractureToughnessTestingTool
+:FractureToughnessTestingTool rdf:type owl:Class ;
+                              rdfs:subClassOf :TestingTool ;
+                              obo:IAO_0000115 """A tool that is designed to measure some entity's resistance to brittle fracture and can be quantified by linear
+elastic fracture mechanics.""" ;
+                              obo:IAO_0000117 "BinBin Zhang" ;
+                              rdfs:label "Fracture Toughness Testing Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/GasDetector
+:GasDetector rdf:type owl:Class ;
+             rdfs:subClassOf :ProtectionTool ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             obo:IAO_0000119 "https://en.wikipedia.org/wiki/Gas_detector" ;
+             cco:definition "A protection artifact that detects the presence of gases in an area, often as part of a safety system."@en ;
+             cco:elucidation "Gas detector can sound an alarm to operators in the area where the leak is occurring, giving them the opportunity to leave." ;
+             rdfs:label "Gas Detector" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/GasThermometer
+:GasThermometer rdf:type owl:Class ;
+                rdfs:subClassOf :ThermoMeter ;
+                obo:IAO_0000117 "Ruoyu Yang" ;
+                cco:definition "A thermometer that is measuring temperature by the variation in volume or pressure of a gas." ;
+                rdfs:label "Gas Thermometer" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Gasket
+:Gasket rdf:type owl:Class ;
+        rdfs:subClassOf cco:MachineElement ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        cco:definition "A machine element that is designed for filling the space between two or more mating surfaces, generally to prevent leakage from or into the joined objects while under compression." ;
+        rdfs:label "Gasket" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/GlazingMachine
+:GlazingMachine rdf:type owl:Class ;
+                rdfs:subClassOf :PolishingTool ;
+                obo:IAO_0000115 "A polishing artifact that is designed for polishing leather, consists of a solid glass cylinder mounted to the end of a rotating or reciprocating arm." ;
+                obo:IAO_0000117 "Ruoyu Yang" ;
+                rdfs:label "Glazing Machine" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/GraduatedCylinder
+:GraduatedCylinder rdf:type owl:Class ;
+                   rdfs:subClassOf :VolumeMeasurementTool ;
+                   obo:IAO_0000117 "Ruoyu Yang" ;
+                   cco:definition "A volume measurement artifact that is designed for measuring the volume of a liquid."@en ;
+                   rdfs:label "Graduated Cylinder" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/GreaseFitting
+:GreaseFitting rdf:type owl:Class ;
+               rdfs:subClassOf :LubricatingTool ;
+               obo:IAO_0000115 "A lubricating artifact that is designed for feeding lubricants into a bearing under moderate to high pressure using a grease gun."@en ;
+               obo:IAO_0000117 "Ruoyu Yang" ;
+               obo:IAO_0000119 "https://en.wikipedia.org/wiki/Grease_fitting" ;
+               rdfs:label "Grease Fitting" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/GreaseGun
+:GreaseGun rdf:type owl:Class ;
+           rdfs:subClassOf :LubricatingTool ;
+           obo:IAO_0000115 "A lubricating artifact that is designed for applying lubricant through an aperture to a specific point, usually on a grease fitting or nipple."@en ;
+           obo:IAO_0000117 "Ruoyu Yang" ;
+           obo:IAO_0000119 "https://en.wikipedia.org/wiki/Grease_gun_(artifact)" ;
+           rdfs:label "Grease Gun" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/GrindingWheel
+:GrindingWheel rdf:type owl:Class ;
+               rdfs:subClassOf cco:MachineElement ;
+               obo:IAO_0000117 "Ruoyu Yang" ;
+               cco:definition "A machine element that is designed for cutting,grinding or finishing material entity and typically made of abrasive particles bonded together." ;
+               rdfs:label "Grinding Wheel" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Hammer
+:Hammer rdf:type owl:Class ;
+        rdfs:subClassOf :HardwareHandlingArtifact ;
+        obo:IAO_0000115 "A hardware handling artifact that is designed for delivering a sudden impact to an object, usually for nails, fit parts, or forged metal."@en ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Hammer" ;
+        rdfs:label "Hammer" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/HandProtectionTool
+:HandProtectionTool rdf:type owl:Class ;
+                    rdfs:subClassOf :PersonalProtectionTool ;
+                    obo:IAO_0000115 "A personal protection artifact that is designed for protecting a person's hand or hands." ;
+                    obo:IAO_0000117 "Ruoyu Yang" ;
+                    rdfs:label "Hand Protection Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/HardDiskDrive
+:HardDiskDrive rdf:type owl:Class ;
+               rdfs:subClassOf :Container ;
+               obo:IAO_0000117 "Ruoyu Yang" ;
+               cco:definition "A container that is designed for storing and retrieving digital information using one or more rigid rapidly rotating disks (platters) coated with magnetic material." ;
+               rdfs:label "HardDisk Drive" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/HardnessTestingTool
+:HardnessTestingTool rdf:type owl:Class ;
+                     rdfs:subClassOf :TestingTool ;
+                     obo:IAO_0000115 "A tool that is designed to examine the resistance of some entity to various kinds of permanent shape change when a compressive force is applied." ;
+                     obo:IAO_0000117 "BinBin Zhang" ;
+                     rdfs:label "Hardness Testing Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/HardwareHandlingArtifact
+:HardwareHandlingArtifact rdf:type owl:Class ;
+                          rdfs:subClassOf cco:Tool ;
+                          obo:IAO_0000115 "An artifact that is designed for build a building or infrastructure."@en ;
+                          obo:IAO_0000117 "Ruoyu Yang" ;
+                          rdfs:label "Hardware Handling Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/HeadProtectionTool
+:HeadProtectionTool rdf:type owl:Class ;
+                    rdfs:subClassOf :PersonalProtectionTool ;
+                    obo:IAO_0000115 "A personal protection artifact that is designed for protecting people's head." ;
+                    obo:IAO_0000117 "Ruoyu Yang" ;
+                    rdfs:label "Head Protection Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Heater
+:Heater rdf:type owl:Class ;
+        rdfs:subClassOf :InfrastructureElement ;
+        obo:IAO_0000115 "An infrastructure element that is designed for generate heat for the building." ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        rdfs:label "Heater" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/HeightGauge
+:HeightGauge rdf:type owl:Class ;
+             rdfs:subClassOf :DimensionalMeasurementTool ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             obo:IAO_0000119 "https://en.wikipedia.org/wiki/Height_gauge" ;
+             cco:definition "A spatial measurement artifact that is designed for determining the heights of objects."@en ;
+             cco:elucidation "Height gauges are used in metalworking or metrology to either set or measure vertical distances; the pointer is sharpened to allow it to act as a scriber and assist in marking out work pieces." ;
+             rdfs:label "Height Gauge" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Hitch
+:Hitch rdf:type owl:Class ;
+       rdfs:subClassOf :Artifact_Element ;
+       obo:IAO_0000117 "Ruoyu Yang" ;
+       cco:definition "An artifact element that is designed for attaching a rope to a fixed object." ;
+       rdfs:label "Hitch" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Hoe
+:Hoe rdf:type owl:Class ;
+     rdfs:subClassOf :FarmingTool ;
+     obo:IAO_0000117 "Ruoyu Yang" ;
+     obo:IAO_0000119 "https://en.wikipedia.org/wiki/Hoe_(artifact)" ;
+     cco:definition "An agriculture artifact that is designed for shaping soil, removing weeds, clearing soil, or harvesting root crops." ;
+     rdfs:label "Hoe" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Hoist
+:Hoist rdf:type owl:Class ;
+       rdfs:subClassOf :LiftingTool ;
+       obo:IAO_0000115 "A lifting artifact that is designed for lifting or lowering a load by means of a drum or lift-wheel."@en ;
+       obo:IAO_0000117 "Ruoyu Yang" ;
+       obo:IAO_0000119 "https://en.wikipedia.org/wiki/Hoist_(device)" ;
+       rdfs:label "Hoist" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/HoleSaw
+:HoleSaw rdf:type owl:Class ;
+         rdfs:subClassOf :SawingTool ;
+         obo:IAO_0000115 "A sawing artifact that is designed for sawing an annular (ring) shape, whose annular kerf creates a hole in the workpiece without having to cut up the core material."@en ;
+         obo:IAO_0000117 "Ruoyu Yang" ;
+         obo:IAO_0000119 "https://en.wikipedia.org/wiki/Hole_saw" ;
+         rdfs:label "Hole Saw" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Hone
+:Hone rdf:type owl:Class ;
+      rdfs:subClassOf :PolishingTool ;
+      obo:IAO_0000115 "A polishing artifact that is designed for sharpening the surface of a blade."@en ;
+      obo:IAO_0000117 "Ruoyu Yang" ;
+      obo:IAO_0000119 "https://www.merriam-webster.com/dictionary/hone" ;
+      rdfs:label "Honing Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Humidifier
+:Humidifier rdf:type owl:Class ;
+            rdfs:subClassOf :InfrastructureElement ;
+            obo:IAO_0000115 "An infrastructure element that is designed for increases humidity (moisture) in a single room or an entire building." ;
+            obo:IAO_0000117 "Ruoyu Yang" ;
+            obo:IAO_0000119 "https://en.wikipedia.org/wiki/Humidifier" ;
+            rdfs:label "Humidifier" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/HydraulicJack
+:HydraulicJack rdf:type owl:Class ;
+               rdfs:subClassOf :Jack ;
+               cco:definition "A jack that is powered by hydraulic power." ;
+               cco:definition_source "https://en.wikipedia.org/wiki/Jack_(device)"@en ;
+               cco:term_editor "Ruoyu Yang" ;
+               rdfs:label "Hydraulic Jack" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/HydraulicPump
+:HydraulicPump rdf:type owl:Class ;
+               rdfs:subClassOf :Pump ;
+               obo:IAO_0000117 "Ruoyu Yang" ;
+               cco:definition "A pump that is designed for converting mechanical power into hydraulic energy(flow pressure), generating flow with enough power to overcome pressure induced by the load at pump outlet."@en ;
+               rdfs:label "Hydraulic Pump" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/HydraulicValve
+:HydraulicValve rdf:type owl:Class ;
+                rdfs:subClassOf cco:MachineElement ;
+                obo:IAO_0000115 "A machine element that is designed for regulating, directing or controling the flow of a fluid (gases, liquids, fluidized solids, or slurries) by opening, closing, or partially obstructing various passageways." ;
+                obo:IAO_0000117 "Ruoyu Yang" ;
+                rdfs:label "Hydraulic Valve" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/HydraulicWrench
+:HydraulicWrench rdf:type owl:Class ;
+                 rdfs:subClassOf :Wrench ;
+                 obo:IAO_0000117 "Ruoyu Yang" ;
+                 cco:definition "A wrenchthat is powered by liquid fluid power."@en ;
+                 rdfs:label "Hydraulic Wrench" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ImpactTestingTool
+:ImpactTestingTool rdf:type owl:Class ;
+                   rdfs:subClassOf :TestingTool ;
+                   obo:IAO_0000117 "BinBin Zhang" ;
+                   cco:definition "A testing artifact that is designed for testing the impact property of some entity." ;
+                   rdfs:label "Impact Testing Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/InfraredAndThermalTestingTool
+:InfraredAndThermalTestingTool rdf:type owl:Class ;
+                               rdfs:subClassOf :TestingTool ;
+                               obo:IAO_0000115 "A artifact that is designed to test the infrared and thermal property of some entity." ;
+                               obo:IAO_0000117 "BinBin Zhang" ;
+                               rdfs:label "Infrared And Thermal Testing Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/InfrastructureElement
+:InfrastructureElement rdf:type owl:Class ;
+                       rdfs:subClassOf :Artifact_Element ;
+                       cco:definition "An artifact element that is designed to be an elementary component of some infrastructure." ;
+                       cco:term_editor "Ruoyu Yang" ;
+                       rdfs:label "Infrastructure Element" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/InsulatingGloves
+:InsulatingGloves rdf:type owl:Class ;
+                  rdfs:subClassOf :HandProtectionTool ;
+                  obo:IAO_0000117 "Ruoyu Yang" ;
+                  cco:definition "A hand protection artifact that protects a wearer's hand from static electricity and electric current." ;
+                  rdfs:label "Insulating Gloves" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Jack
+:Jack rdf:type owl:Class ;
+      rdfs:subClassOf :LiftingTool ;
+      obo:IAO_0000117 "Ruoyu Yang" ;
+      obo:IAO_0000119 "https://en.wikipedia.org/wiki/Jack_(device)" ;
+      cco:definition "A lifting artifact that is designed for lifting heavy loads or apply great forces, usually applying screw thread or hydraulic power to lift loads."@en ;
+      rdfs:label "Jack" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Jar
+:Jar rdf:type owl:Class ;
+     rdfs:subClassOf :Container ;
+     obo:IAO_0000117 "Ruoyu Yang" ;
+     cco:definition "A container that is designed for storing foods, cosmetics, medications, and chemicals that are relatively thick or viscous storage with a wide mouth or opening." ;
+     rdfs:label "Jar" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/JigSaw
+:JigSaw rdf:type owl:Class ;
+        rdfs:subClassOf :SawingTool ;
+        obo:IAO_0000115 "A sawing artifact that uses a reciprocating blade to cut irregular curves, such as stenciled designs, in wood, metal, or other materials."@en ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Jigsaw_(artifact)" ;
+        rdfs:label "Jig Saw" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/JoinTool
+:JoinTool rdf:type owl:Class ;
+          rdfs:subClassOf cco:Tool ;
+          obo:IAO_0000115 "An artifact that is designed for physically connecting different objects together."@en ;
+          obo:IAO_0000117 "Ruoyu Yang" ;
+          rdfs:label "Joining Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/KeroseneThermometer
+:KeroseneThermometer rdf:type owl:Class ;
+                     rdfs:subClassOf :ThermoMeter ;
+                     obo:IAO_0000117 "Ruoyu Yang" ;
+                     cco:definition "A thermometer that is measuring temperature by the variation in volume or pressure of a portion of kerosene."@en ;
+                     rdfs:label "Kerosene Thermometer" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Knife
+:Knife rdf:type owl:Class ;
+       rdfs:subClassOf :CuttingTool ;
+       obo:IAO_0000115 "A cutting artifact that has a cutting edge or blade and a handle to facilitate holding."@en ;
+       obo:IAO_0000117 "Ruoyu Yang" ;
+       obo:IAO_0000119 "https://en.wikipedia.org/wiki/Knife" ;
+       rdfs:label "Knife" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Label
+:Label rdf:type owl:Class ;
+       rdfs:subClassOf :SignArtifact ;
+       obo:IAO_0000117 "Ruoyu Yang" ;
+       cco:definition "A sign artifact that is affixed to an object and which bears an information bearing entity that designates the object." ;
+       rdfs:label "Label" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Level
+:Level rdf:type owl:Class ;
+       rdfs:subClassOf :DimensionalMeasurementTool ;
+       obo:IAO_0000117 "Ruoyu Yang" ;
+       cco:definition "A spatial measurement artifact that is designed for measuring geodetic height using an optical levelling instrument and a level staff or rod having a numbered scale."@en ;
+       rdfs:label "Level" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/LiftingTool
+:LiftingTool rdf:type owl:Class ;
+             rdfs:subClassOf cco:Tool ;
+             obo:IAO_0000115 "An artifact that is designed for changing the horizontal position of heavy loads."@en ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             rdfs:label "Lifting Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/LightBulb
+:LightBulb rdf:type owl:Class ;
+           rdfs:subClassOf :LightingTool ;
+           obo:IAO_0000115 "A lighting artifact that produces visible light by the flow of electric current, providing interior lighting for buildings and exterior light for evening and nighttime activities."@en ;
+           obo:IAO_0000117 "Ruoyu Yang" ;
+           obo:IAO_0000119 "https://en.wikipedia.org/wiki/Electric_light" ;
+           rdfs:label "Light Bulb" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/LightingTool
+:LightingTool rdf:type owl:Class ;
+              rdfs:subClassOf cco:Tool ;
+              obo:IAO_0000115 "An artifact that is designed for emitting light."@en ;
+              obo:IAO_0000117 "Ruoyu Yang" ;
+              obo:IAO_0000119 "https://en.wikipedia.org/wiki/Lighting" ;
+              cco:elucidation "Light source can be both artificial light source like lamps and light fixtures, as well as natural illumination by capturing daylight." ;
+              rdfs:label "Lighting Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/LiquidPenetrantTestingTool
+:LiquidPenetrantTestingTool rdf:type owl:Class ;
+                            rdfs:subClassOf :TestingTool ;
+                            obo:IAO_0000115 "A tool that is designed to test some entity by utilizing fluorescent dye to reveal surface flaws on the entity which might not otherwise be visible." ;
+                            obo:IAO_0000117 "BinBin Zhang" ;
+                            rdfs:label "Liquid Penetrant Testing Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/LocationMeasurementTool
+:LocationMeasurementTool rdf:type owl:Class ;
+                         rdfs:subClassOf :MeasurementTool ;
+                         obo:IAO_0000115 "A measurement artifact that is designed for measuring a particular place or position of a material entity."@en ;
+                         obo:IAO_0000117 "Ruoyu Yang" ;
+                         rdfs:label "Location Measurement Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/LubricatingTool
+:LubricatingTool rdf:type owl:Class ;
+                 rdfs:subClassOf cco:Tool ;
+                 obo:IAO_0000115 "An artifact that is designed to reduce friction between surfaces by interposing a lubricant."@en ;
+                 obo:IAO_0000117 "Ruoyu Yang" ;
+                 obo:IAO_0000119 "https://en.wikipedia.org/wiki/Lubrication" ;
+                 rdfs:label "Lubricating Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Magnet
+:Magnet rdf:type owl:Class ;
+        rdfs:subClassOf :JoinTool ;
+        obo:IAO_0000115 "A join artifact that produces a magnetic field to join different metal objects together."@en ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Magnet" ;
+        rdfs:label "Magnet" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/MagneticParticleTestingTool
+:MagneticParticleTestingTool rdf:type owl:Class ;
+                             rdfs:subClassOf :TestingTool ;
+                             obo:IAO_0000117 "BinBin Zhang" ;
+                             cco:definition "A tool that is designed to test some entity by running through a magnetic current to detect surface and slightly subsurface flaws." ;
+                             rdfs:label "Magnetic Particle Testing Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ManualCleaningTool
+:ManualCleaningTool rdf:type owl:Class ;
+                    rdfs:subClassOf :CleaningTool ;
+                    obo:IAO_0000115 "A cleaning artifact that is powered by human hands."@en ;
+                    obo:IAO_0000117 "Ruoyu Yang" ;
+                    rdfs:label "Manual Cleaning Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Marker
+:Marker rdf:type owl:Class ;
+        rdfs:subClassOf :WritingTool ;
+        obo:IAO_0000115 "A writing artifact that is designed for highlighting and covering over existing writing while still leaving the writing readable."@en ;
+        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Marker_pen" ;
+        cco:term_editor "Ruoyu Yang" ;
+        rdfs:label "Marker" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/MeasurementTool
+:MeasurementTool rdf:type owl:Class ;
+                 rdfs:subClassOf cco:Tool ;
+                 obo:IAO_0000115 "An artifact that is designed for ascertaining a measurement."@en ;
+                 obo:IAO_0000117 "Ruoyu Yang" ;
+                 rdfs:label "Measurement Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/MechanicalSeal
+:MechanicalSeal rdf:type owl:Class ;
+                rdfs:subClassOf cco:MachineElement ;
+                obo:IAO_0000117 "Ruoyu Yang" ;
+                cco:definition "A machine element that is designed for helping join systems or mechanisms together by preventing leakage, containing pressure or excluding contamination." ;
+                rdfs:label "Mechanical Seal" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Mechanical_Jack
+:Mechanical_Jack rdf:type owl:Class ;
+                 rdfs:subClassOf :Jack ;
+                 cco:definition "A jack that is powered by screw thread for lifting heavy equipment."@en ;
+                 cco:definition_source "https://en.wikipedia.org/wiki/Jack_(device)" ;
+                 cco:term_editor "Ruoyu Yang" ;
+                 rdfs:label "Mechanical Jack" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/MercurialThermometer
+:MercurialThermometer rdf:type owl:Class ;
+                      rdfs:subClassOf :ThermoMeter ;
+                      obo:IAO_0000117 "Ruoyu Yang" ;
+                      cco:definition "A thermometer that is measuring temperature by the variation in volume or pressure of a portion of mercury."@en ;
+                      rdfs:label "Mercurial Thermometer" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Micrometer
+:Micrometer rdf:type owl:Class ;
+            rdfs:subClassOf :DimensionalMeasurementTool ;
+            obo:IAO_0000117 "Ruoyu Yang" ;
+            obo:IAO_0000119 "https://en.wikipedia.org/wiki/Micrometer" ;
+            cco:definition "A spatial measurement artifact that is designed that is designed to measure components incorporating a calibrated screw."@en ;
+            rdfs:label "Micrometer" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Mop
+:Mop rdf:type owl:Class ;
+     rdfs:subClassOf :ManualCleaningTool ;
+     obo:IAO_0000115 "A manual cleaning artifact that is designed for soaking up liquid, for cleaning floors and other surfaces or to soak up dirt and debris."@en ;
+     obo:IAO_0000117 "Ruoyu Yang" ;
+     obo:IAO_0000119 "https://en.wikipedia.org/wiki/Mop" ;
+     rdfs:label "Mop" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/MotionMeasurementTool
+:MotionMeasurementTool rdf:type owl:Class ;
+                       rdfs:subClassOf :MeasurementTool ;
+                       obo:IAO_0000115 "A measurement artifact that is designed for measuring the speed of a material entity."@en ;
+                       obo:IAO_0000117 "Ruoyu Yang" ;
+                       rdfs:label "Motion Measurement Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Nail
+:Nail rdf:type owl:Class ;
+      rdfs:subClassOf :Artifact_Element ;
+      obo:IAO_0000115 "An artifact element that is designed as a fastener, consisting of a sharp point on one end and a flattened head on the other."@en ;
+      obo:IAO_0000117 "Ruoyu Yang" ;
+      rdfs:label "Nail" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Nailer
+:Nailer rdf:type owl:Class ;
+        rdfs:subClassOf :JoinTool ;
+        obo:IAO_0000115 "A join artifact that is designed for driving nails into wood or some other kind of material."@en ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Nail_gun" ;
+        rdfs:label "Nailer Gun" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Nibbler
+:Nibbler rdf:type owl:Class ;
+         rdfs:subClassOf :CuttingTool ;
+         obo:IAO_0000115 "A cutting artifact that is designed for cutting sheets of metal with minimal distortion."@en ;
+         obo:IAO_0000117 "Ruoyu Yang" ;
+         obo:IAO_0000119 "https://en.wikipedia.org/wiki/Nibbler" ;
+         rdfs:label "Nibbler" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/NutDriver
+:NutDriver rdf:type owl:Class ;
+           rdfs:subClassOf :HardwareHandlingArtifact ;
+           obo:IAO_0000117 "Ruoyu Yang" ;
+           obo:IAO_0000119 "https://en.wikipedia.org/wiki/Nut_driver" ;
+           cco:definition "A hardware handling artifact that is designed for tightening nuts and bolts consisting of a socket attached to a shaft and cylindrical handle."@en ;
+           rdfs:label "Nut Driver" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/O-Ring
+:O-Ring rdf:type owl:Class ;
+        rdfs:subClassOf cco:MachineElement ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        cco:definition "A machine element that is designed to be seated in a groove and compressed during assembly between two or more parts, creating a seal at the interface." ;
+        rdfs:label "O Ring" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/O-RingAssemblyTool
+:O-RingAssemblyTool rdf:type owl:Class ;
+                    rdfs:subClassOf :JoinTool ;
+                    cco:definition "A transportation artifact that is designed for carrying out the assembly of an O-ring"@en ;
+                    cco:term_editor "Munira Ali"@en ;
+                    rdfs:label "O-Ring Assembly Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/OilFilter
+:OilFilter rdf:type owl:Class ;
+           rdfs:subClassOf :FiltrationTool ;
+           obo:IAO_0000115 "A filtration artifact that is designed for removing contaminants from engine oil, transmission oil, lubricating oil, or hydraulic oil."@en ;
+           obo:IAO_0000117 "Ruoyu Yang" ;
+           obo:IAO_0000119 "https://en.wikipedia.org/wiki/Oil_filter" ;
+           cco:elucidation "A chief use of the oil filter is in internal-combustion engines in on- and off-road motor vehicles, light aircraft, and various naval vessels." ;
+           rdfs:label "Oil Filter" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/OpticalInvestigationTool
+:OpticalInvestigationTool rdf:type owl:Class ;
+                          rdfs:subClassOf cco:Tool ;
+                          obo:IAO_0000115 "An artifact that is designed for small sample observation by using visible light and a system of lenses."@en ;
+                          cco:definition_source "https://en.wikipedia.org/wiki/Optical_microscope"@en ;
+                          cco:term_editor "Ruoyu Yang" ;
+                          rdfs:label "Optical Investigation Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Oscilloscope
+:Oscilloscope rdf:type owl:Class ;
+              rdfs:subClassOf :ElectricityMeasurementTool ;
+              obo:IAO_0000115 "An electricity measurement artifact that is designed for observing the change of an electrical signal over time, such that voltage and time describe a shape which is continuously graphed against a calibrated scale."@en ;
+              obo:IAO_0000117 "Ruoyu Yang" ;
+              obo:IAO_0000119 "https://en.wikipedia.org/wiki/Oscilloscope" ;
+              rdfs:label "Oscilloscope" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/OvenGlove
+:OvenGlove rdf:type owl:Class ;
+           rdfs:subClassOf :HandProtectionTool ;
+           obo:IAO_0000117 "Ruoyu Yang" ;
+           obo:IAO_0000119 "https://en.wikipedia.org/wiki/Oven_glove" ;
+           cco:definition "A hand protection artifact that protects a wearer's hand from hot objects such as ovens, stoves, cookware."@en ;
+           rdfs:label "Oven Glove" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/OxygenCylinder
+:OxygenCylinder rdf:type owl:Class ;
+                rdfs:subClassOf :Container ;
+                obo:IAO_0000117 "Ruoyu Yang" ;
+                cco:definition "A container that is designed for storing and transporting oxygen to people in underwater operation." ;
+                rdfs:label "Oxygen Cylinder" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/PackagingTool
+:PackagingTool rdf:type owl:Class ;
+               rdfs:subClassOf cco:Tool ;
+               obo:IAO_0000117 "An artifact that is designed to aid in or facilitate the packaging of material entities."@en ,
+                               "Ruoyu Yang" ;
+               rdfs:label "Packaging Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Pail
+:Pail rdf:type owl:Class ;
+      rdfs:subClassOf :Container ;
+      obo:IAO_0000117 "Ruoyu Yang" ;
+      cco:definition "A container that is designed for liquid storage with an open top and a flat bottom, attached to a semicircular carrying handle." ;
+      rdfs:label "Pail" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Pallet
+:Pallet rdf:type owl:Class ;
+        rdfs:subClassOf :LiftingTool ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Pallet" ;
+        cco:definition "A lifting artifact that supports goods in a stable fashion while being lifted by a pallet jack, front loader, work saver, or other jacking device."@en ;
+        rdfs:label "Pallet" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/PalletTruck
+:PalletTruck rdf:type owl:Class ;
+             rdfs:subClassOf :TransportationTool ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             obo:IAO_0000119 "https://en.wikipedia.org/wiki/Pallet_jack" ;
+             cco:definition "A transportation artifact that is designed for lifting and moving pallets."@en ;
+             rdfs:label "Pallet Truck" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Pencil
+:Pencil rdf:type owl:Class ;
+        rdfs:subClassOf :WritingTool ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        cco:definition "A writing artifact that is constructed of a narrow, solid pigment core inside a protective casing which prevents the core from being broken or leaving marks on the user’s hand during use."@en ;
+        rdfs:label "Pencil" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/PersonalProtectionTool
+:PersonalProtectionTool rdf:type owl:Class ;
+                        rdfs:subClassOf :ProtectionTool ;
+                        obo:IAO_0000115 "A protection artifact that is designed for protecting the wearer's body from injury or infection."@en ;
+                        obo:IAO_0000117 "Ruoyu Yang" ;
+                        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Personal_protective_equipment" ;
+                        rdfs:label "Personal Protection Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Pin
+:Pin rdf:type owl:Class ;
+     rdfs:subClassOf :JoinTool ;
+     obo:IAO_0000115 "A join artifact that is designed for fastening objects or material together, consisting of a long body and sharp tip made of steel, or occasionally copper or brass, and a larger head often made of plastic."@en ;
+     obo:IAO_0000117 "Ruoyu Yang" ;
+     obo:IAO_0000119 "https://en.wikipedia.org/wiki/Pin" ;
+     rdfs:label "Pin" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Pipette
+:Pipette rdf:type owl:Class ;
+         rdfs:subClassOf :VolumeMeasurementTool ;
+         obo:IAO_0000117 "Ruoyu Yang" ;
+         obo:IAO_0000119 "https://en.wikipedia.org/wiki/Pipette" ;
+         cco:definition "A volume measurement artifact that is designed for transporting a measured volume of liquid, often as a media dispenser."@en ;
+         rdfs:label "Pipette" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Pitcher
+:Pitcher rdf:type owl:Class ;
+         rdfs:subClassOf :Container ;
+         obo:IAO_0000117 "Ruoyu Yang" ;
+         cco:definition "A container that is designed for holding and pouring liquids, made of earthenware, glass or plastics typically with a handle and a lip." ;
+         rdfs:label "Pitcher" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Planer
+:Planer rdf:type owl:Class ;
+        rdfs:subClassOf :ShapingTool ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Plane_(artifact)" ;
+        cco:definition "A shaping artifact that is designed for shaping wood using muscle power to force the cutting blade over the wood surface."@en ;
+        rdfs:label "Planer" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/PlasticMesh
+:PlasticMesh rdf:type owl:Class ;
+             rdfs:subClassOf :FiltrationTool ;
+             obo:IAO_0000115 "A filtration artifact that is designed for separating solids from liquids."@en ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             rdfs:label "Plastic Mesh" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/PlatformScale
+:PlatformScale rdf:type owl:Class ;
+               rdfs:subClassOf :Scale ;
+               obo:IAO_0000117 "Ruoyu Yang" ;
+               cco:definition "A scale that is designed for measuring small objects with rectangular mesa."@en ;
+               rdfs:label "Platform Scale" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Plunger
+:Plunger rdf:type owl:Class ;
+         rdfs:subClassOf :ManualCleaningTool ;
+         obo:IAO_0000115 "A manual cleaning artifact that is designed for clearing blockages in drains and pipes, consisting of a rubber suction cup with an attached stick, usually made of wood, rubber, or plastic."@en ;
+         obo:IAO_0000117 "Ruoyu Yang" ;
+         obo:IAO_0000119 "https://en.wikipedia.org/wiki/Plunger" ;
+         rdfs:label "Plunger" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/PointerPressureGauge
+:PointerPressureGauge rdf:type owl:Class ;
+                      rdfs:subClassOf :PressureGauge ;
+                      obo:IAO_0000115 "A pressure gauge that displays measurements using a long thin piece of metal on a scale or dial."@en ;
+                      obo:IAO_0000117 "Ruoyu Yang" ;
+                      rdfs:label "Pointer Pressure Gauge" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/PolishingTool
+:PolishingTool rdf:type owl:Class ;
+               rdfs:subClassOf :AbradingTool ;
+               obo:IAO_0000115 "An abrading artifact that is designed for making the surface of an object smooth or shiny by rubbing it."@en ;
+               obo:IAO_0000117 "Ruoyu Yang" ;
+               rdfs:label "Polishing Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/PressureGauge
+:PressureGauge rdf:type owl:Class ;
+               rdfs:subClassOf :PressureMeasurementTool ;
+               obo:IAO_0000117 "Ruoyu Yang" ;
+               obo:IAO_0000119 "https://en.wikipedia.org/wiki/Pressure_measurement" ;
+               cco:definition "A pressure measurement artifact that is designed for measuring and displaying pressure in an integral unit."@en ;
+               rdfs:label "Pressure Gauge" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/PressureIndicator
+:PressureIndicator rdf:type owl:Class ;
+                   rdfs:subClassOf :PressureMeasurementTool ;
+                   obo:IAO_0000115 "A pressure measurement artifact that is designed for accurately measuring small pressure change and amplify them to make them more obvious."@en ;
+                   obo:IAO_0000117 "Ruoyu Yang" ;
+                   rdfs:label "Pressure Indicator" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/PressureMeasurementTool
+:PressureMeasurementTool rdf:type owl:Class ;
+                         rdfs:subClassOf :MeasurementTool ;
+                         obo:IAO_0000115 "A measurement artifact that is designed for measuring the pressure of a material entity."@en ;
+                         obo:IAO_0000117 "Ruoyu Yang" ;
+                         rdfs:label "Pressure Measurement Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/PressureSwitch
+:PressureSwitch rdf:type owl:Class ;
+                rdfs:subClassOf :Switch ;
+                obo:IAO_0000115 "A switch that is designed for closing an electrical contact when a certain set fluid pressure has been reached on its input." ;
+                obo:IAO_0000117 "Ruoyu Yang" ;
+                obo:IAO_0000119 "https://en.wikipedia.org/wiki/Pressure_switch" ;
+                rdfs:label "Pressure Switch" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/PressureTestFixture
+:PressureTestFixture rdf:type owl:Class ;
+                     rdfs:subClassOf :Fixture ;
+                     cco:definition "A fixture that is designed for holding a device during a test and allow it to be tested by being subjected to controlled pressures."@en ;
+                     cco:term_editor "J. Neil Otte"@en ;
+                     rdfs:label "Pressure Test Fixture" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/PressureWasher
+:PressureWasher rdf:type owl:Class ;
+                rdfs:subClassOf :ElectricCleaningTool ;
+                obo:IAO_0000117 "Ruoyu Yang" ;
+                obo:IAO_0000119 "https://en.wikipedia.org/wiki/Pressure_washing" ;
+                cco:definition "An electric cleaning artifact that is designed for removing loose paint, mold, grime, dust, mud, chewing gum, dirt, and other forms of debris from objects such as buildings, vehicles, and concrete surfaces."@en ;
+                rdfs:label "Pressure Washer" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Probe
+:Probe rdf:type owl:Class ;
+       rdfs:subClassOf cco:MachineElement ;
+       obo:IAO_0000119 "http://www.thefreedictionary.com/probe"@en ;
+       cco:definition "A machine element that is designed for placing inside something to take and convey measurements."@en ;
+       cco:term_editor "Ruoyu Yang"@en ;
+       rdfs:label "Probe" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ProtectionTool
+:ProtectionTool rdf:type owl:Class ;
+                rdfs:subClassOf cco:Tool ;
+                obo:IAO_0000117 "Ruoyu Yang" ;
+                cco:definition "An artifact that is designed for preventing people or objects from suffering harm or injury."@en ;
+                rdfs:label "Protection Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Protractor
+:Protractor rdf:type owl:Class ;
+            rdfs:subClassOf :DimensionalMeasurementTool ;
+            obo:IAO_0000117 "Ruoyu Yang" ;
+            obo:IAO_0000119 "https://en.wikipedia.org/wiki/Protractor" ;
+            cco:definition "A spatial measurement artifact that is typically made of transparent plastic or glass, for measuring angles."@en ;
+            rdfs:label "Protractor" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/PryBar
+:PryBar rdf:type owl:Class ;
+        rdfs:subClassOf :HardwareHandlingArtifact ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Crowbar_(artifact)" ;
+        cco:definition "A hardware handling artifact that is designed for removing nails consisting of a metal or plastic bar with a single curved end and flattened points."@en ;
+        rdfs:label "PryBar" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Pump
+:Pump rdf:type owl:Class ;
+      rdfs:subClassOf cco:MachineElement ;
+      obo:IAO_0000115 "A machine element that is designed for moving fluids (liquids or gases) by mechanical action." ;
+      obo:IAO_0000117 "Ruoyu Yang" ;
+      obo:IAO_0000119 "https://en.wikipedia.org/wiki/Pump" ;
+      rdfs:label "Pump" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/RadiographicTestingTool
+:RadiographicTestingTool rdf:type owl:Class ;
+                         rdfs:subClassOf :TestingTool ;
+                         obo:IAO_0000115 "A tool that is designed to examine some entity using electromagetic radiation to verify the entity's internal structure and integrity." ;
+                         obo:IAO_0000117 "BinBin Zhang" ;
+                         rdfs:label "Radiographic Testing Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Rake
+:Rake rdf:type owl:Class ;
+      rdfs:subClassOf :FarmingTool ;
+      obo:IAO_0000117 "Ruoyu Yang" ;
+      obo:IAO_0000119 "https://en.wikipedia.org/wiki/Rake_(artifact)" ;
+      cco:definition "An agriculture artifact that is designed for collecting leaves, hay, grass, loosening the soil, light weeding and levelling, removing dead grass from lawns."@en ;
+      rdfs:label "Rake" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ReciprocatingSaw
+:ReciprocatingSaw rdf:type owl:Class ;
+                  rdfs:subClassOf :SawingTool ;
+                  obo:IAO_0000115 "A sawing artifact that cuts objects through a push-and-pull (reciprocating) motion of a blade."@en ;
+                  obo:IAO_0000117 "Ruoyu Yang" ;
+                  obo:IAO_0000119 "https://en.wikipedia.org/wiki/Reciprocating_saw" ;
+                  cco:elucidation "Reciprocating saw has a large blade resembling that of a jigsaw and a handle oriented to allow the saw to be used comfortably on vertical surfaces." ;
+                  rdfs:label "Reciprocating Saw" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Regulator
+:Regulator rdf:type owl:Class ;
+           rdfs:subClassOf cco:MachineElement ;
+           obo:IAO_0000115 "A machine element that is designed for reducing the input pressure of a fluid to a desired value at its output." ;
+           obo:IAO_0000117 "Ruoyu Yang" ;
+           rdfs:label "Regulator" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ResistanceTester
+:ResistanceTester rdf:type owl:Class ;
+                  rdfs:subClassOf :TestingTool ;
+                  cco:definition "A testing artifact whose function is realized in testing the resistance inhering in a material entity."@en ;
+                  cco:term_editor "J. Neil Otte"@en ;
+                  rdfs:label "Resistance Tester" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Respirator
+:Respirator rdf:type owl:Class ;
+            rdfs:subClassOf :BreatheProtectionTool ;
+            obo:IAO_0000117 "Ruoyu Yang" ;
+            obo:IAO_0000119 "https://en.wikipedia.org/wiki/Respirator" ;
+            cco:definition "A respiratory system protection artifact that is designed for protecting the wearer from inhaling particulate matter, including airborne microrganisms, fumes, vapours." ;
+            rdfs:label "Respirator" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Rivet
+:Rivet rdf:type owl:Class ;
+       rdfs:subClassOf cco:MachineElement ;
+       obo:IAO_0000115 "A machine element that is designed as a permanent mechanical fastener, consisting of a smooth cylindrical shaft with a head on one end." ;
+       obo:IAO_0000117 "Ruoyu Yang" ;
+       rdfs:label "Rivet" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/RockwellHardnessTester
+:RockwellHardnessTester rdf:type owl:Class ;
+                        rdfs:subClassOf :TestingTool ;
+                        obo:IAO_0000115 "A testing artifact that is designed for testing the Rockwell hardness of some entity." ;
+                        obo:IAO_0000117 "BinBin Zhang" ;
+                        rdfs:label "Rockwell Hardness Tester" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Rope
+:Rope rdf:type owl:Class ;
+      rdfs:subClassOf :JoinTool ;
+      obo:IAO_0000115 "A join artifact that is designed for fastening different objects together, usually made by twisting together strands of natural fibers, such as hemp, or artificial fibers, such as polypropylene."@en ;
+      obo:IAO_0000117 "Ruoyu Yang" ;
+      obo:IAO_0000119 "https://en.wikipedia.org/wiki/Rope" ;
+      rdfs:label "Rope" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/SafetyGoggle
+:SafetyGoggle rdf:type owl:Class ;
+              rdfs:subClassOf :EyeProtectionTool ;
+              obo:IAO_0000117 "Ruoyu Yang" ;
+              obo:IAO_0000119 "https://en.wikipedia.org/wiki/Goggles" ;
+              cco:definition "An eye protection artifact that encloses or protects the area surrounding the eyes in order to prevent particulates, water or chemicals from striking the eyes." ;
+              rdfs:label "Safety Goggle" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/SafetyHelmet
+:SafetyHelmet rdf:type owl:Class ;
+              rdfs:subClassOf :HeadProtectionTool ;
+              obo:IAO_0000115 "A head protection artifact that is designed for protecting the head from injuries." ;
+              obo:IAO_0000117 "Ruoyu Yang" ;
+              obo:IAO_0000119 "https://en.wikipedia.org/wiki/Helmet" ;
+              rdfs:label "Safety Helmet" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Sander
+:Sander rdf:type owl:Class ;
+        rdfs:subClassOf :AbradingTool ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Sander" ;
+        cco:definition "An abrading artifact that is designed for smoothing the surface of an object with sandpaper or other abrasive material."@en ;
+        rdfs:label "Sander" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/SawingTool
+:SawingTool rdf:type owl:Class ;
+            rdfs:subClassOf :CuttingTool ;
+            obo:IAO_0000115 "A cutting artifact that is designed for cutting through material, very often wood, consisting of a tough blade, wire, or chain with a hard toothed edge."@en ;
+            obo:IAO_0000117 "Ruoyu Yang" ;
+            obo:IAO_0000119 "https://en.wikipedia.org/wiki/Saw" ;
+            rdfs:label "Sawing Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Scale
+:Scale rdf:type owl:Class ;
+       rdfs:subClassOf :WeightMeasurementTool ;
+       obo:IAO_0000117 "Ruoyu Yang" ;
+       cco:definition "A weight measurement artifact that is designed for measuring weight or calculate mass according to Hooke's Law or the lever balance principle."@en ;
+       rdfs:label "Scale" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Scalpel
+:Scalpel rdf:type owl:Class ;
+         rdfs:subClassOf :CuttingTool ;
+         obo:IAO_0000117 "Ruoyu Yang" ;
+         obo:IAO_0000119 "https://en.wikipedia.org/wiki/Scalpel" ;
+         cco:definition "A cutting artifact that is designed for surgery generally a knife with small, sharp blade."@en ;
+         rdfs:label "Scalpel" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Scissors
+:Scissors rdf:type owl:Class ;
+          rdfs:subClassOf :CuttingTool ;
+          obo:IAO_0000115 "A cutting artifact that is designed for cutting various thin materials, such as paper, cardboard, metal foil, cloth, rope, and wire, consisting of a pair of metal blades."@en ;
+          obo:IAO_0000117 "Ruoyu Yang" ;
+          obo:IAO_0000119 "https://en.wikipedia.org/wiki/Scissors" ;
+          rdfs:label "Scissors" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Scraper
+:Scraper rdf:type owl:Class ;
+         rdfs:subClassOf :CuttingTool ;
+         obo:IAO_0000115 "A cutting artifact that is desogned for cutting various thin materials, such as paper, cardboard, metal foil, cloth, rope, and wire, consisting of a pair of metal blades pivoted."@en ;
+         obo:IAO_0000117 "Ruoyu Yang" ;
+         rdfs:label "Scraper" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Screw
+:Screw rdf:type owl:Class ;
+       rdfs:subClassOf :Artifact_Element ;
+       obo:IAO_0000117 "Ruoyu Yang" ;
+       cco:definition "An artifact element that is designed as fastener by being rotated, usually a short, slender, sharp-pointed metal pin with a raised helical thread running around it and a slotted head." ,
+                      "An artifact element that is designed as fastener with an external male thread." ;
+       rdfs:label "Screw" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ScrewExtractor
+:ScrewExtractor rdf:type owl:Class ;
+                rdfs:subClassOf :HardwareHandlingArtifact ;
+                obo:IAO_0000117 "Ruoyu Yang" ;
+                obo:IAO_0000119 "https://en.wikipedia.org/wiki/Screw_extractor" ;
+                cco:definition "A hardware handling artifact that is designed for removing broken or stripped screws."@en ;
+                rdfs:label "Screw Extractor" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Screwdriver
+:Screwdriver rdf:type owl:Class ;
+             rdfs:subClassOf :HardwareHandlingArtifact ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             obo:IAO_0000119 "https://en.wikipedia.org/wiki/Screwdriver" ;
+             cco:definition "A hardware handling artifact that is designed for turning (driving or removing) screws with a flattened, cross-shaped, or star shaped tip."@en ;
+             rdfs:label "Screw Driver" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/SetSquare
+:SetSquare rdf:type owl:Class ;
+           rdfs:subClassOf :DimensionalMeasurementTool ;
+           obo:IAO_0000117 "Ruoyu Yang" ;
+           obo:IAO_0000119 "https://en.wikipedia.org/wiki/Set_square" ;
+           cco:definition "A spatial measurement artifact that is designed for engineering and technical drawing to provide a straightedge at a right angle or other particular planar angle to a baseline."@en ;
+           rdfs:label "Set Square" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ShapingTool
+:ShapingTool rdf:type owl:Class ;
+             rdfs:subClassOf cco:Tool ;
+             obo:IAO_0000115 "An artifact that is designed for producing a sculpted or plane surface by removing material ."@en ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             obo:IAO_0000119 "https://en.wikipedia.org/wiki/Shaping" ;
+             rdfs:label "Shaping Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Sickle
+:Sickle rdf:type owl:Class ;
+        rdfs:subClassOf :FarmingTool ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Sickle" ;
+        cco:definition "An agriculture artifact that is designed for harvesting, or reaping crops or cutting succulent forage chiefly for feeding livestock, which has a semicircular blade as part."@en ;
+        rdfs:label "Sickle" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Sieves
+:Sieves rdf:type owl:Class ;
+        rdfs:subClassOf :FiltrationTool ;
+        obo:IAO_0000115 "A filtration artifact that is designed for separating wanted material from unwanted material or for characterizing the particle size distribution of a sample, typically using a woven screen such as a mesh or net or metal."@en ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Sieve" ;
+        rdfs:label "Sieves" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/SignArtifact
+:SignArtifact rdf:type owl:Class ;
+              rdfs:subClassOf cco:Tool ;
+              obo:IAO_0000117 "Ruoyu Yang" ;
+              cco:definition "A artifact that is designed for indicating probable presence and basic information of objects." ;
+              rdfs:label "Sign Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Sponge
+:Sponge rdf:type owl:Class ;
+        rdfs:subClassOf :ManualCleaningTool ;
+        obo:IAO_0000115 "A manual cleaning artifact that is designed for washing and cleaning, usually a piece of a soft, light, porous substance originally consisting of the fibrous skeleton of an invertebrate."@en ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Sponge_(material)" ;
+        cco:elucidation "Sponges are commonly made from cellulose wood fibers or foamed plastic polymers." ;
+        rdfs:label "Sponge" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Sprayer
+:Sprayer rdf:type owl:Class ;
+         rdfs:subClassOf :Container ;
+         obo:IAO_0000117 "Ruoyu Yang" ;
+         cco:definition "A container that is designed for spraying a liquid like water herbicides and pesticides." ;
+         rdfs:label "Sprayer" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/SpringScale
+:SpringScale rdf:type owl:Class ;
+             rdfs:subClassOf :Scale ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             cco:definition "A scale that uses a spring to measure an object's weight, consisting of a spring fixed at one end with a hook to attach an object at the other."@en ;
+             rdfs:label "Spring Scale" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Staple
+:Staple rdf:type owl:Class ;
+        rdfs:subClassOf :Artifact_Element ;
+        obo:IAO_0000115 "An artifact element that is designed for joining or binding materials together, usually a type of two-pronged fastener." ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        rdfs:label "Staple" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Stapler
+:Stapler rdf:type owl:Class ;
+         rdfs:subClassOf :JoinTool ;
+         obo:IAO_0000115 "A join artifact that is designed for joining pages of paper or similar material by driving a thin metal staple through the sheets and folding the ends."@en ;
+         obo:IAO_0000117 "Ruoyu Yang" ;
+         obo:IAO_0000119 "https://en.wikipedia.org/wiki/Stapler" ;
+         rdfs:label "Stapler" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Steelyard
+:Steelyard rdf:type owl:Class ;
+           rdfs:subClassOf :Scale ;
+           obo:IAO_0000117 "Ruoyu Yang" ;
+           obo:IAO_0000119 "https://en.wikipedia.org/wiki/Steelyard_balance" ;
+           cco:definition "A scale that has a straight-beam balance with arms of unequal length, which incorporates a counterweight which slides along the longer arm to counterbalance the load and indicate its weight."@en ;
+           rdfs:label "Steelyard" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Stroboscope
+:Stroboscope rdf:type owl:Class ;
+             rdfs:subClassOf :MotionMeasurementTool ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             obo:IAO_0000119 "https://en.wikipedia.org/wiki/Stroboscope" ;
+             cco:definition "A motion measurement artifact that is designed for making a cyclically moving object appear to be slow-moving, or stationary."@en ;
+             cco:elucidation "Stroboscope consists of either a rotating disk with slots or holes or a lamp such as a flashtube which produces brief repetitive flashes of light." ;
+             rdfs:label "Stroboscope" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/SuctionCup
+:SuctionCup rdf:type owl:Class ;
+            rdfs:subClassOf :JoinTool ;
+            obo:IAO_0000115 "A join artifact that is designed for adhering objects to nonporous surfaces, creating a partial vacuum by negative fluid pressure of air or water."@en ;
+            obo:IAO_0000117 "Ruoyu Yang" ;
+            obo:IAO_0000119 "https://en.wikipedia.org/wiki/Suction_cup" ;
+            cco:elucidation "The working face of the suction cup is made of elastic, flexible material and has a curved surface." ;
+            rdfs:label "Suction Cup" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Switch
+:Switch rdf:type owl:Class ;
+        rdfs:subClassOf cco:MachineElement ;
+        cco:definition "A machine element that is designed for interrupting the current or diverting it from one conductor to another." ;
+        cco:definition_source "https://en.wikipedia.org/wiki/Switch" ;
+        cco:elucidation "Switch may be operated manually, like light switch or a keyboard button, may be operated by a moving object such as a door, or may be operated by some sensing element for pressure, temperature or flow." ;
+        cco:term_editor "Ruoyu Yang" ;
+        rdfs:label "Switch" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Tachometer
+:Tachometer rdf:type owl:Class ;
+            rdfs:subClassOf :MotionMeasurementTool ;
+            obo:IAO_0000117 "Ruoyu Yang" ;
+            obo:IAO_0000119 "https://en.wikipedia.org/wiki/Tachometer" ;
+            cco:definition "A motion measurement artifact that is designed for measuring the rotation speed of a shaft or disk, as in a motor or other machine."@en ;
+            rdfs:label "Tachometer" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Tag
+:Tag rdf:type owl:Class ;
+     rdfs:subClassOf :SignArtifact ;
+     obo:IAO_0000117 "Ruoyu Yang" ;
+     cco:definition "A sign artifact that is attached to someone or something for the purpose of identification or to give other information." ;
+     rdfs:label "Tag" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Tank
+:Tank rdf:type owl:Class ;
+      rdfs:subClassOf :Container ;
+      obo:IAO_0000117 "Ruoyu Yang" ;
+      cco:definition "A container that is designed for liquid or gas storage," ;
+      rdfs:label "Tank" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/TapeDispenser
+:TapeDispenser rdf:type owl:Class ;
+               rdfs:subClassOf :PackagingTool ;
+               obo:IAO_0000117 "Ruoyu Yang" ;
+               obo:IAO_0000119 "https://en.wikipedia.org/wiki/Tape_dispenser" ;
+               cco:definition "A package artifact that is designed for dispensing segments of tape for easy use."@en ;
+               cco:elucidation "Tape dispensers (like those used in an office or at home) are commonly made of plastic, and may be disposable." ;
+               rdfs:label "Tape Dispenser" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/TapeRuler
+:TapeRuler rdf:type owl:Class ;
+           rdfs:subClassOf :DimensionalMeasurementTool ;
+           obo:IAO_0000117 "Ruoyu Yang" ;
+           obo:IAO_0000119 "https://en.wikipedia.org/wiki/Tape_measure" ;
+           cco:definition "A spatial measurement artifact that is designed for measuring, consisting of a strip of material with linear-measurement markings."@en ;
+           cco:elucidation "Tape ruler's design allows for a measure of great length to be easily carried in pocket or toolkit and permits one to measure around curves or corners." ;
+           rdfs:label "Tape Ruler" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/TemperatureMeasurementTool
+:TemperatureMeasurementTool rdf:type owl:Class ;
+                            rdfs:subClassOf :MeasurementTool ;
+                            obo:IAO_0000115 "A measurement artifact that is designed for measuring the temperature of a material entity."@en ;
+                            obo:IAO_0000117 "Ruoyu Yang" ;
+                            rdfs:label "Temperature Measurement Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/TestingTool
+:TestingTool rdf:type owl:Class ;
+             rdfs:subClassOf cco:Tool ;
+             obo:IAO_0000115 "An artifact that is designed for establishing the quality, performance, or reliability of material entities."@en ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             rdfs:label "Testing Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ThermoCouple
+:ThermoCouple rdf:type owl:Class ;
+              rdfs:subClassOf :TemperatureMeasurementTool ;
+              obo:IAO_0000115 "A temperature measurement artifact that is designed for measuring temperature, consisting of two wires of different metals connected at two points, with a voltage being developed between the two junctions in proportion to the temperature difference."@en ;
+              obo:IAO_0000117 "Ruoyu Yang" ;
+              obo:IAO_0000119 "https://en.wikipedia.org/wiki/Thermocouple" ;
+              rdfs:label "Thermo Couple" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/ThermoMeter
+:ThermoMeter rdf:type owl:Class ;
+             rdfs:subClassOf :TemperatureMeasurementTool ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             cco:definition "A temperature measurement artifact that is designed for measuring temperature or a temperature gradient."@en ;
+             rdfs:label "Thermo Meter" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Thermostat
+:Thermostat rdf:type owl:Class ;
+            rdfs:subClassOf :InfrastructureElement ;
+            obo:IAO_0000115 "A infrastructure element that is designed for maintain the temperature near a desired setpoint." ;
+            obo:IAO_0000117 "Ruoyu Yang" ;
+            obo:IAO_0000119 "https://en.wikipedia.org/wiki/Thermostat" ;
+            rdfs:label "Thermostat" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/TileCutter
+:TileCutter rdf:type owl:Class ;
+            rdfs:subClassOf :CuttingTool ;
+            obo:IAO_0000115 "A cutting artifact that is designed for cutting tiles to a required size or shape."@en ;
+            obo:IAO_0000117 "Ruoyu Yang" ;
+            obo:IAO_0000119 "https://en.wikipedia.org/wiki/Ceramic_tile_cutter" ;
+            rdfs:label "Tile Cutter" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/TrafficCone
+:TrafficCone rdf:type owl:Class ;
+             rdfs:subClassOf :ProtectionTool ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             obo:IAO_0000119 "https://en.wikipedia.org/wiki/Traffic_cone" ;
+             cco:definition "A protection artifact that is placed on roads or footpaths to temporarily redirect traffic in a safe manner."@en ;
+             rdfs:label "Traffic Cone" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/TransmissionElectroMicroscopy
+:TransmissionElectroMicroscopy rdf:type owl:Class ;
+                               rdfs:subClassOf :OpticalInvestigationTool ;
+                               obo:IAO_0000115 "An optical investigation artifact that is designed to form an image of some entity with a beam of electrons transmitting through the entity."@en ;
+                               obo:IAO_0000117 "BinBin Zhang" ;
+                               rdfs:label "Transmission Electro Microscope" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/TransportationTool
+:TransportationTool rdf:type owl:Class ;
+                    rdfs:subClassOf cco:Tool ;
+                    obo:IAO_0000117 "Ruoyu Yang" ;
+                    obo:IAO_0000119 "https://en.wikipedia.org/wiki/Transport" ;
+                    cco:definition "An artifact that is designed for moving people, animals, or goods from one location to another."@en ;
+                    rdfs:label "Transportation Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/TrashCan
+:TrashCan rdf:type owl:Class ;
+          rdfs:subClassOf :Container ;
+          obo:IAO_0000117 "Ruoyu Yang" ;
+          cco:definition "A container that is designed for temporarily stroing waste and is usually made out of metal or plastic." ;
+          rdfs:label "Trash Can" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/U-Bolt
+:U-Bolt rdf:type owl:Class ;
+        rdfs:subClassOf :Bolt ;
+        cco:definition "A bolt that is designed for the shape of the letter U with screw threads on both ends." ;
+        cco:definition_source "https://en.wikipedia.org/wiki/U-bolt" ;
+        cco:term_editor "Ruoyu Yang" ;
+        rdfs:label "U Bolt" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/USBFlashDisk
+:USBFlashDisk rdf:type owl:Class ;
+              rdfs:subClassOf :Container ;
+              obo:IAO_0000117 "Ruoyu Yang" ;
+              cco:definition "A container that is designed for data storage including flash memory with an integrated USB interface." ;
+              rdfs:label "USBFlash Disk" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/UltrasonicThicknessGauge
+:UltrasonicThicknessGauge rdf:type owl:Class ;
+                          rdfs:subClassOf :DimensionalMeasurementTool ;
+                          obo:IAO_0000117 "Ruoyu Yang" ;
+                          obo:IAO_0000119 "https://en.wikipedia.org/wiki/Ultrasonic_thickness_gauge" ;
+                          cco:definition "A spatial measurement artifact that is designed for the non-destructive investigation of a material's thickness using ultrasonic waves."@en ;
+                          rdfs:label "Ultrasonic Thickness Gauge" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/VacuumCleaner
+:VacuumCleaner rdf:type owl:Class ;
+               rdfs:subClassOf :ElectricCleaningTool ;
+               obo:IAO_0000117 "Ruoyu Yang" ;
+               obo:IAO_0000119 "https://en.wikipedia.org/wiki/Vacuum_cleaner" ;
+               cco:definition "An electric cleaning artifact that is designed for sucking up debris, usually from floors, and from other surfaces such as upholstery and draperies."@en ;
+               cco:elucidation "The dirt is collected by either a dustbag or a cyclone for later disposal." ;
+               rdfs:label "Vacuum Cleaner" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/VibrationMeter
+:VibrationMeter rdf:type owl:Class ;
+                rdfs:subClassOf :MotionMeasurementTool ;
+                obo:IAO_0000117 "Ruoyu Yang" ;
+                obo:IAO_0000119 "https://www.pce-instruments.com/us/measuring-instruments/test-meters/vibration-meter-kat_40108_1.htm" ;
+                cco:definition "A motion measurement artifact that is designed for measuring vibrations and oscillations in many machines and installations, as well as in the development of products such as artifacts or components."@en ;
+                rdfs:label "Vibration Meter" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/VibrationTestingTool
+:VibrationTestingTool rdf:type owl:Class ;
+                      rdfs:subClassOf :TestingTool ;
+                      obo:IAO_0000117 "BinBin Zhang" ;
+                      cco:definition "A tool that is designed to test some entity by introducing a forcing function to monitor the characteristic changes." ;
+                      rdfs:label "Vibration Testing Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/VideoSurveillance
+:VideoSurveillance rdf:type owl:Class ;
+                   rdfs:subClassOf :InfrastructureElement ;
+                   obo:IAO_0000117 "Ruoyu Yang" ;
+                   cco:definition "An infrastructure element that is designed for compressing stores or transmiting video images or extracting information over communication networks or digital data link." ;
+                   rdfs:label "Video Surveillance Camera" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/VolumeMeasurementTool
+:VolumeMeasurementTool rdf:type owl:Class ;
+                       rdfs:subClassOf :MeasurementTool ;
+                       obo:IAO_0000115 "A measurement artifact that is designed for measuring the volume of a material entity."@en ,
+                                       "Ruoyu Yang" ;
+                       rdfs:label "Volume Measurement Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/WarningLight
+:WarningLight rdf:type owl:Class ;
+              rdfs:subClassOf :InfrastructureElement ;
+              obo:IAO_0000117 "Ruoyu Yang" ;
+              cco:definition "A infrastructure element that is attached to tall structures and are used as collision avoidance measures which makes structures more visible to passing aircraft and are usually used at night." ;
+              rdfs:label "Warning Light" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/WaterFilter
+:WaterFilter rdf:type owl:Class ;
+             rdfs:subClassOf :FiltrationTool ;
+             obo:IAO_0000115 "A filtration artifact that is designed for removing impurities by minimizing contamination of water using a fine physical barrier, a chemical process or a biological process."@en ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             obo:IAO_0000119 "https://en.wikipedia.org/wiki/Water_filter" ;
+             cco:elucidation "Filters use sieving, adsorption, ion exchanges and other processes to remove unwanted substances from water. Unlike a sieve or screen, a filter can potentially remove particles much smaller than the holes through which its water passes." ;
+             rdfs:label "Water Filter" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/WaterWheel
+:WaterWheel rdf:type owl:Class ;
+            rdfs:subClassOf :FarmingTool ;
+            obo:IAO_0000117 "Ruoyu Yang" ;
+            obo:IAO_0000119 "https://en.wikipedia.org/wiki/Water_wheel" ;
+            cco:definition "An agriculture artifact that is designed for converting the energy of flowing or falling water into useful forms of power, often in a watermill."@en ;
+            rdfs:label "Water Wheel" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/WeightMeasurementTool
+:WeightMeasurementTool rdf:type owl:Class ;
+                       rdfs:subClassOf :MeasurementTool ;
+                       obo:IAO_0000115 "A measurement artifact that is designed for measuring the weight of a material entity."@en ;
+                       obo:IAO_0000117 "Ruoyu Yang" ;
+                       rdfs:label "Weight Measurement Tool" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Welder
+:Welder rdf:type owl:Class ;
+        rdfs:subClassOf :WeldingTool ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Welder" ;
+        cco:definition "A welding artifact that is designed for welding power supply."@en ;
+        rdfs:label "Weld Power Supply" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/WeldingHelmet
+:WeldingHelmet rdf:type owl:Class ;
+               rdfs:subClassOf :FaceProtectionTool ;
+               obo:IAO_0000115 "A face protection artifact that is designed for protecting people's eyes, face and neck from flash burn, ultraviolet light, sparks, infrared light, and heat." ;
+               obo:IAO_0000117 "Ruoyu Yang" ;
+               obo:IAO_0000119 "https://en.wikipedia.org/wiki/Welding_helmet"@en ;
+               rdfs:label "Welding Helmet" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/WeldingTool
+:WeldingTool rdf:type owl:Class ;
+             rdfs:subClassOf :JoinTool ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             obo:IAO_0000119 "https://en.wikipedia.org/wiki/Welding" ;
+             cco:definition "An artifact that is designed for joining materials, usually metals or thermoplastics, by causing fusion."@en ;
+             rdfs:label "Welding Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Wheel
+:Wheel rdf:type owl:Class ;
+       rdfs:subClassOf cco:MachineElement ;
+       obo:IAO_0000117 "A machine element that is designed for rotating on an axle bearing, usually a circular component of vehicle." ,
+                       "Ruoyu Yang" ;
+       rdfs:label "Wheel" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Winch
+:Winch rdf:type owl:Class ;
+       rdfs:subClassOf :LiftingTool ;
+       obo:IAO_0000115 "A lifting artifact that is designed for adjusting the tension on a rope or wire rope."@en ;
+       obo:IAO_0000117 "Ruoyu Yang" ;
+       obo:IAO_0000119 "https://en.wikipedia.org/wiki/Winch" ;
+       cco:elucidation "In winch's simplest form it consists of a spool and attached hand crank. In larger forms, winches stand at the heart of machines as diverse as tow trucks, steam shovels and elevators." ;
+       rdfs:label "Winch" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Wrench
+:Wrench rdf:type owl:Class ;
+        rdfs:subClassOf :JoinTool ;
+        obo:IAO_0000117 "Ruoyu Yang" ;
+        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Wrench" ;
+        cco:definition "A joining artifact that is designed for providing grip and mechanical advantage in applying torque to turn nuts and bolts or keep them from turning."@en ;
+        rdfs:label "Wrench" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/WritingTool
+:WritingTool rdf:type owl:Class ;
+             rdfs:subClassOf cco:Tool ;
+             obo:IAO_0000117 "Ruoyu Yang" ;
+             cco:definition "An artifact that is designed to be used in the manual production of writing or drawing."@en ;
+             rdfs:label "Writing Artifact" .
+
+
+###  http://www.semanticweb.org/ontologies/ToolOntology/Compression/Tensile/BendingTestTool
+<http://www.semanticweb.org/ontologies/ToolOntology/Compression/Tensile/BendingTestTool> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf :TestingTool ;
+                                                                                         obo:IAO_0000115 "A tool that is designed to test the behavior or response of some entity while it experiences a compressive load."@en ;
+                                                                                         obo:IAO_0000117 "BinBin Zhang" ;
+                                                                                         rdfs:label "Compression Tensile Bending Test Tool" .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

@@ -1,0 +1,20 @@
+.hidden {
+    display: none !important;
+}
+
+.center {
+    text-align: center;
+}
+
+.required {
+    color: red;
+}
+
+span.smaller {
+    font-size: 0.875rem;
+}
+
+.horizontal-limit {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

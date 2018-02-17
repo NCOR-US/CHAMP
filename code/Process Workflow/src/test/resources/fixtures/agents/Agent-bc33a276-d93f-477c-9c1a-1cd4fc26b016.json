@@ -1,0 +1,20 @@
+{
+  "data" : {
+    "id" : "urn:process-workflow:plans:generated:Agent-bc33a276-d93f-477c-9c1a-1cd4fc26b016",
+    "attributes" : {
+      "name" : "Ted",
+      "username" : null,
+      "joined" : null,
+      "role" : "http://www.semanticweb.org/no/ontologies/2017/2/Widget#EmployeeRole"
+    },
+    "relationships" : {
+      "agentIn" : {
+        "data" : [ {
+          "type" : "sub-processes",
+          "id" : "urn:process-workflow:plans:generated:SubProcess-244544b9-9018-488b-9a67-1286cec68c9d"
+        } ]
+      }
+    },
+    "type" : "agents"
+  }
+}

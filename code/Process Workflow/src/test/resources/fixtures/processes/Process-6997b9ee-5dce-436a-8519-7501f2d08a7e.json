@@ -1,0 +1,21 @@
+{
+  "data" : {
+    "id" : "urn:process-workflow:plans:generated:Process-6997b9ee-5dce-436a-8519-7501f2d08a7e",
+    "attributes" : {
+      "name" : "Test Process",
+      "type" : "http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology#ActOfProduction",
+      "description" : "A test process",
+      "created" : "2017-10-02T19:59:01.307Z",
+      "lastEdited" : "2017-10-02T19:59:01.307Z"
+    },
+    "relationships" : {
+      "firstStep" : {
+        "data" : {
+          "type" : "sub-process-specs",
+          "id" : "urn:process-workflow:plans:generated:Spec-SubProcess-36330772-8395-4d82-8814-ab3153740f6b"
+        }
+      }
+    },
+    "type" : "processes"
+  }
+}

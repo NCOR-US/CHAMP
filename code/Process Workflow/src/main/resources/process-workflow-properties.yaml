@@ -1,0 +1,55 @@
+# Properties for OntoView web application
+ProcessWorkflow:
+  # location for queries
+  query-location: @process-workflow.query.location@
+
+  # the graph URI inside the above datastore for instance data
+  data-graph: @process-workflow.default.query.data.graph@
+
+  # the graph URI inside the above datastore for deleted records
+  deleted-record-graph: @process-workflow.default.query.deleted.record.graph@
+
+  # the graph URI inside the above datastore for record deltas
+  delta-graph: @process-workflow.default.query.delta.graph@
+
+  # the graph URI inside the above datastore for the ontologies
+  ontology-graph: @process-workflow.query.ontology.graph@
+
+  # all namespaces, in order of appearance
+  query-namespaces:
+    - prefix: owl
+      ns: http://www.w3.org/2002/07/owl#
+    - prefix: rdf
+      ns: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+    - prefix: rdfs
+      ns: http://www.w3.org/2000/01/rdf-schema#
+
+    - prefix: bfo
+      ns: http://purl.obolibrary.org/obo/
+    - prefix: ro
+      ns: http://www.obofoundry.org/ro/ro.owl#
+
+    - prefix: cco
+      ns: http://www.ontologyrepository.com/CommonCoreOntologies/
+    - prefix: lro
+      ns: http://www.ontologyrepository.com/CommonCoreOntologies/LewisianRelationOntology/
+
+    - prefix: mpo
+      ns: http://www.semanticweb.org/ontologies/ManufacturingProcessOntology#
+    - prefix: tool
+      ns: http://www.semanticweb.org/ontologies/ToolOntology#
+    - prefix: tpo
+      ns: http://www.semanticweb.org/ontologies/TestingProcessOntology#
+    - prefix: plc
+      ns: http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology#
+    - prefix: ceo
+      ns: http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology
+    - prefix: design
+      ns: http://www.semanticweb.org/no/ontologies/2017/6/untitled-ontology-252#
+    - prefix: ser
+      ns: http://www.semanticweb.org/no/ontologies/2017/1/SeRonto-ontology
+    - prefix: widget
+      ns: http://www.semanticweb.org/no/ontologies/2017/2/Widget#
+
+    - prefix: gen
+      ns: "urn:process-workflow:plans:generated:"

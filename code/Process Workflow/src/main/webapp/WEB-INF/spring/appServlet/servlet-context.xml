@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+
+    <!-- Enables the Spring MVC @Controller programming model -->
+    <mvc:annotation-driven />
+    <mvc:resources mapping="/**" location="/resources/" />
+
+    <context:component-scan base-package="org.cubrc.process.workflow.web" />
+
+    <bean id="databaseConnector" class="org.cubrc.process.workflow.db.RdfDatabaseConnector">
+        <constructor-arg name="queryLocation" value="${process-workflow.query.location}" />
+        <constructor-arg name="updateLocation" value="${process-workflow.update.location}" />
+    </bean>
+
+    <bean id="dataControllerWorker" class="org.cubrc.process.workflow.web.worker.DataControllerWorker">
+        <property name="databaseConnector" ref="databaseConnector" />
+    </bean>
+
+    <bean id="jsonApiTransformerFactory" class="org.cubrc.process.workflow.data.transform.JsonApiTransformerFactory" />
+
+    <bean id="filePersistenceWorker" class="org.cubrc.process.workflow.web.worker.FilePersistenceWorker">
+        <constructor-arg name="workingDirectory" value="${process-workflow.data.location}" />
+    </bean>
+
+    <bean id="dataController" class="org.cubrc.process.workflow.web.controller.DataController">
+        <property name="worker" ref="${process-workflow.data.controller.worker}" />
+    </bean>
+
+    <bean id="deletedDataController" class="org.cubrc.process.workflow.web.controller.DeletedDataController">
+        <property name="databaseConnector" ref="databaseConnector" />
+    </bean>
+
+    <bean id="processWorkflowProperties" class="org.springframework.beans.factory.config.YamlPropertiesFactoryBean">
+        <property name="resources" value="classpath:process-workflow-properties.yaml" />
+    </bean>
+
+    <context:property-placeholder properties-ref="processWorkflowProperties" location="classpath:maven-project.properties,classpath:application.properties" />
+
+    <bean id="ontologyController" class="org.cubrc.process.workflow.web.controller.OntologyController">
+        <property name="databaseConnector" ref="databaseConnector" />
+    </bean>
+</beans>

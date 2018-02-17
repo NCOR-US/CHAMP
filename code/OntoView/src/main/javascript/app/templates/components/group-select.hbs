@@ -1,0 +1,11 @@
+<label>
+    <select class="group-select" data-placeholder="Select an aggregate" multiple>
+        {{#each options as |opt|}}
+            <option value="{{opt.value}}"
+                    selected="{{if opt.selected "selected"}}"
+                    disabled="{{if opt.disabled "disabled"}}">
+                {{opt.text}}
+            </option>
+        {{/each}}
+    </select>
+</label>

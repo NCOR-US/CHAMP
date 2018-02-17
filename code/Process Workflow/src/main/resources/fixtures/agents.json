@@ -1,0 +1,26 @@
+{
+    "meta": {
+        "version": "0.1.0"
+    },
+    "data": [
+        {
+            "type": "agents",
+            "id": "urn:test:plans:JoeSmith",
+            "attributes": {
+                "name": "Joe Smith",
+                "username": "joe.smith"
+            },
+            "relationships": {
+                "authorOf": {
+                    "data": {
+                        "type": "process",
+                        "id": "urn:test:plans:IntelReportPlan"
+                    }
+                }
+            },
+            "links": {
+                "self": "http://localhost:9090/ontoview/data/agents/urn%3Atest%3Aplans%3AJoeSmith"
+            }
+        }
+    ]
+}

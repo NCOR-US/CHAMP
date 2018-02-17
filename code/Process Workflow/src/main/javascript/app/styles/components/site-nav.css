@@ -1,0 +1,11 @@
+/* navigation bar */
+
+nav.top-bar {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+
+nav.top-bar a.user-label:hover {
+    background: inherit !important;
+}

@@ -1,0 +1,350 @@
+@prefix : <http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology> .
+
+<http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology> rdf:type owl:Ontology ;
+                                                                    owl:imports <http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology> ;
+                                                                    <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/Title> "The Services Ontology"@en ;
+                                                                    owl:versionInfo "Version .01"@en ;
+                                                                    rdfs:comment "created by J. Neil Otte from work of Barry Smith, 2.3.17"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/IAO_0000115
+<http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000117
+<http://purl.obolibrary.org/obo/IAO_0000117> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/Title
+<http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/Title> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/Title
+:Title rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/affords
+:affords rdf:type owl:ObjectProperty ;
+         owl:inverseOf :is_afforded_by ;
+         <http://purl.obolibrary.org/obo/IAO_0000115> "X affords Y when X makes possible, facilitates, or allows for Y."@en ;
+         <http://www.w3.org/2004/02/skos/core#example> "an ocean affords swimming"@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/is_afforded_by
+:is_afforded_by rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct
+<http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService
+<http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+                                                                            <http://purl.obolibrary.org/obo/IAO_0000117> "J. Neil Otte"@en ;
+                                                                            rdfs:comment "Note: While there is a common distinction in the literature between embodied services and disembodied or splintered services (such as compact discs, books, newspapers, television shows), the latter are not true services, since the purchase of a splintered service is not the purchase of a process, but rather the purchase of a commodity (a continuant). Hence, there is here, under process, no contrasting sibling class of disembodied service, and thus all that we mean by services are services in the sense of an embodied service."@en ;
+                                                                            rdfs:label "Act of Service"@en ;
+                                                                            <http://www.w3.org/2004/02/skos/core#definition> "an intentional act that is such that production of an economic good and consumption of that good coincide."@en .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfAccounting
+:ActOfAccounting rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfArbitrationService
+:ActOfArbitrationService rdf:type owl:Class ;
+                         rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfArchivalService
+:ActOfArchivalService rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfBanking
+:ActOfBanking rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfBarbering
+:ActOfBarbering rdf:type owl:Class ;
+                rdfs:subClassOf :ActOfPersonalGrooming .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfBaristaService
+:ActOfBaristaService rdf:type owl:Class ;
+                     rdfs:subClassOf :ActOfBeverageService .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfBartending
+:ActOfBartending rdf:type owl:Class ;
+                 rdfs:subClassOf :ActOfBeverageService .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfBeverageService
+:ActOfBeverageService rdf:type owl:Class ;
+                      rdfs:subClassOf :ActOfFoodService .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfChildcare
+:ActOfChildcare rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfCleaning
+:ActOfCleaning rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfConsulting
+:ActOfConsulting rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfCoronerService
+:ActOfCoronerService rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfCustomerService
+:ActOfCustomerService rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfDelivery
+:ActOfDelivery rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfDentalCleaning
+:ActOfDentalCleaning rdf:type owl:Class ;
+                     rdfs:subClassOf :ActOfDentalService .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfDentalService
+:ActOfDentalService rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfDropOffLaundryService
+:ActOfDropOffLaundryService rdf:type owl:Class ;
+                            rdfs:subClassOf :ActOfFabricCare .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfDryCleaningService
+:ActOfDryCleaningService rdf:type owl:Class ;
+                         rdfs:subClassOf :ActOfFabricCare .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfEntertainmentService
+:ActOfEntertainmentService rdf:type owl:Class ;
+                           rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfFabricCare
+:ActOfFabricCare rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfFinancialService
+:ActOfFinancialService rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfFoodService
+:ActOfFoodService rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfGambling
+:ActOfGambling rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfGardening
+:ActOfGardening rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfHealthcare
+:ActOfHealthcare rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfHospiceCare
+:ActOfHospiceCare rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfHospitalityService
+:ActOfHospitalityService rdf:type owl:Class ;
+                         rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfHumanResourceAdministration
+:ActOfHumanResourceAdministration rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfIncarcerationService
+:ActOfIncarcerationService rdf:type owl:Class ;
+                           rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfInformationTechnologyService
+:ActOfInformationTechnologyService rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfInterpreting
+:ActOfInterpreting rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfJanitorialService
+:ActOfJanitorialService rdf:type owl:Class ;
+                        rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfLandscaping
+:ActOfLandscaping rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfLawEnforcement
+:ActOfLawEnforcement rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfLegalService
+:ActOfLegalService rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfLibraryService
+:ActOfLibraryService rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfMaintence
+:ActOfMaintence rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfManicuring
+:ActOfManicuring rdf:type owl:Class ;
+                 rdfs:subClassOf :ActOfPersonalGrooming .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfMessageTherapy
+:ActOfMessageTherapy rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfMorticianService
+:ActOfMorticianService rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfPedicuring
+:ActOfPedicuring rdf:type owl:Class ;
+                 rdfs:subClassOf :ActOfPersonalGrooming .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfPerformingArts
+:ActOfPerformingArts rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfPersonalGrooming
+:ActOfPersonalGrooming rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfPrisonGuardService
+:ActOfPrisonGuardService rdf:type owl:Class ;
+                         rdfs:subClassOf :ActOfIncarcerationService .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfRealEstate
+:ActOfRealEstate rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfRepairing
+:ActOfRepairing rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfSecurityPatroling
+:ActOfSecurityPatroling rdf:type owl:Class ;
+                        rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfSocialService
+:ActOfSocialService rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfSportsParticipation
+:ActOfSportsParticipation rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfStockBrockering
+:ActOfStockBrockering rdf:type owl:Class ;
+                      rdfs:subClassOf :ActOfFinancialService .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfTaxPreparation
+:ActOfTaxPreparation rdf:type owl:Class ;
+                     rdfs:subClassOf :ActOfFinancialService .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfTeaching
+:ActOfTeaching rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfTranslating
+:ActOfTranslating rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfTransport
+:ActOfTransport rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/Services-ontology/ActOfWaitering
+:ActOfWaitering rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfService> .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

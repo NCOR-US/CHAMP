@@ -1,0 +1,46 @@
+{{#if queryTracker.isTrackingQuery}}
+    <br>
+    <div class="row">
+        <div class="small-12 columns">
+            <ul class="breadcrumbs">
+                {{#each queryTracker.queryEntities as |entity|}}
+                    {{#if entity.current}}
+                        <li class="current">
+                            {{entity.label}}
+                        </li>
+                    {{else}}
+                        <li>
+                            {{#link-to 'search-result' entity.id}}{{entity.label}}{{/link-to}}
+                        </li>
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+{{/if}}
+{{!-- todo maybe have the breadcrumb on the left side?? --}}
+
+<div class="row">
+    <div class="small-12 columns">
+        <br>
+        <h4>{{model.id}} {{#if property}}<small>{{property}}</small>{{/if}}</h4>
+        <hr>
+    </div>
+</div>
+
+<div class="row">
+    <div class="small-12 columns">
+        {{#if queryTracker.isTrackingQuery}}
+            <a class='button small success' {{action 'stopTrackingQuery'}}>Start building query</a>
+            <a class="button small alert" {{action 'cancelTrackingQuery'}}>Discard tracking query</a>
+        {{else}}
+            <a class="button small primary" {{action 'startTrackingQuery'}}>Start tracking query</a>
+        {{/if}}
+    </div>
+</div>
+
+<div class="row">
+    <div class="small-12 columns">
+        {{results-table data=model.result selectedProperty=property id=model.id}}
+    </div>
+</div>

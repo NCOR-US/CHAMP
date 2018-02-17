@@ -1,0 +1,10 @@
+{
+  "data" : {
+    "id" : "urn:process-workflow:plans:generated:SubProcess-244544b9-9018-488b-9a67-1286cec68c9d",
+    "attributes" : {
+      "name" : "Step 2",
+      "type" : "http://www.semanticweb.org/ontologies/ManufacturingProcessOntology#ActOfAnnealing"
+    },
+    "type" : "sub-processes"
+  }
+}

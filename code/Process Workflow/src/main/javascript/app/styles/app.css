@@ -1,0 +1,15 @@
+/* Index of all styles to precompile */
+
+@import "global.css";
+@import "app-container.css";
+
+@import "routes/processes.css";
+
+@import "components/site-nav.css";
+@import "components/process-nav.css";
+@import "components/chosen-select.css";
+@import "components/process-creator-form.css";
+@import "components/subprocess-editor.css";
+@import "components/legacy-data-input.css";
+@import "components/subprocess-input.css";
+@import "components/user-settings.css";

@@ -1,0 +1,137 @@
+.bottom-margin-1 {
+    margin-bottom: 1rem;
+}
+
+.query-row-handle {
+    /* todo better layout */
+    position: absolute;
+    left: 1.75rem;
+    top: 0.5rem;
+    color: #aaa;
+}
+
+.query-drag-row {
+    border: 1px solid #aaa;
+    border-radius: 0.25rem;
+    margin: 0.25rem 0.5rem;
+    background-color: #efefef;
+}
+
+.query-drag-row.highlighted {
+    background-color: #def;
+}
+
+.ui-drag-hover .query-drag-row {
+    border: 1px dashed #333;
+}
+
+.query-row {
+    margin-left: 2em;
+    margin-right: 1em;
+}
+
+.query-row input,
+.aggregate-wrapper input {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.query-row input[type=text],
+.aggregate-wrapper input[type=text] {
+    height: 1.5rem;
+}
+
+.aggregate-function-editor-wrapper {
+    margin-top: 1em;
+}
+
+div.change-node-type-wrapper input[type='radio'] {
+    margin-bottom: 0;
+    height: 1rem;
+}
+
+a.remove-row-icon {
+    position: absolute;
+    z-index: 9999;
+    right: 0;
+    top: .25rem;
+}
+
+.use-checkbox {
+    padding-top: 1.5em;
+}
+
+.use-checkbox input {
+    margin-bottom: 0;
+    height: 1em;
+}
+
+.function-editor-wrapper,
+.aggregate-function-editor-wrapper {
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: .25em .5em;
+    margin-bottom: 1em;
+}
+
+.hover-editable {
+    display: inline-block;
+    border: 1px solid transparent;
+}
+.hover-editable:hover {
+    border: 1px solid grey;
+}
+
+input.short-input {
+    height: 2em;
+}
+
+div.offset-checkbox-container {
+    position: relative;
+}
+
+input.offset-checkbox {
+    position: absolute;
+    top: .5em;
+    left: -.5em;
+}
+
+#namespaceTable {
+    margin-bottom: 0;
+    border: none;
+}
+
+#namespaceTable td {
+    padding: 0 .5em .25em 0;
+}
+
+#queryBuilderTable {
+    margin-bottom: 0;
+    margin-left: 1em;
+    border: none;
+}
+
+#queryBuilderTable td {
+    padding: .25em .5em;
+}
+
+#queryBuilderTable select[name='augment'] {
+    margin: 0 1rem 1rem 0;
+}
+
+#queryBuilderTable tr:nth-of-type(even) {
+    background: inherit;
+}
+
+#queryBuilderTable div.edit {
+    border: 1px solid #aaa;
+    padding: .25em .5em;
+}
+
+#queryNamespaceTable {
+    width: 100%;
+}
+
+#queryNamespaceTable input {
+    margin: 0;
+}

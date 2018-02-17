@@ -1,0 +1,126 @@
+{
+    "type": "sub-process-specs",
+    "id": "processID",
+    "iriBase": "gen:Spec-SubProcess",
+    "baseClass": "cco:Act",
+    "attributes": [
+        {
+            "name": "name",
+            "structure": [
+                "?processID cco:designated_by ?ice0",
+                "?ice0 rdf:type cco:DesignativeName",
+                "?ice0 cco:inheres_in ?ibe0",
+                "?ibe0 rdf:type cco:InformationBearingEntity",
+                "?ibe0 cco:has_text_value ?name"
+            ],
+            "generate": [
+                {
+                    "variable": "ibe0",
+                    "strategy": "random",
+                    "base": "DesignativeNameIBE"
+                },
+                {
+                    "variable": "ice0",
+                    "strategy": "random",
+                    "base": "DesignativeNameICE"
+                }
+            ]
+        },
+        {
+            "name": "notes",
+            "structure": [
+                "?ice1 cco:is_about ?processID",
+                "?ice1 rdf:type cco:InformationContentEntity",
+                "?ice1 cco:inheres_in ?ibe1",
+                "?ibe1 rdf:type cco:InformationBearingEntity",
+                "?ibe1 cco:has_text_value ?notes"
+            ],
+            "generate": [
+                {
+                    "variable": "ibe1",
+                    "strategy": "random",
+                    "base": "NotesIBE"
+                },
+                {
+                    "variable": "ice1",
+                    "strategy": "random",
+                    "base": "NotesICE"
+                }
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "name": "parentPlan",
+            "type": "processes",
+            "linkType": "belongsTo",
+            "structure": [
+                "?processID lro:prescribed_by ?parentPlan"
+            ]
+        },
+        {
+            "name": "previousSubProcess",
+            "type": "sub-process-specs",
+            "linkType": "belongsTo",
+            "structure": [
+                "?processID lro:preceded_by ?previousSubProcess"
+            ]
+        },
+        {
+            "name": "nextSubProcess",
+            "type": "sub-process-specs",
+            "linkType": "belongsTo",
+            "structure": [
+                "?processID lro:precedes ?nextSubProcess"
+            ]
+        },
+        {
+            "name": "inputs",
+            "type": "artifact-specs",
+            "linkType": "hasMany",
+            "structure": [
+                "?processID lro:has_input ?inputs"
+            ]
+        },
+        {
+            "name": "outputs",
+            "type": "artifact-specs",
+            "linkType": "hasMany",
+            "structure": [
+                "?processID lro:has_output ?outputs"
+            ]
+        },
+        {
+            "name": "testValues",
+            "type": "test-value-bearer-specs",
+            "linkType": "hasMany",
+            "structure": [
+                "?processID lro:has_test_output ?testValues"
+            ]
+        },
+        {
+            "name": "agents",
+            "type": "agent-specs",
+            "linkType": "hasMany",
+            "structure": [
+                "?processID lro:has_agent ?agents"
+            ]
+        },
+        {
+            "name": "processParts",
+            "type": "sub-process-specs",
+            "linkType": "hasMany",
+            "structure": [
+                "?processID lro:has_process_part ?processParts"
+            ]
+        },
+        {
+            "name": "parentSubProcess",
+            "type": "sub-process-specs",
+            "linkType": "belongsTo",
+            "structure": [
+                "?processID lro:is_part_of_process ?parentSubProcess"
+            ]
+        }
+    ]
+}

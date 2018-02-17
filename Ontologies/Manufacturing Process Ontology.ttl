@@ -1,0 +1,1899 @@
+@prefix : <http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix FLU12: <http://www.semanticweb.org/no/ontologies/2017/2/FLU12#> .
+@prefix CEO-ontology: <http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/> .
+@prefix PLC-ontology: <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/> .
+@base <http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/> .
+
+<http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/> rdf:type owl:Ontology ;
+                                                                      owl:imports <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/> ;
+                                                                      obo:IAO_0000232 "The Manufacturing Process Ontology has an intended scope those processes that are performed in the manufacture of goods"@en ;
+                                                                      owl:versionInfo "Version .02"@en ,
+                                                                                      "Manufacturing Process Ontology"@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfArtifactProcessing
+cco:ActOfArtifactProcessing rdf:type owl:Class ;
+                            rdfs:subClassOf cco:IntentionalAct ;
+                            cco:definition "An intentional act that modifies some already existing artifact."@en .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/ActOfMotion
+cco:ActOfMotion rdf:type owl:Class ;
+                rdfs:subClassOf cco:IntentionalAct .
+
+
+###  http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/ActOfProduction
+PLC-ontology:ActOfProduction rdf:type owl:Class ;
+                             rdfs:subClassOf cco:IntentionalAct .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfAbrading
+:ActOfAbrading rdf:type owl:Class ;
+               rdfs:subClassOf cco:ActOfArtifactProcessing ;
+               cco:definition "An act of artifact processing that alters the surface of an artifact to achieve a certain property by the process of scuffing, scratching, wearing down, marring, or rubbing away."^^xsd:string ;
+               cco:definition_source "https://en.wikipedia.org/wiki/Abrasion_(mechanical)"^^xsd:string ;
+               cco:elucidation "It can be intentionally imposed in a controlled process using an abrasive. Abrasion can be an undesirable effect of exposure to normal use or exposure to the elements. Abrading may be employed to: improve appearance, adhesion or wettability, solderability, corrosion resistance, tarnish resistance, chemical resistance, wear resistance, hardness, modify electrical conductivity, remove burrs and other surface flaws, and control the surface friction."^^xsd:string ;
+               cco:term_editor "Munira Mohd Ali" ;
+               rdfs:label "Act of Abrading"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfAbrasiveJetMachining
+:ActOfAbrasiveJetMachining rdf:type owl:Class ;
+                           rdfs:subClassOf :ActOfMachining ;
+                           cco:definition "An act of machining that uses abrasives propelled by a high velocity gas to erode material from the workpiece."^^xsd:string ;
+                           cco:term_editor "Munira Mohd Ali" ;
+                           rdfs:label "Act of Abrasive Jet Machining"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfAdditiveManufacturing
+:ActOfAdditiveManufacturing rdf:type owl:Class ;
+                            rdfs:subClassOf PLC-ontology:ActOfProduction ;
+                            cco:definition "An act of production in which layers of material are formed under computer control to create an object." ;
+                            cco:definition_source "https://en.wikipedia.org/wiki/3D_printing" ;
+                            cco:elucidation "Objects can be of almost any shape or geometry and are produced using digital model data from a 3D model or another electronic data source such as an Additive Manufacturing File (AMF) file." ;
+                            cco:term_editor "Munira Mohd Ali" ;
+                            rdfs:label "Act of Additive Manufacturing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfAdhesiveBonding
+:ActOfAdhesiveBonding rdf:type owl:Class ;
+                      rdfs:subClassOf :ActOfWaferBonding ;
+                      obo:IAO_0000115 "An act of joining that uses a wafer bonding technique with applying an intermediate layer to connect substrates of different materials."^^xsd:string ;
+                      obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                      obo:IAO_0000119 "https://en.wikipedia.org/wiki/Adhesive_bonding"^^xsd:string ;
+                      rdfs:label "Act of Adhesive Bonding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfAnnealing
+:ActOfAnnealing rdf:type owl:Class ;
+                rdfs:subClassOf :ActOfHeatTreating ;
+                cco:definition "An act of heat treating that increases a materials ductility and reduce its hardness to make it more workable."^^xsd:string ;
+                cco:definition_source "https://en.wikipedia.org/wiki/Annealing_(metallurgy)"^^xsd:string ;
+                cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                rdfs:label "Act of Annealing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfAnodicBonding
+:ActOfAnodicBonding rdf:type owl:Class ;
+                    rdfs:subClassOf :ActOfWaferBonding ;
+                    cco:definition "An act of wafer bonding that connects silicon/glass and metal/glass through electric fields."^^xsd:string ;
+                    cco:definition_source "https://en.wikipedia.org/wiki/Anodic_bonding"^^xsd:string ;
+                    cco:elucidation "The requirements for anodic bonding are clean and even wafer surfaces and atomic contact between the bonding substrates through a sufficiently powerful electrostatic field. Also necessary is the use of borosilicate glass containing a high concentration of alkali ions. The coefficient of thermal expansion (CTE) of the processed glass needs to be similar to those of the bonding partner."^^xsd:string ;
+                    cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                    rdfs:label "Act of Anodic Bonding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfArcWelding
+:ActOfArcWelding rdf:type owl:Class ;
+                 rdfs:subClassOf :ActOfWelding ;
+                 obo:IAO_0000115 "An act of welding that uses electricity to create enough heat to melt metal rod to join metal to metal and when the melted metals cool will result in a binding of the joint metals."^^xsd:string ;
+                 obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                 obo:IAO_0000119 "https://en.wikipedia.org/wiki/Arc_welding"^^xsd:string ;
+                 rdfs:label "Act of Arc Welding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfAssembly
+:ActOfAssembly rdf:type owl:Class ;
+               rdfs:subClassOf :ActOfJoining ;
+               cco:definition "An act of joining in which parts are connected in order to create a new object."@en ;
+               cco:term_editor "J. Neil Otte"@en ;
+               rdfs:label "Act of Assembly"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfBending
+:ActOfBending rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfForming ;
+              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+              cco:definition "An act of forming that shapes material entity into a curve or angle by applying some force on it."^^xsd:string ;
+              rdfs:label "Act of Bending"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfBiomachining
+:ActOfBiomachining rdf:type owl:Class ;
+                   rdfs:subClassOf :ActOfMachining ;
+                   obo:IAO_0000115 "An act of machining that uses lithotropic bacteria to remove material from metal parts."^^xsd:string ;
+                   obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                   obo:IAO_0000119 "https://en.wikipedia.org/wiki/Biomachining"^^xsd:string ;
+                   rdfs:label "Act of Biomachining"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfBlankNibbling
+:ActOfBlankNibbling rdf:type owl:Class ;
+                    rdfs:subClassOf :ActOfBlankShearing ;
+                    obo:IAO_0000115 "An act of blank shearing that cuts a contour by producing a series of overlapping slits or notches."^^xsd:string ;
+                    obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                    obo:IAO_0000119 "https://en.wikipedia.org/wiki/Blanking_and_piercing"^^xsd:string ;
+                    rdfs:label "Act of Blank Nibbling"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfBlankShaving
+:ActOfBlankShaving rdf:type owl:Class ;
+                   rdfs:subClassOf :ActOfBlankShearing ;
+                   obo:IAO_0000115 "An act of blank shearing that shears a small portion of material from an already blanked part to obtain better dimensional accuracy."^^xsd:string ;
+                   obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                   obo:IAO_0000119 "https://en.wikipedia.org/wiki/Blanking_and_piercing"^^xsd:string ;
+                   rdfs:label "Act of Blank Shaving"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfBlankShearing
+:ActOfBlankShearing rdf:type owl:Class ;
+                    rdfs:subClassOf :ActOfShearing ;
+                    obo:IAO_0000115 "An act of shearing in which a punch and die are used to create a flat piece of material by cutting the outside contour of the desired shape of workpiece (material entity)."^^xsd:string ;
+                    obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                    obo:IAO_0000119 "https://en.wikipedia.org/wiki/Die_(manufacturing)"^^xsd:string ;
+                    rdfs:label "Act of Blank Shearing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfBlowMolding
+:ActOfBlowMolding rdf:type owl:Class ;
+                  rdfs:subClassOf :ActOfMolding ;
+                  obo:IAO_0000115 "An act of molding that forms hollow plastic parts begins with melting down the plastic and forming it into a parison or in the case of injection and injection stretch blow moulding (ISB) a preform."^^xsd:string ;
+                  obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                  obo:IAO_0000600 "The parison is a tube-like piece of plastic with a hole in one end through which compressed air can pass"^^xsd:string ;
+                  cco:definition_source "https://en.wikipedia.org/wiki/Blow_molding"^^xsd:string ;
+                  rdfs:label "Act of Blow Molding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfBlowingOff
+:ActOfBlowingOff rdf:type owl:Class ;
+                 rdfs:subClassOf :ActOfCleaning ;
+                 obo:IAO_0000115 "An act of cleaning where the release of compressed gas, whether from a person's lungs or a compressed air tank, clears debris from the surface of an object."@en ;
+                 cco:term_editor "J. Neil Otte"@en ;
+                 rdfs:label "Act of Blowing Off"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfBoreTurning
+:ActOfBoreTurning rdf:type owl:Class ;
+                  rdfs:subClassOf :ActOfLatheTurning ;
+                  obo:IAO_0000115 "An act of lathe turning  that enlarges hole that has already been drilled (or cast) by means of a single-point cutting tool (or of a boring head containing several such tools)."^^xsd:string ;
+                  obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                  obo:IAO_0000119 "https://en.wikipedia.org/wiki/Boring_(manufacturing)"^^xsd:string ;
+                  rdfs:label "Act of Bore Turning"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfBrazing
+:ActOfBrazing rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfJoining ;
+              obo:IAO_0000115 "An act of joining two or more metal items by melting a filler metal at temperature above 840 degree Fahrenheit and flowing it into the gap between close-fitting parts of the joint."^^xsd:string ;
+              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+              obo:IAO_0000119 "https://en.wikipedia.org/wiki/Brazing"^^xsd:string ;
+              rdfs:label "Act of Brazing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfBroaching
+:ActOfBroaching rdf:type owl:Class ;
+                rdfs:subClassOf :ActOfMachining ;
+                obo:IAO_0000115 "An act of machining that uses a toothed tool, called a broach, to remove material from workpiece."^^xsd:string ;
+                obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                obo:IAO_0000119 "https://en.wikipedia.org/wiki/Broaching_(metalworking)"^^xsd:string ;
+                rdfs:label "Act of Broaching"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfBuffing
+:ActOfBuffing rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfPolishing ;
+              cco:definition "An act of polishing in which a loose abrasive applied to the work wheel."^^xsd:string ;
+              cco:definition_source "https://en.wikipedia.org/wiki/Polishing_(metalworking)"^^xsd:string ;
+              cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+              rdfs:label "Act of Buffing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfBurnishing
+:ActOfBurnishing rdf:type owl:Class ;
+                 rdfs:subClassOf :ActOfAbrading ;
+                 cco:definition "An act of abrading that smears the texture of a rough surface and makes it shinier."^^xsd:string ;
+                 cco:definition_source "https://en.wikipedia.org/wiki/Burnishing_(metal)"^^xsd:string ;
+                 cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                 rdfs:label "Act of Burnishing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfButtWelding
+:ActOfButtWelding rdf:type owl:Class ;
+                  rdfs:subClassOf :ActOfElectricResistanceWelding ;
+                  obo:IAO_0000115 "An act of electric resistance welding that does not use any filler material where parts that are going to be welded are placed nearly parallel and don't overlap and typically welds the entire joint at once."^^xsd:string ;
+                  obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                  obo:IAO_0000119 "https://en.wikipedia.org/wiki/Butt_welding"^^xsd:string ;
+                  rdfs:label "Act of Butt Welding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfCasting
+:ActOfCasting rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfMaterialSolidification ;
+              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+              obo:IAO_0000600 """Pattern which is a replica of the object to be cast is used to prepare the mold cavity in which the liquid material will be poured.
+Another term for liquid metallic material is molten metal."""^^xsd:string ;
+              cco:definition "An act of material solidification in which a liquid metallic material is poured into a mold and allowed to solidify."^^xsd:string ;
+              cco:definition_source """[1] https://en.wikipedia.org/wiki/Casting
+[2] https://en.wikipedia.org/wiki/Pattern_(casting)"""^^xsd:string ;
+              rdfs:label "Act of Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfCentrifugalCasting
+:ActOfCentrifugalCasting rdf:type owl:Class ;
+                         rdfs:subClassOf :ActOfPermanentMoldCasting ;
+                         obo:IAO_0000115 "An act of permanent mold casting that uses materials such as metal, glass, and concrete to make thin-walled cylinders."^^xsd:string ;
+                         obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                         cco:definition_source "https://en.wikipedia.org/wiki/Centrifugal_casting_(industrial)"^^xsd:string ;
+                         rdfs:label "Act of Centrifugal Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfCeramicMoldCasting
+:ActOfCeramicMoldCasting rdf:type owl:Class ;
+                         rdfs:subClassOf :ActOfExpendableMoldCasting ;
+                         obo:IAO_0000115 "An act of expendable mold casting in which refractory ceramic is used as the mold material."^^xsd:string ;
+                         obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                         cco:definition_source "http://www.thelibraryofmanufacturing.com/ceramic_mold_casting.html"^^xsd:string ;
+                         rdfs:label "Act of Ceramic Mold Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfChemicalVaporDeposition
+:ActOfChemicalVaporDeposition rdf:type owl:Class ;
+                              rdfs:subClassOf :ActOfCoating ;
+                              obo:IAO_0000115 "An act of coating that uses chemical process to deposit a substrate on the surface of the object"^^xsd:string ;
+                              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                              obo:IAO_0000119 "https://en.wikipedia.org/wiki/Chemical_vapor_deposition"^^xsd:string ;
+                              rdfs:label "Act of Chemical Vapor Deposition"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfCleaning
+:ActOfCleaning rdf:type owl:Class ;
+               rdfs:subClassOf cco:ActOfArtifactProcessing ;
+               cco:definition "An act of artifact processing that makes a surface free of dirt, marks, or debris, especially by washing, wiping, or brushing."@en ;
+               cco:term_editor "Binbin Zhang" ;
+               rdfs:label "Act of Cleaning"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfCoating
+:ActOfCoating rdf:type owl:Class ;
+              rdfs:subClassOf cco:ActOfArtifactProcessing ;
+              obo:IAO_0000115 "An act of artifact processing that deposits a portion of material on a surface of an object to act as cover to the surface of the object."^^xsd:string ;
+              rdfs:label "Act of Coating"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfCoining
+:ActOfCoining rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfStamping ;
+              obo:IAO_0000115 "An act of stamping in which a workpiece is subjected to a sufficiently high stress to induce plastic flow on the surface of the material."^^xsd:string ;
+              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+              obo:IAO_0000119 "https://en.wikipedia.org/wiki/Coining_(metalworking)"^^xsd:string ;
+              obo:IAO_0000600 "A beneficial feature is that in some metals, the plastic flow reduces surface grain size, and work hardens the surface, while the material deeper in the part retains its toughness and ductility. It is used to produce coins, medals, badges, buttons, precision-energy springs and precision parts with small or polished surface features."^^xsd:string ;
+              rdfs:label "Act of Coining"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfColdChamberDieCasting
+:ActOfColdChamberDieCasting rdf:type owl:Class ;
+                            rdfs:subClassOf :ActOfDieCasting ;
+                            obo:IAO_0000115 "An act of die casting that uses alloys with high melting temperature as cast metal."^^xsd:string ;
+                            obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                            cco:definition_source "http://www.cwmdiecast.com/blog/2016/05/24/die-casting-101-hot-chamber-vs-cold-chamber/"^^xsd:string ;
+                            rdfs:label "Act of Cold Chamber Die Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfColdIsostaticPressing
+:ActOfColdIsostaticPressing rdf:type owl:Class ;
+                            rdfs:subClassOf :ActOfIsostaticPressing ;
+                            obo:IAO_0000115 "An act of isostatic pressing in which the act is performed at room temperature and uses a mold made from an elastomer material such as urethane, rubber, or polyvinyl chloride."^^xsd:string ;
+                            obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                            cco:definition_source "http://www.thelibraryofmanufacturing.com/alt_powder_processes.html"^^xsd:string ;
+                            rdfs:label "Act of Cold Isostatic Pressing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfCompressionMolding
+:ActOfCompressionMolding rdf:type owl:Class ;
+                         rdfs:subClassOf :ActOfMolding ;
+                         obo:IAO_0000115 "An act of molding in that uses thermosetting resins as molding material and is preheated in an open, heated mould cavity before the mold is closed with a top force or plug member and pressure is applied to force the material into contact with all mold areas, while heat and pressure are maintained until the molding material has cured."^^xsd:string ;
+                         obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                         cco:definition_source """[1] https://en.wikipedia.org/wiki/Compression_molding
+[2] http://www.assab.com/en/products/compression-moulding.php"""^^xsd:string ;
+                         rdfs:label "Act of Compression Molding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfContinuousCasting
+:ActOfContinuousCasting rdf:type owl:Class ;
+                        rdfs:subClassOf :ActOfPermanentMoldCasting ;
+                        obo:IAO_0000115 "An act of permanent mold casting in which molten metal is solidified into a \"semifinished\" billet, bloom, or slab for subsequent rolling in the finishing mills to make continuous length of metals."^^xsd:string ;
+                        obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                        cco:definition_source "https://en.wikipedia.org/wiki/Continuous_casting"^^xsd:string ;
+                        rdfs:label "Act of Continuous Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfCountergravityCasting
+:ActOfCountergravityCasting rdf:type owl:Class ;
+                            rdfs:subClassOf :ActOfInvestmentCasting ;
+                            obo:IAO_0000115 "An act of investment casting in which a fill pipe is lowered into the melt and a vacuum draws the melt into a cavity."^^xsd:string ;
+                            obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                            cco:definition_source "http://countergravity-casting.wikia.com/wiki/Counter-Gravity_Casting_Wikia"^^xsd:string ;
+                            rdfs:label "Act of Countergravity Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfCountersinking
+:ActOfCountersinking rdf:type owl:Class ;
+                     rdfs:subClassOf :ActOfMachining ;
+                     obo:IAO_0000115 "An act of machining that cuts conical champfer of beveled corner hole of manufactured part."^^xsd:string ;
+                     obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                     obo:IAO_0000119 "https://en.wikipedia.org/wiki/Countersink"^^xsd:string ;
+                     rdfs:label "Act of Countersinking"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfCrimping
+:ActOfCrimping rdf:type owl:Class ;
+               rdfs:subClassOf :ActOfFastening ;
+               obo:IAO_0000117 "Munira Mohd Ali"@en ;
+               cco:definition "An act of fastening that compresses material entity into small fold."@en ;
+               rdfs:label "Act of Crimping"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfCryogenicRolling
+:ActOfCryogenicRolling rdf:type owl:Class ;
+                       rdfs:subClassOf :ActOfRolling ;
+                       obo:IAO_0000115 "An act of rolling that is carried out at cryogenic temperature to produce nanostructured bulk materials from its bulk counterpart."^^xsd:string ;
+                       obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                       cco:definition_source "https://en.wikipedia.org/wiki/Cryogenic_treatment#Cryogenic_rolling"^^xsd:string ;
+                       cco:elucidation "Cryogenics is the science that addresses the production and effects of very low temperatures. Under such a definition it could be used to include all temperatures below the freezing point of water (0 C)."^^xsd:string ;
+                       rdfs:label "Act of Cryogenic Rolling"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfCuring
+:ActOfCuring rdf:type owl:Class ;
+             rdfs:subClassOf cco:ActOfArtifactProcessing ;
+             cco:definition "An act of artifact processing in which a chemical reaction or physical action takes place, resulting in a harder, tougher, or more stable linkage (such as an adhesive bond) or substance (such as concrete)."@en ;
+             cco:definition_source "http://www.businessdictionary.com/definition/curing.html"@en ;
+             cco:elucidation "Chemical reaction in this context is polymerization and physical action is evaporation.Some curing processes require maintenance of a certain temperature and/or humidity level, others require a certain pressure." ;
+             cco:term_editor "Munira Mohd Ali"@en ;
+             rdfs:label "Act of Curing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfDieCasting
+:ActOfDieCasting rdf:type owl:Class ;
+                 rdfs:subClassOf :ActOfPermanentMoldCasting ;
+                 obo:IAO_0000115 "An act of permanent mold casting in which a molten metal is forced under high pressure into a mold."^^xsd:string ;
+                 obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                 cco:definition_source "https://en.wikipedia.org/wiki/Die_casting"^^xsd:string ;
+                 rdfs:label "Act of Die Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfDipBrazing
+:ActOfDipBrazing rdf:type owl:Class ;
+                 rdfs:subClassOf :ActOfBrazing ;
+                 obo:IAO_0000115 "An act of brazing in which two pieces of metal are joined together with a filler metal when heated to the melting point of the filler metal in the molten chemical salt bath."^^xsd:string ;
+                 obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                 obo:IAO_0000119 "http://www.amalco.com/dip-brazing.html"^^xsd:string ;
+                 rdfs:label "Act of Dip Brazing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfDipMolding
+:ActOfDipMolding rdf:type owl:Class ;
+                 rdfs:subClassOf :ActOfMolding ;
+                 obo:IAO_0000115 "An act of molding that dips mold into a polymer to create a molded artifact."^^xsd:string ;
+                 obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                 cco:definition_source "https://www.moldeddevices.com/dip-molding-coating/"^^xsd:string ;
+                 rdfs:label "Act of Dip Molding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfDisassembly
+:ActOfDisassembly rdf:type owl:Class ;
+                  rdfs:subClassOf cco:IntentionalAct ;
+                  cco:definition "An intentional act that separates an object into objects."^^xsd:string ;
+                  cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                  rdfs:label "Act of Disassembly"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfDrilling
+:ActOfDrilling rdf:type owl:Class ;
+               rdfs:subClassOf :ActOfMachining ;
+               obo:IAO_0000115 "Act of machining that uses drill bit to cut a hole of circular cross-section in solid materials."^^xsd:string ;
+               obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+               obo:IAO_0000119 "https://en.wikipedia.org/wiki/Drilling"^^xsd:string ;
+               rdfs:label "Act of Drilling"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfDropForging
+:ActOfDropForging rdf:type owl:Class ;
+                  rdfs:subClassOf :ActOfForging ;
+                  obo:IAO_0000115 "An act of forging that shapes material entity (metal) into complex shapes by dropping a heavy hammer with a die on the hammer's face onto the material entity (workpiece)."^^xsd:string ;
+                  obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                  cco:definition_source "https://en.wikipedia.org/wiki/Forge#Drop_forging"^^xsd:string ;
+                  rdfs:label "Act of Drop Forging"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfDyeSublimationPrinting
+:ActOfDyeSublimationPrinting rdf:type owl:Class ;
+                             rdfs:subClassOf :ActOfPrinting ;
+                             cco:definition "An act of printing that uses heat to transfer dye onto materials such as a plastic, card, paper, or fabric."^^xsd:string ;
+                             cco:definition_source "https://en.wikipedia.org/wiki/Dye-sublimation_printer"^^xsd:string ;
+                             cco:elucidation "Many consumer and professional dye-sublimation printers are designed and used for producing photographic prints, ID cards, clothing, and more."^^xsd:string ;
+                             cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                             rdfs:label "Act of Dye Sublimation Printer"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfElectricResistanceWelding
+:ActOfElectricResistanceWelding rdf:type owl:Class ;
+                                rdfs:subClassOf :ActOfWelding ;
+                                obo:IAO_0000115 "An act of welding that produces coalescence of faying surfaces where heat to form the weld is generated by the electrical resistance of material combined with the time and the force used to hold the materials together during welding."^^xsd:string ;
+                                obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                                obo:IAO_0000119 "https://en.wikipedia.org/wiki/Electric_resistance_welding"^^xsd:string ;
+                                rdfs:label "Act of Electric Resistance Welding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfElectricalDischargeMachining
+:ActOfElectricalDischargeMachining rdf:type owl:Class ;
+                                   rdfs:subClassOf :ActOfMachining ;
+                                   obo:IAO_0000115 "An act of machining that removes material from workpiece by a series of rapidly recurring current discharges between two electrodes, separated by a dielectric liquid and subject to an electric voltage."^^xsd:string ;
+                                   obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                                   obo:IAO_0000119 "https://en.wikipedia.org/wiki/Electrical_discharge_machining"^^xsd:string ;
+                                   rdfs:label "Act of Electric Discharge Machining"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfElectrochemicalGrinding
+:ActOfElectrochemicalGrinding rdf:type owl:Class ;
+                              rdfs:subClassOf :ActOfGrinding ;
+                              obo:IAO_0000115 "An act of grinding that removes electrically conductive material by grinding with a negatively charged abrasive grinding wheel, an electrolyte fluid, and a positively charged workpiece."^^xsd:string ;
+                              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                              obo:IAO_0000119 "https://en.wikipedia.org/wiki/Electrochemical_grinding"^^xsd:string ;
+                              rdfs:label "Act of Electrochemical Grinding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfElectrochemicalMachining
+:ActOfElectrochemicalMachining rdf:type owl:Class ;
+                               rdfs:subClassOf :ActOfMachining ;
+                               obo:IAO_0000115 "An act of machining that removes material from the workpiece by electrochemical process."^^xsd:string ;
+                               obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                               obo:IAO_0000119 "https://en.wikipedia.org/wiki/Electrochemical_machining"^^xsd:string ;
+                               rdfs:label "Act of Electrochemical Machining"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfElectronBeamMachining
+:ActOfElectronBeamMachining rdf:type owl:Class ;
+                            rdfs:subClassOf :ActOfMachining ;
+                            obo:IAO_0000115 "An act of machining that removes material from workpiece by the concentration of high-velocity electrons into a narrow beam that are directed toward the work piece, creating heat and vaporizing the material."^^xsd:string ;
+                            rdfs:label "Act of Electron Beam Machining"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfElectronBeamWelding
+:ActOfElectronBeamWelding rdf:type owl:Class ;
+                          rdfs:subClassOf :ActOfWelding ;
+                          obo:IAO_0000115 "An act of welding in which a beam of high-velocity electrons is applied to two materials to be joined."^^xsd:string ;
+                          obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                          obo:IAO_0000119 "https://en.wikipedia.org/wiki/Electron_beam_welding"^^xsd:string ;
+                          obo:IAO_0000600 "The workpieces melt and flow together as the kinetic energy of the electrons is transformed into heat upon impact. EBW is often performed under vacuum conditions to prevent dissipation of the electron beam."^^xsd:string ;
+                          rdfs:label "Act of Electron Beam Welding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfElectronicsPotting
+:ActOfElectronicsPotting rdf:type owl:Class ;
+                         rdfs:subClassOf :ActOfJoining ;
+                         cco:definition "An act of joining that fills a complete electronic assembly with a solid or gelatinous compound for resistance to shock and vibration, and for exclusion of moisture and corrosive agents."@en ;
+                         cco:term_editor "J. Neil Otte"@en ;
+                         rdfs:label "Act of Electronics Potting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfElectroplating
+:ActOfElectroplating rdf:type owl:Class ;
+                     rdfs:subClassOf :ActOfPlating ;
+                     obo:IAO_0000117 "Munira Mohd Ali" ;
+                     cco:definition "An act of plating that uses electric current to reduce dissolved metal cations so that they form a thin coherent metal coating on an electrode."^^xsd:string ;
+                     rdfs:label "Act of Electroplating"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfEutecticBonding
+:ActOfEutecticBonding rdf:type owl:Class ;
+                      rdfs:subClassOf :ActOfWaferBonding ;
+                      cco:definition "An act of wafer bonding that uses eutectic metals as wafer."^^xsd:string ;
+                      cco:definition_source ""^^xsd:string ;
+                      cco:elucidation "Eutectic metals are alloys that transform directly from solid to liquid state, or vice versa from liquid to solid state, at a specific composition and temperature without passing a two-phase equilibrium, i.e. liquid and solid state. The fact that the eutectic temperature can be much lower than the melting temperature of the two or more pure elements can be important in eutectic bonding."^^xsd:string ;
+                      cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                      rdfs:label "Act of Eutectic Bonding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfEvaporativePatternCasting
+:ActOfEvaporativePatternCasting rdf:type owl:Class ;
+                                rdfs:subClassOf :ActOfExpendableMoldCasting ;
+                                obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                                cco:definition "An act of expendable mold casting that uses pattern that made from a material that will evaporate when the molten metal is poured into the molding cavity."^^xsd:string ;
+                                cco:definition_source "https://en.wikipedia.org/wiki/Evaporative-pattern_casting"^^xsd:string ;
+                                rdfs:label "Act of Evaporative Pattern Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfExpendableMoldCasting
+:ActOfExpendableMoldCasting rdf:type owl:Class ;
+                            rdfs:subClassOf :ActOfCasting ;
+                            obo:IAO_0000115 "An act of casting that employs temporary and nonreusable molds."^^xsd:string ;
+                            obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                            cco:definition_source "http://www.americanbronze.com/expandable-mold-casting.html"^^xsd:string ;
+                            rdfs:label "Act of Expendable Mold Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfExtrusion
+:ActOfExtrusion rdf:type owl:Class ;
+                rdfs:subClassOf :ActOfForming ;
+                obo:IAO_0000115 "An act of forming in which a material entity is pushed through a die of the desired cross-section."^^xsd:string ;
+                obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                cco:definition_source "https://en.wikipedia.org/wiki/Extrusion"^^xsd:string ;
+                rdfs:label "Act Of Extrusion"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfFaceTurning
+:ActOfFaceTurning rdf:type owl:Class ;
+                  rdfs:subClassOf :ActOfLatheTurning ;
+                  obo:IAO_0000115 "An act of lathe turning that removes material at the planar surface of the workpiece while the workpiece is rotating."^^xsd:string ;
+                  obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                  obo:IAO_0000119 "https://en.wikipedia.org/wiki/Facing_(machining)"^^xsd:string ;
+                  rdfs:label "Act of Face Turning"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfFastening
+:ActOfFastening rdf:type owl:Class ;
+                rdfs:subClassOf :ActOfTightening ;
+                obo:IAO_0000115 "An act of tightening that joins two or more material entities together."^^xsd:string ;
+                obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                rdfs:label "Act of Fastening"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfFlashWelding
+:ActOfFlashWelding rdf:type owl:Class ;
+                   rdfs:subClassOf :ActOfElectricResistanceWelding ;
+                   obo:IAO_0000115 "An act of electric resistance welding that does not use any filler metal where  pieces of metal to be welded are set apart at a predetermined distance based on material thickness, material composition, and desired properties of the finished weld."^^xsd:string ;
+                   obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                   obo:IAO_0000119 "https://en.wikipedia.org/wiki/Flash_welding"^^xsd:string ;
+                   rdfs:label "Act of Flash Welding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfFlexography
+:ActOfFlexography rdf:type owl:Class ;
+                  rdfs:subClassOf :ActOfPrinting ;
+                  cco:definition "An act of printing that utilizes a flexible relief plate."^^xsd:string ;
+                  cco:definition_source "https://en.wikipedia.org/wiki/Flexography"^^xsd:string ;
+                  cco:elucidation "It is essentially a modern version of letterpress which can be used for printing on almost any type of substrate, including plastic, metallic films, cellophane, and paper. It is widely used for printing on the non-porous substrates required for various types of food packaging (it is also well suited for printing large areas of solid colour)."^^xsd:string ;
+                  cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                  rdfs:label "Act of Flexography"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfForging
+:ActOfForging rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfForming ;
+              obo:IAO_0000115 "An act of forming that applies compressive forces to some material entity at high temperature to deform it and create a desired geometry from it."^^xsd:string ;
+              obo:IAO_0000117 "Munira Mohd Ali" ;
+              cco:definition_source """[1] https://en.wikipedia.org/wiki/Forging
+[2] http://www.thelibraryofmanufacturing.com/forging.html"""^^xsd:string ;
+              rdfs:label "Act of Forging"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfForming
+:ActOfForming rdf:type owl:Class ;
+              rdfs:subClassOf PLC-ontology:ActOfProduction ;
+              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+              cco:definition "An act of production in which a material entity is created by applying engineering deformation to some portion of material, usually metal."^^xsd:string ;
+              cco:definition_source "https://en.wikipedia.org/wiki/Molding_(process)"^^xsd:string ;
+              cco:elucidation """Engineering deformation is the transformation of a body from a reference configuration to a current configuration where a configuration is a set containing the positions of all particles of the body.
+A deformation may be caused by external loads, body forces (such as gravity or electromagnetic forces), or changes in temperature, moisture content, or chemical reactions, etc.""" ;
+              rdfs:label "Act of Forming"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfFullMoldCasting
+:ActOfFullMoldCasting rdf:type owl:Class ;
+                      rdfs:subClassOf :ActOfEvaporativePatternCasting ;
+                      obo:IAO_0000115 "An act of evaporative pattern casting that uses expanded polystyrene foam pattern."^^xsd:string ;
+                      obo:IAO_0000117 "Munira"^^xsd:string ;
+                      cco:definition_source "https://en.wikipedia.org/wiki/Full-mold_casting"^^xsd:string ;
+                      rdfs:label "Act of Full Mold Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfFurnaceBrazing
+:ActOfFurnaceBrazing rdf:type owl:Class ;
+                     rdfs:subClassOf :ActOfBrazing ;
+                     obo:IAO_0000115 "An act of brazing in which brazing filler metal applied to the surfaces to be joined, then placed into the furnace."^^xsd:string ;
+                     obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                     obo:IAO_0000119 "http://www.bodycote.com/en-GB/services/metal-joining/furnace-brazing.aspx"^^xsd:string ;
+                     rdfs:label "Act of Furnace Brazing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfFusionBonding
+:ActOfFusionBonding rdf:type owl:Class ;
+                    rdfs:subClassOf :ActOfWaferBonding ;
+                    cco:definition "An act of wafer bonding that is a joining process without any additional intermediate layers where it is based on chemical bonds between two surfaces of any material entity."^^xsd:string ;
+                    cco:definition_source "https://en.wikipedia.org/wiki/Direct_bonding"^^xsd:string ;
+                    cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                    rdfs:label "Act of Fusion Bonding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfGasMetalArcWelding
+:ActOfGasMetalArcWelding rdf:type owl:Class ;
+                         rdfs:subClassOf :ActOfArcWelding ;
+                         obo:IAO_0000115 "An act of arc welding in which an electric arc forms between a consumable wire electrode and the workpiece metal(s), which heats the workpiece metal(s), causing them to melt and join."^^xsd:string ;
+                         obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                         obo:IAO_0000119 "https://en.wikipedia.org/wiki/Gas_metal_arc_welding"^^xsd:string ;
+                         rdfs:label "Act of Gas Metal Arc Welding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfGasTungstenArcWelding
+:ActOfGasTungstenArcWelding rdf:type owl:Class ;
+                            rdfs:subClassOf :ActOfArcWelding ;
+                            obo:IAO_0000115 "An act of arc welding process that uses a non-consumable tungsten electrode to produce the weld."^^xsd:string ;
+                            obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                            obo:IAO_0000119 "https://en.wikipedia.org/wiki/Gas_tungsten_arc_welding"^^xsd:string ;
+                            rdfs:label "Act of Gas Tungsten Arc Welding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfGasWelding
+:ActOfGasWelding rdf:type owl:Class ;
+                 rdfs:subClassOf :ActOfWelding ;
+                 obo:IAO_0000115 "An act of welding that uses fuel gases and oxygen to weld metals."^^xsd:string ;
+                 obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                 obo:IAO_0000119 "https://en.wikipedia.org/wiki/Oxy-fuel_welding_and_cutting"^^xsd:string ;
+                 obo:IAO_0000600 "Gas welding also known as Oxy-fuel welding, Oxyacetylene welding, Oxy welding. It uses welding torch to weld metals."^^xsd:string ;
+                 rdfs:label "Act of Gas Welding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfGashing
+:ActOfGashing rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfMachining ;
+              obo:IAO_0000115 "An act of machining that roughs out coarse pitched gears and sprockets before act of hobbing."^^xsd:string ;
+              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+              obo:IAO_0000119 "https://en.wikipedia.org/wiki/Gashing"^^xsd:string ;
+              rdfs:label "Act of Gashing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfGlassFritBonding
+:ActOfGlassFritBonding rdf:type owl:Class ;
+                       rdfs:subClassOf :ActOfWaferBonding ;
+                       cco:definition "An act of wafer bonding that utilizes low melting glass as wafer."^^xsd:string ;
+                       cco:definition_source ""^^xsd:string ;
+                       cco:elucidation "Glass frit bonding is a widely used encapsulation technology for surface micro-machined structures, e.g., accelerometers or gyroscopes. The utlization of low melting glass various advantages including that viscosity of glass decreases with an increase of temperature. The viscous flow of glass has effects to compensate and planarize surface irregularities, convenient for bonding wafers with a high roughness due to plasma etching or deposition. A low viscosity promotes hermetically sealed encapsulation of structures based on a better adaption of the structured shapes."^^xsd:string ;
+                       cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                       rdfs:label "Act of Glass Frit Bonding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfGravurePrinting
+:ActOfGravurePrinting rdf:type owl:Class ;
+                      rdfs:subClassOf :ActOfIntaglioPrinting ;
+                      cco:definition "Act of intaglio printing where the image being printed is made up of small depressions in the surface of the printing plate."^^xsd:string ;
+                      cco:definition_source "https://en.wikipedia.org/wiki/Printing"^^xsd:string ;
+                      rdfs:label "Act of Gravure Printing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfGrinding
+:ActOfGrinding rdf:type owl:Class ;
+               rdfs:subClassOf :ActOfMachining ;
+               obo:IAO_0000115 "An act of machining that uses grinding wheel to remove material from the workpiece and generate surface with high surface finish and precision."^^xsd:string ;
+               obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+               obo:IAO_0000119 "https://www.quora.com/What-is-the-difference-between-grinding-and-milling"^^xsd:string ;
+               obo:IAO_0000600 "Grinding employs an abrasive product, usually a rotating wheel brought into controlled contact with a work surface. The grinding wheel is composed of abrasive grains held together in a binder. These abrasive grains act as cutting tools, removing tiny chips of material from the work. As these abrasive grains wear and become dull, the added resistance leads to fracture of the grains or weakening of their bond. The dull pieces break away, revealing sharp new grains that continue cutting."^^xsd:string ;
+               rdfs:label "Act of Grinding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfHeatTreating
+:ActOfHeatTreating rdf:type owl:Class ;
+                   rdfs:subClassOf cco:ActOfArtifactProcessing ;
+                   cco:definition "An act of artifact processing that alters the physical, and sometimes chemical, properties of a material by applying heat."^^xsd:string ;
+                   cco:definition_source ""^^xsd:string ;
+                   cco:elucidation "It is noteworthy that while the term heat treatment applies only to processes where the heating and cooling are done for the specific purpose of altering properties intentionally, heating and cooling often occur incidentally during other manufacturing processes such as hot forming or welding."^^xsd:string ;
+                   cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                   rdfs:label "Act of Heat Treating"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfHemming
+:ActOfHemming rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfBending ;
+              obo:IAO_0000115 "An act of bending that rolls over the edge of the sheet onto itself."^^xsd:string ;
+              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+              cco:definition_source "https://en.wikipedia.org/wiki/Hemming_and_seaming"^^xsd:string ;
+              cco:elucidation "Hemming is the process in which the edge is rolled flush to itself and it is commonly used as a reinforcement to the edge, hide burrs and rough edges and imporve appearance."^^xsd:string ;
+              rdfs:label "Act of Hemming"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfHobbing
+:ActOfHobbing rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfMilling ;
+              obo:IAO_0000115 "An act of milling that cuts workpiece to the shape of gear splines and sprockets."^^xsd:string ;
+              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+              obo:IAO_0000119 "https://en.wikipedia.org/wiki/Hobbing"^^xsd:string ;
+              rdfs:label "Act of Hobbing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfHotChamberDieCasting
+:ActOfHotChamberDieCasting rdf:type owl:Class ;
+                           rdfs:subClassOf :ActOfDieCasting ;
+                           obo:IAO_0000115 "An act of die casting that uses alloys with low melting temperature as cast metal."^^xsd:string ;
+                           obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                           cco:definition_source "http://www.cwmdiecast.com/blog/2016/05/24/die-casting-101-hot-chamber-vs-cold-chamber/"^^xsd:string ;
+                           rdfs:label "Act of Hot Chamber Die Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfHotIsostaticPressing
+:ActOfHotIsostaticPressing rdf:type owl:Class ;
+                           rdfs:subClassOf :ActOfIsostaticPressing ;
+                           obo:IAO_0000115 "An act of isostatic pressing in which the act is performed at elevated temperature and uses a mold made from sheet metal."^^xsd:string ;
+                           obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                           cco:definition_source "http://www.thelibraryofmanufacturing.com/alt_powder_processes.html"^^xsd:string ;
+                           rdfs:label "Act of Hot Isostatic Pressing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfImpactExtrusion
+:ActOfImpactExtrusion rdf:type owl:Class ;
+                      rdfs:subClassOf :ActOfExtrusion ;
+                      obo:IAO_0000115 "An act of extrusion in which the portion of material (usually metal slug) is pressed at a high velocity with extreme force into a die or mold by a punch."^^xsd:string ;
+                      obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                      cco:definition_source "https://en.wikipedia.org/wiki/Impact_extrusion"^^xsd:string ;
+                      rdfs:label "Act of Impact Extrusion"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfInductionBrazing
+:ActOfInductionBrazing rdf:type owl:Class ;
+                       rdfs:subClassOf :ActOfBrazing ;
+                       obo:IAO_0000115 "An act of brazing in which two or more materials are joined together by a filler metal that has a lower melting point than the base materials using induction heating."^^xsd:string ;
+                       obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                       obo:IAO_0000119 "https://en.wikipedia.org/wiki/Induction_brazing"^^xsd:string ;
+                       rdfs:label "Act of Induction Brazing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfInductionWelding
+:ActOfInductionWelding rdf:type owl:Class ;
+                       rdfs:subClassOf :ActOfWelding ;
+                       obo:IAO_0000115 "An act of welding that uses electromagnetic induction to heat the workpiece."^^xsd:string ;
+                       obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                       obo:IAO_0000119 "https://en.wikipedia.org/wiki/Induction_welding"^^xsd:string ;
+                       rdfs:label "Act of Induction Welding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfInfraredBrazing
+:ActOfInfraredBrazing rdf:type owl:Class ;
+                      rdfs:subClassOf :ActOfBrazing ;
+                      obo:IAO_0000115 "An act of brazing that utilizes focused light energy (typically from high intensity quartz bulbs) to heat components to brazing temperature."^^xsd:string ;
+                      obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                      obo:IAO_0000119 "http://www.vpei.com/infrared-brazing/"^^xsd:string ;
+                      rdfs:label "Act of Infrared Brazing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfInjectionMolding
+:ActOfInjectionMolding rdf:type owl:Class ;
+                       rdfs:subClassOf :ActOfPowderMetallurgyProcessing ;
+                       obo:IAO_0000115 "An act of powder metallurgy processing that injects a portion of material into a mold by feeding it into a heated barrel, mixing it, and forcing it into a mold."^^xsd:string ;
+                       obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                       cco:definition_source "https://en.wikipedia.org/wiki/Injection_moulding"^^xsd:string ;
+                       rdfs:label "Act of Injection Molding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfInkjetPrinting
+:ActOfInkjetPrinting rdf:type owl:Class ;
+                     rdfs:subClassOf :ActOfPrinting ;
+                     obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                     cco:definition "An act of printing that recreates a digital image by propelling droplets of ink onto paper, plastic, or other substrates."^^xsd:string ;
+                     cco:definition_source "https://en.wikipedia.org/wiki/Inkjet_printing"^^xsd:string ;
+                     rdfs:label "Act of Inkjet Printing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfInserting
+:ActOfInserting rdf:type owl:Class ;
+                rdfs:subClassOf cco:ActOfMotion ;
+                cco:definition "An act of motion that consists of moving one material entity, in whole or in part, inside another object, often along runners."@en ;
+                cco:term_editor "J. Neil Otte"@en ;
+                rdfs:label "Act of Inserting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfIntaglioPrinting
+:ActOfIntaglioPrinting rdf:type owl:Class ;
+                       rdfs:subClassOf :ActOfPrinting ;
+                       cco:definition "An act of printing in which the image is incised into a surface and the incised line or sunken area holds the ink."^^xsd:string ;
+                       cco:definition_source ""^^xsd:string ;
+                       cco:elucidation "Intaglio (Italian word) printing is the direct opposite of a relief print."^^xsd:string ;
+                       cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                       rdfs:label "Act of Intaglio Printing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfInvestmentCasting
+:ActOfInvestmentCasting rdf:type owl:Class ;
+                        rdfs:subClassOf :ActOfExpendableMoldCasting ;
+                        obo:IAO_0000115 "An act of expendable mold casting that uses wax pattern, coated with ceramic."^^xsd:string ;
+                        obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                        cco:definition_source "https://en.wikipedia.org/wiki/Investment_casting"^^xsd:string ;
+                        rdfs:label "Act of Investment Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfIsostaticPressing
+:ActOfIsostaticPressing rdf:type owl:Class ;
+                        rdfs:subClassOf :ActOfPowderMetallurgyProcessing ;
+                        obo:IAO_0000115 "An act of powder metallurgy processing that uses fluid pressure to compact a portion of material into a desired shape."^^xsd:string ;
+                        obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                        cco:definition_source "http://www.thelibraryofmanufacturing.com/alt_powder_processes.html"^^xsd:string ;
+                        rdfs:label "Act of Isostatic Pressing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfJoining
+:ActOfJoining rdf:type owl:Class ;
+              rdfs:subClassOf PLC-ontology:ActOfProduction ;
+              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+              cco:definition "An act of production that puts together separate objects."^^xsd:string ;
+              rdfs:label "Act of Joining"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfKnurlTurning
+:ActOfKnurlTurning rdf:type owl:Class ;
+                   rdfs:subClassOf :ActOfLatheTurning ;
+                   obo:IAO_0000115 "An act of turning in which pattern of straight, angled or crossed lines is cut or rolled into the material."^^xsd:string ;
+                   obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                   obo:IAO_0000119 "https://en.wikipedia.org/wiki/Knurling"^^xsd:string ;
+                   rdfs:label "Act of Knurl Turning"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfLabeling
+:ActOfLabeling rdf:type owl:Class ;
+               rdfs:subClassOf cco:ActOfArtifactProcessing ;
+               cco:definition "An act of artifact processing that attaches a label to an object."^^xsd:string ;
+               cco:elucidation "For the definition of lable, see the tool ontology." ;
+               cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+               rdfs:label "Act of Labeling"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfLancing
+:ActOfLancing rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfPiercing ;
+              obo:IAO_0000115 "An act of piercing in which the workpiece is sheared and bent with one strike of the die."^^xsd:string ;
+              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+              obo:IAO_0000119 "https://en.wikipedia.org/wiki/Blanking_and_piercing"^^xsd:string ;
+              obo:IAO_0000600 "A key part of this process is that there is not reduction of material, only a modification in its geometry. This operation is used to make tabs, vents, and louvers."^^xsd:string ;
+              rdfs:label "Act of Lancing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfLaserBeamWelding
+:ActOfLaserBeamWelding rdf:type owl:Class ;
+                       rdfs:subClassOf :ActOfWelding ;
+                       obo:IAO_0000115 "An act of welding that joins multiple pieces of metal through the use of a laser."^^xsd:string ;
+                       obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                       obo:IAO_0000119 "https://en.wikipedia.org/wiki/Laser_beam_welding"^^xsd:string ;
+                       rdfs:label "Act of Laser Beam Welding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfLaserCutMachining
+:ActOfLaserCutMachining rdf:type owl:Class ;
+                        rdfs:subClassOf :ActOfMachining ;
+                        obo:IAO_0000115 "An act of machining that uses a laser to cut materials by directing the output of a high-power laser to the workpiece."^^xsd:string ;
+                        obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Laser_cutting"^^xsd:string ;
+                        rdfs:label "Act of Laser Cut Machining"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfLaserEngraving
+:ActOfLaserEngraving rdf:type owl:Class ;
+                     rdfs:subClassOf :ActOfLaserMarking ;
+                     cco:definition "An act of laser marking that uses lasers to engrave an object."^^xsd:string ;
+                     cco:definition_source "https://en.wikipedia.org/wiki/Laser_engraving"^^xsd:string ;
+                     cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                     rdfs:label "Act of Laser Engraving"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfLaserMarking
+:ActOfLaserMarking rdf:type owl:Class ;
+                   rdfs:subClassOf :ActOfPrinting ;
+                   cco:definition "An act of printing that leaves marks on an object, which also includes color change due to chemical/molecular alteration, charring, foaming, melting, ablation, or more."^^xsd:string ;
+                   cco:definition_source "https://en.wikipedia.org/wiki/Laser_engraving"^^xsd:string ;
+                   cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                   rdfs:label "Act of Laser Marking"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfLaserPrinting
+:ActOfLaserPrinting rdf:type owl:Class ;
+                    rdfs:subClassOf :ActOfPrinting ;
+                    cco:definition "An act of printing that produces high-quality text and graphics (and moderate-quality photographs) by repeatedly passing a laser beam back and forth over a negatively charged cylinder called a \"drum\" to define a differentially charged image."^^xsd:string ;
+                    cco:definition_source "https://en.wikipedia.org/wiki/Laser_printing"^^xsd:string ;
+                    cco:elucidation "Act of laser printing is an electrostatic digital printing process" ;
+                    cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                    rdfs:label "Act of Laser Printing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfLatheTurning
+:ActOfLatheTurning rdf:type owl:Class ;
+                   rdfs:subClassOf :ActOfMachining ;
+                   obo:IAO_0000115 "An act of machining that uses a cutting tool, typically a non-rotary tool bit, describes a helix toolpath by moving more or less linearly to remove material from the workpiece while the workpiece rotates."^^xsd:string ;
+                   obo:IAO_0000119 "https://en.wikipedia.org/wiki/Turning"^^xsd:string ;
+                   rdfs:label "Act of Lathe Turning"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfLinishing
+:ActOfLinishing rdf:type owl:Class ;
+                rdfs:subClassOf :ActOfAbrading ;
+                cco:definition "An act of abrading that uses grinding or belt sanding techniques to improve the flatness of a surface."^^xsd:string ;
+                cco:definition_source "https://en.wikipedia.org/wiki/Linishing"^^xsd:string ;
+                cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                rdfs:label "Act of Linishing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfLooping
+:ActOfLooping rdf:type owl:Class ;
+              rdfs:subClassOf cco:ActOfArtifactProcessing ;
+              cco:definition "An act of artifact processing that causes objects to form a loop."@en ;
+              cco:term_editor "J. Neil Otte"@en ;
+              rdfs:label "Act of Looping"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfLostFoamCasting
+:ActOfLostFoamCasting rdf:type owl:Class ;
+                      rdfs:subClassOf :ActOfEvaporativePatternCasting ;
+                      obo:IAO_0000115 "An act of evaporative pattern casting that uses polystyrene foam pattern, coated with ceramic."^^xsd:string ;
+                      obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                      cco:definition_source "https://en.wikipedia.org/wiki/Lost-foam_casting"^^xsd:string ;
+                      rdfs:label "Act of Lost Foam Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfLubricating
+:ActOfLubricating rdf:type owl:Class ;
+                  rdfs:subClassOf cco:ActOfArtifactProcessing ;
+                  obo:IAO_0000117 "Binbin Zhang and J. Neil Otte"@en ;
+                  cco:definition "An act of artifact processing that consists of applying a lubricant to a mechanism to facilitate motion."@en ;
+                  rdfs:label "Act of Lubricating"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfMachining
+:ActOfMachining rdf:type owl:Class ;
+                rdfs:subClassOf :ActOfMaterialRemoval ;
+                cco:definition "An act of material removal in which some portion of material is cut into a shape and size by a controlled material removal process."^^xsd:string ;
+                cco:definition_source "https://en.wikipedia.org/wiki/Machining"^^xsd:string ;
+                rdfs:label "Act of Machining"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfMagneticFieldAssistedFinishing
+:ActOfMagneticFieldAssistedFinishing rdf:type owl:Class ;
+                                     rdfs:subClassOf :ActOfAbrading ;
+                                     cco:definition "An act of abrading in which a magnetic field is used to force abrasive particles against a target surface."^^xsd:string ;
+                                     cco:definition_source "https://en.wikipedia.org/wiki/Magnetic_field-assisted_finishing"^^xsd:string ;
+                                     cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                                     rdfs:label "Act of Magnetic Field Assisted Finishing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfMaterialRemoval
+:ActOfMaterialRemoval rdf:type owl:Class ;
+                      rdfs:subClassOf PLC-ontology:ActOfProduction ;
+                      cco:definition "An act of production that removes unwanted portion of material from a material entity to produce a desired shape."^^xsd:string ;
+                      cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                      rdfs:label "Act of Material Removal" .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfMaterialSeparation
+:ActOfMaterialSeparation rdf:type owl:Class ;
+                         rdfs:subClassOf PLC-ontology:ActOfProduction ;
+                         cco:definition "An act of production that cut objects into two or more portions or create a incision, through the application of an acutely directed force."^^xsd:string ;
+                         cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                         rdfs:label "Act of Material Separation"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfMaterialSolidification
+:ActOfMaterialSolidification rdf:type owl:Class ;
+                             rdfs:subClassOf PLC-ontology:ActOfProduction ;
+                             cco:definition "An act of production that either, 1)changes the state of matter of a portion of material from  a gaseous or liquid state to a solid state, or, 2) melts an object aggregate consisting of particles, beads, or other fine-sized objects into a single object."^^xsd:string ;
+                             cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                             rdfs:label "Act of Material Solidification"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfMechanicalEmbossing
+:ActOfMechanicalEmbossing rdf:type owl:Class ;
+                          rdfs:subClassOf :ActOfStamping ;
+                          obo:IAO_0000115 "An act of stamping that produces raised or sunken design and relief images on the sheet of material."^^xsd:string ;
+                          obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                          obo:IAO_0000119 "https://en.wikipedia.org/wiki/Embossing_(manufacturing)"^^xsd:string ;
+                          rdfs:label "Act of Embossing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfMechanicalTwisting
+:ActOfMechanicalTwisting rdf:type owl:Class ;
+                         rdfs:subClassOf cco:ActOfArtifactProcessing ;
+                         cco:definition "An act of artifact processing that winds or coils one or more objects."@en ;
+                         cco:term_editor "Ruoyu Yang"@en ;
+                         rdfs:label "Act of Twisting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfMetalInjectionMolding
+:ActOfMetalInjectionMolding rdf:type owl:Class ;
+                            rdfs:subClassOf :ActOfInjectionMolding ;
+                            obo:IAO_0000115 "An act of injection molding that uses metal powder."^^xsd:string ;
+                            obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                            cco:definition_source "https://en.wikipedia.org/wiki/Injection_moulding"^^xsd:string ;
+                            rdfs:label "Act of Metal Injection Molding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfMicromachining
+:ActOfMicromachining rdf:type owl:Class ;
+                     rdfs:subClassOf :ActOfAbrading ;
+                     cco:definition "An act of abrading that improves a surface and workpiece geometry by removing just the thin amorphous surface layer left by the last process with an abrasive stone or tape."^^xsd:string ;
+                     cco:definition_source "https://en.wikipedia.org/wiki/Superfinishing"^^xsd:string ;
+                     cco:elucidation "Micromachining also known as superfinishing and it creates a cross-hatch pattern on the workpiece unlike polishing that produces a mirror finish."^^xsd:string ;
+                     cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                     rdfs:label "Act of Micromachining"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfMilling
+:ActOfMilling rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfMachining ;
+              obo:IAO_0000115 "An act of machining that uses rotary cutters to remove material from a workpiece by advancing (or feeding) in a direction at an angle with the axis of the tool."^^xsd:string ;
+              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+              obo:IAO_0000119 "https://en.wikipedia.org/wiki/Milling_(machining)"^^xsd:string ;
+              rdfs:label "Act of Milling"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfMolding
+:ActOfMolding rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfMaterialSolidification ;
+              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+              cco:definition "An act of material solidification in which a material is forced for example injected or dipped into some mold or matrix and allowed to solidify."^^xsd:string ;
+              cco:definition_source "https://en.wikipedia.org/wiki/Molding_(process)"^^xsd:string ;
+              rdfs:label "Act of Molding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfNailing
+:ActOfNailing rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfFastening ;
+              obo:IAO_0000115 "An act of fastening that uses nail as a type of fastener."^^xsd:string ;
+              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+              rdfs:label "Act of Nailing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfNormalizing
+:ActOfNormalizing rdf:type owl:Class ;
+                  rdfs:subClassOf :ActOfHeatTreating ;
+                  cco:definition "An act of heat treating that heats a portion of material above the critical temperature, holding for a period of time long enough for transformation to occur, and air cooling."^^xsd:string ;
+                  cco:definition_source "http://www.pacmet.com/index.php?h=basicheattreat"^^xsd:string ;
+                  cco:elucidation "Normalized heat treatment establishes a more uniform carbide size and distribution which facilitates later heat treatment operations and produces a more uniform final product."^^xsd:string ;
+                  cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                  rdfs:label "Act of Normalizing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfNotching
+:ActOfNotching rdf:type owl:Class ;
+               rdfs:subClassOf :ActOfPiercing ;
+               obo:IAO_0000115 "An act of piercing that removes portion of material from the edge of the workpiece (material entity)."^^xsd:string ;
+               obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+               obo:IAO_0000119 "https://en.wikipedia.org/wiki/Notching"^^xsd:string ;
+               obo:IAO_0000600 "It is used on sheetmetal or thin barstock, sometimes on angle sections or tube. by the act of cutting in vertically down and perpendicular to the surface, working from the edge of a workpiece."^^xsd:string ;
+               rdfs:label "Act of Notching"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfOffsetPrinting
+:ActOfOffsetPrinting rdf:type owl:Class ;
+                     rdfs:subClassOf :ActOfPrinting ;
+                     cco:definition "Act of printing in which the inked image is transferred (or \"offset\") from a plate to a rubber blanket, then to the printing surface."^^xsd:string ;
+                     cco:definition_source "https://en.wikipedia.org/wiki/Offset_printing"^^xsd:string ;
+                     cco:elucidation "When used in combination with the lithographic process, which is based on the repulsion of oil and water, the offset technique employs a flat (planographic) image carrier on which the image to be printed obtains ink from ink rollers, while the non-printing area attracts a water-based film (called \"fountain solution\"), keeping the non-printing areas ink-free. The modern \"web\" process feeds a large reel of paper through a large press machine in several parts, typically for several metres, which then prints continuously as the paper is fed through."^^xsd:string ;
+                     cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                     rdfs:label "Act of Offset Printing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPackaging
+:ActOfPackaging rdf:type owl:Class ;
+                rdfs:subClassOf cco:IntentionalAct ;
+                obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                cco:definition "An intentional act that encloses or protects a material entity for distribution, storage, sale or use."^^xsd:string ;
+                cco:definition_source "https://en.wikipedia.org/wiki/Packaging_and_labeling"^^xsd:string ;
+                cco:elucidation "Packaging can be described as a coordinated series of processes of preparing goods for transport, warehousing, logistics, sale, and end use."^^xsd:string ;
+                rdfs:label "Act of Packaging"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPadPrinting
+:ActOfPadPrinting rdf:type owl:Class ;
+                  rdfs:subClassOf :ActOfGravurePrinting ;
+                  cco:definition "An act of printing that transfers a 2-D image onto a 3-D object by using an indirect offset (gravure) printing process that involves an image being transferred from the cliché via a silicone pad onto a substrate."^^xsd:string ;
+                  cco:definition_source "https://en.wikipedia.org/wiki/Pad_printing"^^xsd:string ;
+                  cco:elucidation "Pad printing is used for printing on otherwise difficult to print on products in many industries including medical, automotive, promotional, apparel, and electronic objects, as well as appliances, sports equipment and toys. It can also be used to deposit functional materials such as conductive inks, adhesives, dyes and lubricants."^^xsd:string ;
+                  cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                  rdfs:label "Act of Pad Printing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPerforating
+:ActOfPerforating rdf:type owl:Class ;
+                  rdfs:subClassOf :ActOfPiercing ;
+                  obo:IAO_0000115 "An act of piercing that involves puncturing the workpiece with a tool to create hole on a thin material or web."^^xsd:string ;
+                  obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                  obo:IAO_0000119 "https://en.wikipedia.org/wiki/Perforation"^^xsd:string ;
+                  rdfs:label "Act of Perforating"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPermanentMoldCasting
+:ActOfPermanentMoldCasting rdf:type owl:Class ;
+                           rdfs:subClassOf :ActOfCasting ;
+                           obo:IAO_0000115 "An act of casting that uses reusable molds such as die that made from metal."^^xsd:string ;
+                           obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                           cco:definition_source "https://en.wikipedia.org/wiki/Permanent_mold_casting"^^xsd:string ;
+                           rdfs:label "Act of Permanent Mold Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPhotochemicalMachining
+:ActOfPhotochemicalMachining rdf:type owl:Class ;
+                             rdfs:subClassOf :ActOfMachining ;
+                             obo:IAO_0000115 "An act of machining that removes material from the workpiece by corrosively machine away selected area."^^xsd:string ;
+                             obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                             obo:IAO_0000119 "https://en.wikipedia.org/wiki/Photochemical_machining"^^xsd:string ;
+                             obo:IAO_0000600 "PCM can be used on virtually any commercially available metal or alloy, of any hardness. It is limited to materials with a thickness of 0.0005 to 0.080 in (0.013 to 2.032 mm). Metals include aluminium, brass, copper, inconel, manganese, nickel, silver, steel, stainless steel, zinc and titanium."^^xsd:string ;
+                             rdfs:label "Act of Photochemical Machining"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPhysicalVaporDeposition
+:ActOfPhysicalVaporDeposition rdf:type owl:Class ;
+                              rdfs:subClassOf :ActOfCoating ;
+                              obo:IAO_0000115 "An act of coating that deposits a substrate on surface of objects to produce thin films and coatings."^^xsd:string ;
+                              obo:IAO_0000119 "https://en.wikipedia.org/wiki/Physical_vapor_deposition"^^xsd:string ;
+                              rdfs:label "Act of Physical Vapor Deposition"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPiercing
+:ActOfPiercing rdf:type owl:Class ;
+               rdfs:subClassOf :ActOfShearing ;
+               obo:IAO_0000115 "An act of shearing in which a punch and die are used to create cavity or hole on workpiece (material entity)."^^xsd:string ;
+               obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+               obo:IAO_0000119 """https://en.wikipedia.org/wiki/Blanking_and_piercing
+http://www.thelibraryofmanufacturing.com/piercing.html"""^^xsd:string ;
+               rdfs:label "Act of Piercing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPinning
+:ActOfPinning rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfFastening ;
+              obo:IAO_0000115 "An act of fastening that uses pin as a type of fastener."^^xsd:string ;
+              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+              rdfs:label "Act of Pinning"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPlaneMilling
+:ActOfPlaneMilling rdf:type owl:Class ;
+                   rdfs:subClassOf :ActOfMilling ;
+                   obo:IAO_0000115 "An act of milling that removes material in which the workpiece reciprocates against a stationary cutting tool producing a plane or sculpted surface."^^xsd:string ;
+                   obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                   obo:IAO_0000119 "https://en.wikipedia.org/wiki/Planing_(shaping)"^^xsd:string ;
+                   obo:IAO_0000600 "The cutting tools are usually carbide tipped or made of high speed steel and resemble those used in facing and turning."^^xsd:string ;
+                   rdfs:label "Act of Plane Milling"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPlasmaActivatedBonding
+:ActOfPlasmaActivatedBonding rdf:type owl:Class ;
+                             rdfs:subClassOf :ActOfWaferBonding ;
+                             cco:definition "An act of wafer bonding that directed to lower processing temperatures for direct bonding with hydrophilic surfaces."^^xsd:string ;
+                             cco:definition_source "https://en.wikipedia.org/wiki/Plasma-activated_bonding"^^xsd:string ;
+                             cco:elucidation "The main requirements for lowering temperatures of direct bonding are the use of materials melting at low temperatures and with different coefficients of thermal expansion (CTE)."^^xsd:string ;
+                             cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                             rdfs:label "Act of Plasma Activated Bonding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPlasterMoldCasting
+:ActOfPlasterMoldCasting rdf:type owl:Class ;
+                         rdfs:subClassOf :ActOfExpendableMoldCasting ;
+                         obo:IAO_0000115 "An act of expendable mold casting that uses plaster of Paris as the mold material."^^xsd:string ;
+                         obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                         cco:definition_source "http://www.thelibraryofmanufacturing.com/plaster_metalcasting.html"^^xsd:string ;
+                         rdfs:label "Act of Plaster Mold Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPlasticExtrusion
+:ActOfPlasticExtrusion rdf:type owl:Class ;
+                       rdfs:subClassOf :ActOfMolding ;
+                       obo:IAO_0000115 "An act of molding that melts a portion of plastic material and then forces it into a die, which shapes the plastic into a pipe that hardens during cooling."^^xsd:string ;
+                       obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                       cco:definition_source "https://en.wikipedia.org/wiki/Plastics_extrusion"^^xsd:string ;
+                       rdfs:label "Act of Plastic Extrusion"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPlasticInjectionMolding
+:ActOfPlasticInjectionMolding rdf:type owl:Class ;
+                              rdfs:subClassOf :ActOfInjectionMolding ;
+                              obo:IAO_0000115 "An act of injection molding that uses plastic granule."^^xsd:string ;
+                              cco:definition_source "https://en.wikipedia.org/wiki/Injection_moulding"^^xsd:string ;
+                              rdfs:label "Act of Plastic Injection Molding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPlating
+:ActOfPlating rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfCoating ;
+              cco:definition "An act of coating in which a portion of metal is deposited on a conductive surface."^^xsd:string ;
+              cco:definition_source "https://en.wikipedia.org/wiki/Plating"^^xsd:string ;
+              cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+              rdfs:label "Act of Plating"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPolishing
+:ActOfPolishing rdf:type owl:Class ;
+                rdfs:subClassOf :ActOfAbrading ;
+                cco:definition "An act of abrading that smooths a material entities' surface (workpiece) using an abrasive and a work wheel or a leather strop."^^xsd:string ;
+                cco:definition_source "https://en.wikipedia.org/wiki/Polishing_(metalworking)"^^xsd:string ;
+                cco:elucidation "Technically polishing refers to processes that use an abrasive that is glued to the work wheel, while buffing uses a loose abrasive applied to the work wheel."^^xsd:string ;
+                cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                rdfs:label "Act of Polishing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPowderMetallurgyProcessing
+:ActOfPowderMetallurgyProcessing rdf:type owl:Class ;
+                                 rdfs:subClassOf :ActOfMolding ;
+                                 obo:IAO_0000115 "An act of molding that compacts a portion of material in the form of powders into a certain geometry, which is then heated and sintered to solidify."^^xsd:string ;
+                                 obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                                 cco:definition_source "http://www.thelibraryofmanufacturing.com/powder_processes.html"^^xsd:string ;
+                                 rdfs:label "Act of Powder Metallurgy Processing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPressFit
+:ActOfPressFit rdf:type owl:Class ;
+               rdfs:subClassOf cco:ActOfMotion ;
+               cco:definition "An act of motion that fits two parts in which one is forced under pressure into a slightly smaller hole in the other."@en ;
+               cco:term_editor "Munira Mohd Ali"@en ;
+               rdfs:label "Act of Press Fit"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPressForging
+:ActOfPressForging rdf:type owl:Class ;
+                   rdfs:subClassOf :ActOfForging ;
+                   obo:IAO_0000115 "An act of forging that employs act of pressing gradually over a longer stroke."^^xsd:string ;
+                   obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                   cco:definition_source "http://www.thelibraryofmanufacturing.com/forging_hammers.html"^^xsd:string ;
+                   rdfs:label "Act of Press Forging"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPressureCasting
+:ActOfPressureCasting rdf:type owl:Class ;
+                      rdfs:subClassOf :ActOfPermanentMoldCasting ;
+                      obo:IAO_0000115 "An act of permanent mold casting that uses air pressure to force molten metal through the gating systems and mold cavity."^^xsd:string ;
+                      obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                      cco:definition_source "http://www.thelibraryofmanufacturing.com/pressure_casting.html"^^xsd:string ;
+                      rdfs:label "Act of Pressure Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPrinting
+:ActOfPrinting rdf:type owl:Class ;
+               rdfs:subClassOf cco:ActOfArtifactProcessing ;
+               cco:definition "An act of artifact processing that reproduces text or images using a master form or template."^^xsd:string ;
+               cco:definition_source "https://en.wikipedia.org/wiki/Printing"^^xsd:string ;
+               cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+               rdfs:label "Act of Printing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfProjectionWelding
+:ActOfProjectionWelding rdf:type owl:Class ;
+                        rdfs:subClassOf :ActOfResistanceSpotWelding ;
+                        obo:IAO_0000115 "An act of resistance spot welding that concentrates heat on positioning of workpieces, which permits the welding of heavier sections or the closer spacing of welds."^^xsd:string ;
+                        obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                        obo:IAO_0000119 "https://en.wikipedia.org/wiki/Spot_welding#Projection_welding"^^xsd:string ;
+                        obo:IAO_0000600 "Projection welding is often used to weld studs, nuts, and other screw machine parts to metal plate. It is also frequently used to join crossed wires and bars."^^xsd:string ;
+                        rdfs:label "Act of Projection Welding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPulling
+:ActOfPulling rdf:type owl:Class ;
+              rdfs:subClassOf cco:ActOfMotion ;
+              cco:definition "An act of motion where an object is moved by a force that moves along a vector toward the source of the force."@en ;
+              cco:term_editor "Binbin Zhang and J. Neil Otte"@en ;
+              rdfs:label "Act of Pulling"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfPushing
+:ActOfPushing rdf:type owl:Class ;
+              rdfs:subClassOf cco:ActOfMotion ;
+              cco:definition "An act of motion where an object is moved by a force that moves along a vector away from the source of the force."@en ;
+              cco:term_editor "Binbin Zhang"@en ;
+              rdfs:label "Act of Pushing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfQuenching
+:ActOfQuenching rdf:type owl:Class ;
+                rdfs:subClassOf :ActOfHeatTreating ;
+                cco:definition "Act of heat treating that prevents phase transformation on a portion material from occurring by rapidly cools the portion of material (mostly metal) through its eutectoid point."^^xsd:string ;
+                cco:definition_source "https://en.wikipedia.org/wiki/Quenching"^^xsd:string ;
+                cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                rdfs:label "Act of Quenching"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfReactiveBonding
+:ActOfReactiveBonding rdf:type owl:Class ;
+                      rdfs:subClassOf :ActOfWaferBonding ;
+                      cco:definition "An act of wafer bonding that uses multilayer system of two alternating different thin metallic firms as an intermediate layer between the bonding substrates."^^xsd:string ;
+                      cco:definition_source ""^^xsd:string ;
+                      cco:elucidation "The self-propagating exothermic reaction within the multilayer system contributes the local heat to bond the solder films. Based on the limited temperature the substrate material is exposed, temperature-sensitive components and materials with different CTEs, i.e. metals, polymers and ceramics, can be used without thermal damage."^^xsd:string ;
+                      cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                      rdfs:label "Act of Reactive Bonding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfReaming
+:ActOfReaming rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfMachining ;
+              obo:IAO_0000115 "An act of machining that enlarges the size of a previously formed hole by using reamer tool."^^xsd:string ;
+              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+              obo:IAO_0000119 "https://en.wikipedia.org/wiki/Reamer"^^xsd:string ;
+              obo:IAO_0000600 "The different with the act of boring is, the act of reaming can be done by using hand tools or on the milling or drilling machines."^^xsd:string ;
+              rdfs:label "Act of Reaming"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfReliefPrinting
+:ActOfReliefPrinting rdf:type owl:Class ;
+                     rdfs:subClassOf :ActOfPrinting ;
+                     cco:definition "Act of printing in which many copies are produced by repeated direct impression of an inked, raised surface against sheets or a continuous roll of paper."^^xsd:string ;
+                     cco:definition_source "https://en.wikipedia.org/wiki/Letterpress_printing"^^xsd:string ;
+                     cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                     rdfs:label "Act of Relief Printing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfResinCasting
+:ActOfResinCasting rdf:type owl:Class ;
+                   rdfs:subClassOf :ActOfExpendableMoldCasting ;
+                   obo:IAO_0000115 "An act of expendable mold casting in which a mold is filled with a liquid synthetic resins, which then hardens."^^xsd:string ;
+                   obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                   obo:IAO_0000600 "Resin casting is also known as plastic casting"^^xsd:string ;
+                   cco:definition_source "https://en.wikipedia.org/wiki/Resin_casting"^^xsd:string ;
+                   rdfs:label "Act of Resin Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfResistanceBrazing
+:ActOfResistanceBrazing rdf:type owl:Class ;
+                        rdfs:subClassOf :ActOfBrazing ;
+                        obo:IAO_0000115 "An act of brazing in which workpieces are heated locally, and the filler metal that is preplaced between the workpieces is melted by the heat generated from resistance to the flow of electric current through the electrodes and the work."^^xsd:string ;
+                        obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                        obo:IAO_0000119 "http://www.asminternational.org/web/tss/technical-resources/-/journal_content/56/10192/ASMHBA0001389/PUBLICATION"^^xsd:string ;
+                        rdfs:label "Act of Resistance Brazing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfResistanceSeamWelding
+:ActOfResistanceSeamWelding rdf:type owl:Class ;
+                            rdfs:subClassOf :ActOfElectricResistanceWelding ;
+                            obo:IAO_0000115 "An act of electric resistance welding that welds progressively from one end to another end facing surfaces of two similar metals."^^xsd:string ;
+                            obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                            obo:IAO_0000119 "https://en.wikipedia.org/wiki/Electric_resistance_welding"^^xsd:string ;
+                            rdfs:label "Act of Resistance Seam Welding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfResistanceSpotWelding
+:ActOfResistanceSpotWelding rdf:type owl:Class ;
+                            rdfs:subClassOf :ActOfElectricResistanceWelding ;
+                            obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                            obo:IAO_0000119 "https://en.wikipedia.org/wiki/Spot_welding"^^xsd:string ;
+                            cco:definition "An act of electric resistance welding that uses heat obtained from resistance to electric current and then concentrates into a small \"spot\" and simultaneously clamp the metals together."^^xsd:string ;
+                            rdfs:label "Act of Resistance Spot Welding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfRingRolling
+:ActOfRingRolling rdf:type owl:Class ;
+                  rdfs:subClassOf :ActOfRolling ;
+                  obo:IAO_0000115 "An act of rolling  that reduces the thickness and enlarges the diameter of the material entity (ring) by the act of pushing the ring as it passes between two rotating rolls."^^xsd:string ;
+                  obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                  cco:definition_source """[1] http://www.thelibraryofmanufacturing.com/ring_rolling.html
+[2] http://14.139.245.214/mfvlab/Ring_Rolling.php"""^^xsd:string ;
+                  cco:elucidation "During the ring rolling process, the main deformation occurs between the king (main) roll and the mandrel (pressure) roll. The rotation of the king roll, coupled by friction at the roll/ring interface, drives the ring through the roll gap, and its wall thickens decreases continuously by the advancing pressure roll. The gap between the main roll and the mandrel roll therefore steadily decreases. As the cross-section of the ring is gradually reduced, the diameter of the ring progressively grows due to incompressibility of the material. The axial rollers named conical rolls used to keep the width of the constant."^^xsd:string ;
+                  rdfs:label "Act of Ring Rolling"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfRolling
+:ActOfRolling rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfForming ;
+              obo:IAO_0000115 "An act of forming in which material entity (metal stock) is passed through one or more pairs of rolls to reduce the thickness and to make the thickness uniform."^^xsd:string ;
+              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+              cco:definition_source "https://en.wikipedia.org/wiki/Rolling_(metalworking)"^^xsd:string ;
+              rdfs:label "Act of Rolling"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfRotationalMolding
+:ActOfRotationalMolding rdf:type owl:Class ;
+                        rdfs:subClassOf :ActOfMolding ;
+                        obo:IAO_0000115 "An act of molding that fills a heated hollow mold with a charge or shot weight of material that is then slowly rotated (usually around two perpendicular axes), causing the softened material to disperse and stick to the walls of the mold."^^xsd:string ;
+                        obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                        cco:definition_source "https://en.wikipedia.org/wiki/Rotational_molding"^^xsd:string ;
+                        rdfs:label "Act of Rotational Molding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfRouteMachining
+:ActOfRouteMachining rdf:type owl:Class ;
+                     rdfs:subClassOf :ActOfMachining ;
+                     obo:IAO_0000115 "An act of machining that uses rotary cutters to remove material from a workpiece by advancing (or feeding) in a direction at an angle with the axis of the tool."^^xsd:string ;
+                     obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                     obo:IAO_0000119 "https://en.wikipedia.org/wiki/Router_(woodworking)"^^xsd:string ;
+                     obo:IAO_0000600 "Routing and milling are conceptually similar, and end mills can be used in routers, but routing wood is different from milling metal in terms of the mechanics involved; the chip formation is different, and the optimal tool geometry is thus different. Routing is properly applied to relatively weak and brittle materials, typically wood."^^xsd:string ;
+                     rdfs:label "Act of Route Machining"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfSandBlasting
+:ActOfSandBlasting rdf:type owl:Class ;
+                   rdfs:subClassOf :ActOfAbrading ;
+                   cco:definition "An act of abrading that smooths a rough surface, roughen a smooth surface, shape a surface or remove surface contaminants by forcibly propelling a stream of abrasive material against a surface under high pressure."^^xsd:string ;
+                   cco:definition_source "https://en.wikipedia.org/wiki/Abrasive_blasting"^^xsd:string ;
+                   cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                   rdfs:label "Act of Sand Blasting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfSandCasting
+:ActOfSandCasting rdf:type owl:Class ;
+                  rdfs:subClassOf :ActOfExpendableMoldCasting ;
+                  obo:IAO_0000115 "An act of expendable mold casting that uses sand as mold material."^^xsd:string ;
+                  obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                  cco:definition_source "https://en.wikipedia.org/wiki/Sand_casting"^^xsd:string ;
+                  rdfs:label "Act of Sand Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfScreenPrinting
+:ActOfScreenPrinting rdf:type owl:Class ;
+                     rdfs:subClassOf :ActOfPrinting ;
+                     cco:definition "An act of printing in which a mesh is used to transfer ink onto a substrate, except in areas made impermeable to the ink by a blocking stencil."^^xsd:string ;
+                     cco:definition_source "https://en.wikipedia.org/wiki/Screen_printing"^^xsd:string ;
+                     cco:elucidation "Screen-printing for a variety of applications ranging from T-shirts to floor tiles, and on uneven surfaces"^^xsd:string ;
+                     cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                     rdfs:label "Act of Screen Printing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfScrewing
+:ActOfScrewing rdf:type owl:Class ;
+               rdfs:subClassOf :ActOfFastening ;
+               obo:IAO_0000115 "An act of fastening that uses screw as a type of fastener."^^xsd:string ;
+               obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+               rdfs:label "Act of Screwing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfSealing
+:ActOfSealing rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfTightening ;
+              obo:IAO_0000115 "An act of tightening that tightens object and prevents leakage."@en ;
+              cco:term_editor "Ruoyu Yang"@en ;
+              rdfs:label "Act of Sealing" .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfSeaming
+:ActOfSeaming rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfBending ;
+              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+              cco:definition "An act of bending that joins the edges of two material entity."^^xsd:string ;
+              cco:definition_source "https://en.wikipedia.org/wiki/Hemming_and_seaming"^^xsd:string ;
+              cco:elucidation "Seaming joins the edges of two materials and commonly used in the food industry on canned goods, on amusement park cars, and in the automotive industry."^^xsd:string ;
+              rdfs:label "Act of Seaming"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfSemicentrifugalCasting
+:ActOfSemicentrifugalCasting rdf:type owl:Class ;
+                             rdfs:subClassOf :ActOfCentrifugalCasting ;
+                             obo:IAO_0000115 "An act of centrifugal casting  in which molten metal is supplied to the mold through the central sprue and the castings manufactured by this process possess rotational symmetry."^^xsd:string ;
+                             obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                             cco:definition_source "http://www.thelibraryofmanufacturing.com/semicentrifugal_casting.html"^^xsd:string ;
+                             rdfs:label "Act of Semicentrifugal Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfShapeMilling
+:ActOfShapeMilling rdf:type owl:Class ;
+                   rdfs:subClassOf :ActOfMilling ;
+                   obo:IAO_0000115 "An act of milling that removes material in which a cutting tools reciprocates against a stationary workpiece producing a plane or sculpted surface."^^xsd:string ;
+                   obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                   obo:IAO_0000119 "https://en.wikipedia.org/wiki/Planing_(shaping)"^^xsd:string ;
+                   obo:IAO_0000600 "The cutting tools are usually carbide tipped or made of high speed steel and resemble those used in facing and turning."^^xsd:string ;
+                   rdfs:label "Act of Shape Milling"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfShapeRolling
+:ActOfShapeRolling rdf:type owl:Class ;
+                   rdfs:subClassOf :ActOfRolling ;
+                   obo:IAO_0000115 "An act of rolling that forms specific shape of material entity."^^xsd:string ;
+                   obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                   cco:definition_source "http://www.thelibraryofmanufacturing.com/shape_rolling.html"^^xsd:string ;
+                   cco:elucidation "Two very common examples of continuous shape rolled product are the I beam for structural purposes and the rail for railroad track."^^xsd:string ;
+                   rdfs:label "Act of Shape Rolling"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfSharpening
+:ActOfSharpening rdf:type owl:Class ;
+                 rdfs:subClassOf :ActOfGrinding ;
+                 obo:IAO_0000115 "An act of grinding that creates or refines a sharp edge of appropriate shape on a tool or implement designed for cutting by grinding away material on the implement with an abrasive substance harder than the material of the implement."^^xsd:string ;
+                 obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                 obo:IAO_0000119 "https://en.wikipedia.org/wiki/Sharpening"^^xsd:string ;
+                 rdfs:label "Act of Sharpening"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfShearing
+:ActOfShearing rdf:type owl:Class ;
+               rdfs:subClassOf :ActOfMaterialSeparation ;
+               obo:IAO_0000115 "An act of material separation that cuts part by using dies."^^xsd:string ;
+               obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+               obo:IAO_0000600 "During the shearing process, an upper blade and a lower blade are forced past each other with the space between them determined by a required offset."^^xsd:string ;
+               cco:definition_source "https://en.wikipedia.org/wiki/Shearing_(manufacturing)"^^xsd:string ;
+               rdfs:label "Act of Shearing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfShellMoldCasting
+:ActOfShellMoldCasting rdf:type owl:Class ;
+                       rdfs:subClassOf :ActOfExpendableMoldCasting ;
+                       obo:IAO_0000115 "An act of expendable mold casting that uses a resin covered sand to form the mold."^^xsd:string ;
+                       obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                       cco:definition_source "https://en.wikipedia.org/wiki/Shell_molding"^^xsd:string ;
+                       rdfs:label "Act of Shell Mold Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfShieldedMetalArcWelding
+:ActOfShieldedMetalArcWelding rdf:type owl:Class ;
+                              rdfs:subClassOf :ActOfArcWelding ;
+                              obo:IAO_0000115 "An act of arc welding that uses a consumable electrode covered with a flux to lay the weld."^^xsd:string ;
+                              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                              obo:IAO_0000119 "https://en.wikipedia.org/wiki/Shielded_metal_arc_welding"^^xsd:string ;
+                              rdfs:label "Act of Shielded Metal Arc Welding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfShotWelding
+:ActOfShotWelding rdf:type owl:Class ;
+                  rdfs:subClassOf :ActOfResistanceSpotWelding ;
+                  obo:IAO_0000115 "An act of resistance spot welding that specifically welds stainless steel metal."^^xsd:string ;
+                  obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                  obo:IAO_0000119 "https://en.wikipedia.org/wiki/Electric_resistance_welding"^^xsd:string ;
+                  rdfs:label "Act of Shot Welding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfSintering
+:ActOfSintering rdf:type owl:Class ;
+                rdfs:subClassOf :ActOfJoining ;
+                cco:definition "An act of joining that compacts and forms a solid mass of material by heat or pressure without melting it to the point of liquefaction." ;
+                cco:definition_source "https://en.wikipedia.org/wiki/Sintering" ;
+                cco:term_editor "Munira Mohd Ali" ;
+                rdfs:label "Act of Sintering" .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfSliding
+:ActOfSliding rdf:type owl:Class ;
+              rdfs:subClassOf cco:ActOfMotion ;
+              cco:definition "An act of motion where an object moves along the surface of a material entity."@en ;
+              cco:term_editor "Binbin Zhang and J. Neil Otte"@en ;
+              rdfs:label "Act of Sliding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfSlushCasting
+:ActOfSlushCasting rdf:type owl:Class ;
+                   rdfs:subClassOf :ActOfPermanentMoldCasting ;
+                   obo:IAO_0000115 "An act of permanent mold casting that creates hollow casting."^^xsd:string ;
+                   obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                   cco:definition_source "http://www.thelibraryofmanufacturing.com/slush_casting.html"^^xsd:string ;
+                   rdfs:label "Act of Slush Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfSmithing
+:ActOfSmithing rdf:type owl:Class ;
+               rdfs:subClassOf :ActOfForging ;
+               obo:IAO_0000115 "An act of forging that is used by craftsman in fashioning useful items (for example, tools, kitchenware, tableware, jewellery, and weapons) out of various metals using a hammer."^^xsd:string ;
+               obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+               cco:definition_source "https://en.wikipedia.org/wiki/Metalsmith"^^xsd:string ;
+               cco:elucidation "Often the hammering is done while the metal is hot, having been heated in a forge."^^xsd:string ;
+               rdfs:label "Act of Smithing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfSoldering
+:ActOfSoldering rdf:type owl:Class ;
+                rdfs:subClassOf :ActOfJoining ;
+                obo:IAO_0000115 "An act of joining two or more metal items by melting a filler metal at temperature below 840 degree Fahrenheit and flowing it into the gap between close-fitting parts of the joint."^^xsd:string ;
+                obo:IAO_0000119 "https://en.wikipedia.org/wiki/Soldering"^^xsd:string ;
+                rdfs:label "Act of Soldering"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfSpinTurning
+:ActOfSpinTurning rdf:type owl:Class ;
+                  rdfs:subClassOf :ActOfLatheTurning ;
+                  obo:IAO_0000115 "An act of turning that removes material from disc or tube of metal that is rotated at high speed to form an axially symmetric part."^^xsd:string ;
+                  obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                  obo:IAO_0000119 "https://en.wikipedia.org/wiki/Metal_spinning"^^xsd:string ;
+                  rdfs:label "Act of Spin Turning"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfSputtering
+:ActOfSputtering rdf:type owl:Class ;
+                 rdfs:subClassOf :ActOfPhysicalVaporDeposition ;
+                 obo:IAO_0000115 "An act of physical vapor deposition that deposits a thin film on the surface of material."^^xsd:string ;
+                 obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                 obo:IAO_0000119 "https://en.wikipedia.org/wiki/Sputter_deposition"^^xsd:string ;
+                 rdfs:label "Act of Sputtering"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfStamping
+:ActOfStamping rdf:type owl:Class ;
+               rdfs:subClassOf :ActOfForming ;
+               obo:IAO_0000115 "An act of forming in which compressive force is applied to the flat sheet of material where a tool and die surface forms desired shape of material entity."^^xsd:string ;
+               obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+               obo:IAO_0000119 "https://en.wikipedia.org/wiki/Stamping_(metalworking)"^^xsd:string ;
+               rdfs:label "Act of Stamping"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfStapling
+:ActOfStapling rdf:type owl:Class ;
+               rdfs:subClassOf :ActOfFastening ;
+               obo:IAO_0000115 "An act of fastening that uses staple as a type of fastener."^^xsd:string ;
+               obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+               obo:IAO_0000600 "Large staples might be used with a hammer or staple gun for masonry, roofing, corrugated boxes and other heavy-duty uses. Smaller staples are used with a stapler to attach pieces of paper together; such staples are a more permanent and durable fastener for paper documents than the paper clip."^^xsd:string ;
+               rdfs:label "Act of Stapling"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfStudWelding
+:ActOfStudWelding rdf:type owl:Class ;
+                  rdfs:subClassOf :ActOfArcWelding ;
+                  obo:IAO_0000115 "An act of arc welding that welds a fastener or specially formed nut onto another metal part."^^xsd:string ;
+                  obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                  obo:IAO_0000119 "https://en.wikipedia.org/wiki/Stud_welding"^^xsd:string ;
+                  rdfs:label "Act of Stud Welding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfSubmergedWelding
+:ActOfSubmergedWelding rdf:type owl:Class ;
+                       rdfs:subClassOf :ActOfArcWelding ;
+                       obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                       obo:IAO_0000119 "https://en.wikipedia.org/wiki/Submerged_arc_welding"^^xsd:string ;
+                       cco:definition "An act of arc welding that requires a continuously fed consumable solid or tubular electrode where molten weld and the arc zone are protected from atmospheric contamination by being \"submerged\" under a blanket of granular fusible flux consisting of lime, silica, manganese oxide, calcium fluoride, and other compounds."^^xsd:string ;
+                       rdfs:label "Act of Submerged Welding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfSurfaceActivatedBonding
+:ActOfSurfaceActivatedBonding rdf:type owl:Class ;
+                              rdfs:subClassOf :ActOfWaferBonding ;
+                              cco:definition "An act of wafer bonding that is conducted at low temperature with atomically clean and activated surfaces."^^xsd:string ;
+                              cco:definition_source "https://en.wikipedia.org/wiki/Surface_activated_bonding"^^xsd:string ;
+                              cco:elucidation "Surface activation prior to bonding by using fast atom bombardment is typically employed to clean the surfaces. High strength bonding of semiconductor, metal, and dielectric can be obtained even at room temperature."^^xsd:string ;
+                              cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                              rdfs:label "Act of Surface Activated Bonding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfSwing
+:ActOfSwing rdf:type owl:Class ;
+            rdfs:subClassOf cco:ActOfMotion ;
+            cco:definition "An act of motion that causes objects to move in a curve or arc, usually with the intent of hitting."@en ;
+            cco:term_editor "Ruoyu Yang"@en ;
+            rdfs:label "Act of Swing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfTaping
+:ActOfTaping rdf:type owl:Class ;
+             rdfs:subClassOf :ActOfFastening ;
+             cco:definition "An act of fastening that fastens or attaches objects with tape."@en ;
+             cco:term_editor "Ruoyu Yang"@en ;
+             rdfs:label "Act of Taping"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfTapping
+:ActOfTapping rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfMachining ;
+              obo:IAO_0000115 "An act of machining that removes material from workpiece to form threads by using tap tool."^^xsd:string ;
+              obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+              obo:IAO_0000119 "https://en.wikipedia.org/wiki/Tap_and_die"^^xsd:string ;
+              rdfs:label "Act of Tapping"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfTempering
+:ActOfTempering rdf:type owl:Class ;
+                rdfs:subClassOf :ActOfHeatTreating ;
+                cco:definition "Act of heat treating that increases the toughness of iron-based alloys by heating it to some temperature below the critical point for a certain period of time, then allowing it to cool in still air."^^xsd:string ;
+                cco:definition_source "https://en.wikipedia.org/wiki/Tempering_(metallurgy)"^^xsd:string ;
+                cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                rdfs:label "Act of Tempering"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfThermalPrinting
+:ActOfThermalPrinting rdf:type owl:Class ;
+                      rdfs:subClassOf :ActOfPrinting ;
+                      cco:definition "An act of printing that produces a printed image by selectively heating coated thermochromic paper, or thermal paper as it is commonly known, when the paper passes over the thermal print head."^^xsd:string ;
+                      cco:definition_source "https://en.wikipedia.org/wiki/Thermal_printing"^^xsd:string ;
+                      cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                      rdfs:label "Act of Thermal Printing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfThermalSpraying
+:ActOfThermalSpraying rdf:type owl:Class ;
+                      rdfs:subClassOf :ActOfCoating ;
+                      obo:IAO_0000115 "An act of coating that sprays melted or heated materials onto a surface."^^xsd:string ;
+                      obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                      obo:IAO_0000119 "https://en.wikipedia.org/wiki/Thermal_spraying"^^xsd:string ;
+                      rdfs:label "Act of Thermal Spraying"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfThermocompressionBonding
+:ActOfThermocompressionBonding rdf:type owl:Class ;
+                               rdfs:subClassOf :ActOfWaferBonding ;
+                               cco:definition "An act of wafer bonding where two metals, e.g. gold (Au)-gold (Au), are brought into atomic contact applying force and heat simultaneously to create diffusion process in making the join."^^xsd:string ;
+                               cco:definition_source "https://en.wikipedia.org/wiki/Thermocompression_bonding"^^xsd:string ;
+                               cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                               rdfs:label "Act of Thermocompression Bonding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfThermoforming
+:ActOfThermoforming rdf:type owl:Class ;
+                    rdfs:subClassOf :ActOfMolding ;
+                    obo:IAO_0000115 "An act of molding that heats a plastic sheet to a pliable forming temperature, to form a specific shape in a mold, and then is trimmed to create a usable artifact."^^xsd:string ;
+                    obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                    cco:definition_source "https://en.wikipedia.org/wiki/Thermoforming"^^xsd:string ;
+                    rdfs:label "Act of Thermoforming"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfThreadRolling
+:ActOfThreadRolling rdf:type owl:Class ;
+                    rdfs:subClassOf :ActOfRolling ;
+                    obo:IAO_0000115 "An act of rolling that forms screw thread into the material entity (metal of a blank)."^^xsd:string ;
+                    obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                    cco:definition_source """https://en.wikipedia.org/wiki/Threading_(manufacturing)#Thread_forming_and_rolling
+http://www.thelibraryofmanufacturing.com/thread_rolling.html"""^^xsd:string ;
+                    rdfs:label "Act of Thread Rolling"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfTightening
+:ActOfTightening rdf:type owl:Class ;
+                 rdfs:subClassOf cco:ActOfArtifactProcessing ;
+                 cco:term_editor "An act of artifact processing that causes objects to be firmly attached."@en ,
+                                 "Ruoyu Yang"@en ;
+                 rdfs:label "Act of Tightening"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfTransferMolding
+:ActOfTransferMolding rdf:type owl:Class ;
+                      rdfs:subClassOf :ActOfMolding ;
+                      obo:IAO_0000115 "An act of molding that uses thermosetting preform as a molding material and where the material is preheated in an enclosed mold and where the process uses higher pressures on the material in order to uniformly fill the mold."^^xsd:string ;
+                      obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                      cco:definition_source "https://en.wikipedia.org/wiki/Transfer_molding"^^xsd:string ;
+                      rdfs:label "Act of Transfer Molding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfTransientLiquidPhaseDiffusionBonding
+:ActOfTransientLiquidPhaseDiffusionBonding rdf:type owl:Class ;
+                                           rdfs:subClassOf :ActOfWaferBonding ;
+                                           cco:definition "An act of wafer bonding that joins metallic and ceramic systems which cannot be bonded by conventional fusion welding techniques."^^xsd:string ;
+                                           cco:definition_source "https://en.wikipedia.org/wiki/Transient_liquid_phase_diffusion_bonding"^^xsd:string ;
+                                           cco:elucidation "The bonding process produces joints with a uniform composition profile, tolerant of surface oxides and geometrical defects. The bonding technique has been exploited in a wide range of applications, from the production and repair of turbine engines in the aerospace industry to the atomic nuclear power plants and the connection of circuit lines in the microelectronics industry."^^xsd:string ;
+                                           cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                                           rdfs:label "Act of Transient Liquid Phase Diffusion Bonding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfTrueCentrifugalCasting
+:ActOfTrueCentrifugalCasting rdf:type owl:Class ;
+                             rdfs:subClassOf :ActOfCentrifugalCasting ;
+                             obo:IAO_0000115 "An act of centrifugal casting that can be performed using both vertical and horizontal rotation."^^xsd:string ;
+                             obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                             obo:IAO_0000119 "https://en.wikipedia.org/wiki/Centrifuge_casting"^^xsd:string ;
+                             rdfs:label "Act of True Centrifugal Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfTumbling
+:ActOfTumbling rdf:type owl:Class ;
+               rdfs:subClassOf :ActOfAbrading ;
+               cco:definition "An act of abrading that smooths and polishes a rough surface on relatively small parts."^^xsd:string ;
+               cco:definition_source "https://en.wikipedia.org/wiki/Tumble_finishing"^^xsd:string ;
+               cco:elucidation "This process is very similar to the natural processes that produce \"sea glass\" or \"beach glass\"."^^xsd:string ;
+               cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+               rdfs:label "Act of Tumbling"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfUltrasonicMachining
+:ActOfUltrasonicMachining rdf:type owl:Class ;
+                          rdfs:subClassOf :ActOfMachining ;
+                          obo:IAO_0000115 "An act of machining that removes material from the surface of a part through high frequency, low amplitude vibrations of a tool against the material surface in the presence of fine abrasive particles."^^xsd:string ;
+                          obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                          obo:IAO_0000119 "https://en.wikipedia.org/wiki/Ultrasonic_machining"^^xsd:string ;
+                          rdfs:label "Act of Ultrasonic Machining"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfUpsetForging
+:ActOfUpsetForging rdf:type owl:Class ;
+                   rdfs:subClassOf :ActOfForging ;
+                   obo:IAO_0000115 "An act of forging that is used to increase the cross section of the workpiece (typically cylinder) by compressing its length."^^xsd:string ;
+                   obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                   cco:definition_source """[1] https://en.wikipedia.org/wiki/Forging#Upset_forging
+[2] http://www.thelibraryofmanufacturing.com/heading.html"""^^xsd:string ;
+                   rdfs:label "Act of Upset Forging"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfUpsetWelding
+:ActOfUpsetWelding rdf:type owl:Class ;
+                   rdfs:subClassOf :ActOfButtWelding ;
+                   obo:IAO_0000115 "An act of butt welding that applies pressure to the metals by clamping edge to edge of materials in the copper jaws of the welding machine and  brought together in a solid contact so that their point of contact forms a locality of high electric resistance, while current flows to heat the joint."^^xsd:string ;
+                   obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                   obo:IAO_0000119 "https://en.wikipedia.org/wiki/Butt_welding"^^xsd:string ;
+                   rdfs:label "Act of Upset Welding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfVacuumMoldCasting
+:ActOfVacuumMoldCasting rdf:type owl:Class ;
+                        rdfs:subClassOf :ActOfSandCasting ;
+                        obo:IAO_0000115 "An act of sand casting in which unbonded sand is held in the flask with a vacuum and the pattern is specially vented so that a vacuum can be pulled through it."^^xsd:string ;
+                        obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                        cco:definition_source "https://en.wikipedia.org/wiki/Sand_casting#Vacuum_molding"^^xsd:string ;
+                        rdfs:label "Act of Vacuum Mold Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfVacuumPermanentMoldCasting
+:ActOfVacuumPermanentMoldCasting rdf:type owl:Class ;
+                                 rdfs:subClassOf :ActOfPermanentMoldCasting ;
+                                 obo:IAO_0000115 "An act of permanent mold casting that uses force to cause applied vacuum pressure draw molten metal into a mold."^^xsd:string ;
+                                 obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                                 cco:definition_source "http://www.thelibraryofmanufacturing.com/vacuum_permanent_mold_casting.html"^^xsd:string ;
+                                 rdfs:label "Act of Vacuum Permanent Mold Casting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfVibratoryFinishing
+:ActOfVibratoryFinishing rdf:type owl:Class ;
+                         rdfs:subClassOf :ActOfAbrading ;
+                         cco:definition "An act of abrading that is used to deburr, radius, descale, burnish, clean, and brighten a large number of relatively small workpieces."^^xsd:string ;
+                         cco:definition_source "https://en.wikipedia.org/wiki/Vibratory_finishing"^^xsd:string ;
+                         cco:elucidation "Vibratory finishing can finish internal features, such as holes. It is also quicker and quieter. The process is performed in an open tub so the operator can easily observe if the required finish has been obtained."^^xsd:string ;
+                         cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                         rdfs:label "Act of Vibratory Finishing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfWaferBonding
+:ActOfWaferBonding rdf:type owl:Class ;
+                   rdfs:subClassOf :ActOfJoining ;
+                   obo:IAO_0000115 "An act of joining that puts together separate material entities by using wafer to join material entities ensuring a mechanically stable and hermetically sealed encapsulation."^^xsd:string ;
+                   cco:definition_source "https://en.wikipedia.org/wiki/Wafer_bonding"^^xsd:string ;
+                   cco:elucidation """Wafer in this definition are the following:
+1. A thin disk of dried paste, gelatin, adhesive paper, or the like, used for sealing letters, attaching papers, etc.
+2. Electronics. a thin slice of semiconductor used as a base material on which single transistors or integrated-circuit components are formed."""^^xsd:string ;
+                   cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                   rdfs:label "Act of Wafer Bonding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfWaterJetCutting
+:ActOfWaterJetCutting rdf:type owl:Class ;
+                      rdfs:subClassOf :ActOfMachining ;
+                      obo:IAO_0000115 "An act of machining that cuts materials that are sensitive to high temperatures."^^xsd:string ;
+                      obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                      obo:IAO_0000119 "https://en.wikipedia.org/wiki/Water_jet_cutter"^^xsd:string ;
+                      rdfs:label "Act of Water Jet Cutting"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfWelding
+:ActOfWelding rdf:type owl:Class ;
+              rdfs:subClassOf :ActOfJoining ;
+              obo:IAO_0000117 "Ruoyu Yang"@en ;
+              cco:definition "An act of joining that joins metals or thermoplastics materials by causing fusion which does not melt the base material."@en ;
+              cco:definition_source "https://en.wikipedia.org/wiki/Welding"@en ;
+              rdfs:label "Act of Welding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfWireBonding
+:ActOfWireBonding rdf:type owl:Class ;
+                  rdfs:subClassOf :ActOfWaferBonding ;
+                  cco:definition "An act of wafer bonding that makes interconnections between an integrated circuit (IC) or other semiconductor device to other electronic device."^^xsd:string ;
+                  cco:definition_source "https://en.wikipedia.org/wiki/Wire_bonding"^^xsd:string ;
+                  cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                  rdfs:label "Act of Wire Bonding"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfWrapping
+:ActOfWrapping rdf:type owl:Class ;
+               rdfs:subClassOf cco:IntentionalAct ;
+               cco:definition "An intentional act that arranges or folds materials as a cover and often as protection for an object."@en ;
+               cco:term_editor "Ruoyu Yang"@en ;
+               rdfs:label "Act of Wrapping"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActOfrecipitationHardening
+:ActOfrecipitationHardening rdf:type owl:Class ;
+                            rdfs:subClassOf :ActOfHeatTreating ;
+                            cco:definition "Act of heat treating that increases the yield strength of malleable materials, including most structural alloys of aluminium, magnesium, nickel, titanium, and some steels and stainless steels."^^xsd:string ;
+                            cco:definition_source "https://en.wikipedia.org/wiki/Precipitation_hardening"^^xsd:string ;
+                            cco:term_editor "Munira Mohd Ali"^^xsd:string ;
+                            rdfs:label "Act of Precipitation Hardening"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/ManufacturingProcessOntology/ActofStitching
+:ActofStitching rdf:type owl:Class ;
+                rdfs:subClassOf :ActOfFastening ;
+                obo:IAO_0000115 "An act of fastening that uses stitch as a type of fastener."^^xsd:string ;
+                obo:IAO_0000117 "Munira Mohd Ali"^^xsd:string ;
+                obo:IAO_0000119 "https://en.wikipedia.org/wiki/Stitch_(textile_arts)"^^xsd:string ;
+                obo:IAO_0000600 "In the textile arts, a stitch is a single turn or loop of thread, or yarn. Stitches are the fundamental elements of sewing, knitting, embroidery, crochet, and needle lace-making, whether by hand or machine. A variety of stitches, each with one or more names, are used for specific purposes."^^xsd:string ;
+                rdfs:label "Act of Stitching"^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

@@ -1,0 +1,70 @@
+{
+    "meta": {
+        "version": "0.1.0"
+    },
+    "data": [
+        {
+            "type": "artifact-spec",
+            "id": "urn:test:plans:someDocument",
+            "attributes": {
+                "name": "Input Document Title",
+                "type": "Document"
+            },
+            "relationships": {
+                "inputOf": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:GatherInformation"
+                    }
+                }
+            },
+            "links": {
+                "self": "http://localhost:9090/ontoview/data/artifacts/urn%3Atest%3Aplans%3AsomeDocument"
+            }
+        },
+        {
+            "type": "artifact-spec",
+            "id": "urn:test:plans:someReport",
+            "attributes": {
+                "name": "Output Report Title",
+                "type": "Report"
+            },
+            "relationships": {
+                "inputOf": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:DiscussInformation"
+                    }
+                },
+                "outputOf": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:GatherInformation"
+                    }
+                }
+            },
+            "links": {
+                "self": "http://localhost:9090/ontoview/data/artifacts/urn%3Atest%3Aplans%3AsomeReport"
+            }
+        },
+        {
+            "type": "artifact-spec",
+            "id": "urn:test:plans:MeetingNotes",
+            "attributes": {
+                "name": "Meeting Notes",
+                "type": "Artifact"
+            },
+            "relationships": {
+                "outputOf": {
+                    "data": {
+                        "type": "sub-process-spec",
+                        "id": "urn:test:plans:DiscussInformation"
+                    }
+                }
+            },
+            "links": {
+                "self": "http://localhost:9090/ontoview/data/artifacts/urn%3Atest%3Aplans%3AMeetingNotes"
+            }
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/>
+prefix lro: <http://www.ontologyrepository.com/CommonCoreOntologies/LewisianRelationOntology/>
+
+select distinct ?iri ?label ?definition
+where {
+  graph ?graph {
+    ?iri rdfs:subClassOf${deepSearch} ?parentClass .
+    ?iri rdfs:subClassOf ?parent .
+    optional {?iri rdfs:label ?label . }
+    optional {?iri cco:definition ?definition . }
+    # alternate label
+    filter (strstarts(str(?iri), ?namespace)) .
+  }
+}

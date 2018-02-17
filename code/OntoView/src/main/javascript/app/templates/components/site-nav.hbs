@@ -1,0 +1,16 @@
+<ul class="title-area">
+    <li class="name">
+        <h1>{{#link-to 'index'}}OntoView{{/link-to}}</h1>
+    </li>
+</ul>
+<section class="top-bar-section">
+    <ul class="left">
+        <li class="divider"></li>
+        <li class="{{if showExplore 'active' ''}}">{{#link-to 'index'}}Explore{{/link-to}}</li>
+        <li class="{{if (eq currentPath 'query-builder') 'active' ''}}">{{#link-to 'query-builder'}}Build a Query{{/link-to}}</li>
+        <li class="{{if (eq currentPath 'ontology-tree') 'active' ''}}">{{#link-to 'ontology-tree'}}View Loaded Classes{{/link-to}}</li>
+    </ul>
+    <ul class="right">
+        <li class="{{if (eq currentPath 'settings') 'active' ''}}">{{#link-to 'settings'}}Settings{{/link-to}}</li>
+    </ul>
+</section>

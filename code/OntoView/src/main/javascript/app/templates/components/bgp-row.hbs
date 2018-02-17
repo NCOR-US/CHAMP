@@ -1,0 +1,324 @@
+{{#drag-row data=rowIndex}}
+    <div class="row">
+        <div class="small-4 columns horizontal-limit">
+            {{#if (eq editing 'subject')}}
+                <strong>{{subjectView}}</strong>
+            {{else}}
+                <a {{action 'toggleEditingSubject'}} title={{subjectView}}>
+                    {{subjectView}}
+                </a>
+            {{/if}}
+        </div>
+        <div class="small-4 columns horizontal-limit">
+            {{#if (eq editing 'predicate')}}
+                <strong>{{predicateView}}</strong>
+            {{else}}
+                <a {{action 'toggleEditingPredicate'}} title={{predicateView}}>
+                    {{predicateView}}
+                </a>
+            {{/if}}
+        </div>
+        <div class="small-4 columns horizontal-limit">
+            {{#if (eq editing 'object')}}
+                <strong>{{objectView}}</strong>
+            {{else}}
+                <a {{action 'toggleEditingObject'}} title={{objectView}}>
+                    {{objectView}}
+                </a>
+            {{/if}}
+        </div>
+    </div>
+
+    {{#if objectIsInstance}}
+        {{#if objectNode.useClass}}
+            <div class="row">
+                <div class="small-4 columns horizontal-limit" title="{{objectView}}">
+                    {{objectView}}
+                </div>
+                <div class="small-4 columns">
+                    rdf:type
+                </div>
+                <div class="small-4 columns horizontal-limit" title="{{objectClassView}}">
+                    {{objectClassView}}
+                </div>
+            </div>
+        {{/if}}
+    {{/if}}
+
+    {{!-- todo need to show subject node class if it's not already shown as object node class elsewhere --}}
+
+    {{!-- editing section --}}
+    {{#if (eq editing 'subject')}}
+        <hr>
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="change-node-type-wrapper">
+                    {{radio-button value="class" groupValue=subjectNodeType}}<label>Class</label>
+                    {{radio-button value="instance" groupValue=subjectNodeType}}<label>Instance</label>
+                    {{radio-button value="adhoc" groupValue=subjectNodeType}}<label>Ad-hoc (created by BIND)</label>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        {{#if subjectIsAdHoc}}
+            {{!-- todo maybe offer to create a new node --}}
+            <label>Node
+                <select name="node" onchange={{action 'changeSelectedAdhocSubjectNode' value="target.value"}}>
+                    {{#each adhocNodes as |node index|}}
+                        <option value="{{node.id}}" selected={{eq node.id subjectNode.id}}>?{{node.variable}}</option>
+                    {{/each}}
+                </select>
+            </label>
+
+        {{else}}
+            {{#if showIRI}}
+                <div class="row">
+                    <div class="small-12 columns">
+                        <label>Source IRI
+                            {{input value=subjectNode.iri}}
+                        </label>
+                    </div>
+                </div>
+            {{/if}}
+
+            <div class="row">
+                <div class="small-6 columns">
+                    <label>Variable
+                        {{input value=subjectNode.variable}}
+                    </label>
+                </div>
+                <div class="small-6 columns use-checkbox">
+                    {{input type="checkbox" checked=(eq subjectNode.active 'variable') click=(action 'toggleUseSubjectVariable')}}
+                    <label>Use variable</label>
+                </div>
+            </div>
+
+            {{#if subjectIsInstance}}
+                {{#if (eq subjectNode.active 'variable')}}
+                    <div class="row">
+                        <div class="small-8 columns">
+                            <label>Class
+                                {{input value=subjectNode.instanceClass}}
+                            </label>
+                        </div>
+                        <div class="small-4 columns use-checkbox">
+                            {{input type="checkbox" checked=subjectNode.useClass click=(action 'toggleUseSubjectClass')}}
+                            <label>Use type restriction</label>
+                        </div>
+                    </div>
+
+                    {{!-- from the object side --}}
+                    {{#if subjectNode.useClass}}
+                        <div class="row">
+                            <div class="small-12 columns">
+                                {{radio-button value="exact" groupValue=subjectClassChange}}<label>Exact</label>
+                                {{radio-button value="generalize" groupValue=subjectClassChange}}<label>Generalize</label>
+                                {{radio-button value="specialize" groupValue=subjectClassChange}}<label>Specialize</label>
+                                {{#if augmentSubjectClass}}
+                                    <a {{action 'findSubjectClassTargets'}}>Find targets</a>
+                                {{/if}}
+                            </div>
+                        </div>
+                    {{/if}}
+
+                    {{#if generalizeSubjectClass}}
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <ul>
+                                    {{#each subjectInstanceClassGeneralizeTargets as |target|}}
+                                        <li title="{{target.description}}">
+                                            {{#if (eq subjectNode.instanceClass target.value)}}
+                                                {{target.label}} (<em>{{target.display}}</em>)
+                                            {{else}}
+                                                <a {{action 'pickSubjectGeneralizeTarget' target}}>
+                                                    {{target.label}} (<em>{{target.display}}</em>)
+                                                </a>
+                                            {{/if}}
+                                        </li>
+                                    {{else}}
+                                        <li>No results</li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    {{else if specializeSubjectClass}}
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <ul>
+                                    {{#each subjectInstanceClassSpecializeTargets as |target|}}
+                                        <li title="{{target.desc}}">
+                                            {{#if (eq subjectNode.instanceClass target.value)}}
+                                                {{target.label}} (<em>{{target.display}}</em>)
+                                            {{else}}
+                                                <a {{action 'pickSubjectSpecializeTarget' target}}>
+                                                    {{target.label}} (<em>{{target.display}}</em>)
+                                                </a>
+                                            {{/if}}
+                                        </li>
+                                    {{else}}
+                                        <li>No results</li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    {{/if}}
+                    {{!-- end from the object side --}}
+                {{/if}}
+            {{/if}}
+        {{/if}}
+
+    {{else if (eq editing 'predicate')}}
+        <hr>
+        <div class="row">
+            <div class="small-12 columns">
+                <label>Source IRI
+                    {{input value=predicate.iri}}
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-6 columns">
+                <label>Variable
+                    {{input value=predicate.variable}}
+                </label>
+            </div>
+            <div class="small-6 columns use-checkbox">
+                {{input type="checkbox" checked=(eq predicate.active 'variable') click=(action 'toggleUsePredicateVariable')}}
+                <label>Use variable</label>
+            </div>
+        </div>
+
+    {{else if (eq editing 'object')}}
+        <hr>
+        <label>Node type</label>
+        <div class="row">
+            <div class="small-12 columns">
+                {{radio-button value="class" groupValue=objectNodeType}}<label>Class</label>
+                {{radio-button value="instance" groupValue=objectNodeType}}<label>Instance</label>
+                {{radio-button value="literal" groupValue=objectNodeType}}<label>Literal</label>
+                {{radio-button value="adhoc" groupValue=objectNodeType}}<label>Ad-hoc (created by BIND)</label>
+            </div>
+        </div>
+
+        {{#if objectIsAdHoc}}
+            {{!-- todo maybe offer to create a new node --}}
+            <label>Node
+                <select name="node" onchange={{action 'changeSelectedAdhocObjectNode' value="target.value"}}>
+                    {{#each adhocNodes as |node index|}}
+                        <option value="{{node.id}}" selected={{eq node.id objectNode.id}}>?{{node.variable}}</option>
+                    {{/each}}
+                </select>
+            </label>
+        {{else}}
+            {{#if showObjectIRI}}
+                <div class="row">
+                    <div class="small-12 columns">
+                        <label>Source IRI
+                            {{input value=objectNode.iri}}
+                        </label>
+                    </div>
+                </div>
+            {{/if}}
+
+            <div class="row">
+                <div class="small-6 columns">
+                    <label>Variable
+                        {{input value=objectNode.variable}}
+                    </label>
+                </div>
+                <div class="small-6 columns use-checkbox">
+                    {{input type="checkbox" checked=(eq objectNode.active 'variable') click=(action 'toggleUseObjectVariable')}}
+                    <label>Use variable</label>
+                </div>
+            </div>
+
+            {{#if objectIsInstance}}
+                {{#if (eq objectNode.active 'variable')}}
+                    <div class="row">
+                        <div class="small-8 columns">
+                            <label>Class
+                                {{input value=objectNode.instanceClass}}
+                            </label>
+                        </div>
+                        <div class="small-4 columns use-checkbox">
+                            {{input type="checkbox" checked=objectNode.useClass click=(action 'toggleUseObjectClass')}}
+                            <label>Use type restriction</label>
+                        </div>
+                    </div>
+
+                    {{#if objectNode.useClass}}
+                        <div class="row">
+                            <div class="small-12 columns">
+                                {{radio-button value="exact" groupValue=objectClassChange}}<label>Exact</label>
+                                {{radio-button value="generalize" groupValue=objectClassChange}}<label>Generalize</label>
+                                {{radio-button value="specialize" groupValue=objectClassChange}}<label>Specialize</label>
+                                {{#if augmentClass}}
+                                    <a {{action 'findObjectClassTargets'}}>Find targets</a>
+                                {{/if}}
+                            </div>
+                        </div>
+                    {{/if}}
+
+                    {{#if generalizeObjectClass}}
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <ul>
+                                    {{#each objectInstanceClassGeneralizeTargets as |target|}}
+                                        <li title="{{target.description}}">
+                                            {{#if (eq objectNode.instanceClass target.value)}}
+                                                {{target.label}} (<em>{{target.display}}</em>)
+                                            {{else}}
+                                                <a {{action 'pickObjectGeneralizeTarget' target}}>
+                                                    {{target.label}} (<em>{{target.display}}</em>)
+                                                </a>
+                                            {{/if}}
+                                        </li>
+                                    {{else}}
+                                        <li>No results</li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    {{else if specializeObjectClass}}
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <ul>
+                                    {{#each objectInstanceClassSpecializeTargets as |target|}}
+                                        <li title="{{target.desc}}">
+                                            {{#if (eq objectNode.instanceClass target.value)}}
+                                                {{target.label}} (<em>{{target.display}}</em>)
+                                            {{else}}
+                                                <a {{action 'pickObjectSpecializeTarget' target}}>
+                                                    {{target.label}} (<em>{{target.display}}</em>)
+                                                </a>
+                                            {{/if}}
+                                        </li>
+                                    {{else}}
+                                        <li>No results</li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    {{/if}}
+                {{/if}}
+            {{/if}}
+        {{/if}}
+
+        <hr>
+    {{/if}}
+
+    {{#if editing}}
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="clearfix">
+                    <ul class="button-group right">
+                        <li>
+                            <a class="button primary small" {{action 'stopEditing'}}>Close</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+{{/drag-row}}

@@ -1,0 +1,39 @@
+<table class="result-table">
+<thead>
+<tr>
+    <th>Property</th>
+    <th>Value</th>
+</tr>
+</thead>
+<tbody>
+{{#each viewData as |row rowIndex|}}
+    <tr>
+        <td style="vertical-align:text-top">
+            {{row.predicate.displayText}}
+        </td>
+        <td>
+            {{#if (eq row.object.length 1)}}
+                {{!-- todo not so hacky --}}
+                {{#each row.object as |obj|}}
+                    {{result-value obj=obj}}
+                {{/each}}
+            {{else}}
+                {{#if selectedProperty}}
+                    {{paginated-result-ul data=row.object}}
+                {{else}}
+                    {{row.object.length}} results (<a {{action 'toggleExpandResults' row}}>toggle expand</a> or {{#link-to 'search-result' id (query-params property=row.predicate.displayText)}}drill down{{/link-to}})
+                    {{#if row.expandResults}}
+                        <hr>
+                        {{paginated-result-ul data=row.object}}
+                    {{/if}}
+                {{/if}}
+            {{/if}}
+        </td>
+    </tr>
+{{else}}
+    <tr>
+        <td colspan="2" class="center">No data</td>
+    </tr>
+{{/each}}
+</tbody>
+</table>

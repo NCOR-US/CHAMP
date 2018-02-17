@@ -1,0 +1,569 @@
+{
+  "name": "OntoView SPARQL 1.1 Function Reference",
+  "version": "@project.version@",
+  "description": "A reference for SPARQL 1.1 functions supported by the OntoView Query Builder interface, adapted from https://www.w3.org/TR/sparql11-query",
+  "comments": [
+    "Properties with a null value are undefined.",
+    "Functions with a null value are unsupported.",
+    "Handling of links should include 'https://www.w3.org/TR/sparql11-query/#func-<functionName>' as a link to the specification definition and example usage.",
+    "Function 'isURI' is unsupported due to being identical to 'isIRI'.",
+    "Function 'URI' is unsupported due to being identical to 'IRI'."
+  ],
+  "data": {
+    "functions": {
+      "functionalForms": {
+        "BOUND": {
+          "name": "bound",
+          "definition": "Returns true if var is bound to a value. Returns false otherwise. Variables with the value NaN or INF are considered bound.",
+          "params": [{ "type": "variable", "name": "var", "description": null }],
+          "return": { "type": "xsd:boolean", "description": null },
+          "links": null
+        },
+        "IF": null,
+        "COALESCE": null,
+        "NOT_EXISTS": null,
+        "EXISTS": null,
+        "SAMETERM": {
+          "name": "sameTerm",
+          "definition": "Returns TRUE if term1 and term2 are the same RDF term as defined in the RDF Concepts and Abstract Syntax specification; returns false otherwise",
+          "params": [{ "type": "variable", "name": "var", "description": null }],
+          "return": { "type": "xsd:boolean", "description": null },
+          "links": [
+            { "text": "RDF Concepts and Abstract Syntax", "url": "http://www.w3.org/TR/rdf-concepts/" }
+          ]
+        },
+        "IN": null,
+        "NOT_IN": null
+      },
+      "rdf": {
+        "UUID": {
+          "name": "UUID",
+          "definition": "Return a fresh IRI from the UUID URN scheme. Each call of UUID() returns a different UUID. It must not be the \"nil\" UUID (all zeroes). The variant and version of the UUID is implementation dependent.",
+          "params": [],
+          "return": { "type": "iri", "description": null },
+          "links": [{ "text": "UUID URN scheme", "url": "http://www.ietf.org/rfc/rfc4122.txt" }]
+        },
+        "STRUUID": {
+          "name": "STRUUID",
+          "definition": "Return a string that is the scheme specific part of UUID. That is, as a simple literal, the result of generating a UUID, converting to a simple literal and removing the initial urn:uuid:.",
+          "params": [],
+          "return": { "type": "iri", "description": null },
+          "links": [{ "text": "UUID URN scheme", "url": "http://www.ietf.org/rfc/rfc4122.txt" }]
+        },
+        "BNODE": {
+          "name": "BNODE",
+          "definition": "The BNODE function constructs a blank node that is distinct from all blank nodes in the dataset being queried and distinct from all blank nodes created by calls to this constructor for other query solutions. If the no argument form is used, every call results in a distinct blank node. If the form with a simple literal is used, every call results in distinct blank nodes for different simple literals, and the same blank node for calls with the same simple literal within expressions for one solution mapping. This functionality is compatible with the treatment of blank nodes in SPARQL CONSTRUCT templates.",
+          "params": [{ "type": ["simple literal, xsd:string"], "name": "id", "description": null, "optional": true }],
+          "return": { "type": "blank node", "description": null },
+          "links": [
+            { "text": "SPARQL solution mapping", "url": "https://www.w3.org/TR/sparql11-query/#defn_sparqlSolutionMapping" },
+            { "text": "Templates with blank nodes", "url": "https://www.w3.org/TR/sparql11-query/#tempatesWithBNodes" }
+          ]
+        },
+        "isURI": null,
+        "ISIRI": {
+          "name": "isIRI",
+          "definition": "Returns true if term is an IRI. Returns false otherwise. isURI is an alternate spelling for the isIRI operator.",
+          "params": [{ "type": "RDF term", "name": "term", "description": null }],
+          "return": { "type": "xsd:boolean", "description": null },
+          "links": null
+        },
+        "ISBLANK": {
+          "name": "isBlank",
+          "definition": "Returns true if term is a blank node. Returns false otherwise.",
+          "params": [{ "type": "RDF term", "name": "term", "description": null }],
+          "return": { "type": "xsd:boolean", "description": null },
+          "links": null
+        },
+        "ISLITERAL": {
+          "name": "isLiteral",
+          "definition": "Returns true if term is a literal. Returns false otherwise.",
+          "params": [{ "type": "RDF term", "name": "term", "description": null }],
+          "return": { "type": "xsd:boolean", "description": null },
+          "links": null
+        },
+        "ISNUMERIC": {
+          "name": "isNumeric",
+          "definition": "Returns true if term is a numeric value. Returns false otherwise. term is numeric if it has an appropriate datatype (see the section Operand Data Types) and has a valid lexical form, making it a valid argument to functions and operators taking numeric arguments.",
+          "params": [{ "type": "RDF term", "name": "term", "description": null }],
+          "return": { "type": "xsd:boolean", "description": null },
+          "links": [{ "text": "Operand Data Types", "url": "https://www.w3.org/TR/sparql11-query/#operandDataTypes" }]
+        },
+        "STR": {
+          "name": "str",
+          "definition": "Returns the lexical form of ltrl (a literal); returns the codepoint representation of rsrc (an IRI). This is useful for examining parts of an IRI, for instance, the host-name.",
+          "params": [{ "type": ["literal", "iri"], "name": ["ltrl", "rsrc"], "description": null }],
+          "return": { "type": "simple literal", "description": null },
+          "links": null
+        },
+        "LANG": {
+          "name": "lang",
+          "definition": "Returns the language tag of ltrl, if it has one. It returns \"\" if ltrl has no language tag. Note that the RDF data model does not include literals with an empty language tag.",
+          "params": [{ "type": "literal", "name": "ltrl", "description": null }],
+          "return": { "type": "simple literal", "description": null },
+          "links": null
+        },
+        "DATATYPE": {
+          "name": "datatype",
+          "definition": "Returns the datatype IRI of a literal. If the literal is a typed literal, return the datatype IRI. If the literal is a simple literal, return xsd:string. If the literal is literal with a language tag, return rdf:langString.",
+          "params": [{ "type": "literal", "name": "literal", "description": null }],
+          "return": { "type": "iri", "description": null },
+          "links": null
+        },
+        "URI": null,
+        "IRI": {
+          "name": "iri",
+          "definition": "The IRI function constructs an IRI by resolving the string argument (see RFC 3986 and RFC 3987 or any later RFC that supersedes RFC 3986 or RFC 3987). The IRI is resolved against the base IRI of the query and must result in an absolute IRI. If the function is passed an IRI, it returns the IRI unchanged. Passing any RDF term other than a simple literal, xsd:string or an IRI is an error. An implementation may normalize the IRI.",
+          "params": [{ "type": ["simple literal", "xsd:string", "iri"], "name": ["ltrl", "string", "rsrc"], "description": null }],
+          "return": { "type": "iri", "description": null },
+          "links": [
+            {"text": "RFC 3986: Uniform Resource Identifier (URI): Generic Syntax", "url": "http://www.ietf.org/rfc/rfc3986.txt"},
+            {"text": "RFC 3987: Internationalized Resource Identifiers (IRIs)", "url": "http://www.ietf.org/rfc/rfc3987.txt"}
+          ]
+        },
+        "STRDT": {
+          "name": "STRDT",
+          "definition": "The STRDT function constructs a literal with lexical form and type as specified by the arguments.",
+          "params": [
+            { "type": "simple literal", "name": "lexicalForm", "description": null },
+            { "type": "iri", "name": "datatypeIRI", "description": null }
+          ],
+          "return": { "type": "literal", "description": null },
+          "links": null
+        },
+        "STRLANG": {
+          "name": "STRLANG",
+          "definition": "The STRLANG function constructs a literal with lexical form and language tag as specified by the arguments.",
+          "params": [
+            { "type": "simple literal", "name": "lexicalForm", "description": null },
+            { "type": "iri", "name": "langTag", "description": null }
+          ],
+          "return": { "type": "literal", "description": null },
+          "links": null
+        }
+      },
+      "string": {
+        "STRLEN": {
+          "name": "STRLEN",
+          "definition": "The strlen function corresponds to the XPath fn:string-length function and returns an xsd:integer equal to the length in characters of the lexical form of the literal.",
+          "params": [
+            { "type": "string literal", "name": "str", "description": null }
+          ],
+          "return": { "type": "xsd:integer", "description": null },
+          "links": [{ "text": "fn:string-length", "url": "http://www.w3.org/TR/xpath-functions/#func-string-length" }]
+        },
+        "UCASE": {
+          "name": "UCASE",
+          "definition": "The UCASE function corresponds to the XPath fn:upper-case function. It returns a string literal whose lexical form is the upper case of the lexical form of the argument.",
+          "params": [
+            { "type": "string literal", "name": "str", "description": null }
+          ],
+          "return": { "type": "string literal", "description": null },
+          "links": [{ "text": "fn:upper-case", "url": "http://www.w3.org/TR/xpath-functions/#func-upper-case" }]
+        },
+        "LCASE": {
+          "name": "LCASE",
+          "definition": "The LCASE function corresponds to the XPath fn:lower-case function. It returns a string literal whose lexical form is the lower case of the lexical form of the argument.",
+          "params": [
+            { "type": "string literal", "name": "str", "description": null }
+          ],
+          "return": { "type": "string literal", "description": null },
+          "links": [{ "text": "fn:lower-case", "url": "http://www.w3.org/TR/xpath-functions/#func-lower-case" }]
+        },
+        "ENCODE_FOR_URI": {
+          "name": "ENCODE_FOR_URI",
+          "definition": "The ENCODE_FOR_URI function corresponds to the XPath fn:encode-for-uri function. It returns a simple literal with the lexical form obtained from the lexical form of its input after translating reserved characters according to the fn:encode-for-uri function.",
+          "params": [
+            { "type": "string literal", "name": "ltrl", "description": null }
+          ],
+          "return": { "type": "simple literal", "description": null },
+          "links": [{ "text": "fn:encode-for-uri", "url": "http://www.w3.org/TR/xpath-functions/#func-encode-for-uri" }]
+        },
+        "STRSTARTS": {
+          "name": "STRSTARTS",
+          "definition": "The STRSTARTS function corresponds to the XPath fn:starts-with function. The arguments must be argument compatible otherwise an error is raised. For such input pairs, the function returns true if the lexical form of arg1 starts with the lexical form of arg2, otherwise it returns false.",
+          "params": [
+            { "type": "string literal", "name": "arg1", "description": null },
+            { "type": "string literal", "name": "arg2", "description": null }
+          ],
+          "return": { "type": "xsd:boolean", "description": null },
+          "links": [
+            { "text": "fn:starts-with", "url": "http://www.w3.org/TR/xpath-functions/#func-starts-with" },
+            { "text": "compatible arguments", "url": "https://www.w3.org/TR/sparql11-query/#func-arg-compatibility" }
+          ]
+        },
+        "STRENDS": {
+          "name": "STRENDS",
+          "definition": "The STRSTARTS function corresponds to the XPath fn:ends-with function. The arguments must be argument compatible otherwise an error is raised. For such input pairs, the function returns true if the lexical form of arg1 ends with the lexical form of arg2, otherwise it returns false.",
+          "params": [
+            { "type": "string literal", "name": "arg1", "description": null },
+            { "type": "string literal", "name": "arg2", "description": null }
+          ],
+          "return": { "type": "xsd:boolean", "description": null },
+          "links": [
+            { "text": "fn:ends-with", "url": "http://www.w3.org/TR/xpath-functions/#func-ends-with" },
+            { "text": "compatible arguments", "url": "https://www.w3.org/TR/sparql11-query/#func-arg-compatibility" }
+          ]
+        },
+        "CONTAINS": {
+          "name": "CONTAINS",
+          "definition": "The CONTAINS function corresponds to the XPath fn:contains. The arguments must be argument compatible otherwise an error is raised.",
+          "params": [
+            { "type": "string literal", "name": "arg1", "description": null },
+            { "type": "string literal", "name": "arg2", "description": null }
+          ],
+          "return": { "type": "xsd:boolean", "description": null },
+          "links": [
+            { "text": "fn:contains", "url": "http://www.w3.org/TR/xpath-functions/#func-contains" },
+            { "text": "compatible arguments", "url": "https://www.w3.org/TR/sparql11-query/#func-arg-compatibility" }
+          ]
+        },
+        "STRBEFORE": {
+          "name": "STRBEFORE",
+          "definition": "The STRBEFORE function corresponds to the XPath fn:substring-before function. The arguments must be argument compatible otherwise an error is raised. For compatible arguments, if the lexical part of the second argument occurs as a substring of the lexical part of the first argument, the function returns a literal of the same kind as the first argument arg1 (simple literal, plain literal same language tag, xsd:string). The lexical form of the result is the substring of the lexical form of arg1 that precedes the first occurrence of the lexical form of arg2. If the lexical form of arg2 is the empty string, this is considered to be a match and the lexical form of the result is the empty string. If there is no such occurrence, an empty simple literal is returned.",
+          "params": [
+            { "type": "string literal", "name": "arg1", "description": null },
+            { "type": "string literal", "name": "arg2", "description": null }
+          ],
+          "return": { "type": "xsd:boolean", "description": null },
+          "links": [
+            { "text": "fn:substring-before", "url": "http://www.w3.org/TR/xpath-functions/#func-substring-before" },
+            { "text": "compatible arguments", "url": "https://www.w3.org/TR/sparql11-query/#func-arg-compatibility" }
+          ]
+        },
+        "STRAFTER": {
+          "name": "STRAFTER",
+          "definition": "The STRAFTER function corresponds to the XPath fn:substring-after function. The arguments must be argument compatible otherwise an error is raised. For compatible arguments, if the lexical part of the second argument occurs as a substring of the lexical part of the first argument, the function returns a literal of the same kind as the first argument arg1 (simple literal, plain literal same language tag, xsd:string). The lexical form of the result is the substring of the lexcial form of arg1 that follows the first occurrence of the lexical form of arg2. If the lexical form of arg2 is the empty string, this is considered to be a match and the lexical form of the result is the lexical form of arg1. If there is no such occurrence, an empty simple literal is returned.",
+          "params": [
+            { "type": "string literal", "name": "arg1", "description": null },
+            { "type": "string literal", "name": "arg2", "description": null }
+          ],
+          "return": { "type": "xsd:boolean", "description": null },
+          "links": [
+            { "text": "fn:substring-after", "url": "http://www.w3.org/TR/xpath-functions/#func-substring-after" },
+            { "text": "compatible arguments", "url": "https://www.w3.org/TR/sparql11-query/#func-arg-compatibility" }
+          ]
+        },
+        "CONCAT": null,
+        "LANGMATCHES": {
+          "name": "LANGMATCHES",
+          "definition": "Returns true if language-tag (first argument) matches language-range (second argument) per the basic filtering scheme defined in [RFC4647] section 3.3.1. language-range is a basic language range per Matching of Language Tags [RFC4647] section 2.1. A language-range of \"*\" matches any non-empty language-tag string.",
+          "params": [
+            { "type": "simple literal", "name": "language-tag", "description": null },
+            { "type": "simple literal", "name": "language-range", "description": null }
+          ],
+          "return": { "type": "xsd:boolean", "description": null },
+          "links": [
+            { "text": "RFC4647", "url": "https://www.w3.org/TR/sparql11-query/#rfc4647" },
+            { "text": "Matching of Language Tags", "url": "http://www.ietf.org/rfc/rfc4647.txt" }
+          ]
+        },
+        "REPLACE": {
+          "name": "REPLACE",
+          "definition": "The REPLACE function corresponds to the XPath fn:replace function. It replaces each non-overlapping occurrence of the regular expression pattern with the replacement string. Regular expression matching may involve modifier flags. See REGEX.",
+          "params": [
+            { "type": "string literal", "name": "arg", "description": null },
+            { "type": "simple literal", "name": "pattern", "description": null },
+            { "type": "simple literal", "name": "replacement", "description": null },
+            { "type": "simple literal", "name": "flags", "description": null, "optional": true }
+          ],
+          "return": { "type": "string literal", "description": null },
+          "links": [
+            { "text": "fn:replace", "url": "http://www.w3.org/TR/xpath-functions/#func-replace" },
+            { "text": "REGEX", "url": "http://www.w3.org/TR/xpath-functions/#func-regex" }
+          ]
+        },
+        "SUBSTR": {
+          "name": "SUBSTR",
+          "definition": "The SUBSTR function corresponds to the XPath fn:substring function and returns a literal of the same kind (simple literal, literal with language tag, xsd:string typed literal) as the source input parameter but with a lexical form formed from the substring of the lexical form of the source. The arguments startingLoc and length may be derived types of xsd:integer. The index of the first character in a strings is 1.",
+          "params": [
+            { "type": "string literal", "name": "source", "description": null },
+            { "type": "xsd:integer", "name": "startingLoc", "description": null },
+            { "type": "xsd:integer", "name": "length", "description": null, "optional": true }
+          ],
+          "return": { "type": "string literal", "description": null },
+          "links": [{ "text": "fn:substring", "url": "http://www.w3.org/TR/xpath-functions/#func-substring" }]
+        },
+        "REGEX": {
+          "name": "REGEX",
+          "definition": "Invokes the XPath fn:matches function to match text against a regular expression pattern. The regular expression language is defined in XQuery 1.0 and XPath 2.0 Functions and Operators section 7.6.1 Regular Expression Syntax [FUNCOP].",
+          "params": [
+            { "type": "string literal", "name": "text", "description": null },
+            { "type": "simple literal", "name": "pattern", "description": null },
+            { "type": "simple literal", "name": "flags", "description": null, "optional": true }
+          ],
+          "return": { "type": "string literal", "description": null },
+          "links": [
+            { "text": "fn:matches", "url": "http://www.w3.org/TR/xpath-functions/#func-matches" },
+            { "text": "7.6.1 Regular Expression Syntax", "url": "http://www.w3.org/TR/xpath-functions/#regex-syntax" },
+            { "text": "FUNCOP", "url": "https://www.w3.org/TR/sparql11-query/#FUNCOP" }
+          ]
+        }
+      },
+      "numeric": {
+        "RAND": {
+          "name": "RAND",
+          "definition": "Returns a pseudo-random number between 0 (inclusive) and 1.0e0 (exclusive). Different numbers can be produced every time this function is invoked. Numbers should be produced with approximately equal probability.",
+          "params": [],
+          "return": { "type": "numeric", "description": null },
+          "links": null
+        },
+        "ABS": {
+          "name": "abs",
+          "definition": "Returns the absolute value of arg. An error is raised if arg is not a numeric value. This function is the same as fn:numeric-abs for terms with a datatype from XDM.",
+          "params": [
+            { "type": "numeric", "name": "term", "description": null }
+          ],
+          "return": { "type": "numeric", "description": null },
+          "links": [
+            { "text": "fn:numeric-abs", "url": "http://www.w3.org/TR/xpath-functions/#func-abs" },
+            { "text": "XDM", "url": "http://www.w3.org/TR/xpath-datamodel/" }
+          ]
+        },
+        "ROUND": {
+          "name": "round",
+          "definition": "Returns the number with no fractional part that is closest to the argument. If there are two such numbers, then the one that is closest to positive infinity is returned. An error is raised if arg is not a numeric value. This function is the same as fn:numeric-round for terms with a datatype from XDM.",
+          "params": [
+            { "type": "numeric", "name": "term", "description": null }
+          ],
+          "return": { "type": "numeric", "description": null },
+          "links": [
+            { "text": "fn:numeric-round", "url": "http://www.w3.org/TR/xpath-functions/#func-round" },
+            { "text": "XDM", "url": "http://www.w3.org/TR/xpath-datamodel/" }
+          ]
+        },
+        "CEIL": {
+          "name": "ceil",
+          "definition": "Returns the smallest (closest to negative infinity) number with no fractional part that is not less than the value of arg. An error is raised if arg is not a numeric value. This function is the same as fn:numeric-ceil for terms with a datatype from XDM.",
+          "params": [
+            { "type": "numeric", "name": "term", "description": null }
+          ],
+          "return": { "type": "numeric", "description": null },
+          "links": [
+            { "text": "fn:numeric-ceil", "url": "http://www.w3.org/TR/xpath-functions/#func-ceil" },
+            { "text": "XDM", "url": "http://www.w3.org/TR/xpath-datamodel/" }
+          ]
+        },
+        "FLOOR": {
+          "name": "floor",
+          "definition": "Returns the largest (closest to positive infinity) number with no fractional part that is not greater than the value of arg. An error is raised if arg is not a numeric value. This function is the same as fn:numeric-floor for terms with a datatype from XDM.",
+          "params": [
+            { "type": "numeric", "name": "term", "description": null }
+          ],
+          "return": { "type": "numeric", "description": null },
+          "links": [
+            { "text": "fn:numeric-floor", "url": "http://www.w3.org/TR/xpath-functions/#func-floor" },
+            { "text": "XDM", "url": "http://www.w3.org/TR/xpath-datamodel/" }
+          ]
+        }
+      },
+      "dateTime": {
+        "NOW": {
+          "name": "now",
+          "definition": "Returns an XSD dateTime value for the current query execution. All calls to this function in any one query execution must return the same value. The exact moment returned is not specified.",
+          "params": [],
+          "return": { "type": "xsd:dateTime", "description": null },
+          "links": null
+        },
+        "YEAR": {
+          "name": "year",
+          "definition": "Returns the year part of arg as an integer. This function corresponds to fn:year-from-dateTime.",
+          "params": [
+            { "type": "xsd:dateTime", "name": "arg", "description": null }
+          ],
+          "return": { "type": "xsd:integer", "description": null },
+          "links": [
+            { "text": "fn:year-from-dateTime", "url": "http://www.w3.org/TR/xpath-functions/#func-year-from-dateTime" }
+          ]
+        },
+        "MONTH": {
+          "name": "month",
+          "definition": "Returns the month part of arg as an integer. This function corresponds to fn:month-from-dateTime.",
+          "params": [
+            { "type": "xsd:dateTime", "name": "arg", "description": null }
+          ],
+          "return": { "type": "xsd:integer", "description": null },
+          "links": [
+            { "text": "fn:month-from-dateTime", "url": "http://www.w3.org/TR/xpath-functions/#func-month-from-dateTime" }
+          ]
+        },
+        "DAY": {
+          "name": "day",
+          "definition": "Returns the day part of arg as an integer. This function corresponds to fn:day-from-dateTime.",
+          "params": [
+            { "type": "xsd:dateTime", "name": "arg", "description": null }
+          ],
+          "return": { "type": "xsd:integer", "description": null },
+          "links": [
+            { "text": "fn:day-from-dateTime", "url": "http://www.w3.org/TR/xpath-functions/#func-day-from-dateTime" }
+          ]
+        },
+        "HOURS": {
+          "name": "hours",
+          "definition": "Returns the hours part of arg as an integer. The value is as given in the lexical form of the XSD dateTime. This function corresponds to fn:hours-from-dateTime.",
+          "params": [
+            { "type": "xsd:dateTime", "name": "arg", "description": null }
+          ],
+          "return": { "type": "xsd:integer", "description": null },
+          "links": [
+            { "text": "fn:hours-from-dateTime", "url": "http://www.w3.org/TR/xpath-functions/#func-hours-from-dateTime" }
+          ]
+        },
+        "MINUTES": {
+          "name": "minutes",
+          "definition": "Returns the minutes part of arg as an integer. The value is as given in the lexical form of the XSD dateTime. This function corresponds to fn:minutes-from-dateTime.",
+          "params": [
+            { "type": "xsd:dateTime", "name": "arg", "description": null }
+          ],
+          "return": { "type": "xsd:integer", "description": null },
+          "links": [
+            { "text": "fn:minutes-from-dateTime", "url": "http://www.w3.org/TR/xpath-functions/#func-minutes-from-dateTime" }
+          ]
+        },
+        "SECONDS": {
+          "name": "seconds",
+          "definition": "Returns the day part of arg as an integer. This function corresponds to fn:seconds-from-dateTime.",
+          "params": [
+            { "type": "xsd:dateTime", "name": "arg", "description": null }
+          ],
+          "return": { "type": "xsd:decimal", "description": null },
+          "links": [
+            { "text": "fn:day-from-dateTime", "url": "http://www.w3.org/TR/xpath-functions/#func-day-from-dateTime" }
+          ]
+        },
+        "TIMEZONE": {
+          "name": "timezone",
+          "definition": "Returns the timezone part of arg as an xsd:dayTimeDuration. Raises an error if there is no timezone. This function corresponds to fn:timezone-from-dateTime.",
+          "params": [
+            { "type": "xsd:dateTime", "name": "arg", "description": null }
+          ],
+          "return": { "type": "xsd:dayTimeDuration", "description": null },
+          "links": [
+            { "text": "fn:timezone-from-dateTime", "url": "http://www.w3.org/TR/xpath-functions/#func-timezone-from-dateTime" }
+          ]
+        },
+        "TZ": {
+          "name": "tz",
+          "definition": "Returns the timezone part of arg as a simple literal. Returns the empty string if there is no timezone.",
+          "params": [
+            { "type": "xsd:dateTime", "name": "arg", "description": null }
+          ],
+          "return": { "type": "simple literal", "description": null },
+          "links": null
+        }
+      },
+      "hash": {
+        "MD5": {
+          "name": "MD5",
+          "definition": "Returns the MD5 checksum, as a hex digit string, calculated on the UTF-8 representation of the simple literal or lexical form of the xsd:string. Hex digits should be in lower case.",
+          "params": [
+            { "type": ["simple literal, xsd:string"], "name": ["arg", "arg"], "description": null }
+          ],
+          "return": { "type": "simple literal", "description": null },
+          "links": null
+        },
+        "SHA1": {
+          "name": "SHA1",
+          "definition": "Returns the SHA1 checksum, as a hex digit string, calculated on the UTF-8 representation of the simple literal or lexical form of the xsd:string. Hex digits should be in lower case.",
+          "params": [
+            { "type": ["simple literal, xsd:string"], "name": ["arg", "arg"], "description": null }
+          ],
+          "return": { "type": "simple literal", "description": null },
+          "links": null
+        },
+        "SHA256": {
+          "name": "SHA256",
+          "definition": "Returns the SHA256 checksum, as a hex digit string, calculated on the UTF-8 representation of the simple literal or lexical form of the xsd:string. Hex digits should be in lower case.",
+          "params": [
+            { "type": ["simple literal, xsd:string"], "name": ["arg", "arg"], "description": null }
+          ],
+          "return": { "type": "simple literal", "description": null },
+          "links": null
+        },
+        "SHA384": {
+          "name": "SHA384",
+          "definition": "Returns the SHA384 checksum, as a hex digit string, calculated on the UTF-8 representation of the simple literal or lexical form of the xsd:string. Hex digits should be in lower case.",
+          "params": [
+            { "type": ["simple literal, xsd:string"], "name": ["arg", "arg"], "description": null }
+          ],
+          "return": { "type": "simple literal", "description": null },
+          "links": null
+        },
+        "SHA512": {
+          "name": "SHA512",
+          "definition": "Returns the SHA512 checksum, as a hex digit string, calculated on the UTF-8 representation of the simple literal or lexical form of the xsd:string. Hex digits should be in lower case.",
+          "params": [
+            { "type": ["simple literal, xsd:string"], "name": ["arg", "arg"], "description": null }
+          ],
+          "return": { "type": "simple literal", "description": null },
+          "links": null
+        }
+      },
+      "constructor": {
+        "BOOL": {
+          "name": "xsd:boolean",
+          "definition": "Casts a literal to xsd:boolean. Allowed source types: string (in some cases), float, double, decimal, integer, boolean, and simple literal (in some cases).",
+          "params": [
+            { "type": "term", "name": "term", "description": null }
+          ],
+          "return": {"type": "xsd:boolean", "description": null},
+          "links": [{ "text": "Casts a literal", "url": "https://www.w3.org/TR/xpath-functions/#casting-boolean" }]
+        },
+        "DBL": {
+          "name": "xsd:double",
+          "definition": "Casts a literal to xsd:double. Allowed source types: string, float, double, decimal, integer, boolean, and simple literal (in some cases).",
+          "params": [
+            { "type": "term", "name": "term", "description": null }
+          ],
+          "return": {"type": "xsd:double", "description": null},
+          "links": [{ "text": "Casts a literal", "url": "https://www.w3.org/TR/xpath-functions/#casting-to-numerics" }]
+        },
+        "FLT": {
+          "name": "xsd:float",
+          "definition": "Casts a literal to xsd:float. Allowed source types: string, float, double, decimal, integer, boolean, and simple literal (in some cases).",
+          "params": [
+            { "type": "term", "name": "term", "description": null }
+          ],
+          "return": {"type": "xsd:float", "description": null},
+          "links": [{ "text": "Casts a literal", "url": "https://www.w3.org/TR/xpath-functions/#casting-to-numerics" }]
+        },
+        "DEC": {
+          "name": "xsd:decimal",
+          "definition": "Casts a literal to xsd:decimal. Allowed source types: string, float (in some cases), double (in some cases), decimal, integer, boolean, and simple literal (in some cases).",
+          "params": [
+            { "type": "term", "name": "term", "description": null }
+          ],
+          "return": {"type": "xsd:decimal", "description": null},
+          "links": [{ "text": "Casts a literal", "url": "https://www.w3.org/TR/xpath-functions/#casting-to-numerics" }]
+        },
+        "INT": {
+          "name": "xsd:integer",
+          "definition": "Casts a literal to xsd:integer. Allowed source types: string, float (in some cases), double (in some cases), decimal, integer, boolean, and simple literal (in some cases).",
+          "params": [
+            { "type": "term", "name": "term", "description": null }
+          ],
+          "return": {"type": "xsd:integer", "description": null},
+          "links": [{ "text": "Casts a literal", "url": "https://www.w3.org/TR/xpath-functions/#casting-to-numerics" }]
+        },
+        "DT": {
+          "name": "xsd:dateTime",
+          "definition": "Casts a literal to xsd:dateTime. Allowed source types: string (in some cases), dateTime, and simple literal (in some cases).",
+          "params": [
+            { "type": "term", "name": "term", "description": null }
+          ],
+          "return": {"type": "xsd:dateTime", "description": null},
+          "links": [{ "text": "Casts a literal", "url": "https://www.w3.org/TR/xpath-functions/#casting-to-datetimes" }]
+        },
+        "STR": {
+          "name": "xsd:string",
+          "definition": "Casts a literal to xsd:string. All literals and IRIs are allowed.",
+          "params": [
+            { "type": "term", "name": "term", "description": null }
+          ],
+          "return": {"type": "xsd:string", "description": null},
+          "links": [{ "text": "Casts a literal", "url": "https://www.w3.org/TR/xpath-functions/#casting-to-string" }]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "data" : {
+    "id" : "urn:process-workflow:plans:generated:Spec-Artifact-97edbfbf-6128-46be-8243-cc14f32110e5",
+    "attributes" : {
+      "name" : "Adjustment and Repairs Specification",
+      "type" : "http://www.semanticweb.org/no/ontologies/2017/2/Widget#AdjustmentsAndRepairsSpecification",
+      "amount" : 1,
+      "unitOfMeasure" : null
+    },
+    "relationships" : {
+      "outputOf" : {
+        "data" : [ {
+          "type" : "sub-process-specs",
+          "id" : "urn:process-workflow:plans:generated:Spec-SubProcess-ffc7542e-b79c-473c-bee5-5271106508e5"
+        } ]
+      }
+    },
+    "type" : "artifact-specs"
+  }
+}

@@ -1,0 +1,65 @@
+<div class="row">
+    <div class="small-6 small-offset-3 columns">
+        <br>
+        <h4 class="center">Settings</h4>
+    </div>
+</div>
+
+{{!-- todo provide option to show default config --}}
+{{!-- todo re-order prefixes --}}
+
+<div class="row">
+    <div class="small-12 columns">
+        <div class="pull-right">
+            <a class="button secondary small" {{action 'restoreDefaults'}}>Restore default settings</a>
+            <a class="button primary small" {{action 'save'}}>Save</a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="small-12 columns">
+        <label><span class="required">*</span> Query Location
+            {{input value=configs.appConfig.queryLocation}}
+        </label>
+    </div>
+    <div class="small-12 columns">
+        <label>Query Instance Data Graph URI
+            {{input value=configs.appConfig.dataGraph}}
+        </label>
+    </div>
+    <div class="small-12 columns">
+        <label><span class="required">*</span> Query Ontology Graph URI
+            {{input value=configs.appConfig.ontologyGraph}}
+        </label>
+    </div>
+    <div class="small-12 columns">
+        <label>Query Namespaces</label>
+        <table id="queryNamespaceTable">
+            <thead><tr><th>Prefix</th><th>Namespace</th><th></th></tr></thead>
+            <tbody>
+            {{#each configs.appConfig.queryNamespaces as |c index|}}
+                <tr>
+                    <td>{{input value=c.prefix}}</td>
+                    <td>{{input value=c.ns}}</td>
+                    <td><a {{action 'removeNS' index}}>Remove</a></td>
+                </tr>
+            {{/each}}
+            <tr>
+                <td><a {{action 'addNS'}}>Add</a></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="small-12 columns">
+        <div class="pull-right">
+            <a class="button secondary small" {{action 'restoreDefaults'}}>Restore default settings</a>
+            <a class="button primary small" {{action 'save'}}>Save</a>
+        </div>
+    </div>
+</div>

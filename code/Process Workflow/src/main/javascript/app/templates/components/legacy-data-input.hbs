@@ -1,0 +1,208 @@
+<br>
+<div class="row">
+    <div class="small-12 columns">
+        <h3 class="center">Legacy Data Input</h3>
+    </div>
+</div>
+
+<div class={{if showFirstForm 'visible' 'hidden'}}>
+    {{!-- alpha testing --}}
+    <div style="position:absolute; top: 1em; left: 1em;">
+        <a class="button secondary small radius" {{action 'setFixture'}} style="position:fixed">
+            {{#if testFixtureIsSet}}
+                Reset test fixture
+            {{else}}
+                Load test fixture
+            {{/if}}
+        </a>
+    </div>
+
+    {{!-- required fields --}}
+    <div class="row">
+        <div class="small-6 columns">
+            <label><span class="required">*</span> Product
+                <select name="productSelect" onchange={{action (mut product) value="target.value"}}>
+                    <option value="" selected disabled>Select a product</option>
+                    {{#each processOptions as |p|}}
+                        <option value="{{p.id}}" selected={{eq p.id product}}>{{p.display}}</option>
+                    {{/each}}
+                </select>
+            </label>
+        </div>
+        <div class="small-6 columns">
+            <label><span class="required">*</span> Quantity
+                {{input type="number" value=quantity min=0}}
+            </label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-6 columns">
+            <label><span class="required">*</span> Start Date</label>
+            <div class="row">
+                <div class="small-1 columns" style="padding-left:1.5em">
+                    <a {{action 'toggleProperty' 'startDatePickerIsOpen'}}><i class="fa fa-calendar"></i></a>
+                </div>
+                <div class="small-11 columns">
+                    <div class="date-view">
+                        {{startDateView}}
+                    </div>
+                    {{#if startDatePickerIsOpen}}
+                        {{pikaday-inputless firstDay=0 onSelection=(action 'chooseStartDate')}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        <div class="small-6 columns">
+            <label><span class="required">*</span> Estimated Completion Date</label>
+            {{!--
+            {{pikaday-input value=endDateView format="MMMM Do YYYY" firstDay=0 placeholder='Select an estimated completion date'}}
+            --}}
+
+            {{!-- todo minDay doesn't work with moment: wants getTime(), moment offers valueOf() --}}
+            <div class="row">
+                <div class="small-1 columns" style="padding-left:1.5em">
+                    <a {{action 'toggleProperty' 'endDatePickerIsOpen'}}><i class="fa fa-calendar"></i></a>
+                </div>
+                <div class="small-11 columns">
+                    <div class="date-view">
+                        {{#if endDateView}}
+                            {{endDateView}}
+                        {{else}}
+                            Select an estimated completion date
+                        {{/if}}
+                    </div>
+                    {{#if endDatePickerIsOpen}}
+                        {{pikaday-inputless firstDay=0 onSelection=(action 'chooseEndDate')}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{!-- optional fields --}}
+    <div class="row">
+        <div class="small-12 columns">
+            <label>Customer {{input value=customer}}</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns">
+            <label>Order Number
+                {{input value=orderNumber}}
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns">
+            <label>Government Contract
+                {{input value=govtContract}}
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns">
+            <label>DPAS Rating</label>
+            <div class="row">
+                <div class="small-2 columns">
+                    <select name="dpas-level" onchange={{action (mut dpasLevel) value="target.value"}}>
+                        {{#each dpasLevelOptions as |level|}}
+                            <option value="{{level.value}}" selected={{eq level.value dpasLevel}}>{{level.display}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="small-1 columns center">
+                    -
+                </div>
+                <div class="small-2 columns">
+                    <select name="dpas-symbol" onchange={{action (mut dpasSymbol) value="target.value"}}>
+                        {{#each dpasSymbolOptions as |symbol|}}
+                            <option value="{{symbol.value}}" selected={{eq symbol.value dpasSymbol}}>{{symbol.display}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="small-7 columns"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns">
+            <div class="pull-right">
+                <a class="button small primary" {{action 'advanceToProcess'}}>Next</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class={{if showFirstForm 'hidden' 'visible'}}>
+    {{!-- individual step pages --}}
+    <div class="row" style="max-width: 85rem">
+        <div class="small-3 columns">
+            <div class="side-nav-container">
+                <nav>
+                    <h6>Process Navigation</h6>
+                    <h5 class="side-nav-title">General Information</h5>
+                    <ul class="side-nav">
+                        <li class={{if showStart 'active' 'inactive'}}>
+                            <a class="side-nav-link" {{action 'goToInfo'}}>Process Summary</a>
+                        </li>
+                    </ul>
+                    <h5 class="side-nav-title">Step Listing</h5>
+                    {{process-nav data=process.firstStep currentStep=currentStep setCurrent='setCurrentStep'}}
+                </nav>
+            </div>
+        </div>
+
+        <div class="small-9 columns">
+            <div class="row">
+                <div class="small-12 columns">
+                    <strong>Process Name:</strong> {{process.name}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns">
+                    <strong>Process Type:</strong> {{processTypeDisplay}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns">
+                    <strong>Final Output:</strong>
+                    {{#if selectedProduct.display}}{{selectedProduct.display}}{{else}}None{{/if}}
+                </div>
+            </div>
+
+            {{#if process.firstStep.content}}
+                {{subprocess-input step=process.firstStep.content
+                                   currentStep=currentStep
+                                   inputLookup=inputLookup
+                                   outputLookup=outputLookup
+                                   testOutputLookup=testOutputLookup
+                                   agentLookup=agentLookup
+                }}
+            {{/if}}
+
+            <br>
+
+            {{!-- control buttons --}}
+            <div class="row">
+                <div class="small-12 columns">
+                    <div class="pull-left">
+                        {{#if showBackToStart}}
+                            <a class="button small secondary" {{action 'goBackToStart'}}>Back</a>
+                        {{/if}}
+                        {{#if hasPreviousInProcess}}
+                            <a class="button small secondary" {{action 'goToPreviousInProcess'}}>Previous</a>
+                        {{/if}}
+                    </div>
+                    <div class="pull-right">
+                        {{#if hasNextInProcess}}
+                            <a class="button small primary" {{action 'goToNextInProcess'}}>Next</a>
+                        {{else}}
+                            <a class="button small success" {{action 'finishProcess'}}>Finish</a>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

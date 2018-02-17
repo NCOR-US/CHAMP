@@ -1,0 +1,12 @@
+<label>{{label}}
+    {{!-- todo merge with variable-select and make multiple a parameter --}}
+    <select class="variable-select" data-placeholder="Select variables" multiple>
+        {{#each variableOptions as |opt|}}
+            <option value="{{opt.value}}"
+                    selected="{{if opt.selected "selected"}}"
+                    disabled="{{if opt.disabled "disabled"}}">
+                {{opt.text}}
+            </option>
+        {{/each}}
+    </select>
+</label>

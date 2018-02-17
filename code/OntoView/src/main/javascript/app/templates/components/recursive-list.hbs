@@ -1,0 +1,32 @@
+{{#each data as |datum|}}
+    <div class="row">
+        <div class="small-12 columns">
+            {{#if datum.isCollapsed}}
+                <a {{action 'expand' datum}}>+</a>
+            {{else}}
+                {{#if datum.subClasses.length}}
+                    <a {{action 'collapse' datum}}>&mdash;</a>
+                {{else}}
+                    &mdash;
+                {{/if}}
+            {{/if}}
+            <span title="{{if datum.definition (concat "Definition: " datum.definition)}}. {{if datum.ont (concat "Curated in " datum.ont)}}">
+                {{#if datum.label}}
+                    {{datum.label}}
+                {{else}}
+                    {{datum.iri}}
+                {{/if}}
+            </span>
+            {{#if datum.isCollapsed}}
+                (# subclasses: {{datum.subClasses.length}})
+            {{/if}}
+            <div class="{{if datum.isCollapsed "hidden" "visible"}}">
+                {{#if datum.subClasses.length}}
+                    {{recursive-list data=datum.subClasses}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+{{else}}
+    No data
+{{/each}}

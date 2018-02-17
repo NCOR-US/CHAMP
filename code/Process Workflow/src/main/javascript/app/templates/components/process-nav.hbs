@@ -1,0 +1,33 @@
+<li class={{if (eq currentStep data.id) 'active' 'inactive'}}>
+    <a class="side-nav-link" {{action 'setCurrentStep' data.id}}>
+        {{#if data.name}}
+            {{data.name}}
+        {{else}}
+            Untitled
+        {{/if}}
+    </a>
+</li>
+
+{{!-- list children first --}}
+{{#each data.processParts as |step index|}}
+    {{#unless step.parentSubProcess}}
+        <li class={{if (eq currentStep index) 'active' 'inactive'}}>
+            <a class="side-nav-link" {{action 'setCurrentStep' data.id}}>
+                {{#if step.name}}
+                    {{step.name}}
+                {{else}}
+                    Untitled
+                {{/if}}
+            </a>
+        </li>
+    {{else}}
+        <li>
+            {{process-nav data=step setCurrent='setCurrentStep' setCurrent=setCurrent currentStep=currentStep isIndented=true}}
+        </li>
+    {{/unless}}
+{{/each}}
+
+{{!-- list next subprocess --}}
+{{#if data.nextSubProcess}}
+    {{process-nav data=data.nextSubProcess setCurrent='setCurrentStep' currentStep=currentStep}}
+{{/if}}

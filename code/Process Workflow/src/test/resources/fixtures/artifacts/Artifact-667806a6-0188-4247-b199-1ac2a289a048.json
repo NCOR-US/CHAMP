@@ -1,0 +1,20 @@
+{
+  "data" : {
+    "id" : "urn:process-workflow:plans:generated:Artifact-667806a6-0188-4247-b199-1ac2a289a048",
+    "attributes" : {
+      "name" : "Age Test Specification",
+      "type" : "http://www.semanticweb.org/no/ontologies/2017/2/Widget#AgeTestSpecification",
+      "amount" : null,
+      "unitOfMeasure" : null
+    },
+    "relationships" : {
+      "inputOf" : {
+        "data" : [ {
+          "type" : "sub-processes",
+          "id" : "urn:process-workflow:plans:generated:SubProcess-244544b9-9018-488b-9a67-1286cec68c9d"
+        } ]
+      }
+    },
+    "type" : "artifacts"
+  }
+}

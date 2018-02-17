@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.cubrc</groupId>
+    <artifactId>process-workflow</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <properties>
+        <fasterxml.jackson.version>2.9.0</fasterxml.jackson.version>
+        <jena.version>3.4.0</jena.version>
+        <slf4j.version>1.7.5</slf4j.version>
+        <spring.version>4.3.7.RELEASE</spring.version>
+        <spring.boot.version>1.5.2.RELEASE</spring.boot.version>
+
+        <process-workflow.default.user>jboss</process-workflow.default.user>
+        <process-workflow.default.query.location>http://localhost:3030/process-workflow/query</process-workflow.default.query.location>
+        <process-workflow.default.query.ontology.graph>http://ontoview.cubrc.org/ontologies</process-workflow.default.query.ontology.graph>
+        <process-workflow.default.update.location>http://localhost:3030/process-workflow/update</process-workflow.default.update.location>
+
+        <process-workflow.default.query.data.graph>urn:process-workflow:graph:data</process-workflow.default.query.data.graph>
+        <process-workflow.default.query.deleted.record.graph>urn:process-workflow:graph:deleted</process-workflow.default.query.deleted.record.graph>
+        <process-workflow.default.query.delta.graph>urn:process-workflow:graph:deltas</process-workflow.default.query.delta.graph>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- Jena -->
+        <dependency>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>jena-core</artifactId>
+            <version>${jena.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>jena-arq</artifactId>
+            <version>${jena.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>jena-tdb</artifactId>
+            <version>${jena.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Servlet -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
+        </dependency>
+
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+
+        <!-- Testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JSON -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${fasterxml.jackson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${fasterxml.jackson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${fasterxml.jackson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-joda</artifactId>
+            <version>${fasterxml.jackson.version}</version>
+        </dependency>
+
+        <!-- misc -->
+        <dependency>
+            <groupId>commons-validator</groupId>
+            <artifactId>commons-validator</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.18</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <!-- local deployment -->
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.3.9.M1</version>
+                <configuration>
+                    <httpConnector>
+                        <host>localhost</host>
+                        <port>9091</port>
+                    </httpConnector>
+                </configuration>
+            </plugin>
+
+            <!--
+                Allow application properties from Maven.
+                Works with /project/build/resources/resource[directory='src/main/resources']/filtering
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <delimiters>
+                        <delimiter>@</delimiter>
+                    </delimiters>
+                    <useDefaultDelimiters>false</useDefaultDelimiters>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+                    <gitDescribe>
+                        <skip>true</skip>
+                    </gitDescribe>
+                    <abbrevLength>7</abbrevLength>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>write-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <outputFile>
+                                ${project.build.outputDirectory}/maven-project.properties
+                            </outputFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- enforce one of the plugins that define all of the environment-specific properties -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>1.4.1</version>
+                <executions>
+                    <execution>
+                        <id>enforce-profiles-and-properties</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireProperty>
+                                    <property>process-workflow.query.location</property>
+                                    <message>You must set a SPARQL HTTP query endpoint.</message>
+                                </requireProperty>
+                                <requireProperty>
+                                    <property>process-workflow.query.ontology.graph</property>
+                                    <message>You must set a graph IRI which holds ontology classes.</message>
+                                </requireProperty>
+                                <requireProperty>
+                                    <property>process-workflow.update.location</property>
+                                    <message>You must set a SPARQL HTTP update request endpoint.</message>
+                                </requireProperty>
+                                <requireActiveProfile>
+                                    <profiles>fs-unix,fs-windows,fs-mac</profiles>
+                                    <all>false</all>
+                                </requireActiveProfile>
+                                <requireActiveProfile>
+                                    <profiles>user-default,user-current</profiles>
+                                    <all>false</all>
+                                </requireActiveProfile>
+                                <requireActiveProfile>
+                                    <profiles>worker-fs,worker-rdf</profiles>
+                                    <all>false</all>
+                                </requireActiveProfile>
+                            </rules>
+                            <fail>true</fail>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <!-- query profiles. determines which query endpoints to use -->
+        <profile>
+            <id>query-local</id>
+            <properties>
+                <process-workflow.query.location>${process-workflow.default.query.location}</process-workflow.query.location>
+                <process-workflow.query.ontology.graph>${process-workflow.default.query.ontology.graph}</process-workflow.query.ontology.graph>
+                <process-workflow.update.location>${process-workflow.default.update.location}</process-workflow.update.location>
+            </properties>
+        </profile>
+
+        <!-- user profiles. determines which username to use for saving information. -->
+        <profile>
+            <id>user-default</id>
+            <properties>
+                <process-workflow.user>${process-workflow.default.user}</process-workflow.user>
+            </properties>
+        </profile>
+        <profile>
+            <id>user-current</id>
+            <properties>
+                <process-workflow.user>${user.name}</process-workflow.user>
+            </properties>
+        </profile>
+
+        <!-- data workers. controls where record data is persisted. -->
+        <profile>
+            <id>worker-fs</id>
+            <properties>
+                <process-workflow.data.controller.worker>filePersistenceWorker</process-workflow.data.controller.worker>
+            </properties>
+        </profile>
+        <profile>
+            <id>worker-rdf</id>
+            <properties>
+                <process-workflow.data.controller.worker>dataControllerWorker</process-workflow.data.controller.worker>
+            </properties>
+        </profile>
+
+        <!-- filesystem profiles. determines the location of saved data for file persistence -->
+        <profile>
+            <id>fs-unix</id>
+            <activation>
+                <os>
+                    <family>unix</family>
+                </os>
+            </activation>
+            <properties>
+                <process-workflow.data.location>/home/${process-workflow.user}/process-workflow/data</process-workflow.data.location>
+            </properties>
+        </profile>
+        <profile>
+            <id>fs-windows</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                </os>
+            </activation>
+            <properties>
+                <process-workflow.data.location>C:/Users/${process-workflow.user}/ProcessWorkflow/data</process-workflow.data.location>
+            </properties>
+        </profile>
+        <profile>
+            <id>fs-mac</id>
+            <activation>
+                <os>
+                    <family>mac</family>
+                </os>
+            </activation>
+            <properties>
+                <process-workflow.data.location>/home/${process-workflow.user}/process-workflow/data</process-workflow.data.location>
+            </properties>
+        </profile>
+    </profiles>
+</project>

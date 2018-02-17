@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="small-12 columns">
+        <label>
+            <select class="class-select" onchange={{action (mut selectedClass) value="target.value"}}>
+                <option selected disabled>Select a class</option>
+                {{#each classOptions as |c cIndex|}}
+                    <option value={{c.id}}>{{c.display}}</option>
+                {{/each}}
+            </select>
+        </label>
+    </div>
+</div>
+
+<div class="row">
+    <div class="small-12 columns">
+        {{#if instanceList.length}}
+            <h6>Instances:</h6>
+        {{/if}}
+        <ul>
+            {{#each instanceList as |instance|}}
+                <li>{{#link-to 'search-result' instance.encodedInstanceIri}}{{instance.display}}{{/link-to}}</li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

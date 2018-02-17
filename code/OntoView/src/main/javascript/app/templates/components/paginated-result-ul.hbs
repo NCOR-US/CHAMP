@@ -1,0 +1,23 @@
+<ul style="min-height:32em;">
+    {{#each currentPaginatedData as |obj|}}
+        <li>
+            {{result-value obj=obj}}
+        </li>
+    {{/each}}
+</ul>
+
+<ul class="pagination" role="menubar" aria-label="Pagination">
+    <li style="margin-top: .5em;"><a {{action 'goToFirst'}}>First</a></li>
+
+    <li class="arrow {{unless hasPrevious "unavailable" ""}}" style="margin-top: .5em;">
+        <a {{action 'decrementPage'}}>Previous</a>
+    </li>
+
+    <li style="width: 6em;">{{input value=currentPageDisplay}}</li>
+
+    <li class="arrow {{unless hasNext "unavailable" ""}}" style="margin-top: .5em;">
+        <a {{action 'incrementPage'}}>Next</a>
+    </li>
+
+    <li style="margin-top: .5em;"><a {{action 'goToLast'}}>Last</a></li>
+</ul>

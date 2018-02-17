@@ -1,0 +1,6 @@
+<label>
+    <select class="order-select" onchange={{action (mut order.type) value='target.value'}}>
+        <option value="asc" selected={{eq order.type 'asc'}}>Ascending</option>
+        <option value="desc" selected={{eq order.type 'desc'}}>Descending</option>
+    </select>
+</label>

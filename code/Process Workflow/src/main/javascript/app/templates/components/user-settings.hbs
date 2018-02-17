@@ -1,0 +1,81 @@
+<div class="row">
+    <div class="small-12 columns">
+        <h5>Process Editor: Drop-down queries</h5>
+    </div>
+</div>
+
+{{#each dropdownConfigs as |config index|}}
+    <div class="row">
+        <div class="small-offset-1 small-11 columns">
+            {{#unless (eq index 0)}} <hr> {{/unless}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-offset-1 small-5 columns">
+            <h6>{{config.label}}</h6>
+        </div>
+        <div class="small-6 columns">
+            {{chosen-select value=(mut config.testOptionValue) options=config.options optionValueKey='id'}}
+        </div>
+    </div>
+    {{#with (get ontologyConfigs config.name) as |config|}}
+        <div class="row">
+            <div class="small-offset-2 small-10 columns">
+                <label>
+                    Parent class: {{input value=config.parentClass disabled=true}}
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-offset-2 small-10 columns">
+                <label>
+                    Namespace: {{input value=config.ontologyIRI disabled=true}}
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-offset-2 small-10 columns">
+                <label>
+                    Deep search: {{input type="checkbox" checked=config.deepSearch disabled=true}}
+                </label>
+            </div>
+        </div>
+    {{else}}
+        {{!-- todo better: concatted configs --}}
+        {{#each config.multiConfig as |mc mci|}}
+            {{#unless (eq mci 0)}}
+                <div class="row">
+                    <div class="small-offset-2 small-10 columns">
+                        <hr>
+                    </div>
+                    <div class="small-1 columns"></div>
+                </div>
+            {{/unless}}
+
+            <div class="row">
+                <div class="small-offset-2 small-10 columns">
+                    <label>
+                        Parent class: {{input value=mc.parentClass disabled=true}}
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-offset-2 small-10 columns">
+                    <label>
+                        Namespace: {{input value=mc.ontologyIRI disabled=true}}
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-offset-2 small-10 columns">
+                    <label>
+                        Deep search: {{input type="checkbox" checked=mc.deepSearch disabled=true}}
+                    </label>
+                </div>
+            </div>
+        {{else}}
+            {{!-- todo better: query config --}}
+        {{/each}}
+    {{/with}}
+{{/each}}

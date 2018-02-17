@@ -1,0 +1,20 @@
+{
+  "data" : {
+    "id" : "urn:process-workflow:plans:generated:Artifact-d2074fa8-6613-4afb-9810-9ca2caf8a04c",
+    "attributes" : {
+      "name" : "Acoustic Emission Testing Tool",
+      "type" : "http://www.semanticweb.org/ontologies/ToolOntology#Acoustic_Emission_Testing_Tool",
+      "amount" : null,
+      "unitOfMeasure" : null
+    },
+    "relationships" : {
+      "inputOf" : {
+        "data" : [ {
+          "type" : "sub-processes",
+          "id" : "urn:process-workflow:plans:generated:SubProcess-244544b9-9018-488b-9a67-1286cec68c9d"
+        } ]
+      }
+    },
+    "type" : "artifacts"
+  }
+}

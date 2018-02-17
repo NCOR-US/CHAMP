@@ -1,0 +1,479 @@
+@prefix : <http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/> .
+
+<http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/> rdf:type owl:Ontology ;
+                                                                                    owl:imports <http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AllCoreOntology> ;
+                                                                                    rdfs:comment "created by Munira Mohd Ali" ;
+                                                                                    rdfs:label "Extended Measurement Ontology" ;
+                                                                                    owl:versionInfo "Version 1.0" .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/ActOfRoundingNumber
+:ActOfRoundingNumber rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/IntentionalAct> ;
+                     <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An Intentional Act that replaces a number with another number in whic it's value is  approximately equal but has a shorter, simpler, or more explicit representation." ;
+                     <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "https://en.wikipedia.org/wiki/Rounding" ;
+                     <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "For example, 23.4476 is rounded to 23.45, or the fraction 312/937 is rounded to 1/3, or the expression √2 is rounded to 1.414." ;
+                     <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                     rdfs:label "Act of Rounding Number" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/CartesianCoordinateReferenceSystem
+:CartesianCoordinateReferenceSystem rdf:type owl:Class ;
+                                    rdfs:subClassOf :CoordinateReferenceSystem ;
+                                    <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Coordinate Reference System that describes each point uniquely in a plane by a pair of numerical coordinates, which are the signed distances from the point to two fixed perpendicular directed lines, measured in the same unit of length." ;
+                                    <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "http://purl.obolibrary.org/obo/STATO_0000009" ;
+                                    <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "(STATO Definition): A Cartesian coordinate system is a coordinate system that specifies each point uniquely in a plane by a pair of numerical coordinates, which are the signed distances from the point to two fixed perpendicular directed lines, measured in the same unit of length." ;
+                                    <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                                    rdfs:label "Cartesian Coordinate Reference System" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/CoefficientOfVariationMeasurement
+:CoefficientOfVariationMeasurement rdf:type owl:Class ;
+                                   rdfs:subClassOf :MeasurementOfVariation ;
+                                   <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Measurement of Variation that describes a normalized measure for dispersion of a probability distribution of frequency distribution." ;
+                                   <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "http://purl.obolibrary.org/obo/STATO_0000236" ;
+                                   <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "The equation could be written as standard deviation/mean x 100" ;
+                                   <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                                   rdfs:label "Coefficient of Variation Measurement" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/CoordinateReferenceSystem
+:CoordinateReferenceSystem rdf:type owl:Class ;
+                           rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity> ;
+                           <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Descriptive Information Content Entity that describes the position of a point or other geometric element on a manifold such as Euclidean space." ;
+                           <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "http://purl.obolibrary.org/obo/STATO_0000010" ;
+                           <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "(STATO Definition): In geometry, a coordinate system is a system which uses one or more numbers, or coordinates, to uniquely determine the position of a point or other geometric element on a manifold such as Euclidean space." ;
+                           <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                           rdfs:label "Coordinate Reference System" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/CylindricalCoordinateReferenceSystem
+:CylindricalCoordinateReferenceSystem rdf:type owl:Class ;
+                                      rdfs:subClassOf :CoordinateReferenceSystem ;
+                                      <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Coordinate Reference System that describes a point position by the distance from a chosen reference axis, the direction from the axis relative to a chosen reference direction, and the distance from a chosen reference plane perpendicular to the axis." ;
+                                      <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "http://purl.obolibrary.org/obo/STATO_0000015" ;
+                                      <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "(STATO definition): A cylindrical coordinate system is a three-dimensional coordinate system that specifies point positions by the distance from a chosen reference axis, the direction from the axis relative to a chosen reference direction, and the distance from a chosen reference plane perpendicular to the axis. The latter distance is given as a positive or negative number depending on which side of the reference plane faces the point." ;
+                                      <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                                      rdfs:label "Cylindrical Coordinate Reference System" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/Dataset
+:Dataset rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/InformationContentEntity> ;
+         <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An Information Content Entity that consists of an aggregate of data collected in a single document."^^xsd:string ;
+         <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "http://purl.obolibrary.org/obo/IAO_0000100"^^xsd:string ;
+         <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "(STATO definition): A data item that is an aggregate of other data items of the same type that have something in common. Averages and distributions can be determined for data sets."^^xsd:string ;
+         <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali"^^xsd:string ;
+         rdfs:label "Dataset"^^xsd:string .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/DecimalDigitPlace
+:DecimalDigitPlace rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/InformationQualityEntity> ;
+                   <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An Information Quality Entity that inheres in a digit with a position of a digit in a decimal format that sometimes involve a decimal separator." ;
+                   <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "http://www.purplemath.com/modules/placeval3.htm" ;
+                   <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> """Position of a digit can be represented by: ones, tens, hundereds, thousands, ten thousands, hundred thousands, millions, and so on or 1, 10, 100, 1000, 10000, 100000, 1000000 and so on before a decimal separator.
+
+Position of a digit can be represented by: tenth, hundreth, thousandth, ten thousandth, hundred thousandth and so on or 0.1, 0.01, 0.001, 0.0001, 0.00001 and so on for the digit after a decimal separator.""" ;
+                   <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                   rdfs:label "Decimal Digit Place" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/DecimalDigitValue
+:DecimalDigitValue rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/InformationQualityEntity> ;
+                   <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An Information Quality Entity that inheres in a digit with a relations between a digit and a decimal digit place." ;
+                   <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "http://www.purplemath.com/modules/placeval3.htm" ;
+                   <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "For example, from the number 5398, digit 5 is placed at 1000 place, so, the digit value of 5 is 5000." ;
+                   rdfs:label "Decimal Digit Value" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/Digit
+:Digit rdf:type owl:Class ;
+       rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingEntity> ;
+       <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An Information Bearing Entity that bears an Information Content Entity that designates single number in a number." ;
+       <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "For example, from the number 5398, 5 is a digit, 3 is a digit, 9 is a digit and 8 is a digit." ;
+       <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+       rdfs:label "Digit" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/ExtendedNumeralNotationFormat
+:ExtendedNumeralNotationFormat rdf:type owl:Class ;
+                               rdfs:subClassOf :NumeralNotationFormat ;
+                               <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Numeral Notation Format that inheres in a format of writing numbers in order to show case the place value of each digit." ;
+                               <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "http://www.mathsisfun.com/definitions/expanded-notation.html" ;
+                               <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "For example, the extended notation of the number 5398 is 5000 + 300 + 90 + 8" ;
+                               <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                               rdfs:label "Extended Numeral Notation Format" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/LowerToleranceLimit
+:LowerToleranceLimit rdf:type owl:Class ;
+                     rdfs:subClassOf :ToleranceMeasurement ;
+                     <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Tolerance Measurement Information  that describes the lowest value bounding a tolerance interval." ;
+                     <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "https://en.wikipedia.org/wiki/Engineering_tolerance" ;
+                     <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                     rdfs:label "Lower Tolerance Limit" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/MeanMeasurement
+:MeanMeasurement rdf:type owl:Class ;
+                 rdfs:subClassOf :MeasurementOfCentralTendency ;
+                 <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Measurement of Central Tendency that is denoted as x¯ and read “x-bar,” is simply the average of the n data points x1, x2, ..., xn" ;
+                 <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "http://purl.obolibrary.org/obo/STATO_0000401" ;
+                 <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> """calculated as:
+
+x¯=x1+x2+⋯+xnn=1n∑i=1nxi""" ;
+                 <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                 rdfs:label "Mean Measurement" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/MeasurementOfCentralTendency
+:MeasurementOfCentralTendency rdf:type owl:Class ;
+                              rdfs:subClassOf :StatisticalAnalysisMeasurement ;
+                              <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Statistical Analysis Measurement that describes the distribution's central or typical value of a data set." ;
+                              <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "https://en.wikipedia.org/wiki/Statistics" ;
+                              <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "(STATO definition): a measure of central tendency is a data item which attempts to describe a set of data by identifying the value of its centre." ;
+                              <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                              rdfs:label "Measurement of Central Tendency" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/MeasurementOfKurtosis
+:MeasurementOfKurtosis rdf:type owl:Class ;
+                       rdfs:subClassOf :StatisticalAnalysisMeasurement ;
+                       <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Statistical Analysis Measurement that describes the degree of peakedness of a distribution." ;
+                       <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "http://purl.obolibrary.org/obo/STATO_0000178" ;
+                       <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "" ;
+                       <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                       rdfs:label "Measurement of Kurtosis" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/MeasurementOfSkewness
+:MeasurementOfSkewness rdf:type owl:Class ;
+                       rdfs:subClassOf :StatisticalAnalysisMeasurement ;
+                       <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Statistical Analysis Measurement that describes the degree of asymmetry of a distribution." ;
+                       <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "http://purl.obolibrary.org/obo/STATO_0000068" ;
+                       <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "Assymmetry is lack of equality or equivalence between parts or aspects of something. Skewness measurement could describe whether a distribution is symmetry or skewed to the left or skewed to the right." ;
+                       <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                       rdfs:label "Measurement of Skewness" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/MeasurementOfVariation
+:MeasurementOfVariation rdf:type owl:Class ;
+                        rdfs:subClassOf :StatisticalAnalysisMeasurement ;
+                        <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Statistical Analysis Measurement that describes how much a theoritical distribution or dataset is spread." ;
+                        <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "http://purl.obolibrary.org/obo/STATO_0000028" ;
+                        <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "(STATO definition): measure of variation or statistical dispersion is a data item which describes how much a theoritical distribution or dataset is spread." ;
+                        <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                        rdfs:label "Measurement of Variation" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/MeasurementSpecificationStandard
+:MeasurementSpecificationStandard rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity> ;
+                                  <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Directive Information Content Entity that prescribes the standard for the measurement specification." ;
+                                  <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                                  rdfs:label "Measurement Specification Standard" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/MeasurementUnitOfAmountOfSubstance
+:MeasurementUnitOfAmountOfSubstance rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/MeasurementUnit> ;
+                                    <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Measurement Unit used in measurements of the size of an ensemble of elementary entities, such as atoms or molecules or electrons or other particles." ;
+                                    <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "https://en.wikipedia.org/wiki/Amount_of_substance" ;
+                                    <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                                    rdfs:label "Measurement Unit of Amount of Substance" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/MeasurementUnitOfElectricCurrent
+:MeasurementUnitOfElectricCurrent rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/MeasurementUnit> ;
+                                  <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Measurement Unit used in measurements of the flow of electric charge." ;
+                                  <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "https://en.wikipedia.org/wiki/Electric_current" ;
+                                  <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                                  rdfs:label "Measurement Unit of Electric Current" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/MeasurementUnitOfLuminousIntensity
+:MeasurementUnitOfLuminousIntensity rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/MeasurementUnit> ;
+                                    <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Measurement Unit used in measurements of the wavelength-weighted power emitted by a light source in a particular direction per unit solid angle, based on the luminosity function, a standardized model of the sensitivity of the human eye." ;
+                                    <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "https://en.wikipedia.org/wiki/Luminous_intensity" ;
+                                    <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                                    rdfs:label "Measurement Unit of Luminous Intensity" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/MedianMeasurement
+:MedianMeasurement rdf:type owl:Class ;
+                   rdfs:subClassOf :MeasurementOfCentralTendency ;
+                   <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Measurement of Central Tendency that describes the middle value of a sequence values in a set of numbers." ;
+                   <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "http://purl.obolibrary.org/obo/OBI_0000674" ;
+                   <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "(STATO definition): The median is measure of central tendency of data. It is obtained by arranging the observations in order from smallest to largest value. If there is an odd number of observations, the median is the middle value. If there is an even number of observations, the median is the average of the two middle values.\"" ;
+                   <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                   rdfs:label "Median Measurement" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/ModeMeasurement
+:ModeMeasurement rdf:type owl:Class ;
+                 rdfs:subClassOf :MeasurementOfCentralTendency ;
+                 <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Measurement of Central Tendency that describes the most frequently occurring number in a set of numbers." ;
+                 <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "http://purl.obolibrary.org/obo/STATO_0000033" ;
+                 <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "(STATO definition): The mode is a data item which corresponds to the most frequently occurring number in a set of numbers." ;
+                 <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                 rdfs:label "Mode Measurement" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/Numeral
+:Numeral rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingEntity> ;
+         <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An Information Bearing Entity that bears an Information Content Entity that designates number." ;
+         <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira" ;
+         rdfs:label "Numeral" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/NumeralFormat
+:NumeralFormat rdf:type owl:Class ;
+               rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/InformationQualityEntity> ;
+               <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An Information Quality Entity that inheres in a numeral with the format of representing a numeral." ;
+               <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+               rdfs:label "Numeral Format" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/NumeralNotationFormat
+:NumeralNotationFormat rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/InformationQualityEntity> ;
+                       <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An Information Quality Entity that inheres in a format of writing a numeral." ;
+                       <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                       rdfs:label "Numeral Notation Format" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/NumeralSystemFormat
+:NumeralSystemFormat rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/InformationQualityEntity> ;
+                     <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An Information Quality Entity that inheres in a numeral as a format of expressing numeral." ;
+                     <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "https://en.wikipedia.org/wiki/Numeral_system" ;
+                     <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "Wikipedia definition: \"writing system for expressing numbers; that is, a mathematical notation for representing numbers of a given set, using digits or other symbols in a consistent manner. It can be seen as the context that allows the symbols \"11\" to be interpreted as the binary symbol for three, the decimal symbol for eleven, or a symbol for other numbers in different bases.\"" ;
+                     <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                     rdfs:label "Numeral System Format" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/PolarCoordinateReferenceSystem
+:PolarCoordinateReferenceSystem rdf:type owl:Class ;
+                                rdfs:subClassOf :CoordinateReferenceSystem ;
+                                <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Coordinate Reference System that describes a point position by a distance from a fixed point and an angle from a fixed direction." ;
+                                <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "http://purl.obolibrary.org/obo/STATO_0000016" ;
+                                <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "(STATO definition): In mathematics, the polar coordinate system is a two-dimensional coordinate system in which each point on a plane is determined by a distance from a fixed point and an angle from a fixed direction." ;
+                                <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                                rdfs:label "Polar Coordinate Reference System" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/RangeMeasurement
+:RangeMeasurement rdf:type owl:Class ;
+                  rdfs:subClassOf :MeasurementOfVariation ;
+                  <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Measurement of Variation that describes the difference between the lowest value and the highest value in a data set." ;
+                  <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "http://purl.obolibrary.org/obo/STATO_0000035" ;
+                  <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                  rdfs:label "Range Measurement" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/RoundedNumberFormat
+:RoundedNumberFormat rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/InformationQualityEntity> ;
+                     <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An Information Quality Entity that inheres in numeral that is rounded to the nearest value of a number based on the digit place." ;
+                     <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                     rdfs:label "Rounded Number Format" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/ScientificNumeralNotationFormat
+:ScientificNumeralNotationFormat rdf:type owl:Class ;
+                                 rdfs:subClassOf :NumeralNotationFormat ;
+                                 <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Numeral Notation Format that inheres in a format of writing numbers that are too big or too small." ;
+                                 <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "https://en.wikipedia.org/wiki/Scientific_notation" ;
+                                 <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "For example, the scientific notation of 2000 is 2 x 10^3" ;
+                                 <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                                 rdfs:label "Scientific Numeral Notation Format" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/SphericalCoordinateReferenceSystem
+:SphericalCoordinateReferenceSystem rdf:type owl:Class ;
+                                    rdfs:subClassOf :CoordinateReferenceSystem ;
+                                    <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Coordinate Reference System that describes a point position by three numbers: the radial distance of that point from a fixed origin, its polar angle measured from a fixed zenith direction, and the azimuth angle of its orthogonal projection on a reference plane that passes through the origin and is orthogonal to the zenith, measured from a fixed reference direction on that plane." ;
+                                    <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "http://purl.obolibrary.org/obo/STATO_0000014" ;
+                                    <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "(STATO definition): In mathematics, a spherical coordinate system is a coordinate system for three-dimensional space where the position of a point is specified by three numbers: the radial distance of that point from a fixed origin, its polar angle measured from a fixed zenith direction, and the azimuth angle of its orthogonal projection on a reference plane that passes through the origin and is orthogonal to the zenith, measured from a fixed reference direction on that plane." ;
+                                    <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                                    rdfs:label "Spherical Coordinate Reference System" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/StandardDeviationMeasurement
+:StandardDeviationMeasurement rdf:type owl:Class ;
+                              rdfs:subClassOf :MeasurementOfVariation ;
+                              <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Measurement of Variation that describes the average distance from the mean of the data set to any given point of that dataset. It also corresponds to the square root of its variance." ;
+                              <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "http://purl.obolibrary.org/obo/STATO_0000237" ;
+                              <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "It also corresponds to the square root of its variance.  The formula could be written as square root of (∑((x-xbar)^2)/(n-1))" ;
+                              <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                              rdfs:label "Standard Deviation Measurement" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/StatisticalAnalysisMeasurement
+:StatisticalAnalysisMeasurement rdf:type owl:Class ;
+                                rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/DescriptiveInformationContentEntity> ;
+                                <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Descriptive Information Content Entity that describes a data set or a variable." ;
+                                <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "http://purl.obolibrary.org/obo/STATO_0000039" ;
+                                <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "(STATO definition): a statistic is a measurement datum to describe a dataset or a variable. It is generated by a calculation on set of observed data." ;
+                                <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                                rdfs:label "Statistical Analysis Measurement" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/ToleranceMeasurement
+:ToleranceMeasurement rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.ontologyrepository.com/CommonCoreOntologies/RatioMeasurementInformationContentEntity> ;
+                      <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Ratio Measurement Information Content Entity that describes a range of values in which a measurement should fall corresponding to a measured value." ;
+                      <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "https://en.wikipedia.org/wiki/Engineering_tolerance" ;
+                      <http://www.ontologyrepository.com/CommonCoreOntologies/elucidation> "Tolerance is the allowable deviation from a target value. Eg: Range of variation permitted in maintaining a specified dimension in machining a piece." ;
+                      <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                      rdfs:label "Tolerance Measurement" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/UpperToleranceLimit
+:UpperToleranceLimit rdf:type owl:Class ;
+                     rdfs:subClassOf :ToleranceMeasurement ;
+                     <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Tolerance Measurement Information  that describes the largest value bounding a tolerance interval." ;
+                     <http://www.ontologyrepository.com/CommonCoreOntologies/definition_source> "https://en.wikipedia.org/wiki/Engineering_tolerance" ;
+                     <http://www.ontologyrepository.com/CommonCoreOntologies/term_editor> "Munira Mohd Ali" ;
+                     rdfs:label "Upper Tolerance Limit" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/AmpereMeasurementUnit
+:AmpereMeasurementUnit rdf:type owl:NamedIndividual ,
+                                :MeasurementUnitOfElectricCurrent ;
+                       rdfs:label "Ampere Measurement Unit" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/BinaryFormat
+:BinaryFormat rdf:type owl:NamedIndividual ,
+                       :NumeralFormat ;
+              <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An instance of a Numeral Format that only uses two symbol for the representation of a numeral; typically 0 and 1." ;
+              rdfs:label "Binary Format" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/CandelaMeasurementUnit
+:CandelaMeasurementUnit rdf:type owl:NamedIndividual ,
+                                 :MeasurementUnitOfLuminousIntensity ;
+                        rdfs:label "Candela Measurement Unit" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/ChineseNumeralSystemFormat
+:ChineseNumeralSystemFormat rdf:type owl:NamedIndividual ,
+                                     :NumeralSystemFormat ;
+                            rdfs:label "Chinese Numeral System Format" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/DecimalFormat
+:DecimalFormat rdf:type owl:NamedIndividual ,
+                        :NumeralFormat ;
+               <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An instance of a numeral format that uses ten decimal digit to represent a numeral; 0,1,2,3,4,5,6,7,8,9 and sometimes has a decimal separator." ;
+               rdfs:label "Decimal Format" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/DecimalFractionFormat
+:DecimalFractionFormat rdf:type owl:NamedIndividual ,
+                                :NumeralFormat ;
+                       <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An instance of a Numeral Format that is represented in the form of a/b where a is a numerator and b is a denominator." ;
+                       rdfs:label "Decimal Fraction Format" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/EasternArabicNumeralSystemFormat
+:EasternArabicNumeralSystemFormat rdf:type owl:NamedIndividual ,
+                                           :NumeralSystemFormat ;
+                                  rdfs:label "Eastern Arabic Numeral System Format" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/GreekNumeralSytemFormat
+:GreekNumeralSytemFormat rdf:type owl:NamedIndividual ,
+                                  :NumeralSystemFormat ;
+                         rdfs:label "Greek Numeral System Format" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/HebrewNumeralSystemFormat
+:HebrewNumeralSystemFormat rdf:type owl:NamedIndividual ,
+                                    :NumeralSystemFormat ;
+                           rdfs:label "Hebrew Numeral System Format" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/HexadecimalFormat
+:HexadecimalFormat rdf:type owl:NamedIndividual ,
+                            :NumeralFormat ;
+                   <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A Numeral Format that uses sixteen distinct symbols, most often the symbols 0–9 to represent values zero to nine, and A, B, C, D, E, F (or alternatively a, b, c, d, e, f) to represent values ten to fifteen." ;
+                   rdfs:label "Hexadecimal Format" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/IndianNumeralSystemFormat
+:IndianNumeralSystemFormat rdf:type owl:NamedIndividual ,
+                                    :NumeralSystemFormat ;
+                           rdfs:label "Indian Numeral System Format" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/InternationalSystemOfQuantityStandard
+:InternationalSystemOfQuantityStandard rdf:type owl:NamedIndividual ,
+                                                :MeasurementSpecificationStandard ;
+                                       <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An instance of Measurement Specification Standard that prescribes a coherent system of quantities for the following qualities: length, mass, time, electric current, thermodynamic temperature, amount of substance, and luminous intensity." ;
+                                       rdfs:label "International System of Quantity Standard" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/InternationalSystemOfUnitStandard
+:InternationalSystemOfUnitStandard rdf:type owl:NamedIndividual ,
+                                            :MeasurementSpecificationStandard ;
+                                   <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "An instance of Measurement Specification Standard that prescribes a coherent system of units of measurement." ;
+                                   rdfs:label "International System of Unit Standard" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/JapaneseNumeralSystemFormat
+:JapaneseNumeralSystemFormat rdf:type owl:NamedIndividual ,
+                                      :NumeralSystemFormat ;
+                             rdfs:label "Japanese Numeral System Format" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/KoreanNumeralSystemFormat
+:KoreanNumeralSystemFormat rdf:type owl:NamedIndividual ,
+                                    :NumeralSystemFormat ;
+                           rdfs:label "Korean Numeral System Format" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/MolMeasurementUnit
+:MolMeasurementUnit rdf:type owl:NamedIndividual ,
+                             :MeasurementUnitOfAmountOfSubstance ;
+                    rdfs:label "Mol Measurement Unit" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/RomanNumeralSystemFormat
+:RomanNumeralSystemFormat rdf:type owl:NamedIndividual ,
+                                   :NumeralSystemFormat ;
+                          rdfs:label "Roman Numeral System Format" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/ThaiNumeralSystemFormat
+:ThaiNumeralSystemFormat rdf:type owl:NamedIndividual ,
+                                  :NumeralSystemFormat ;
+                         rdfs:label "Thai Numeral System Format" .
+
+
+###  http://www.semanticweb.org/munira/ontologies/2017/10/ExtendedMeasurementOntology/WesternArabicNumeralSystemFormat
+:WesternArabicNumeralSystemFormat rdf:type owl:NamedIndividual ,
+                                           :NumeralSystemFormat ;
+                                  rdfs:label "Western Arabic Numeral System Format" .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

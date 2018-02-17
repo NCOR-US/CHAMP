@@ -1,0 +1,35 @@
+# Properties for OntoView web application
+OntoView:
+  # location for queries
+  query-location: @ontoview.query.location@
+
+  # the graph URI inside the above datastore for instance data
+  data-graph: @ontoview.default.query.data.graph@
+
+  # the graph URI inside the above datastore for the ontologies
+  ontology-graph: @ontoview.query.ontology.graph@
+
+  # all namespaces, in order of appearance
+  query-namespaces:
+    - prefix: owl
+      ns: http://www.w3.org/2002/07/owl#
+    - prefix: rdf
+      ns: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+    - prefix: rdfs
+      ns: http://www.w3.org/2000/01/rdf-schema#
+
+    - prefix: bfo
+      ns: http://purl.obolibrary.org/obo/
+    - prefix: ro
+      ns: http://www.obofoundry.org/ro/ro.owl#
+
+    - prefix: cco
+      ns: http://www.ontologyrepository.com/CommonCoreOntologies/
+    - prefix: lro
+      ns: http://www.ontologyrepository.com/CommonCoreOntologies/LewisianRelationOntology/
+
+    - prefix: local
+      ns: http://localhost:8080/source/
+
+  # location for config overrides
+  overrides-location: @user.properties.location@

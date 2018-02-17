@@ -1,0 +1,8 @@
+<div class="row collapse">
+    <div class="small-10 columns">
+        {{input enter='doSearch' id="entityLookupValue" type="text" placeholder="Enter an IRI" value=searchValue}}
+    </div>
+    <div class="small-2 columns">
+        {{#link-to 'search-result' encodedSearchValue id="entityLookupAnchor" class="button postfix" disabledWhen=noSearchValue}}Go{{/link-to}}
+    </div>
+</div>

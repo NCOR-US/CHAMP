@@ -1,0 +1,8 @@
+{
+  "name": "ontoview",
+  "devDependencies": {
+    "foundation": "^5.5.3",
+    "font-awesome": "^4.7.0",
+    "chosen": "^1.7.0"
+  }
+}

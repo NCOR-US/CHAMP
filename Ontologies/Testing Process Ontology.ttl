@@ -1,0 +1,448 @@
+@prefix : <http://www.semanticweb.org/ontologies/TestingProcessOntology/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix FLU12: <http://www.semanticweb.org/no/ontologies/2017/2/FLU12#> .
+@prefix ace_lexicon: <http://attempto.ifi.uzh.ch/ace_lexicon#> .
+@prefix CEO-ontology: <http://www.semanticweb.org/no/ontologies/2017/1/CEO-ontology/> .
+@prefix PLC-ontology: <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/> .
+@base <http://www.semanticweb.org/ontologies/TestingProcessOntology/> .
+
+<http://www.semanticweb.org/ontologies/TestingProcessOntology/> rdf:type owl:Ontology ;
+                                                                 owl:imports PLC-ontology: ;
+                                                                 owl:versionInfo "Version .01"@en ;
+                                                                 obo:IAO_0000232 "The Testing Process Ontology is a mid-level ontology developed to represent the testing processes performed throughout the product lifecycle."@en ;
+                                                                 owl:versionInfo "Testing Process Ontology"@en ;
+                                                                 dc:contributor "Binbin Zhang, J. Neil Otte, Ron Rudnicki, Munira Binti Mohd Ali, Ruoyu Yang"@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOFAdhesionTesting
+:ActOFAdhesionTesting rdf:type owl:Class ;
+                      rdfs:subClassOf :ActOfNondestructiveTesting ;
+                      obo:IAO_0000115 "An act of nondestructive testing that tests the bond strength between some entities."@en ;
+                      cco:definition_source "http://www.ametektest.com/learningzone/testtypes/adhesion-testing"@en ;
+                      cco:term_editor "Binbin Zhang"@en ;
+                      rdfs:label "Act of Adhesion Testing"@en .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfAcousticEmissionTesting
+:ActOfAcousticEmissionTesting rdf:type owl:Class ;
+                              rdfs:subClassOf :ActOfNondestructiveTesting ;
+                              obo:IAO_0000117 "Binbin Zhang"@en ;
+                              cco:definition "An act of nondestructive testing that tests the transient elastic waves produced by a sudden redistribution of stress in some entity."@en ;
+                              rdfs:label "Act of Acoustic Emission Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfAgeTesting
+:ActOfAgeTesting rdf:type owl:Class ;
+                 rdfs:subClassOf :ActOfDestructiveTesting ;
+                 obo:IAO_0000115 "An act of destructive testing that examines the service temporal interval of some entity using aggravated conditions of heat, humidity, oxygen, sunlight, vibration, etc. to speed up the normal aging processes."@en ;
+                 obo:IAO_0000117 "Binbin Zhang"@en ;
+                 cco:elucidation "Service temporal interval of some entity is the useful lifespan of the entity."@en ;
+                 rdfs:label "Act of Age Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfAnalysis
+:ActOfAnalysis rdf:type owl:Class ;
+               rdfs:subClassOf cco:ActOfAppraisal ;
+               obo:IAO_0000117 "Binbin Zhang"@en ;
+               cco:definition "An act of appraisal that uses data to infer a conclusion."@en ;
+               rdfs:label "Act of Analysis"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfBatteryVoltageTesting
+:ActOfBatteryVoltageTesting rdf:type owl:Class ;
+                            rdfs:subClassOf :ActOfElectromagneticTesting ;
+                            obo:IAO_0000115 "An act of electromagnetic testing that examines battery voltage of some entity with electronic test equipment."@en ;
+                            cco:term_editor "Binbin Zhang"@en ;
+                            rdfs:label "Act of Battery Voltage Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfBendingTesting
+:ActOfBendingTesting rdf:type owl:Class ;
+                     rdfs:subClassOf :ActOfDeformationTesting ;
+                     obo:IAO_0000115 "An act of deformation testing that a) deforms some entity at the midpoint causing a concave surface or a bend to form without the occurrence of fracture and b) is typically performed to determine the ductility or resistance to fracture of that entity."@en ;
+                     obo:IAO_0000117 "Binbin Zhang"@en ;
+                     obo:IAO_0000119 "http://www.testresources.net/applications/test-types/bend-test/" ;
+                     rdfs:label "Act of Bending Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfBubbleLeakTesting
+:ActOfBubbleLeakTesting rdf:type owl:Class ;
+                        rdfs:subClassOf :ActOfLeakTesting ;
+                        cco:definition "An act of leak testing that tests the leaks of some entity by relying on the visual detection of a gas (usually air) leaking from a pressurized system."@en ;
+                        cco:definition_source "https://www.asnt.org/MajorSiteSections/Certification/ASNT_NDT_Level_III/Examinations/LT.aspx"@en ;
+                        cco:term_editor "Binbin Zhang"@en ;
+                        rdfs:label "Act of Bubble Leak Testing"@en .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfCapacitanceTesting
+:ActOfCapacitanceTesting rdf:type owl:Class ;
+                         rdfs:subClassOf :ActOfElectromagneticTesting ;
+                         obo:IAO_0000115 "An act of electromagnetic testing that examines capacitance of some entity with electronic test equipment."@en ;
+                         obo:IAO_0000117 "Binbin Zhang"@en ;
+                         cco:elucidation "Capacitance is the ability of a system to store an electric charge."@en ;
+                         rdfs:label "Act of Capacitance Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfCompressionTesting
+:ActOfCompressionTesting rdf:type owl:Class ;
+                         rdfs:subClassOf :ActOfDestructiveTesting ;
+                         obo:IAO_0000115 "An act of destructive testing that tests the behavior of some entity while it experiences a compressive load."@en ;
+                         obo:IAO_0000117 "Binbin Zhang"@en ;
+                         cco:elucidation "The test is used to establish the compressive force or crush resistance of some entity and the ability of the entity to recover after a specified compressive force is applied and even held over a defined period of time"@en ;
+                         rdfs:label "Act of Compression Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfCreepTesting
+:ActOfCreepTesting rdf:type owl:Class ;
+                   rdfs:subClassOf :ActOfDestructiveTesting ;
+                   obo:IAO_0000115 "An act of destructive testing that gains inforamtion on how some entity deforms when exposed to stress at a certain temperature."@en ;
+                   obo:IAO_0000117 "Binbin Zhang"@en ;
+                   rdfs:label "Act of Creep Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfCrushTesting
+:ActOfCrushTesting rdf:type owl:Class ;
+                   rdfs:subClassOf :ActOfCompressionTesting ;
+                   obo:IAO_0000117 "Binbin Zhang"@en ;
+                   cco:definition "An act of compression testing that tests some entity's load limit undering crush compression."@en ;
+                   cco:definition_source "http://www.ametektest.com/learningzone/testtypes/crush-resistance-testing"@en ;
+                   cco:elucidation "Load Limit is the maximum load which should ever be applied to the entity."@en ;
+                   rdfs:label "Act of Crush Testing"@en .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfDeformationTesting
+:ActOfDeformationTesting rdf:type owl:Class ;
+                         rdfs:subClassOf :ActOfDestructiveTesting ;
+                         obo:IAO_0000119 "http://www.ametektest.com/learningzone/testtypes/deformation-testing"@en ;
+                         cco:definition "An act of destructive testing that tests some entity's ability to withstand a permanent deformation and/or the ability of the entity to return to its original shape after deformation."@en ;
+                         cco:term_editor "Binbin Zhang"@en ;
+                         rdfs:label "Act of Deformation Testing"@en .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfDestructiveTesting
+:ActOfDestructiveTesting rdf:type owl:Class ;
+                         rdfs:subClassOf :ActOfIndustrialDiagnosticTesting ;
+                         obo:IAO_0000115 "An act of diagnostic testing that examines some entity and causes damage to that entity."@en ;
+                         obo:IAO_0000117 "Binbin Zhang"@en ;
+                         rdfs:label "Act of Destructive Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfDuctilityTesting
+:ActOfDuctilityTesting rdf:type owl:Class ;
+                       rdfs:subClassOf :ActOfDeformationTesting ;
+                       obo:IAO_0000119 "http://www.ametektest.com/learningzone/testtypes/ductility-testing"@en ;
+                       cco:definition "An act of deformation testing that tests some entities' ability to withstand plastic deformation without rupture."@en ;
+                       cco:term_editor "Binbin Zhang"@en ;
+                       rdfs:label "Act of Ductility Testing"@en .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfElectromagneticTesting
+:ActOfElectromagneticTesting rdf:type owl:Class ;
+                             rdfs:subClassOf :ActOfNondestructiveTesting ;
+                             obo:IAO_0000117 "Binbin Zhang"@en ;
+                             cco:definition "An act of nondestructive testing that tests the electromagnetic response of some entity by inducing electric currents or magnetic fields or both."@en ;
+                             rdfs:label "Act of Electromagnetic Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfFatigueTesting
+:ActOfFatigueTesting rdf:type owl:Class ;
+                     rdfs:subClassOf :ActOfDestructiveTesting ;
+                     obo:IAO_0000115 "An act of destructive testing that measures some entity's fatigue life (cracks or complete fracture) under repeated loading below the yield strength."@en ;
+                     obo:IAO_0000117 "Binbin Zhang"@en ;
+                     rdfs:label "Act of Fatigue Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfFireSensitivityTesting
+:ActOfFireSensitivityTesting rdf:type owl:Class ;
+                             rdfs:subClassOf :ActOfNondestructiveTesting ;
+                             cco:definition "An act of nondestructive testing that examines some entity's sensitivity or response to fire."@en ;
+                             cco:term_editor "Binbin Zhang"@en ;
+                             rdfs:label "Act of Fire Sensitivity Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfFlatteningTesting
+:ActOfFlatteningTesting rdf:type owl:Class ;
+                        rdfs:subClassOf :ActOfCompressionTesting ;
+                        obo:IAO_0000117 "Binbin Zhang"@en ;
+                        obo:IAO_0000119 "http://www.ptspl.com/Flattening_Test.html"@en ;
+                        cco:definition "An act of compression testing that flattens some entity between two plain parallel and rigid platens until the distance between the platens, measured under load, is not greater than the requirements."@en ;
+                        rdfs:label "Act of Flattening Testing"@en .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfFractureToughnessTesting
+:ActOfFractureToughnessTesting rdf:type owl:Class ;
+                               rdfs:subClassOf :ActOfToughnessTesting ;
+                               obo:IAO_0000115 "An act of toughness testing that measures some entity's resistance to brittle fracturing and the entity's toughness can be quantified by linear elastic fracture mechanics."@en ;
+                               obo:IAO_0000117 "Binbin Zhang"@en ;
+                               cco:elucidation """Impact test measures how easily a crack is initiated in a test specimen and how fast it
+propagates once it’s started. Fracture toughness test measures only crack propagation – and from
+a design standpoint on a part that is constantly loaded,"""@en ;
+                               rdfs:label "Act of Fracture Toughness Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfFrictionTesting
+:ActOfFrictionTesting rdf:type owl:Class ;
+                      rdfs:subClassOf :ActOfNondestructiveTesting ;
+                      obo:IAO_0000119 "http://www.ametektest.com/learningzone/testtypes/friction-testing"@en ;
+                      cco:definition "An act of nondestructive testing that calculates the coefficient of friction of some entity by sliding two surfaces against each other."@en ;
+                      cco:term_editor "Binbin Zhang"@en ;
+                      rdfs:label "Act of Friction Testing"@en .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfHalogenDiodeLeakTesting
+:ActOfHalogenDiodeLeakTesting rdf:type owl:Class ;
+                              rdfs:subClassOf :ActOfLeakTesting ;
+                              cco:definition "An act of leak testing that locates leaks of some entity by pressurizing the entity with a mixture of air and a halogen-based tracer gas."@en ;
+                              cco:definition_source "https://www.asnt.org/MajorSiteSections/Certification/ASNT_NDT_Level_III/Examinations/LT.aspx"@en ;
+                              cco:term_editor "Binbin Zhang"@en ;
+                              rdfs:label "Act of Halogen Diode Leak Testing"@en .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfHardnessTesting
+:ActOfHardnessTesting rdf:type owl:Class ;
+                      rdfs:subClassOf :ActOfDestructiveTesting ;
+                      obo:IAO_0000115 "An act of destructive testing that examines the resistance of some entity to various kinds of permanent shape change when a compressive force is applied."@en ;
+                      obo:IAO_0000117 "Binbin Zhang"@en ;
+                      rdfs:label "Act of Hardness Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfHolographicTesting
+:ActOfHolographicTesting rdf:type owl:Class ;
+                         rdfs:subClassOf :ActOfLaserTesting ;
+                         obo:IAO_0000117 "Binbin Zhang"@en ;
+                         cco:definition "An act of laser testing that tests changes of the surface of some entity by scanning laser beam across the surface of the entity."@en ;
+                         cco:definition_source "https://www.asnt.org/MinorSiteSections/AboutASNT/Intro-to-NDT"@en ;
+                         rdfs:label "Act of Holographic Testing"@en .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfImpactTesting
+:ActOfImpactTesting rdf:type owl:Class ;
+                    rdfs:subClassOf :ActOfToughnessTesting ;
+                    obo:IAO_0000115 "An act of toughness testing that measures some entity's ability to resist high strain-rate loading and the amount of energy it absorbed during fracture."@en ;
+                    obo:IAO_0000117 "Binbin Zhang"@en ;
+                    cco:elucidation """Impact test measures how easily a crack is initiated in a test specimen and how fast it
+propagates once it’s started. Fracture toughness test measures only crack propagation – and from
+a design standpoint on a part that is constantly loaded,""" ;
+                    rdfs:label "Act of Impact Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfIndustrialDiagnosticTesting
+:ActOfIndustrialDiagnosticTesting rdf:type owl:Class ;
+                                  rdfs:subClassOf cco:ActOfAppraisal ;
+                                  obo:IAO_0000117 "Binbin Zhang"@en ;
+                                  cco:definition "An act of appraisal that examines some entity using specialized testing equipment."@en ;
+                                  rdfs:label "Act of Industrial Diagnostic Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfInfraredThermographyTesting
+:ActOfInfraredThermographyTesting rdf:type owl:Class ;
+                                  rdfs:subClassOf :ActOfNondestructiveTesting ;
+                                  obo:IAO_0000117 "Binbin Zhang"@en ;
+                                  cco:definition "An act of nondestructive testing that tests the surface temperatures of some material entity."@en ;
+                                  rdfs:label "Act of Infrared Thermography Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfLabeling
+:ActOfLabeling rdf:type owl:Class ;
+               rdfs:subClassOf cco:IntentionalAct ;
+               obo:IAO_0000117 "Binbin Zhang"@en ;
+               cco:definition "An intentional act that marks some entity with an information bearer that bears a designative information content entity"@en ;
+               rdfs:label "Act of Labeling"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfLaserProfilometryTesting
+:ActOfLaserProfilometryTesting rdf:type owl:Class ;
+                               rdfs:subClassOf :ActOfLaserTesting ;
+                               obo:IAO_0000117 "Binbin Zhang"@en ;
+                               cco:definition "An act of laser testing that detects corrosion, pitting, erosion and cracks of some entity by using a high-speed roating laser light source, miniature optics and a computer."@en ;
+                               cco:definition_source "https://www.asnt.org/MinorSiteSections/AboutASNT/Intro-to-NDT"@en ;
+                               rdfs:label "Act of Laser Profilometry Testing"@en .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfLaserShearographyTesting
+:ActOfLaserShearographyTesting rdf:type owl:Class ;
+                               rdfs:subClassOf :ActOfLaserTesting ;
+                               obo:IAO_0000115 "An act of laser testing that provides information about the pattern or defects of some entity by using a coherent light or coherent soundwaves."@en ;
+                               obo:IAO_0000117 "Binbin Zhang"@en ;
+                               cco:definition_source "https://en.wikipedia.org/wiki/Shearography"@en ;
+                               rdfs:label "Act of Laser Shearography Testing"@en .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfLaserTesting
+:ActOfLaserTesting rdf:type owl:Class ;
+                   rdfs:subClassOf :ActOfNondestructiveTesting ;
+                   obo:IAO_0000117 "Binbin Zhang"@en ;
+                   cco:definition "An act of nondestructive testing that tests some entity to provide its quality information by using one of the three laser testing techniques:Holography, Shearography and Profilometry."@en ;
+                   rdfs:label "Act of Laser Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfLeakTesting
+:ActOfLeakTesting rdf:type owl:Class ;
+                  rdfs:subClassOf :ActOfNondestructiveTesting ;
+                  obo:IAO_0000117 "Binbin Zhang"@en ;
+                  cco:definition "An act of nondestructive testing that tests some entity to detect leaks using one of the four major techniques: bubble, pressure change, halogen diode and mass spectrometer testing."@en ;
+                  rdfs:label "Act of Leak Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfLiquidPenetrantTesting
+:ActOfLiquidPenetrantTesting rdf:type owl:Class ;
+                             rdfs:subClassOf :ActOfNondestructiveTesting ;
+                             obo:IAO_0000117 "Binbin Zhang"@en ;
+                             cco:definition "An act of nondestructive testing that tests some entity by utilizing fluorescent dye to reveal surface flaws in the entity which might not otherwise be visible."@en ;
+                             rdfs:label "Act of Liquid Penetrant Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfMagneticParticleTesting
+:ActOfMagneticParticleTesting rdf:type owl:Class ;
+                              rdfs:subClassOf :ActOfNondestructiveTesting ;
+                              obo:IAO_0000117 "Binbin Zhang"@en ;
+                              cco:definition "An act of nondestructive testing that tests some entity by putting a magnetic field into the entity and magnetizing it with direct or indirect magnetization to detect its surface and slightly subsurface flaws."@en ;
+                              rdfs:label "Act of Magnetic Particle Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfMassSpectrometerLeakTesting
+:ActOfMassSpectrometerLeakTesting rdf:type owl:Class ;
+                                  rdfs:subClassOf :ActOfLeakTesting ;
+                                  cco:definition "An act of leak testing that pressurizes some entity with helium or a helium/air mixture within a test chamber then surveyies the entity's surfaces using a sniffer, which sends an air sample back to the spectrometer."@en ;
+                                  cco:definition_source "https://www.asnt.org/MajorSiteSections/Certification/ASNT_NDT_Level_III/Examinations/LT.aspx"@en ;
+                                  cco:term_editor "Binbin Zhang"@en ;
+                                  rdfs:label "Act of Mass Spectrometer Leak Testing"@en .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfMaterialSampling
+:ActOfMaterialSampling rdf:type owl:Class ;
+                       rdfs:subClassOf cco:IntentionalAct ;
+                       obo:IAO_0000117 "Binbin Zhang"@en ;
+                       cco:definition "An intentional act that selects some material entity either a) from a portion of material (X) of which it is part, or b) from some aggregate (Y) of which it is a member, in order to draw an inference about either the portion of material (X) or the aggregate (Y)."@en ;
+                       rdfs:label "Act of Material Sampling"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfMetallographicTesting
+:ActOfMetallographicTesting rdf:type owl:Class ;
+                            rdfs:subClassOf :ActOfDestructiveTesting ;
+                            obo:IAO_0000117 "Binbin Zhang"@en ;
+                            cco:definition "An act of destructive testing that tests the physical structure and components of some entity, typically using microscopy or radiography."@en ;
+                            rdfs:label "Act of Metallographic Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfNondestructiveTesting
+:ActOfNondestructiveTesting rdf:type owl:Class ;
+                            rdfs:subClassOf :ActOfIndustrialDiagnosticTesting ;
+                            obo:IAO_0000115 "An act of diagnostic testing that examines some entity without causing damage to it."@en ;
+                            obo:IAO_0000117 "Binbin Zhang"@en ;
+                            rdfs:label "Act of Nondestructive Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfPackaging
+:ActOfPackaging rdf:type owl:Class ;
+                rdfs:subClassOf cco:IntentionalAct ;
+                obo:IAO_0000117 "Binbin Zhang"@en ;
+                cco:definition "An intentional act that encloses or wraps some entity for distribution, storage, sale, and use for the next point of production."@en ;
+                rdfs:label "Act of Packaging"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfPressureChangeLeakTesting
+:ActOfPressureChangeLeakTesting rdf:type owl:Class ;
+                                rdfs:subClassOf :ActOfLeakTesting ;
+                                cco:definition "An act of leak testing that detects a leak of some entity by either pressurizing the system or pulling a vacuum then monitoring the pressure."@en ;
+                                cco:definition_source "https://www.asnt.org/MajorSiteSections/Certification/ASNT_NDT_Level_III/Examinations/LT.aspx"@en ;
+                                cco:term_editor "Binbin Zhang"@en ;
+                                rdfs:label "Act of Pressure Change Leak Testing"@en .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfPunctureTesting
+:ActOfPunctureTesting rdf:type owl:Class ;
+                      rdfs:subClassOf :ActOfCompressionTesting ;
+                      obo:IAO_0000117 "Binbin Zhang"@en ;
+                      obo:IAO_0000119 "http://www.ametektest.com/learningzone/testtypes/puncture-testing"@en ;
+                      cco:definition "An act of compression testing that tests some entity by compressing it with a probe or other entity until the entity ruptures or until a maximum negative elongation value is achieved."@en ;
+                      rdfs:label "Act of Puncture Testing"@en .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfRadiographicTesting
+:ActOfRadiographicTesting rdf:type owl:Class ;
+                          rdfs:subClassOf :ActOfNondestructiveTesting ;
+                          obo:IAO_0000117 "Binbin Zhang"@en ;
+                          cco:definition "An act of nondestructive testing that examines some entity using electromagetic radiation to verify the entity's internal structure and integrity."@en ;
+                          rdfs:label "Act of Radiographic Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfResistanceTesting
+:ActOfResistanceTesting rdf:type owl:Class ;
+                        rdfs:subClassOf :ActOfElectromagneticTesting ;
+                        obo:IAO_0000115 "An act of electromagnetic testing that examines resistance of some electromagnetic entity with electronic test equipment."@en ;
+                        obo:IAO_0000117 "Binbin Zhang"@en ;
+                        rdfs:label "Act of Resistance Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfReview
+:ActOfReview rdf:type owl:Class ;
+             rdfs:subClassOf cco:ActOfAppraisal ;
+             obo:IAO_0000117 "Binbin Zhang"@en ;
+             cco:definition "An act of appraisal that examines some entity in order to confirm or ensure that a planned process occurred in the manner prescribed by some specification."@en ;
+             rdfs:label "Act of Review"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfScanningElectronMicroscopeTesting
+:ActOfScanningElectronMicroscopeTesting rdf:type owl:Class ;
+                                        rdfs:subClassOf :ActOfNondestructiveTesting ;
+                                        obo:IAO_0000117 "Binbin Zhang"@en ;
+                                        cco:definition "An act of nondestructive testing that tests the ultrastructure of some entity with a beam of accelerated electrons as a source of illumination."@en ;
+                                        rdfs:label "Act of Electron Microscope Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfSensorialExamination
+:ActOfSensorialExamination rdf:type owl:Class ;
+                           rdfs:subClassOf cco:ActOfAppraisal ;
+                           obo:IAO_0000115 "An act of appraisal that examines some entity using one or more of the human senses, such as sight, hearing, olfaction, or touch, and which does not involve specialized testing equipment, but which may involve glasses or hearing aids used in the normal course of human activity" ;
+                           obo:IAO_0000117 "Binbin Zhang"@en ;
+                           rdfs:label "Act of Sensorial Examination"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfTensileTesting
+:ActOfTensileTesting rdf:type owl:Class ;
+                     rdfs:subClassOf :ActOfDestructiveTesting ;
+                     obo:IAO_0000115 "An act of destructive testing that tests the yield strength and ultimate tensile strength of some entity by applying force perpendicular to the cross sectional area of the entity."@en ;
+                     obo:IAO_0000117 "Binbin Zhang"@en ;
+                     rdfs:label "Act of Tensile Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfToughnessTesting
+:ActOfToughnessTesting rdf:type owl:Class ;
+                       rdfs:subClassOf :ActOfDestructiveTesting ;
+                       cco:definition "An act of destructive testing that tests the ability of some entity to absorb energy and plastically deform without fracturing."@en ;
+                       cco:elucidation "Toughness is the ability of a material to absorb energy and plastically deform without fracturing. Toughness is related to the area under the stress-strain curve."@en ;
+                       cco:term_editor "Binbin Zhang"@en ;
+                       rdfs:label "Act of Toughness Testing"@en .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfUltrasonicTesting
+:ActOfUltrasonicTesting rdf:type owl:Class ;
+                        rdfs:subClassOf :ActOfNondestructiveTesting ;
+                        obo:IAO_0000117 "Binbin Zhang"@en ;
+                        cco:definition "An act of nondestructive testing that tests some entity based on the propagation of ultrasonic waves in the entity to detect internal flaws or to characterize materials."@en ;
+                        rdfs:label "Act of Ultrasonic Testing"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/TestingProcessOntology/ActOfVibrationTesting
+:ActOfVibrationTesting rdf:type owl:Class ;
+                       rdfs:subClassOf :ActOfNondestructiveTesting ;
+                       obo:IAO_0000117 "Binbin Zhang"@en ;
+                       cco:definition "An act of nondestructive testing that tests some entity by introducing a forcing function to monitor the characteristic changes."@en ;
+                       cco:elucidation "A forcing function is a function that appears in a differential equations and is only a function of time. A differential equation is a mathematical equation that relates some function with its derivatives."@en ;
+                       rdfs:label "Act of Vibration Testing"^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

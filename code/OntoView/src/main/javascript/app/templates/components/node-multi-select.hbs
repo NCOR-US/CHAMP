@@ -1,0 +1,11 @@
+<label> {{label}}
+    <select class="projection-select" data-placeholder="At least one variable required" multiple>
+        {{#each options as |opt|}}
+            <option value="{{opt.value}}"
+                    selected="{{if opt.selected "selected"}}"
+                    disabled="{{if opt.disabled "disabled"}}">
+                {{opt.text}}
+            </option>
+        {{/each}}
+    </select>
+</label>

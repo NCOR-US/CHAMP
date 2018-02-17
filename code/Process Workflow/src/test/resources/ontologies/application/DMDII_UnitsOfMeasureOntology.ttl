@@ -1,0 +1,352 @@
+@prefix : <http://www.ontologyrepository.com/CommonCoreOntologies/Domain/DMDIIUnitsOfMeasurementOntology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.ontologyrepository.com/CommonCoreOntologies/Domain/DMDIIUnitsOfMeasurementOntology> .
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/Domain/DMDIIUnitsOfMeasurementOntology> rdf:type owl:Ontology ;
+                                                                                                 owl:imports <http://www.ontologyrepository.com/CommonCoreOntologies/Mid/UnitsOfMeasureOntology> ;
+                                                                                                 rdfs:comment "For the DMDII-CHAMP ontologies, this ontology adds shortened preferred labels to the most common measurement units."^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label
+<http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> rdf:type owl:AnnotationProperty ;
+                                                                               <http://www.ontologyrepository.com/CommonCoreOntologies/definition> "A preferred label for adding shortened labels for display purposes in the Process Workflow application."^^xsd:string ;
+                                                                               rdfs:label "dmdii preferred label"^^xsd:string ;
+                                                                               rdfs:subPropertyOf <http://www.ontologyrepository.com/CommonCoreOntologies/alternative_label> .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/AcreMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "acre"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/AngstromMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "angstrom"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/AtmosphereMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "atm"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/BarMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "bar"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/BayreMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "bayre"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/BinaryDegreeMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "binary radian"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/BritishThermalUnitMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "btu"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/CalorieMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "calorie"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/CentigramMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "cg"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/CentiliterMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "cl"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/CentimeterMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "cm"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/CubicCentimeterMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "cm^3"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/CubicDecimeterMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "dm^3"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/CubicFootMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "ft^3"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/CubicInchMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "in^3"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/CubicMeterMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "m^3"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/CubicMillimeterMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "mm^3"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/CubicYardMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "yrd^3"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/DayMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "day"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/DecibelMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "dB"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/DecigramMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "dg"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/DeciliterMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "dL"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/DecimeterMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "dm"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/DegreeCelsiusMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "°C"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/DegreeFahrenheitMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "°F"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/DegreeMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "degree"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/DyneMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "dyne"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/DyneSecondMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "dyne second"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/ErgMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "erg"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/FeetPerSecondMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "ft/s"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/FeetPerSecondPerSecondMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "ft/s/s"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/FootMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "ft"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/GallonMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "gal"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/GigahertzMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "GHz"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/GradianMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "gradian"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/GramMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "g"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/HertzMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "Hz"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/HorsepowerMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "hp"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/HourMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "hr"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/InchMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "in"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/JouleMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "joule"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/KelvinMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "Kelvin"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/KilogramMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "kg"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/KilogramMeterPerSecondMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "kg m/s"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/KilohertzMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "kHz"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/KiloliterMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "kL"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/KilometerMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "km"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/KilometersPerHourMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "kmh"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/KilometersPerSecondMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "km/s"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/KilometersPerSecondPerSecondMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "km/s/s"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/KilonewtonMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "kN"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/KilopondMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "kgf"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/KnotMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "kn"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/LiterMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "liter"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/LongTonMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "ton (UK)"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/MachMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "mach"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/MegahertzMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "MHz"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/MeterMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "m"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/MetersPerSecondMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "m/s"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/MetersPerSecondPerSecondMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "m/s/s"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/MetricTonMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "metric ton"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/MileMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "mi"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/MilesPerHourMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "mph"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/MilesPerSecondMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "mi/s"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/MilesPerSecondPerSecondMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "mi/s/s"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/MillibarMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "mbar"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/MilligramMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "mg"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/MilliliterMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "mL"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/MinuteMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "min"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/MinuteOfArcMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "arc minute"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/MonthMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "month"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/NanometerMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "nanometer"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/NauticalMileMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "nautical mile"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/NewtonMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "Newton"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/NewtonSecondMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "Newton second"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/OunceMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "oz"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/PascalMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "pascal"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/PhonMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "phon"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/PintMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "pt"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/PoundForceMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "lbf"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/PoundMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "lb"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/PoundsPerSquareInchMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "psi"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/QuartMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "qt"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/RadianMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "radian"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/RevolutionsPerDayMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "r/day"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/RevolutionsPerMinuteMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "rpm"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/SecondMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "s"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/SecondOfArcMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "arc second"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/ShaftHorsepowerMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "shp"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/ShortTonMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "ton (US)"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/SlugFootPerSecondMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "slug ft/s"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/SoneMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "sone"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/SquareCentimeterMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "cm^2"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/SquareDecimeterMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "dm^2"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/SquareFootMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "ft^2"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/SquareInchMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "in^2"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/SquareKilometerMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "km^2"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/SquareMeterMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "m^2"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/SquareMileMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "mi^2"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/SquareMillimeterMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "mm^2"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/SquareYardMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "yd^2"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/TablespoonMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "tablespoon"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/TeaspoonMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "teaspoon"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/TerahertzMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "THz"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/TurnMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "full circle"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/WeekMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "week"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/YardMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "yrd"^^xsd:string .
+
+
+<http://www.ontologyrepository.com/CommonCoreOntologies/YearMeasurementUnit> <http://www.ontologyrepository.com/CommonCoreOntologies/dmdii_preferred_label> "yr"^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

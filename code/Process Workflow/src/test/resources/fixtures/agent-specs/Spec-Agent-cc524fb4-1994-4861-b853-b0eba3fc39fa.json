@@ -1,0 +1,17 @@
+{
+  "data" : {
+    "id" : "urn:process-workflow:plans:generated:Spec-Agent-cc524fb4-1994-4861-b853-b0eba3fc39fa",
+    "attributes" : {
+      "role" : "http://www.semanticweb.org/no/ontologies/2017/2/Widget#ManufacturerRole"
+    },
+    "relationships" : {
+      "agentIn" : {
+        "data" : [ {
+          "type" : "sub-process-specs",
+          "id" : "urn:process-workflow:plans:generated:Spec-SubProcess-ffc7542e-b79c-473c-bee5-5271106508e5"
+        } ]
+      }
+    },
+    "type" : "agent-specs"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "data" : {
+    "id" : "urn:process-workflow:plans:generated:Artifact-5-r-643085",
+    "attributes" : {
+      "name" : "Date Value",
+      "type" : "http://www.semanticweb.org/no/ontologies/2017/2/Widget#RejectedUnit",
+      "amount" : null,
+      "unitOfMeasure" : null
+    },
+    "relationships" : {
+      "outputOf" : {
+        "data" : [ {
+          "type" : "sub-processes",
+          "id" : "urn:process-workflow:plans:generated:SubProcess-362bfb87-4b83-4b84-8ae0-d29250123991"
+        } ]
+      }
+    },
+    "type" : "artifacts"
+  }
+}

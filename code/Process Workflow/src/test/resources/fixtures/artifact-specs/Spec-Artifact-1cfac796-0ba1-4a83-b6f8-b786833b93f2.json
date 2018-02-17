@@ -1,0 +1,20 @@
+{
+  "data" : {
+    "id" : "urn:process-workflow:plans:generated:Spec-Artifact-1cfac796-0ba1-4a83-b6f8-b786833b93f2",
+    "attributes" : {
+      "name" : "Battery Contact And Ferrite Bushing Assembly",
+      "type" : "http://www.semanticweb.org/no/ontologies/2017/2/Widget#BatteryContactAndFerriteBushingAssembly",
+      "amount" : 1,
+      "unitOfMeasure" : null
+    },
+    "relationships" : {
+      "inputOf" : {
+        "data" : [ {
+          "type" : "sub-process-specs",
+          "id" : "urn:process-workflow:plans:generated:Spec-SubProcess-36330772-8395-4d82-8814-ab3153740f6b"
+        } ]
+      }
+    },
+    "type" : "artifact-specs"
+  }
+}

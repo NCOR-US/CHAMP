@@ -1,0 +1,13 @@
+.process-creator-form div.column-headers {
+    margin-bottom: 1em;
+}
+
+.process-creator-form div.select-title {
+    border-bottom: 1px solid grey;
+}
+
+.process-creator-form div.delete-item {
+    position: absolute;
+    right: -1em;
+    top: 1px;
+}

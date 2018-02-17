@@ -1,0 +1,104 @@
+{
+    "type": "sub-processes",
+    "id": "processID",
+    "iriBase": "gen:SubProcess",
+    "baseClass": "cco:Act",
+    "attributes": [
+        {
+            "name": "name",
+            "structure": [
+                "?processID cco:designated_by ?ice0",
+                "?ice0 rdf:type cco:DesignativeName",
+                "?ice0 cco:inheres_in ?ibe0",
+                "?ibe0 rdf:type cco:InformationBearingEntity",
+                "?ibe0 cco:has_text_value ?name"
+            ],
+            "generate": [
+                {
+                    "variable": "ibe0",
+                    "strategy": "random",
+                    "base": "DesignativeNameIBE"
+                },
+                {
+                    "variable": "ice0",
+                    "strategy": "random",
+                    "base": "DesignativeNameICE"
+                }
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "name": "parentPlan",
+            "type": "processes",
+            "linkType": "belongsTo",
+            "structure": [
+                "?processID cco:prescribed_by ?parentPlan"
+            ]
+        },
+        {
+            "name": "previousSubProcess",
+            "type": "sub-processes",
+            "linkType": "belongsTo",
+            "structure": [
+                "?processID cco:preceded_by ?previousSubProcess"
+            ]
+        },
+        {
+            "name": "nextSubProcess",
+            "type": "sub-processes",
+            "linkType": "belongsTo",
+            "structure": [
+                "?processID cco:precedes ?nextSubProcess"
+            ]
+        },
+        {
+            "name": "inputs",
+            "type": "artifacts",
+            "linkType": "hasMany",
+            "structure": [
+                "?processID cco:has_input ?inputs"
+            ]
+        },
+        {
+            "name": "outputs",
+            "type": "artifacts",
+            "linkType": "hasMany",
+            "structure": [
+                "?processID cco:has_output ?outputs"
+            ]
+        },
+        {
+            "name": "testValues",
+            "type": "test-value-bearers",
+            "linkType": "hasMany",
+            "structure": [
+                "?processID cco:has_test_output ?testValues"
+            ]
+        },
+        {
+            "name": "agents",
+            "type": "agents",
+            "linkType": "hasMany",
+            "structure": [
+                "?processID cco:has_agent ?agents"
+            ]
+        },
+        {
+            "name": "processParts",
+            "type": "sub-processes",
+            "linkType": "hasMany",
+            "structure": [
+                "?processID cco:has_process_part ?processParts"
+            ]
+        },
+        {
+            "name": "parentSubProcess",
+            "type": "sub-processes",
+            "linkType": "belongsTo",
+            "structure": [
+                "?processID cco:is_part_of_process ?parentSubProcess"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,146 @@
+{
+    "type": "processes",
+    "id": "processID",
+    "iriBase": "gen:Process",
+    "baseClass": "cco:Act",
+    "attributes": [
+        {
+            "name": "name",
+            "structure": [
+                "?processID cco:designated_by ?ice0",
+                "?ice0 rdf:type cco:DesignativeName",
+                "?ice0 cco:inheres_in ?ibe0",
+                "?ibe0 rdf:type cco:InformationBearingEntity",
+                "?ibe0 cco:has_text_value ?name"
+            ],
+            "generate": [
+                {
+                    "variable": "ibe0",
+                    "strategy": "random",
+                    "base": "DesignativeNameIBE"
+                },
+                {
+                    "variable": "ice0",
+                    "strategy": "random",
+                    "base": "DesignativeNameICE"
+                }
+            ]
+        },
+        {
+            "name": "description",
+            "structure": [
+                "?processID cco:designated_by ?ice1",
+                "?ice1 rdf:type cco:DescriptiveInformationContentEntity",
+                "?ice1 cco:inheres_in ?ibe1",
+                "?ibe1 rdf:type cco:InformationBearingEntity",
+                "?ibe1 cco:has_text_value ?description"
+            ],
+            "generate": [
+                {
+                    "variable": "ibe1",
+                    "strategy": "random",
+                    "base": "DescriptionIBE"
+                },
+                {
+                    "variable": "ice1",
+                    "strategy": "random",
+                    "base": "DescriptionICE"
+                }
+            ]
+        },
+        {
+            "name": "notes",
+            "structure": [
+                "?ice3 cco:is_about ?processID",
+                "?ice3 rdf:type cco:InformationContentEntity",
+                "?ice3 cco:inheres_in ?ibe3",
+                "?ibe3 rdf:type cco:InformationBearingEntity",
+                "?ibe3 cco:has_text_value ?notes"
+            ],
+            "generate": [
+                {
+                    "variable": "ibe3",
+                    "strategy": "random",
+                    "base": "NotesIBE"
+                },
+                {
+                    "variable": "ice3",
+                    "strategy": "random",
+                    "base": "NotesICE"
+                }
+            ]
+        },
+        {
+            "name": "lastEdited",
+            "structure": [
+                "?processID cco:edited_on ?ice2",
+                "?ice2 rdf:type cco:TemporalInstant",
+                "?ice2 cco:inheres_in ?ibe2",
+                "?ibe2 rdf:type cco:InformationBearingEntity",
+                "?ibe2 cco:has_text_value ?lastEdited"
+            ],
+            "generate": [
+                {
+                    "variable": "ibe2",
+                    "strategy": "random",
+                    "base": "LastEditedIBE"
+                },
+                {
+                    "variable": "ice2",
+                    "strategy": "random",
+                    "base": "LastEditedICE"
+                }
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "name": "author",
+            "type": "agents",
+            "linkType": "belongsTo",
+            "structure": [
+                "?author cco:has_role ?role",
+                "?role rdf:type cco:AuthorRole",
+                "?role cco:realized_by ?planCreate",
+                "?planCreate rdf:type cco:ActOfArtifactCreation",
+                "?planCreate cco:prescribes ?processID"
+            ],
+            "generate": [
+                {
+                    "variable": "role",
+                    "strategy": "random",
+                    "base": "Role"
+                },
+                {
+                    "variable": "planCreate",
+                    "strategy": "random",
+                    "base": "Plan"
+                }
+            ]
+        },
+        {
+            "name": "output",
+            "type": "artifact-specs",
+            "linkType": "belongsTo",
+            "structure": [
+                "?processID lro:has_output ?output"
+            ]
+        },
+        {
+            "name": "firstStep",
+            "type": "sub-process-specs",
+            "linkType": "belongsTo",
+            "structure": [
+                "?processID lro:prescribes ?firstStep"
+            ]
+        },
+        {
+            "name": "firstConcreteSteps",
+            "type": "sub-processes",
+            "linkType": "hasMany",
+            "structure": [
+                "?processID cco:prescribes ?firstStep"
+            ]
+        }
+    ]
+}

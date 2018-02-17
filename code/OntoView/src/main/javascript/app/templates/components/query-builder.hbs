@@ -1,0 +1,373 @@
+{{!-- alpha testing --}}
+<div style="position:absolute; top: 1em; left: -20em;">
+    <a class="button secondary small radius" {{action 'setFixture'}} style="position:fixed">
+        {{#if testFixtureIsSet}}
+            Reset test fixture
+        {{else}}
+            Load test fixture
+        {{/if}}
+    </a>
+</div>
+
+{{#if testFixtureIsSet}}
+    <div style="position:absolute; top: 4em; left: -20em;">
+        <a class="button secondary small radius" {{action 'removeFixture'}} style="position:fixed">
+            Remove test fixture
+        </a>
+    </div>
+{{/if}}
+
+<div class="row">
+    <div class="small-12 columns">
+        {{#unless editingName}}
+            <h3 class="hover-editable" {{action 'startEditingName'}}>{{query.name}}</h3>
+        {{else}}
+            <div class="row collapse" style="margin-top: 0.2rem">
+                <div class="small-10 columns">{{input value=currentName}}</div>
+                <div class="small-1 columns">
+                    <a class="button secondary postfix" {{action 'stopEditingName'}}>Cancel</a>
+                </div>
+                <div class="small-1 columns">
+                    <a class="button primary postfix" {{action 'saveName'}}>Save</a>
+                </div>
+            </div>
+        {{/unless}}
+    </div>
+</div>
+<div class="row">
+    <div class="small-12 columns">
+        {{#unless editingDescription}}
+            <div class="hover-editable" {{action 'startEditingDescription'}}>
+                {{#if query.description}}
+                    {{query.description}}
+                {{else}}
+                    (no description)
+                {{/if}}
+            </div>
+        {{else}}
+            <div>
+                <div class="row collapse">
+                    <div class="small-10 columns">{{input value=currentDescription}}</div>
+                    <div class="small-1 columns">
+                        <a class="button secondary postfix" {{action 'stopEditingDescription'}}>Cancel</a>
+                    </div>
+                    <div class="small-1 columns">
+                        <a class="button primary postfix" {{action 'saveDescription'}}>Save</a>
+                    </div>
+                </div>
+            </div>
+        {{/unless}}
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="small-12 columns">
+        <table id="namespaceTable">
+            <tbody>
+            {{#each-in query.prefixes as |key value|}}
+                <tr>
+                    <td>PREFIX</td>
+                    <td>{{key}}:</td>
+                    <td>&lt;{{value}}&gt;</td>
+                </tr>
+                <tr></tr>
+            {{/each-in}}
+            </tbody>
+        </table>
+        <br>
+    </div>
+</div>
+<div class="row">
+    <div class="small-1 columns smaller" style="padding-top: 3px;">
+        SELECT
+    </div>
+    <div class="small-11 columns">
+        {{projection-select query=query}}
+    </div>
+</div>
+<div class="row">
+    <div class="small-12 columns">
+        {{radio-button value="noMod" groupValue=querySelectType}}<label>No modifier</label>
+        {{radio-button value="distinct" groupValue=querySelectType}}<label>DISTINCT</label>
+        {{radio-button value="reduced" groupValue=querySelectType}}<label>REDUCED</label>
+    </div>
+</div>
+
+<div class="row">
+    <div class="small-12 columns">
+        WHERE {
+    </div>
+</div>
+
+<div class="row">
+    <div class="small-12 columns">
+        {{#each bodyApplications as |app index|}}
+            <div class="row">
+                <div class="small-12 columns">
+                    {{#drop-area callback=(action 'dropRow' index)}}
+                        {{#if (eq app.type 'relationship')}}
+                            {{bgp-row query=query row=app rowIndex=index}}
+                        {{else if (eq app.type 'createNode')}}
+                            {{bind-row query=query row=app rowIndex=index functionRegistry=functions}}
+                        {{else if (eq app.type 'filter')}}
+                            {{filter-row query=query row=app rowIndex=index functionRegistry=functions}}
+                        {{else if (eq app.type 'startOptional')}}
+                            {{#drag-row data=index class=(if app.highlightRow 'highlighted')}}
+                                <div class="row">
+                                    <div class="small-3 columns">
+                                        OPTIONAL {
+                                    </div>
+                                    <div class="small-offset-5 small-4 columns">
+                                        <a onmouseenter={{action 'updateShowCompanionApplication' app.link true}}
+                                                   onmouseleave={{action 'updateShowCompanionApplication' app.link false}}>
+                                            <em>(hover to show companion line)</em>
+                                        </a>
+                                    </div>
+                                </div>
+                            {{/drag-row}}
+                        {{else if (eq app.type 'endOptional')}}
+                            {{#drag-row data=index class=(if app.highlightRow 'highlighted')}}
+                                <div class="row">
+                                    <div class="small-3 columns">
+                                        }
+                                    </div>
+                                    <div class="small-offset-5 small-4 columns">
+                                        <a onmouseenter={{action 'updateShowCompanionApplication' app.link true}}
+                                                   onmouseleave={{action 'updateShowCompanionApplication' app.link false}}>
+                                            <em>(hover to show companion line)</em>
+                                        </a>
+                                    </div>
+                                </div>
+                            {{/drag-row}}
+                        {{else if (eq app.type 'startUnion')}}
+                            {{#drag-row data=index class=(if app.highlightRow 'highlighted')}}
+                                <div class="row">
+                                    <div class="small-3 columns">
+                                        UNION {
+                                    </div>
+                                    <div class="small-offset-5 small-4 columns">
+                                        <a onmouseenter={{action 'updateShowCompanionApplication' app.link true}}
+                                                   onmouseleave={{action 'updateShowCompanionApplication' app.link false}}>
+                                            <em>(hover to show companion line)</em>
+                                        </a>
+                                    </div>
+                                </div>
+                            {{/drag-row}}
+                        {{else if (eq app.type 'endUnion')}}
+                            {{#drag-row data=index class=(if app.highlightRow 'highlighted')}}
+                                <div class="row">
+                                    <div class="small-3 columns">
+                                        }
+                                    </div>
+                                    <div class="small-offset-5 small-4 columns">
+                                        <a onmouseenter={{action 'updateShowCompanionApplication' app.link true}}
+                                                   onmouseleave={{action 'updateShowCompanionApplication' app.link false}}>
+                                            <em>(hover to show companion line)</em>
+                                        </a>
+                                    </div>
+                                </div>
+                            {{/drag-row}}
+                        {{else}}
+                            {{#drag-row data=index}}
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        unknown type
+                                    </div>
+                                </div>
+                            {{/drag-row}}
+                        {{/if}}
+                        <a class="remove-row-icon" {{action 'removeRow' index}}><i class="fa fa-trash"></i></a>
+                    {{/drop-area}}
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+<div class="row">
+    <div class="small-12 columns">
+        <div class="row">
+            <div class="small-11 columns" style="margin-left: 0.75rem">
+                {{!--
+                {{#drag-row}}
+                --}}
+                <a data-dropdown="{{newRowDropdownID}}"><i class="fa fa-plus"></i> Add to query</a>
+                <ul id="{{newRowDropdownID}}" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+                    <li><a {{action 'addRow' 'bgp'}}>Statement</a></li>
+                    <li><a {{action 'addRow' 'bind'}}>Bind</a></li>
+                    <li><a {{action 'addRow' 'filter'}}>Filter</a></li>
+                    <li><a {{action 'addRow' 'optional'}}>Optional</a></li>
+                    <li><a {{action 'addRow' 'union'}}>Union</a></li>
+                </ul>
+                {{!--
+                {{/drag-row}}
+                --}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row bottom-margin-1">
+    <div class="small-12 columns">
+        <span class="smaller">}</span>
+        <br>
+    </div>
+</div>
+
+<div class="row">
+    <div class="small-2 columns">
+        GROUP BY
+    </div>
+    <div class="small-10 columns">
+        {{#each query.aggregates as |agg aIndex|}}
+            <div class="aggregate-wrapper {{if agg.isEditing 'editing'}}">
+            <div class="row">
+                <div class="small-11 columns">
+                    {{#if agg.isEditing}}
+                        <strong>{{#each agg.groups as |g|}}?{{g}} {{else}}(no variables selected){{/each}}</strong>
+                    {{else}}
+                        <a {{action 'editAggregate' agg}}>
+                            {{#each agg.groups as |g|}}?{{g}} {{else}}(no variables selected){{/each}}
+                        </a>
+                    {{/if}}
+                    <em>(target: ?{{agg.target}})</em>
+                </div>
+                <div class="small-1 columns">
+                    <a><i class="fa fa-trash" {{action 'removeAggregate' aIndex}}></i></a>
+                </div>
+            </div>
+            {{#if agg.isEditing}}
+                <div class="row">
+                    <div class="small-12 columns">
+                        <label>Target Variable
+                            {{input value=agg.target}}
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-12 columns">
+                        {{node-multi-select label='Group Variables' changeGroup=(action 'handleGroupChange' agg) nodeSet=agg.groups query=query}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-12 columns">
+                        <div class="aggregate-function-editor-wrapper">
+                            <div class="row">
+                                <div class="small-3 columns">
+                                    {{aggregate-function-select aggregateFunctions=aggregateFunctions agg=agg changeCallback=(action 'changeAggregateFnName' agg)}}
+                                </div>
+                                <div class="small-9 columns"></div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="small-12 columns">
+                                    {{variable-multi-select label='Arguments' query=query aggregate=agg selected=agg.expr.args changeCallback=(action 'changeAggregateFnVariable' agg)}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-12 columns">
+                        <div class="clearfix">
+                            <ul class="button-group right">
+                                <li>
+                                    <a class="button primary small" {{action 'stopEditingAggregate' agg aIndex}}>Close</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {{/if}}
+            </div>
+        {{/each}}
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="bottom-margin-1">
+                    <a {{action 'addNewAggregate'}}><i class="fa fa-plus"></i> Add aggregate</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- order by --}}
+<div class="row" style="padding-top: 0.25rem;">
+    <div class="small-2 columns smaller">
+        ORDER BY
+    </div>
+    <div class="small-5 columns">
+        {{#each orderingList as |ordering|}}
+            {{#with ordering.node as |node|}}
+                {{#if node.variable}}
+                    <div class="row">
+                        <div class="small-1 columns">
+                            {{input type="checkbox" checked=ordering.checked click=(action 'handleClickOrder' ordering)}}
+                        </div>
+                        <div class="small-5 columns">
+                            {{node.variable}}
+                        </div>
+                        <div class="small-6 columns">
+                            {{#if ordering.checked}}
+                                {{order-type-select order=ordering.order callback=(action 'setOrderDirection' ordering)}}
+                            {{/if}}
+                        </div>
+                    </div>
+                {{/if}}
+            {{/with}}
+            {{#with ordering.aggregate as |agg|}}
+                <div class="row">
+                    <div class="small-1 columns">
+                        {{input type="checkbox" checked=ordering.checked click=(action 'handleClickOrder' ordering)}}
+                    </div>
+                    <div class="small-5 columns">
+                        {{agg.target}}
+                    </div>
+                    <div class="small-6 columns">
+                        {{#if ordering.checked}}
+                            {{order-type-select order=ordering.order callback=(action 'setOrderDirection' ordering)}}
+                        {{/if}}
+                    </div>
+                </div>
+            {{/with}}
+        {{else}}
+            <div class="row">
+                <div class="small-12 columns">
+                    (No variables to order by)
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    <div class="small-5 columns"></div>
+</div>
+
+{{!-- limit --}}
+<div class="row">
+    <div class="small-1 columns smaller" style="padding-top: 0.25rem;">
+        LIMIT
+    </div>
+    <div class="small-2 columns">
+        {{input type="number" value=query.limit class="short-input"}}
+    </div>
+    <div class="small-9 columns"></div>
+</div>
+
+<div class="row">
+    <div class="small-1 columns smaller" style="padding-top: 0.25rem;">
+        OFFSET
+    </div>
+    <div class="small-2 columns">
+        {{input type="number" value=query.offset class="short-input"}}
+    </div>
+    <div class="small-9 columns"></div>
+</div>
+
+<div class="row">
+    <div class="small-12 columns">
+        <br>
+        <div class="clearfix">
+            <a class="button success small right" {{action 'saveQuery'}}>Save Query</a>
+        </div>
+        <a id="downloader" class='hidden'></a>
+    </div>
+</div>

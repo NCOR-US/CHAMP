@@ -1,0 +1,292 @@
+<div class="{{if (eq currentStep step.id) 'visible' 'hidden'}}">
+
+    <div class="row">
+        <div class="small-12 columns">
+            <label><span class="required">*</span> Title
+                {{input value=step.name}}
+            </label>
+            <br>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-12 columns">
+            <label><span class="required">*</span> Sub-process Type
+                {{chosen-select value=(mut step.type) options=subProcessTypes optionValueKey='id'
+                                placeholder='Select a process type'}}
+            </label>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="small-12 columns">
+            <label>Notes
+                {{textarea value=step.notes}}
+            </label>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="small-12 columns">
+            <h5><strong>Inputs</strong>
+                <small><a {{action 'addInput' step}}>(add)</a></small>
+            </h5>
+            <div class="row column-headers">
+                <div class="small-3 columns">
+                    <div class="select-title">Type</div>
+                </div>
+                <div class="small-5 columns">
+                    <div class="select-title">Item</div>
+                </div>
+                <div class="small-4 columns">
+                    <div class="select-title">Amount</div>
+                </div>
+            </div>
+            {{#each step.inputs as |input index|}}
+                <div class="row">
+                    <div class="small-3 columns">
+                        <label>
+                            {{chosen-select value=(mut input.category) options=inputTypes optionValueKey='id'
+                                            placeholder='Select an input type'}}
+                        </label>
+                    </div>
+                    <div class="small-5 columns">
+                        <label>
+                            {{#if input.category}}
+                                {{chosen-select value=(mut input.type) options=(get allInputItems input.category)
+                                                optionValueKey='id' placeholder='Select an item'}}
+                            {{/if}}
+                        </label>
+                    </div>
+                    <div class="small-4 columns">
+                        {{#if input.type}}
+                            <div class="row">
+                                <div class="small-6 columns">
+                                    {{input type='number' class='amount-input' value=input.amount min=0}}
+                                </div>
+                                <div class="small-6 columns">
+                                    {{!-- todo defaultShowFirst=true  --}}
+                                    {{chosen-select value=(mut input.unitOfMeasure) options=uomOptions
+                                                    optionValueKey='id' placeholder="EA" allowSingleDeselect=true}}
+                                </div>
+                            </div>
+                        {{/if}}
+                        <div class="delete-item">
+                            <a {{action 'deleteInput' step index}}><i class="fa fa-trash"></i></a>
+                        </div>
+                    </div>
+                </div>
+            {{else}}
+                <div class="row">
+                    <div class="small-12 columns">
+                        No inputs.
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="small-12 columns">
+            <h5><strong>Outputs</strong>
+                <small><a {{action 'addOutput' step}}>(add)</a></small>
+            </h5>
+            <div class="row column-headers">
+                <div class="small-3 columns">
+                    <div class="select-title">Type</div>
+                </div>
+                <div class="small-5 columns">
+                    <div class="select-title">Item</div>
+                </div>
+                <div class="small-4 columns">
+                    <div class="select-title">Amount</div>
+                </div>
+            </div>
+            {{#each step.outputs as |output index|}}
+                <div class="row">
+                    <div class="small-3 columns">
+                        <label>
+                            {{chosen-select value=(mut output.category) options=outputTypes optionValueKey='id'
+                                            placeholder='Select an output type'}}
+                        </label>
+                    </div>
+                    <div class="small-5 columns">
+                        <label>
+                            {{#if output.category}}
+                                {{chosen-select value=(mut output.type) options=(get allOutputItems output.category)
+                                                optionValueKey='id' placeholder='Select an item'}}
+                            {{/if}}
+                        </label>
+                    </div>
+                    <div class="small-4 columns">
+                        {{#if output.type}}
+                            <div class="row">
+                                <div class="small-6 columns">
+                                    {{input type='number' class='amount-input' value=output.amount placeholder='1'
+                                            min=0}}
+                                </div>
+                                <div class="small-6 columns">
+                                    {{!-- todo defaultShowFirst=true  --}}
+                                    {{chosen-select value=(mut output.unitOfMeasure) options=uomOptions
+                                                    optionValueKey='id' placeholder="EA" allowSingleDeselect=true}}
+                                </div>
+                            </div>
+                        {{/if}}
+                        <div class="delete-item">
+                            <a {{action 'deleteOutput' step index}}><i class="fa fa-trash"></i></a>
+                        </div>
+                    </div>
+                </div>
+            {{else}}
+                <div class="row">
+                    <div class="small-12 columns">
+                        No outputs.
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="small-12 columns">
+            <h5><strong>Test Outputs</strong>
+                <small><a {{action 'addTestValueBearer' step}}>(add)</a></small>
+            </h5>
+            <div class="row column-headers">
+                <div class="small-4 columns">
+                    <div class="select-title">Type</div>
+                </div>
+                <div class="small-4 columns">
+                    <div class="select-title"><span class="required">*</span> Name</div>
+                </div>
+                <div class="small-4 columns">
+                    <div class="select-title">Amount</div>
+                </div>
+            </div>
+            {{#each step.testValues as |bearer index|}}
+                <div class="row">
+                    <div class="small-4 columns">
+                        <label>
+                            {{chosen-select value=(mut bearer.type) options=testValueTypes optionValueKey='id'
+                                            placeholder='Select an output type'}}
+                        </label>
+                    </div>
+                    <div class="small-4 columns">
+                        <div class="row">
+                            <div class="small-6 columns">
+                                <label>
+                                    {{input value=bearer.name class='amount-input'}}
+                                </label>
+                            </div>
+                            <div class="small-6 columns">
+                                {{chosen-select value=(mut bearer.unitOfMeasure) options=uomOptions
+                                                optionValueKey='id' placeholder="(no unit)" allowSingleDeselect=true}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-2 columns">
+                        <label>
+                            {{input type='number' class='amount-input' value=bearer.amount min=0}}
+                        </label>
+                    </div>
+                    <div class="small-2 columns">
+                        <div class="delete-item">
+                            <a {{action 'deleteTestValueBearer' step index}}><i class="fa fa-trash"></i></a>
+                        </div>
+                    </div>
+                </div>
+            {{else}}
+                <div class="row">
+                    <div class="small-12 columns">
+                        No test outputs.
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="small-12 columns">
+            <h5><strong>Agents</strong>
+                <small><a {{action 'addAgent' step}}>(add)</a></small>
+            </h5>
+            <div class="row column-headers">
+                <div class="small-6 columns">
+                    <div class="select-title">Role</div>
+                </div>
+                <div class="small-6 columns"></div>
+            </div>
+            {{#each step.agents as |agent agentIndex|}}
+                <div class="row">
+                    <div class="small-6 columns">
+                        <label>
+                            {{chosen-select value=(mut agent.role) options=agentRoles optionValueKey='id'
+                                            placeholder='Select an agent role'}}
+                        </label>
+                        <div class="delete-item">
+                            <a {{action 'deleteAgent' step agentIndex}}><i class="fa fa-trash"></i></a>
+                        </div>
+                    </div>
+                    <div class="small-6 columns"></div>
+                </div>
+            {{else}}
+                <div class="row">
+                    <div class="small-12 columns">
+                        No agents.
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="small-12 columns">
+            <h5><strong>Subtasks</strong>
+                <small><a {{action 'addTask' step}}>(add)</a></small>
+            </h5>
+            <ul>
+                {{#each step.processParts as |task|}}
+                    <li><a title="scroll to {{task.name}}" {{action 'showTask' task.id}}>{{task.name}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    {{#unless step.processParts.length}}
+        <div class="row">
+            <div class="small-12 columns">
+                No subtasks.
+            </div>
+        </div>
+    {{/unless}}
+</div>
+
+{{!-- have to make the next subprocess editor in the chain --}}
+{{#if step.nextSubProcess}}
+    {{subprocess-editor step=step.nextSubProcess.content
+                        showTask=(action 'showTask')
+                        allInputItems=allInputItems
+                        allOutputItems=allOutputItems
+                        currentStep=currentStep
+    }}
+{{/if}}
+
+{{#each step.processParts as |part|}}
+    {{subprocess-editor step=part
+                        showTask=(action 'showTask')
+                        allInputItems=allInputItems
+                        allOutputItems=allOutputItems
+                        currentStep=currentStep
+    }}
+{{/each}}

@@ -1,0 +1,10 @@
+{
+  "data" : {
+    "id" : "urn:process-workflow:plans:generated:SubProcess-362bfb87-4b83-4b84-8ae0-d29250123991",
+    "attributes" : {
+      "name" : "Step 1",
+      "type" : "http://www.semanticweb.org/ontologies/ManufacturingProcessOntology#ActOfAbrading"
+    },
+    "type" : "sub-processes"
+  }
+}

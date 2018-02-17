@@ -1,0 +1,45 @@
+<select>
+    <option value=""></option>
+    {{#each options as |opt|}}
+        {{#with (get opt optionValueKey) as |o|}}
+            <option value="{{o}}"
+                    title="{{opt.title}}"
+                    selected={{eq value o}}>
+                {{opt.display}}
+            </option>
+        {{/with}}
+    {{/each}}
+</select>
+
+{{!--
+
+<select>
+    <option value=""></option>
+    {{#each options as |opt|}}
+        <option value="{{get opt optionValueKey}}"
+                selected="{{if opt.selected "selected"}}"
+                disabled="{{if opt.disabled "disabled"}}">
+            {{opt.display}}
+        </option>
+    {{/each}}
+</select>
+
+ --}}
+
+{{!--
+<select name="inputSelect" onchange={{action (mut input.type) value="target.value"}}>
+    <option value="" selected disabled>Select an input type</option>
+    {{#each inputTypes as |pt|}}
+        <option value="{{pt.id}}" selected={{eq pt.id input.type}}>{{pt.display}}</option>
+    {{/each}}
+</select>
+--}}
+{{!--
+<select name="inputItemSelect" onchange={{action (mut input.item) value="target.value"}}>
+    {{#with (get allInputItems input.type) as |inputItems|}}
+        {{#each inputItems as |pt|}}
+            <option value="{{pt.id}}" selected={{eq pt.id input.item}}>{{pt.display}}</option>
+        {{/each}}
+    {{/with}}
+</select>
+--}}

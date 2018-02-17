@@ -1,0 +1,9 @@
+table.result-table {
+    width: 100%;
+}
+
+table.result-table,
+table.result-table ul {
+    font-size: 0.875rem;
+    list-style-type: none;
+}
