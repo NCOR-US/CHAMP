@@ -1,18 +1,31 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww10800\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+To open the Product Life Cycle (PLC) ontologies in an ontology editor, such as Protege or TopBraid, 
+you will require access to the ontologies that import them: namely, 
+Basic Formal Ontology (BFO), the Relations Ontology (RO), and the Common Core Ontologies (CCO).
 
-\f0\fs24 \cf0 To open the Product Life Cycle (PLC) ontologies in an ontology editor, such as Protege or TopBraid, you will require access to the ontologies that import them: namely, Basic Formal Ontology (BFO) and the Common Core Ontologies (CCO).\
-\
-A compatible release of BFO along with the latest release of the CCO files may be found here:\
-\
-https://github.com/CommonCoreOntology/CommonCoreOntologies\
-\
-We recommend downloading all of these files to a single repository shared with the PLC files prior to opening, as importing them from their URLs online has been a known problem.  \
-\
-Note that the \'91AllCoreOntology.ttl\'92 file in the CCO suite will import all of the CCO, and is useful for viewing all of the CCO and BFO independently. \
- \
-}
+A compatible release of BFO, RO, and the latest release of the CCO files may be found here:
+https://github.com/CommonCoreOntology/CommonCoreOntologies
+
+We recommend downloading all of these files (along with those in the PLC) to a single folder on your hard-drive 
+shared with the PLC files prior to opening, as importing them from their URLs online has been a known problem.
+
+Note that the 'AllCoreOntology.ttl' file in the CCO suite will import all of the CCO, and is 
+useful for viewing all of the CCO and BFO independently.
+
+---------------------------------
+Troubleshooting:
+
+Recently, some users have had trouble with Protege timing out while opening the files. If you experience this problem,
+take the following steps:
+1. Place all files in a common folder.
+2. Delete any previously existing 'catalog.xml' in the folder.
+3. Disconnect from the internet. [This will prevent the OWL API from requesting a package]
+4. Open the 'allcore' file from your local drive. Protege will then ask you to specify the location of the importing ontologies.
+
+Once you have located all the imported ontologies, the file should open properly. You can confirm this by 
+proceding to the class hierarchy, where you should see the BFO hierarchy properly in place.
+
+If the file does open properly, you should not be required to specify the location of the importing ontologies every time
+you open the file, because Protege will re-create the catalog.xml file specifying the location of them. However, if 
+this file is deleted or the location of the files moved, you will need to repeat this process. 
+
+
