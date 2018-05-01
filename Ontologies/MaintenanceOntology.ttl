@@ -7,10 +7,10 @@
 @base <http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/> .
 
 <http://www.semanticweb.org/ruoyuyang/ontologies/2017/10/MaintenanceOntology/> rdf:type owl:Ontology ;
-                                                                               owl:imports <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/> ;
-                                                                               <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology/term_editor> "Ruoyu Yang" ;
-                                                                               rdfs:label "Maintenance Ontology" ;
-                                                                               owl:versionInfo "version 1" .
+                                                                                owl:imports <http://www.semanticweb.org/no/ontologies/2017/1/PLC-ontology/> ;
+                                                                                <http://purl.org/dc/elements/1.1/contributor> "Ruoyu Yang" ;
+                                                                                owl:versionInfo "version 0.1"@en ;
+                                                                                rdfs:label "Maintenance Ontology" .
 
 #################################################################
 #    Annotation properties
@@ -24,8 +24,12 @@
 <http://www.ontologyrepository.com/CommonCoreOntologies/definition> rdf:type owl:AnnotationProperty .
 
 
-###  http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology/definition_source
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#definition_source
 <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#definition_source> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor
+<http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology#term_editor> rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology/term_editor
